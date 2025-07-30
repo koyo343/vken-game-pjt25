@@ -28,6 +28,3 @@ MemoryCaptures/
 Build/
 Builds/
 
-# Asset Store files
-/[Aa]ssets/*
-!/[Aa]ssets/Project/
