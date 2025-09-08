@@ -28,3 +28,10 @@ UnityHubから`Projects`を選び、プロジェクトのインポート　を�
 ### 3. 終わり
 
 <img width="1907" height="1017" alt="スクリーンショット 2025-07-25 1 33 30" src="https://github.com/user-attachments/assets/06e1928c-0c15-4709-ae90-6707f6fcb9d0" />
+
+### 4. 補足
+バージョンリコメンドに上記のバージョンが出てこない場合(2025/09/08 追記)\
+→以下のURLから探してインストールしてください
+[https://unity.com/releases/editor/archive](https://unity.com/releases/editor/archive)
+
+一応、バージョンが違っても立ち上げる時に[上記のバージョン](#環境のバージョン)のインストールを強制されるらしいので、別バージョンをインストールして進めていただいても構いません
