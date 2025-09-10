@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1234
     height: 1021
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,12 +43,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
-    width: 1234
-    height: 965
+    width: 1280
+    height: 573.3334
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 54
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -71,6 +71,7 @@ MonoBehaviour:
     height: 965
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
+
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -118,9 +119,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 571
-    width: 943
-    height: 394
+    y: 340
+    width: 978
+    height: 233.33337
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 13}
@@ -270,8 +271,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 233
     y: 0
-    width: 710
-    height: 571
+    width: 736
+    height: 340
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 16}
@@ -342,6 +343,7 @@ MonoBehaviour:
     y: 595
     width: 942
     height: 368
+
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -378,12 +380,12 @@ MonoBehaviour:
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\f drive\github\vken-game-pjt25
   m_LockTracker:
-    m_IsLocked: 0
+    m_IsLocked: 
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 72b50000
-    m_LastClickedID: 46450
-    m_ExpandedIDs: 000000002cb60000
+    m_SelectedIDs: eef30000
+    m_LastClickedID: 62446
+    m_ExpandedIDs: 00000000eef300001217010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -560,7 +562,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f4e8fffff2faffff3ab40000
+      m_ExpandedIDs: e488feff388efeff7094fefffc99feff769bfeff54a0feff8ea4feffdca5feffc4a7feff8aa8feffc4a9feff38abfeff86acfeff56adfeffeeaffeffaeb1feff8ab3feffaeb4feffaab6feff06b8feff64c9feffd0cefeffb0d3feffacd4feff92d5feffeed6feff78e1fefff0e2feff52e8feffd8e8feffc2f0feff28f2feffd8f3feffaaf4feff74f5feff82f6feffdafbfeffe0fcfefffc21ffff1e27ffffd22bffffa41b0100021d0100641d0100861d0100981e0100ca1e01006023010092230100222801002c290100a8290100c2290100e82a0100be2c0100c82c0100d42f0100f82f0100783001008c300100723801000a390100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1052,9 +1054,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 370.88464, y: 233.91826, z: -3.3506901}
+    m_Target: {x: 350.42862, y: 146.44603, z: 0}
     speed: 2
-    m_Value: {x: 370.88464, y: 233.91826, z: -3.3506901}
+    m_Value: {x: 350.42862, y: 146.44603, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1104,9 +1106,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 345.0709
+    m_Target: 176.76892
     speed: 2
-    m_Value: 345.0709
+    m_Value: 176.76892
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1207,7 +1209,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
@@ -1228,13 +1230,13 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -367.33334
-      y: -177.66667
-      width: 734.6667
-      height: 355.33334
+      x: -244.66667
+      y: -97.666664
+      width: 489.33334
+      height: 195.33333
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1102, y: 554}
+  m_LastWindowPixelSize: {x: 1101, y: 471}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
