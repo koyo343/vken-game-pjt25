@@ -591,8 +591,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d4fa19fde7712e4d94c59f0f84dd019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNameScoreText: {fileID: 0}
-  scoreDetailsText: {fileID: 0}
+  playerNameText: {fileID: 348643238}
+  totalScoreText: {fileID: 1431061445}
+  playScoreText: {fileID: 51702937}
+  timeLeftsText: {fileID: 1485650665}
+  timeScoreText: {fileID: 1585569130}
+  characterImage: {fileID: 1379053161}
 --- !u!4 &722945632
 Transform:
   m_ObjectHideFlags: 0
@@ -1053,7 +1057,7 @@ GameObject:
   - component: {fileID: 1379053162}
   - component: {fileID: 1379053161}
   m_Layer: 5
-  m_Name: Chara
+  m_Name: CharacterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

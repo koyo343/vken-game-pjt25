@@ -4,7 +4,7 @@ using Amazon.DynamoDBv2.DataModel;
 [DynamoDBTable("RankingTable")]
 public class RankingItem
 {
-    [DynamoDBHashKey]
+    [DynamoDBHashKey] // これが正しく設定されているか確認
     public string PlayerID { get; set; }
 
     [DynamoDBProperty]

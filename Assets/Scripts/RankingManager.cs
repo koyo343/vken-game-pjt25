@@ -10,9 +10,6 @@ using Amazon.DynamoDBv2.Model;
 // RankingEntryクラスは別のファイルで定義してください
 // public class RankingEntry { public string playerName; public int score; }
 
-// AWSCredentialsクラスも別のファイルで定義してください
-// public static class AWSCredentials { ... }
-
 public class RankingManager : MonoBehaviour
 {
     // UIコンポーネントをUnityエディタからアタッチ
