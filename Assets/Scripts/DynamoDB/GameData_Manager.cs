@@ -1,5 +1,6 @@
 // GameData_Manager.cs
 using UnityEngine;
+using System;
 
 public class GameData_Manager : MonoBehaviour
 {
@@ -28,6 +29,13 @@ public class GameData_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void InitializePlayerID()
+    {
+        // 常に新しいGUIDを生成して格納
+        playerID = Guid.NewGuid().ToString();
+        Debug.Log($"新しいplayerIDを生成しました: {playerID}");
     }
 
     // playerIDも受け取るように修正

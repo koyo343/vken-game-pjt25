@@ -54,6 +54,8 @@ public class ResultManager : MonoBehaviour
             AWSCredentials.SecretKey,
             RegionEndpoint.GetBySystemName(AWSCredentials.Region)
         );
+
+        // DynamoDBContextBuilderを使って初期化
         DynamoDBContextConfig config = new DynamoDBContextConfig();
         context = new DynamoDBContext(client, config);
 
