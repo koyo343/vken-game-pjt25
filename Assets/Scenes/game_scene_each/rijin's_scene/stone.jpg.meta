@@ -1,18 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Materials/Chara/ken/tagame.bmp.meta
-<<<<<<< HEAD
-guid: 4f577be017f74ba4e989c225e8bff8f0
-=======
-guid: 0fb870319895c9d42b7776855a58c559
->>>>>>> 590ab5e3c0abafd6b09f35dbd6bcf5f712b09aac
-=======
-guid: 23170d9fc4fad2d4aa0e24ee9c123c75
->>>>>>> 57039ef9b6b8e3da1dbfd88658c05c0647b47372:Assets/Materials/Chara/Official/Sora_Official.png.meta
+guid: 009192fe02cdcb44097cb030654905c7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3501767243950723327
-    second: sora_0
+      213: 5725184139431673129
+    second: stone_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -59,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sora_0
+      name: stone_0
       rect:
         serializedVersion: 2
-        x: 320
-        y: 75
-        width: 733
-        height: 1414
+        x: 0
+        y: 0
+        width: 275
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff018c551c6c89030800000000000000
-      internalID: 3501767243950723327
+      spriteID: 92d768834a0f37f40800000000000000
+      internalID: 5725184139431673129
       vertices: []
       indices: 
       edges: []
@@ -156,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sora_0: 3501767243950723327
+      stone_0: 5725184139431673129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
