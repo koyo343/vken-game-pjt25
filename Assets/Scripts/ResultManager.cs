@@ -30,10 +30,10 @@ public class ResultManager : MonoBehaviour
     {
         // ここで画像ファイルを辞書に登録
         // 🚨 必ずAssets/Resourcesフォルダに画像ファイルを配置してください 🚨
-        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/temp_tokino.jpg"));
-        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/temp_kenmochi.jpg"));
-        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/temp_tsukino.jpg"));
-        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/temp_ichinose.jpg"));
+        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/temp_tokino"));
+        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/temp_kenmochi"));
+        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/temp_tsukino"));
+        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/temp_ichinose"));
     }
 
     void Start()
@@ -66,6 +66,13 @@ public class ResultManager : MonoBehaviour
         int timeScore = GameData_Manager.Instance.TimeScore;
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
+
+        if (characterSprites.ContainsKey(selectedCharacter))
+        {
+            Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is null: {characterSprites[selectedCharacter] == null}");
+            characterImage.sprite = characterSprites[selectedCharacter];
+        }
+
         // UIに表示
         playerNameText.text = "PlayerName: " + playerName;
         totalScoreText.text = "Total Score: " + totalScore.ToString();
@@ -89,12 +96,19 @@ public class ResultManager : MonoBehaviour
     
     /// <summary>
     /// スコアをDynamoDBに非同期で送信するメソッド
-    /// 既存スコアより高い場合のみ更新する
+    /// 既存スコアより高い場合のみ更新するという条件を削除し、常に新しいデータを保存します
     /// </summary>
+    // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
         string rankingCategory = "allTime";
         
+        if (string.IsNullOrEmpty(playerID))
+        {
+            Debug.LogError("DynamoDBへの送信に失敗しました: playerIDが設定されていません。");
+            return;
+        }
+
         var item = new RankingItem
         {
             PlayerID = playerID,
@@ -112,5 +126,5 @@ public class ResultManager : MonoBehaviour
         {
             Debug.LogError($"DynamoDBへのスコア送信に失敗しました: {e.Message}");
         }
-    }
+    }  
 }

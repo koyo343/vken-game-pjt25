@@ -2706,16 +2706,16 @@ MonoBehaviour:
   characterImage: {fileID: 1646035467}
   characterButtons:
   - button: {fileID: 1874352699}
-    characterName: tokinosora
+    characterName: "\u3068\u304D\u306E\u305D\u3089"
     characterSprite: {fileID: 632301620031758097, guid: 15b476520c47b9b449aace835620807d, type: 3}
   - button: {fileID: 305267703}
-    characterName: kenmochitoya
+    characterName: "\u5263\u6301\u5200\u4E5F"
     characterSprite: {fileID: 8531029878543443940, guid: e4106bb926abbfe42a19416b32e666e8, type: 3}
   - button: {fileID: 28952854}
-    characterName: tsukinomito
+    characterName: "\u6708\u30CE\u7F8E\u514E"
     characterSprite: {fileID: -3938408722033731490, guid: 64566442cf802214d943107c1b78e04b, type: 3}
   - button: {fileID: 1759090165}
-    characterName: ichinoseuruha
+    characterName: "\u4E00\u30CE\u702C\u3046\u308B\u306F"
     characterSprite: {fileID: -1286650749685352652, guid: ef000a9438c3e8f44a1d60654f8d869c, type: 3}
   saveButton: {fileID: 1291890638}
 --- !u!4 &800496062

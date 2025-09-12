@@ -1,21 +1,19 @@
-// RankingItem.cs
 using Amazon.DynamoDBv2.DataModel;
 
 [DynamoDBTable("RankingTable")]
 public class RankingItem
 {
-    [DynamoDBHashKey] // これが正しく設定されているか確認
+    // DynamoDBの属性名 "playerID" とマッピング
+    [DynamoDBHashKey]
+    [DynamoDBProperty("playerID")]
     public string PlayerID { get; set; }
 
-    [DynamoDBProperty]
+    [DynamoDBProperty("playerName")]
     public string PlayerName { get; set; }
 
-    [DynamoDBProperty]
+    [DynamoDBProperty("score")]
     public int Score { get; set; }
 
-    [DynamoDBProperty]
+    [DynamoDBProperty("rankingCategory")]
     public string RankingCategory { get; set; }
-
-    [DynamoDBVersion]
-    public int? Version { get; set; }
 }
