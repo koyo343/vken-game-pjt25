@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class ScoreDebug : MonoBehaviour
+public class Debugmode : MonoBehaviour
 {
     //ゲーム上にデバッグモードを表示する機能
      [Header("デバッグモード表示用UI")]
@@ -15,7 +15,7 @@ public class ScoreDebug : MonoBehaviour
     public string targetSceneName;
 
     // 期待するキーの順番
-    public KeyCode[] sequence = { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.B };
+    public KeyCode[] sequence = { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.A };
 
     // 現在、シーケンスの何番目を待っているか
     private int currentSequenceIndex = 0;
