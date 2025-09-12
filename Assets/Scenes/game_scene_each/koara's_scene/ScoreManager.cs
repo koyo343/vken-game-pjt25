@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
     [Header("スコア表示用のテキストUI")]
     public TextMeshProUGUI scoreText; // インスペクターからScoreTextをアタッチ
     public ScoreManager scoreManager;       // ScoreManagerへの参照
-    public ScoreDebug scoredebug; // ScoreDebugへの参照
+    public Debugmode debugmode; // Debugmodeへの参照
 
     public int currentScore = 0; // 現在のスコアを管理する変数
 
@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void AddScoreDebug(){
-        if (scoreManager != null && scoredebug != null && scoredebug.mode){
+        if (scoreManager != null && debugmode != null && debugmode.mode){
             if(Input.GetKeyDown(KeyCode.P)){
                 AddScore(100);
                 Debug.Log("スコアを100追加しました！");
