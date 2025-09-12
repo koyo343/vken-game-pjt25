@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Explain Text
 
-    Uruha Ithinose'
+    Uruha Ichinose'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -393,52 +393,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23323644}
   m_CullTransparentMesh: 1
---- !u!1 &41929187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41929188}
-  - component: {fileID: 41929189}
-  m_Layer: 0
-  m_Name: Select_Toya_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &41929188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41929187}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 497.34848, y: 334.41595, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 252018415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &41929189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41929187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80731ec8223b154cb34756892b28ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGameObject:
-  - {fileID: 2132094132}
 --- !u!1 &102978823
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,9 +672,6 @@ Transform:
   m_Children:
   - {fileID: 1119792213}
   - {fileID: 593745186}
-  - {fileID: 41929188}
-  - {fileID: 1276172909}
-  - {fileID: 1938559993}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255859463
@@ -1088,14 +1039,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938559994}
+      - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
-        m_MethodName: ToggleAllGameObject
-        m_Mode: 1
+        m_MethodName: ToggleObject
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1435,7 +1386,7 @@ GameObject:
   - component: {fileID: 593745186}
   - component: {fileID: 593745187}
   m_Layer: 0
-  m_Name: Select_Sora_Manager
+  m_Name: Select_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1468,8 +1419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80731ec8223b154cb34756892b28ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetGameObject:
+  characterGameObjects:
   - {fileID: 790253011}
+  - {fileID: 2132094132}
+  - {fileID: 1948076012}
+  - {fileID: 1907843449}
 --- !u!1 &610697407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,8 +1673,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
-        m_MethodName: ToggleAllGameObject
-        m_Mode: 1
+        m_MethodName: ToggleObject
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1868,14 +1822,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 41929189}
+      - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
-        m_MethodName: ToggleAllGameObject
-        m_Mode: 1
+        m_MethodName: ToggleObject
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2091,7 +2045,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -540, y: 5}
-  m_SizeDelta: {x: 300, y: 800}
+  m_SizeDelta: {x: 280, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &938688909
 MonoBehaviour:
@@ -2840,52 +2794,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238287648}
   m_CullTransparentMesh: 1
---- !u!1 &1276172908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1276172909}
-  - component: {fileID: 1276172910}
-  m_Layer: 0
-  m_Name: Select_Mito_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1276172909
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276172908}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 497.34848, y: 334.41595, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 252018415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1276172910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276172908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80731ec8223b154cb34756892b28ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGameObject:
-  - {fileID: 1948076012}
 --- !u!1 &1347793377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,14 +3136,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1276172910}
+      - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
-        m_MethodName: ToggleAllGameObject
-        m_Mode: 1
+        m_MethodName: ToggleObject
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3378,52 +3286,6 @@ Transform:
   - {fileID: 298470680}
   m_Father: {fileID: 102978827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1938559992
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1938559993}
-  - component: {fileID: 1938559994}
-  m_Layer: 0
-  m_Name: Select_Uruha_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1938559993
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938559992}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 497.34848, y: 334.41595, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 252018415}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1938559994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938559992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80731ec8223b154cb34756892b28ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGameObject:
-  - {fileID: 1907843449}
 --- !u!1 &1948076012
 GameObject:
   m_ObjectHideFlags: 0
