@@ -594,7 +594,7 @@ MonoBehaviour:
   playerNameText: {fileID: 348643238}
   totalScoreText: {fileID: 1431061445}
   playScoreText: {fileID: 51702937}
-  timeLeftsText: {fileID: 1485650665}
+  totalTimeText: {fileID: 1485650665}
   timeScoreText: {fileID: 1585569130}
   characterImage: {fileID: 1379053161}
 --- !u!4 &722945632
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 1485650666}
   - component: {fileID: 1485650665}
   m_Layer: 5
-  m_Name: TimeLeft
+  m_Name: TotalTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TimesLefts:????????
+  m_text: TotalTime:????????
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

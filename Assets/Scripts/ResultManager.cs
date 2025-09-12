@@ -14,7 +14,7 @@ public class ResultManager : MonoBehaviour
     public TextMeshProUGUI totalScoreText;
     
     public TextMeshProUGUI playScoreText;
-    public TextMeshProUGUI timeLeftsText;
+    public TextMeshProUGUI totalTimeText;
     public TextMeshProUGUI timeScoreText;
     
     public Image characterImage;
@@ -42,7 +42,7 @@ public class ResultManager : MonoBehaviour
         AWSCredentials.Initialize();
 
         // UIコンポーネントが有効か確認
-        if (playerNameText == null || totalScoreText == null || playScoreText == null || timeLeftsText == null || timeScoreText == null || characterImage == null)
+        if (playerNameText == null || totalScoreText == null || playScoreText == null || totalTimeText == null || timeScoreText == null || characterImage == null)
         {
             Debug.LogError("リザルト画面のUIコンポーネントがアタッチされていません！");
             return;
@@ -62,7 +62,7 @@ public class ResultManager : MonoBehaviour
         string playerName = GameData_Manager.Instance.playerName;
         int totalScore = GameData_Manager.Instance.currentScore;
         int playScore = GameData_Manager.Instance.PlayScore;
-        int timeLefts = GameData_Manager.Instance.TimeLefts;
+        int totalTime = GameData_Manager.Instance.TotalTime;
         int timeScore = GameData_Manager.Instance.TimeScore;
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
@@ -77,7 +77,7 @@ public class ResultManager : MonoBehaviour
         playerNameText.text = "PlayerName: " + playerName;
         totalScoreText.text = "Total Score: " + totalScore.ToString();
         playScoreText.text = "Play Score: " + playScore.ToString();
-        timeLeftsText.text = "Time Lefts: " + timeLefts.ToString() + "s";
+        totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
         timeScoreText.text = "Time Score: " + timeScore.ToString();
 
         // キャラクター画像を変更
