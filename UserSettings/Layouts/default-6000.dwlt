@@ -14,12 +14,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 8
     y: 51
     width: 1024
     height: 768
   m_ShowMode: 4
   m_Title: Project
+=======
+<<<<<<< Updated upstream
+    x: 0
+<<<<<<< HEAD
+    y: 43
+    width: 1920
+    height: 989
+  m_ShowMode: 4
+  m_Title: Console
+=======
+<<<<<<< HEAD
+    y: 43
+    width: 1920
+    height: 1037
+  m_ShowMode: 4
+<<<<<<< Updated upstream
+  m_Title: Hierarchy
+=======
+    y: 43.2
+    width: 1536
+    height: 916.8
+  m_ShowMode: 4
+  m_Title: Project
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 7.2000003
+    y: 50.4
+    width: 1522.4
+    height: 902.4
+  m_ShowMode: 4
+  m_Title: Game
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+  m_Title: Game
+>>>>>>> Stashed changes
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -43,12 +81,52 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 36
+<<<<<<< HEAD
     width: 1024
     height: 712
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 243
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 1920
+    height: 933
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 16
+=======
+<<<<<<< HEAD
+    width: 1920
+    height: 981
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 111
+=======
+    width: 1536
+    height: 860.8
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 99
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    width: 1522.4
+    height: 846.4
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 38
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+  controlID: 100
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -65,12 +143,29 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 782
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    x: 1466
+=======
+<<<<<<< HEAD
+    x: 1465
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     y: 0
     width: 242
     height: 712
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
+=======
+    x: 1162.4
+    y: 0
+    width: 360
+    height: 846.4
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Stashed changes
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -93,8 +188,32 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 194
     height: 421
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 363
+    height: 552
+=======
+<<<<<<< HEAD
+    width: 361
+    height: 581
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 14}
+=======
+    width: 290.4
+    height: 510.4
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    width: 288
+    height: 501.6
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_MinSize: {x: 201, y: 226}
   m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 15}
@@ -118,9 +237,40 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 421
     width: 782
     height: 291
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    y: 552
+    width: 1466
+    height: 381
+=======
+<<<<<<< HEAD
+    y: 581
+    width: 1465
+    height: 400
+  m_MinSize: {x: 101, y: 126}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 12}
+  - {fileID: 17}
+  m_Selected: 1
+  m_LastSelected: 0
+=======
+    y: 510.4
+    width: 1172.8
+    height: 350.4
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    y: 501.6
+    width: 1162.4
+    height: 344.80002
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_MinSize: {x: 231, y: 276}
   m_MaxSize: {x: 10001, y: 10026}
   m_ActualView: {fileID: 13}
@@ -129,7 +279,11 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 12}
   m_Selected: 0
+<<<<<<< HEAD
   m_LastSelected: 2
+=======
+  m_LastSelected: 1
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,8 +304,28 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1024
     height: 768
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 1920
+    height: 989
+=======
+<<<<<<< HEAD
+    width: 1920
+    height: 1037
+=======
+    width: 1536
+    height: 916.8
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    width: 1522.4
+    height: 902.4
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -175,7 +349,23 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1024
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 1920
+=======
+<<<<<<< HEAD
+    width: 1920
+=======
+    width: 1536
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    width: 1522.4
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     height: 36
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -196,8 +386,28 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 748
     width: 1024
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    y: 969
+    width: 1920
+=======
+<<<<<<< HEAD
+    y: 1017
+    width: 1920
+=======
+    y: 896.8
+    width: 1536
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    y: 882.4
+    width: 1522.4
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -220,12 +430,51 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 782
     height: 712
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 170
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 1466
+    height: 933
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 17
+=======
+<<<<<<< HEAD
+    width: 1465
+    height: 981
+=======
+    width: 1162.4
+    height: 846.4
+>>>>>>> Stashed changes
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 39
+<<<<<<< Updated upstream
+=======
+    width: 1172.8
+    height: 860.8
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 38
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+  controlID: 38
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -246,12 +495,51 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 782
     height: 421
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 171
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    width: 1466
+    height: 552
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 18
+=======
+<<<<<<< HEAD
+    width: 1465
+    height: 581
+=======
+    width: 1162.4
+    height: 501.6
+>>>>>>> Stashed changes
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 40
+<<<<<<< Updated upstream
+=======
+    width: 1172.8
+    height: 510.4
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 39
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+  controlID: 39
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -268,10 +556,40 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 194
     y: 0
     width: 588
     height: 421
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    x: 363
+=======
+<<<<<<< HEAD
+    x: 361
+    y: 0
+    width: 1104
+    height: 581
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
+  m_ActualView: {fileID: 15}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 16}
+=======
+    x: 290.4
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+    y: 0
+    width: 1103
+    height: 552
+=======
+    x: 288
+    y: 0
+    width: 874.4
+    height: 501.6
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 16}
@@ -333,15 +651,56 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
+<<<<<<< HEAD
     m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 0
+<<<<<<< HEAD
     y: 445
     width: 781
     height: 265
+=======
+<<<<<<< HEAD
+    y: 576
+    width: 1465
+    height: 355
+=======
+<<<<<<< HEAD
+    y: 660
+    width: 1464
+    height: 374
+=======
+    y: 589.60004
+    width: 1171.8
+    height: 324.4
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 7.2000003
+    y: 588
+    width: 1161.4
+    height: 318.80002
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -364,7 +723,27 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     - Assets/Scripts/Chara_select
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    - Assets/Scripts/Chara_select
+=======
+<<<<<<< HEAD
+    - Assets/Materials/Chara
+=======
+    - Assets/Scenes/game_scene_each
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    - Assets/Materials
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+    - Assets/Scripts
+>>>>>>> Stashed changes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -374,33 +753,93 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
   - Assets/Scripts/Chara_select
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+  - Assets/Scripts/Chara_select
+=======
+<<<<<<< HEAD
+  - Assets/Materials/Chara
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: F:\f drive\github\vken-game-pjt25
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: 2cb70000
+    m_LastClickedID: 46892
+    m_ExpandedIDs: 000000006cb70000
+=======
+  - Assets/Scenes/game_scene_each
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+  - Assets/Materials
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+  - Assets/Scripts
+>>>>>>> Stashed changes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rihit\vgame\vken-game-pjt25
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 97}
     m_SelectedIDs: 58b40000
     m_LastClickedID: 46168
     m_ExpandedIDs: 000000000cb4000000ca9a3bffffff7f
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    scrollPos: {x: 0, y: 408}
+    m_SelectedIDs: 04ba0000
+    m_LastClickedID: 47620
+    m_ExpandedIDs: 0000000002b4000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 79}
+<<<<<<< Updated upstream
+    m_SelectedIDs: 10b70000
+    m_LastClickedID: 46864
+    m_ExpandedIDs: 0000000062b50000aab6000000ca9a3bffffff7f
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    scrollPos: {x: 0, y: 55.198425}
+    m_SelectedIDs: 60b70000
+    m_LastClickedID: 46944
+    m_ExpandedIDs: 0000000002b7000060b700006cb70000aeb7000028c0000000ca9a3bffffff7f
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+    m_SelectedIDs: 0ab70000
+    m_LastClickedID: 46858
+    m_ExpandedIDs: 000000005ab50000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: sora
+      m_OriginalName: sora
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 54596
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
+=======
+      m_ClientGUIView: {fileID: 5}
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -412,7 +851,27 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     m_ExpandedIDs: 000000000cb4000000ca9a3bffffff7f
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_ExpandedIDs: 0000000002b4000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 000000006cb70000
+=======
+    m_ExpandedIDs: 0000000062b50000
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_ExpandedIDs: 0000000002b70000
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+    m_ExpandedIDs: 000000005ab50000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -440,7 +899,11 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -458,7 +921,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -486,15 +949,59 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
+<<<<<<< HEAD
     m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 783
     y: 24
     width: 241
     height: 686
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    x: 1467
+    y: 24
+    width: 453
+    height: 907
+=======
+<<<<<<< HEAD
+    x: 1466
+    y: 24
+    width: 454
+    height: 955
+=======
+    x: 1172.8
+    y: 79.200005
+    width: 362.19995
+    height: 834.8
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 1169.6
+    y: 86.4
+    width: 359
+    height: 820.4
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -535,15 +1042,54 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
+<<<<<<< HEAD
     m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< Updated upstream
     x: 0
     y: 24
+<<<<<<< HEAD
     width: 193
     height: 395
+=======
+    width: 362
+    height: 526
+=======
+<<<<<<< HEAD
+    y: 24
+    width: 360
+    height: 555
+=======
+    y: 79.200005
+    width: 289.4
+    height: 484.4
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 7.2000003
+    y: 86.4
+    width: 287
+    height: 475.6
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -558,9 +1104,33 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 26070000
       m_LastClickedID: 0
       m_ExpandedIDs: c6deffffa6f3ffff42f4ffffc2f4ffffe6f5ffffeef8ffff7cb5000086b500008ab50000
+=======
+<<<<<<< Updated upstream
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      m_ExpandedIDs: b2a3ffffd0d3ffff92eeffff04fbffffe8b70000fab7000016b80000
+=======
+<<<<<<< HEAD
+      m_ExpandedIDs: 9a0bffffc20cffffa00dffff6468ffffc068ffff1a69ffff7069ffff1e6affff4a6bffff3a76ffffb483ffff008affff0099ffff66a2ffff96a3ffffaca4ffff48a8ffff2aa9ffff0aaaffff42abffff76afffff0ab3ffff44ddffffc4e8ffffe6ecffff2ceefffffeeeffff20f0ffffa0f2ffffb0f2ffff82f3ffff86f4ffffb4f5ffff04fbffff24b50000ecb70000a2b8000052b900005cb9000030ba000042bb00004cbb000002bf000022bf0000debf000078c00000bcc1000056c2000088dc00001edd0000cadd00002cde0000
+=======
+      m_ExpandedIDs: 36e8ffff04e9ffff7cedffff46eeffffd4f2ffffdcfaffffd6b70000
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+      m_SelectedIDs: 6a060100
+      m_LastClickedID: 67178
+      m_ExpandedIDs: 8a38feffc850feff9851feff5054feff7055feff0e6bfeff1a76feffac77feff9c78feffa079feff0481feff4485feffac88feffea89feffc08afeffc491feff8896fefffee9feffce46ffffa24efffff053ffffc854ffffbe64ffff8e65ffff5666ffff2e67ffff666bffffa66ffffff876ffff547dffffac82ffffc283ffffd28bfffff08cffff5e95ffff2897ffff10c6ffff26c7ffff76c8ffff0acaffffb6ceffff78d2ffff5ad3ffff24d4fffff2d4ffffb8d5ffff9cd6ffff62d7ffff2cd8ffff06d9ffffb6e0ffffa4e1ffffa0e2ffff66e3ffff3ae8ffff82e9ffff4aefffff68f0ffff76f1ffff52f2ffff26f3fffffaf3ffffccf4ffff96f5ffff60f6ffff26f7ffff04fbffff94ba0000aabb0000f4c000001ec100007ac10000a4c10000a2d50000b8d500009ee9000020ea000026ea000006f1000046f10000c8f100006ef40000f0f4000080f700006ef90000cef9000036fa000084010100a6010100360301004803010038060100460601006a060100
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+      m_ExpandedIDs: 02a5ffff6ab8ffff6ac7ffff42dcffff5cf8ffff48b6000052b60000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -601,15 +1171,59 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
+<<<<<<< HEAD
     m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 195
     y: 24
     width: 586
     height: 395
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    x: 364
+    y: 24
+    width: 1101
+    height: 526
+=======
+<<<<<<< HEAD
+    x: 362
+    y: 24
+    width: 1102
+    height: 555
+=======
+    x: 290.4
+    y: 79.200005
+    width: 880.4
+    height: 484.4
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 295.2
+    y: 86.4
+    width: 872.4
+    height: 475.6
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -638,10 +1252,43 @@ MonoBehaviour:
       displayed: 1
       id: Tool Settings
       index: 1
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
       snapOffset: {x: 24, y: 25}
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 25}
+=======
+=======
+>>>>>>> Stashed changes
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 0}
+<<<<<<< Updated upstream
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 24, y: 25}
+>>>>>>> Stashed changes
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 4
@@ -792,9 +1439,33 @@ MonoBehaviour:
       displayed: 0
       id: Scene View/Tilemap Focus
       index: 0
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+=======
+<<<<<<< HEAD
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":24.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      floating: 0
+      collapsed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+=======
+=======
+>>>>>>> Stashed changes
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+      floating: 0
+      collapsed: 0
+=======
       contents: '{"m_Layout":4,"m_Collapsed":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":24.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
+>>>>>>> Stashed changes
       snapOffset: {x: 24, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1052,9 +1723,39 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     m_Target: {x: 834.0773, y: 480.3034, z: -7.90516}
     speed: 2
     m_Value: {x: 834.0773, y: 480.3034, z: -7.90516}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Target: {x: 834.0773, y: 480.3034, z: -7.90516}
+    speed: 2
+    m_Value: {x: 834.0773, y: 480.3034, z: -7.90516}
+=======
+<<<<<<< HEAD
+    m_Target: {x: 956.12103, y: 546.6742, z: -16.559385}
+    speed: 2
+    m_Value: {x: 956.12103, y: 546.6742, z: -16.559385}
+=======
+    m_Target: {x: 950.54913, y: 451.77615, z: -8.773612}
+    speed: 2
+    m_Value: {x: 950.54913, y: 451.77615, z: -8.773612}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Target: {x: 923.72034, y: 324.63766, z: -9.167546}
+    speed: 2
+    m_Value: {x: 923.72034, y: 324.63766, z: -9.167546}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+    m_Target: {x: -3.0094135, y: -2.159361, z: -0.056086693}
+    speed: 2
+    m_Value: {x: -3.0094135, y: -2.159361, z: -0.056086693}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1104,9 +1805,39 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
     m_Target: 790.6042
     speed: 2
     m_Value: 790.6042
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Target: 790.6042
+    speed: 2
+    m_Value: 790.6042
+=======
+<<<<<<< HEAD
+    m_Target: 668.06366
+    speed: 2
+    m_Value: 668.06366
+=======
+    m_Target: 887.3618
+    speed: 2
+    m_Value: 887.3618
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Target: 926.75757
+    speed: 2
+    m_Value: 926.75757
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
+=======
+    m_Target: 14.613452
+    speed: 2
+    m_Value: 14.613452
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1156,15 +1887,59 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
+<<<<<<< HEAD
     m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 363
     y: 79
     width: 1101
     height: 526
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    x: 368
+    y: 87
+    width: 1092
+    height: 517
+=======
+<<<<<<< HEAD
+    x: 361
+    y: 79
+    width: 1102
+    height: 555
+=======
+    x: 290.4
+    y: 79.200005
+    width: 880.4
+    height: 484.4
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    x: 295.2
+    y: 86.4
+    width: 872.4
+    height: 475.6
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1197,10 +1972,35 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_HBaseRangeMin: -960
     m_HBaseRangeMax: 960
     m_VBaseRangeMin: -540
     m_VBaseRangeMax: 540
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> Stashed changes
+    m_HBaseRangeMin: -768
+    m_HBaseRangeMax: 768
+    m_VBaseRangeMin: -432
+    m_VBaseRangeMax: 432
+<<<<<<< Updated upstream
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1218,23 +2018,90 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
       width: 1101
       height: 505
     m_Scale: {x: 0.4675926, y: 0.4675926}
     m_Translation: {x: 550.5, y: 252.5}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      width: 1092
+      height: 496
+    m_Scale: {x: 0.45925927, y: 0.45925927}
+    m_Translation: {x: 546, y: 248}
+=======
+<<<<<<< HEAD
+      width: 1102
+      height: 534
+    m_Scale: {x: 0.49444443, y: 0.49444443}
+    m_Translation: {x: 551, y: 267}
+=======
+      width: 880.4
+      height: 463.4
+    m_Scale: {x: 0.53634256, y: 0.53634256}
+    m_Translation: {x: 440.2, y: 231.7}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+      width: 872.4
+      height: 454.6
+    m_Scale: {x: 0.52615744, y: 0.52615744}
+    m_Translation: {x: 436.20004, y: 227.29999}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
       x: -1177.3069
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      x: -1188.871
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
       y: -540
       width: 2354.6138
       height: 1080
     m_MinimalGUI: 1
+<<<<<<< HEAD
   m_defaultScale: 0.4675926
   m_LastWindowPixelSize: {x: 1101, y: 526}
+=======
+  m_defaultScale: 0.45925927
+  m_LastWindowPixelSize: {x: 1092, y: 517}
+=======
+<<<<<<< HEAD
+      x: -1114.3821
+      y: -540
+      width: 2228.7642
+      height: 1080
+    m_MinimalGUI: 1
+  m_defaultScale: 0.49444443
+  m_LastWindowPixelSize: {x: 1102, y: 555}
+=======
+      x: -820.74414
+      y: -432.00003
+      width: 1641.4883
+      height: 864.00006
+    m_MinimalGUI: 1
+  m_defaultScale: 0.53634256
+  m_LastWindowPixelSize: {x: 1100.5, y: 605.5}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+      x: -829.0295
+      y: -431.99994
+      width: 1658.059
+      height: 863.99994
+    m_MinimalGUI: 1
+  m_defaultScale: 0.52615744
+  m_LastWindowPixelSize: {x: 1090.5, y: 594.5}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1257,15 +2124,38 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
+<<<<<<< HEAD
     m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+=======
+<<<<<<< HEAD
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+=======
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> 660d3ff1623ff9d03ef742301cfaa7be377a62b9
+>>>>>>> 384a0791b2d6e4cf3aa40ed4cd6cb3080668bc92
+=======
+    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> Stashed changes
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
     m_Tooltip: 
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 2249
     y: 726.5
     width: 920
     height: 250
+=======
+    x: 7.2000003
+    y: 588
+    width: 1161.4
+    height: 318.80002
+>>>>>>> 6e4ede5df2978d63f8fcfdffb0ea36c63e2699ad
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
