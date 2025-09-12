@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public enum Direction { Left, Right };
+
+    //Animatorの情報を入れる変数を宣言
+    Animator animator;
     private Direction lastDirection;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        //変数にAnimatorの情報を取得して入れる
+        animator = this.GetComponent<Animator>();
     }
 
     void Update()
@@ -48,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
         // プレイヤーの速度を更新
         rb.linearVelocity = new Vector2(moveInput * currentMoveSpeed, rb.linearVelocity.y);
+
+        // isWalking の判定
+        animator.SetBool("isWalking", Mathf.Abs(moveInput) > 0.01f && isGrounded);
 
 
         // ジャンプ
