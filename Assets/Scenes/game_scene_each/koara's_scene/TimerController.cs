@@ -14,6 +14,7 @@ public class TimerController : MonoBehaviour
     // --- 内部で使う変数 ---
     private float currentTime;      // 残り時間を管理する変数
     private float timeUpCounter;    // 0秒になった後のカウントアップ用変数
+    private float totaltime;        //全体でかかった時間の計算
     private bool isTimeUp = false;  // 時間切れになったかどうかを判定するフラグ
 
     // ■ ゲーム開始時に一度だけ呼ばれる処理
@@ -21,12 +22,18 @@ public class TimerController : MonoBehaviour
     {
         // 残り時間を初期値でセット
         currentTime = initialTime;
+
+        totaltime = 0;
         
         // テキストの色を初期化（白）
         timerText.color = Color.white;
         
         // 最初の表示を更新
         UpdateTimerDisplay();
+
+        //タイムアップのカウントの初期値更新
+        timeUpCounter = 1f;
+
     }
 
     // ■ 毎フレーム（1秒間に何十回も）呼ばれる処理
@@ -38,8 +45,8 @@ public class TimerController : MonoBehaviour
             // 残り時間を減らしていく
             currentTime -= Time.deltaTime;
 
-            // もし残り時間が0以下になったら
-            if (currentTime <= 1f)
+            // もし残り時間が1以下になったら
+            if (currentTime <= 0f)
             {
                 // ピッタリ0秒で止める
                 currentTime = 0f;
@@ -47,6 +54,7 @@ public class TimerController : MonoBehaviour
                 isTimeUp = true;
                 // テキストの色を赤に変える
                 timerText.color = Color.red;
+
             }
         }
         // 時間切れになった後
@@ -56,8 +64,11 @@ public class TimerController : MonoBehaviour
             timeUpCounter += Time.deltaTime;
         }
 
+        totaltime += Time.deltaTime;
+
         // 毎フレーム、画面の表示を更新する
         UpdateTimerDisplay();
+
     }
     
     // ■ 画面表示を更新する専門の処理
@@ -75,6 +86,7 @@ public class TimerController : MonoBehaviour
             displayTime = timeUpCounter;
         }
         
+
         // 小数点以下を切り捨てて整数にする
         int seconds = (int)displayTime;
 
