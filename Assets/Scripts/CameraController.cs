@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        // ゲーム開始時のカメラのX位置を保存し、これより左には動かないようにする
-        minXPosition = transform.position.x;
+        // ゲーム開始時にカメラの左端の座標を設定してください
+        minXPosition = -7012f;
     }
 
     void LateUpdate()
