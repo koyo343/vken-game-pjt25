@@ -64,6 +64,15 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
+
+        if (isGrounded)  // 地面にいる場合
+        {
+            animator.SetBool("isJumping", false);
+        }
+        else  // 空中にいる場合
+        {
+            animator.SetBool("isJumping", true);
+        }
     }
 
     // 地面判定
