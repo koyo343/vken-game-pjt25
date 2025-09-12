@@ -53,7 +53,7 @@ public class Bullet : MonoBehaviour
             PlayerController player = FindObjectOfType<PlayerController>();
             if (player != null)
             {
-                player.AddScore(1);
+                //player.AddScore(1);
             }
 
             // 爆発エフェクトを生成
