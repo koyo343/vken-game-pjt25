@@ -1,16 +1,19 @@
-// TimerScoreManager.cs
 using UnityEngine;
 
-public class TimerScoreManager : MonoBehaviour
+public class ScoreSaveManager : MonoBehaviour
 {
     // このスクリプトは、TimerController.csと同じGameObjectにアタッチしてください
 
     // TimerControllerへの参照
     public TimerControllerforScore TimerControllerforScore;
+    public ScoreManager scoreManager; 
 
     // このメソッドは、ゲームオーバー時に外部から呼ばれます
-    public void OnGameOver(int playScore)
+    public void OnGameOver()
     {
+        // ScoreManagerからスコアを取得
+        int playScore = scoreManager.currentScore;
+        
         // TimerControllerから時間を取得
         float currentTime = TimerControllerforScore.GetCurrentTime();
         float totaltime = TimerControllerforScore.GetTotalTime();

@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TempInputScene.unity
     guid: f0b28f439ae3fca4eab0e335bc39b79b
   - enabled: 1
-    path: Assets/Scenes/game_scene_each/Hori's_scene/game_timescore_scene.unity
+    path: Assets/Scenes/game_scene_each/Hori's_scene/game_debug_scene.unity
     guid: 37fceedca85a4484a8379af287e4f478
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
