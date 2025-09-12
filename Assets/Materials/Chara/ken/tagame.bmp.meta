@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0b2b05da2cf034e508befbaa70bfd0bd
+guid: 0fb870319895c9d42b7776855a58c559
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1627711891147384769
-    second: tagame_0
+      213: 8531029878543443940
+    second: man1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tagame_0
+      name: man1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 208
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f381b73b8a43969e0800000000000000
-      internalID: -1627711891147384769
+      spriteID: 4e763d6a97e446670800000000000000
+      internalID: 8531029878543443940
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tagame_0: -1627711891147384769
+      man1_0: 8531029878543443940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
