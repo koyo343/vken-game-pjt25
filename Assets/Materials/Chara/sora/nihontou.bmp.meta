@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9f30f45f43daf4c14b0d765eafec3113
+guid: e55000aa2852042959321e000cb79ca0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 742093817872145716
-    second: ken-run2_0
+      213: -6957880648352521663
+    second: nihontou_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ken-run2_0
+      name: nihontou_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 32
+        width: 16
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43d584445627c4a00800000000000000
-      internalID: 742093817872145716
+      spriteID: 142226d2a64a07f90800000000000000
+      internalID: -6957880648352521663
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ken-run2_0: 742093817872145716
+      nihontou_0: -6957880648352521663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0b2b05da2cf034e508befbaa70bfd0bd
+guid: 53dd7d06734bb438ea4508a7203127a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1627711891147384769
-    second: tagame_0
+      213: -4204167777653060534
+    second: TokinoSora_Tatie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tagame_0
+      name: TokinoSora_Tatie_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 24
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f381b73b8a43969e0800000000000000
-      internalID: -1627711891147384769
+      spriteID: a4c88dc4eabc7a5c0800000000000000
+      internalID: -4204167777653060534
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tagame_0: -1627711891147384769
+      TokinoSora_Tatie_0: -4204167777653060534
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

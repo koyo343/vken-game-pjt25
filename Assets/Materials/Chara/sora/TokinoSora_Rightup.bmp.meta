@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f882b5e010ada4592bef379d7a03415c
+guid: 48104da15bc9b447790486c592f49592
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8292823704309378879
-    second: ken-jump_0
+      213: -5022100796940748977
+    second: TokinoSora_Rightup_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ken-jump_0
+      name: TokinoSora_Rightup_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f3fac48c837061370800000000000000
-      internalID: 8292823704309378879
+      spriteID: f47f324fee9ed4ab0800000000000000
+      internalID: -5022100796940748977
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ken-jump_0: 8292823704309378879
+      TokinoSora_Rightup_0: -5022100796940748977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
