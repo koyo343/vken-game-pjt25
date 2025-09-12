@@ -17,6 +17,7 @@ public class GameData_Manager : MonoBehaviour
     public int PlayScore { get; private set; }
     public int TotalTime { get; private set; }
     public int TimeScore { get; private set; }
+    public int TotalScore { get; private set; }
 
     void Awake()
     {
@@ -57,5 +58,6 @@ public class GameData_Manager : MonoBehaviour
         PlayScore = playScore;
         TotalTime = totalTime;
         TimeScore = timeScore;
+        TotalScore = PlayScore + TimeScore;
     }
 }

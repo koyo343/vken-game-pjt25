@@ -8,9 +8,6 @@ using System.Collections.Generic;
 
 public class CharacterSelectManager : MonoBehaviour
 {
-    // 各キャラクター選択ボタンをInspectorで設定する配列
-    public Button[] characterButtons;
-    
     // ゲームシーンに遷移するボタン
     public Button startButton;
 
@@ -26,21 +23,16 @@ public class CharacterSelectManager : MonoBehaviour
     {
         // ここで画像ファイルを辞書に登録
         // 🚨 必ずAssets/Resourcesフォルダに画像ファイルを配置してください 🚨
-        characterNameDatas.Add(1, "ときのそら");
-        characterNameDatas.Add(2, "剣持刀也");
-        characterNameDatas.Add(3, "月ノ美兎");
-        characterNameDatas.Add(4, "一ノ瀬うるは");
+        characterNameDatas.Add(0, "ときのそら");
+        characterNameDatas.Add(1, "剣持刀也");
+        characterNameDatas.Add(2, "月ノ美兎");
+        characterNameDatas.Add(3, "一ノ瀬うるは");
     } 
 
     // ゲーム開始時に実行
     void Start()
     {
-        // 各ボタンにメソッドを登録
-        for (int i = 0; i < characterButtons.Length; i++)
-        {
-            int index = i;
-            characterButtons[i].onClick.AddListener(() => OnCharacterSelected(index));
-        }
+        startButton.onClick.AddListener(OnCharacterSelected);
 
         // ゲーム開始ボタンにメソッドを登録
         //startButton.onClick.AddListener(OnGameStart);
@@ -49,28 +41,35 @@ public class CharacterSelectManager : MonoBehaviour
     /// <summary>
     /// キャラクター選択ボタンが押されたときの処理
     /// </summary>
-    public void OnCharacterSelected(int charIndex)
+    public void OnCharacterSelected()
     {
-        
+        Debug.Log("OnCharacterSelected is called.");
         // 選択されたキャラクターの名前をGameData_Managerに格納
         if (GameData_Manager.Instance != null)
         {
+            Debug.Log("GameData_Manager.Instance != null");
             for (int i = 0; i < objectToggle.characterDatas.Length; i++)
             {
                 if (objectToggle.characterDatas[i].characterFlag == 1)
                 {
+                    Debug.Log("objectToggle.characterDatas[i].characterFlag == 1");
                     if (GameData_Manager.Instance != null)
-                    {      
+                    {
+                        Debug.Log("GameData_Manager.Instance != null");
                         if (characterNameDatas.ContainsKey(i))
-                            {
-                                string selectedCharacterName = characterNameDatas[i];
-                                GameData_Manager.Instance.SetCharacter(selectedCharacterName);
-                                Debug.Log($"キャラクターが選択されました: {selectedCharacterName}");
-                            }
-                            else
-                            {
-                                Debug.LogWarning($"キー {i} は存在しません。");
-                            }
+                        {
+                            string selectedCharacterName = characterNameDatas[i];
+                            GameData_Manager.Instance.SetCharacter(selectedCharacterName);
+                            Debug.Log($"キャラクターが保存されました: {selectedCharacterName}");
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"キー {i} は存在しません。");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("GameData_Manager.Instance == null");
                     }
                 }
             }

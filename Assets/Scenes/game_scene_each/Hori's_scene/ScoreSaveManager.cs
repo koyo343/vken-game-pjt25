@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreSaveManager : MonoBehaviour
 {
@@ -8,9 +10,20 @@ public class ScoreSaveManager : MonoBehaviour
     public TimerControllerforScore TimerControllerforScore;
     public ScoreManager scoreManager; 
 
+    public Button Debugbutton;
+
+    void Start()
+    {
+        Debugbutton.onClick.AddListener(OnGameOver);
+
+        // ゲーム開始ボタンにメソッドを登録
+        //startButton.onClick.AddListener(OnGameStart);
+    }
+
     // このメソッドは、ゲームオーバー時に外部から呼ばれます
     public void OnGameOver()
     {
+        Debug.Log("OnGameOver is called.");
         // ScoreManagerからスコアを取得
         int playScore = scoreManager.currentScore;
         

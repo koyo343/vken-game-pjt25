@@ -59,13 +59,16 @@ public class ResultManager : MonoBehaviour
         DynamoDBContextConfig config = new DynamoDBContextConfig();
         context = new DynamoDBContext(client, config);
 
+        GameData_Manager.Instance.InitializePlayerID();
+
         // GameData_Managerから結果を取得
         string playerID = GameData_Manager.Instance.playerID;
         string playerName = GameData_Manager.Instance.playerName;
-        int totalScore = GameData_Manager.Instance.currentScore;
+        int totalScore = GameData_Manager.Instance.TotalScore;
         int playScore = GameData_Manager.Instance.PlayScore;
         int totalTime = GameData_Manager.Instance.TotalTime;
         int timeScore = GameData_Manager.Instance.TimeScore;
+
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
 
@@ -104,6 +107,8 @@ public class ResultManager : MonoBehaviour
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
         string rankingCategory = "allTime";
+
+        Debug.Log("SaveScoreToDynamoDB is called.");
         
         if (string.IsNullOrEmpty(playerID))
         {
@@ -128,5 +133,6 @@ public class ResultManager : MonoBehaviour
         {
             Debug.LogError($"DynamoDBへのスコア送信に失敗しました: {e.Message}");
         }
+        
     }  
 }
