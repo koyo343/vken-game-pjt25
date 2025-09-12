@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097e00ef5a2f04a4790e23ccbbfe6b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1603949421}
   smoothing: 0.5
 --- !u!114 &2139318780
 MonoBehaviour:
