@@ -54,6 +54,7 @@ public class TimerController : MonoBehaviour
                 isTimeUp = true;
                 // テキストの色を赤に変える
                 timerText.color = Color.red;
+                Debug.Log("文字は赤色");
 
             }
         }
