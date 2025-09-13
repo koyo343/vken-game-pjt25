@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject clearPanel; // クリア画面のパネル
+    public static bool isGameClear = false; // staticでどこからでもアクセス可能にする
 
-    // ゲームクリアの判定と演出を行う関数
+    public GameObject clearPanel;
+
     public void GameClear()
     {
         Debug.Log("ゲームクリア！");
+        isGameClear = true; // ゲームクリア状態をtrueにする
         clearPanel.SetActive(true);
-        Time.timeScale = 0f; // ゲームを一時停止する
+        Time.timeScale = 0f;
     }
 }
