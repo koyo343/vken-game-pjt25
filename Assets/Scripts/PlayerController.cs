@@ -73,6 +73,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isJumping", true);
         }
+        // プレイヤーの向きを更新
+        if (moveInput < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (moveInput > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 
     // 地面判定
