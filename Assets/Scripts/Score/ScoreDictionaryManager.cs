@@ -1,5 +1,4 @@
-<<<<<<< Updated upstream
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using UnityEngine;
 
 // インスペクターで表示・編集可能にするための属性
@@ -77,7 +76,5 @@ public class ScoreDictionaryManager : MonoBehaviour
                 Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
             }
         }
-        */
-}
-=======
->>>>>>> Stashed changes
+
+}*/
