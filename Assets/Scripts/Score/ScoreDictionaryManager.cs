@@ -18,7 +18,10 @@ public class ScoreDictionaryManager : MonoBehaviour
     // 登録された辞書本体
     private Dictionary<string, int> _scoreDictionary;
 
-    // Startは最初のフレーム更新の前に一度だけ呼ばれます
+    // ScoreManagerクラスのインスタンスを保持するフィールド
+    // StrToScoreメソッドからアクセス可能にするために必要
+    private ScoreManager _scoreManager;
+
     void Awake()
     {
         // 辞書を初期化
@@ -27,7 +30,6 @@ public class ScoreDictionaryManager : MonoBehaviour
         // _ScoreData配列の要素を辞書に登録
         foreach (var data in _ScoreData)
         {
-            // 同じキーが既に存在するか確認し、存在しない場合のみ追加
             if (!_scoreDictionary.ContainsKey(data.EventStr))
             {
                 _scoreDictionary.Add(data.EventStr, data.Score);
@@ -38,34 +40,40 @@ public class ScoreDictionaryManager : MonoBehaviour
             }
         }
 
-        // テストのために登録内容を表示
-        Debug.Log("辞書への登録が完了しました。");
-        foreach (var item in _scoreDictionary)
+        // ScoreManagerオブジェクトとコンポーネントを検索してフィールドに格納
+        GameObject scoreManagerObject = GameObject.Find("ScoreManager");
+        if (scoreManagerObject != null)
         {
-            Debug.Log($"キー: {item.Key}, 値: {item.Value}");
+            _scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
+            if (_scoreManager == null)
+            {
+                Debug.LogError("ScoreManagerコンポーネントがGameObject 'ScoreManager'に見つかりません。");
+            }
         }
-
-        GameObject scoreManagerObject = GameObject.Find("ScoreManager"); //ScoreManagerを探す
-        if (scoreManagerObject != null){
-        //検索したGameObjectからScoreManagerコンポーネントを取得
-        ScoreManager scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
-        if (scoreManager != null){
-
-        }else{
-            Debug.LogError("ScoreManagerコンポーネントがGameObject 'ScoreManager'に見つかりません。");
-        }
-        }else{
+        else
+        {
             Debug.LogError("ゲームオブジェクト 'ScoreManager' が見つかりません。");
         }
     }
 
-    void StrToScore(string Str){
-        if(_scoreDictionary[Str] != NULL){
-        scoreManager.AddScore(_scoreDictionary[Str]);
-        }else{
-            Debug.LogError("イベントが登録されていません");
+    // イベント名（文字列）を渡してスコアを加算するメソッド
+    public void StrToScore(string eventName)
+    {
+        // 辞書にキーが存在するかチェック
+        if (_scoreDictionary.ContainsKey(eventName))
+        {
+            // スコアを取得
+            int scoreToAdd = _scoreDictionary[eventName];
+
+            // ScoreManagerのScoreAddメソッドを呼び出す
+            if (_scoreManager != null)
+            {
+                _scoreManager.AddScore(eventName, scoreToAdd);
+            }
+        }
+        else
+        {
+            Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
         }
     }
-
-
 }
