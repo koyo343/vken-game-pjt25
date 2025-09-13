@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3225482791392174378}
   - component: {fileID: 530072246968262877}
   - component: {fileID: 4907927720470038106}
-  - component: {fileID: 5469510842552399922}
+  - component: {fileID: 4646038197274622505}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.32, y: -0.85, z: 0}
-  m_LocalScale: {x: 2.3169, y: 0.4001, z: 1}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5469510842552399922
+--- !u!114 &4646038197274622505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6177772342352209638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0acbd3c4659316a43a403a1a6cca8dca, type: 3}
+  m_Script: {fileID: 11500000, guid: 02f51338ee9530a4899e74919d7218e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  bulletSpeed: 10
+  explosionPrefab: {fileID: 0}
