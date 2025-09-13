@@ -1,5 +1,6 @@
 // GameData_Manager.cs
 using UnityEngine;
+using System;
 
 public class GameData_Manager : MonoBehaviour
 {
@@ -14,8 +15,9 @@ public class GameData_Manager : MonoBehaviour
     
     // 新しく追加する変数
     public int PlayScore { get; private set; }
-    public int TimeLefts { get; private set; }
+    public int TotalTime { get; private set; }
     public int TimeScore { get; private set; }
+    public int TotalScore { get; private set; }
 
     void Awake()
     {
@@ -28,6 +30,13 @@ public class GameData_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void InitializePlayerID()
+    {
+        // 常に新しいGUIDを生成して格納
+        playerID = Guid.NewGuid().ToString();
+        Debug.Log($"新しいplayerIDを生成しました: {playerID}");
     }
 
     // playerIDも受け取るように修正
@@ -44,10 +53,11 @@ public class GameData_Manager : MonoBehaviour
     }
 
     // 新しく追加するメソッド
-    public void SetGameResult(int playScore, int timeLefts, int timeScore)
+    public void SetGameResult(int playScore, int totalTime, int timeScore)
     {
         PlayScore = playScore;
-        TimeLefts = timeLefts;
+        TotalTime = totalTime;
         TimeScore = timeScore;
+        TotalScore = PlayScore + TimeScore;
     }
 }

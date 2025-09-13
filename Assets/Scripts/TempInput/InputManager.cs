@@ -72,7 +72,7 @@ public class InputManager : MonoBehaviour
     private void OnSaveData()
     {
         // 入力フォームから値を取得
-        string playerID = playerIDInput.text;
+        string dummyPlayerID = ""; 
         string playerName = playerNameInput.text;
         int score = int.Parse(scoreInput.text);
         int playScore = int.Parse(playScoreInput.text);
@@ -81,7 +81,7 @@ public class InputManager : MonoBehaviour
 
         if (GameData_Manager.Instance != null)
         {
-            GameData_Manager.Instance.SetPlayerResult(playerID, playerName, score);
+            GameData_Manager.Instance.SetPlayerResult(dummyPlayerID, playerName, score);
             GameData_Manager.Instance.SetGameResult(playScore, timeLefts, timeScore);
         }
         else

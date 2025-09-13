@@ -45,6 +45,7 @@ public class ObjectToggle : MonoBehaviour
                 {
                     characterGameObjects[i].SetActive(false);
                 }
+                Debug.Log($"キャラクターが選択されました: {characterDatas[i].characterName}");
 
                 // フラグを0に戻す
                 characterDatas[i].characterFlag = 0;

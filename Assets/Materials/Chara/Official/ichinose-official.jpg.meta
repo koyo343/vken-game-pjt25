@@ -1,18 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Materials/Chara/ken/ken-jump.bmp.meta
-<<<<<<< HEAD
-guid: a4b07306b76384749acd0737b93bcdc7
-=======
-guid: c3770524e05965b49921069eafb54d65
->>>>>>> 590ab5e3c0abafd6b09f35dbd6bcf5f712b09aac
-=======
-guid: 2759a6240b888fe4494952db53417b74
->>>>>>> 57039ef9b6b8e3da1dbfd88658c05c0647b47372:Assets/Materials/Chara/Official/Mito_Official.jpg.meta
+guid: 6cd5dd3b4e4bfc14eae157035fe37ea5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3566105550148322344
-    second: nijisanji_0
+      213: -7123754736534869553
+    second: ichinose-official_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nijisanji_0
+      name: ichinose-official_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 3344
+        x: 169
+        y: 71
+        width: 631
+        height: 1243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8db3cdb65e5a28ec0800000000000000
-      internalID: -3566105550148322344
+      spriteID: fc925d57fc6532d90800000000000000
+      internalID: -7123754736534869553
       vertices: []
       indices: 
       edges: []
@@ -143,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nijisanji_0: -3566105550148322344
+      ichinose-official_0: -7123754736534869553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

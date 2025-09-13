@@ -14,7 +14,7 @@ public class ResultManager : MonoBehaviour
     public TextMeshProUGUI totalScoreText;
     
     public TextMeshProUGUI playScoreText;
-    public TextMeshProUGUI timeLeftsText;
+    public TextMeshProUGUI totalTimeText;
     public TextMeshProUGUI timeScoreText;
     
     public Image characterImage;
@@ -30,10 +30,10 @@ public class ResultManager : MonoBehaviour
     {
         // ここで画像ファイルを辞書に登録
         // 🚨 必ずAssets/Resourcesフォルダに画像ファイルを配置してください 🚨
-        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/temp_tokino"));
-        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/temp_kenmochi"));
-        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/temp_tsukino"));
-        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/temp_ichinose"));
+        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/tokino-official"));
+        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/kenmochi-official"));
+        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/tsukino-official"));
+        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/ichinose-officail"));
     }
 
     void Start()
@@ -42,7 +42,7 @@ public class ResultManager : MonoBehaviour
         AWSCredentials.Initialize();
 
         // UIコンポーネントが有効か確認
-        if (playerNameText == null || totalScoreText == null || playScoreText == null || timeLeftsText == null || timeScoreText == null || characterImage == null)
+        if (playerNameText == null || totalScoreText == null || playScoreText == null || totalTimeText == null || timeScoreText == null || characterImage == null)
         {
             Debug.LogError("リザルト画面のUIコンポーネントがアタッチされていません！");
             return;
@@ -54,16 +54,21 @@ public class ResultManager : MonoBehaviour
             AWSCredentials.SecretKey,
             RegionEndpoint.GetBySystemName(AWSCredentials.Region)
         );
+
+        // DynamoDBContextBuilderを使って初期化
         DynamoDBContextConfig config = new DynamoDBContextConfig();
         context = new DynamoDBContext(client, config);
+
+        GameData_Manager.Instance.InitializePlayerID();
 
         // GameData_Managerから結果を取得
         string playerID = GameData_Manager.Instance.playerID;
         string playerName = GameData_Manager.Instance.playerName;
-        int totalScore = GameData_Manager.Instance.currentScore;
+        int totalScore = GameData_Manager.Instance.TotalScore;
         int playScore = GameData_Manager.Instance.PlayScore;
-        int timeLefts = GameData_Manager.Instance.TimeLefts;
+        int totalTime = GameData_Manager.Instance.TotalTime;
         int timeScore = GameData_Manager.Instance.TimeScore;
+
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
 
@@ -77,7 +82,7 @@ public class ResultManager : MonoBehaviour
         playerNameText.text = "PlayerName: " + playerName;
         totalScoreText.text = "Total Score: " + totalScore.ToString();
         playScoreText.text = "Play Score: " + playScore.ToString();
-        timeLeftsText.text = "Time Lefts: " + timeLefts.ToString() + "s";
+        totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
         timeScoreText.text = "Time Score: " + timeScore.ToString();
 
         // キャラクター画像を変更
@@ -102,6 +107,8 @@ public class ResultManager : MonoBehaviour
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
         string rankingCategory = "allTime";
+
+        Debug.Log("SaveScoreToDynamoDB is called.");
         
         if (string.IsNullOrEmpty(playerID))
         {
@@ -126,5 +133,6 @@ public class ResultManager : MonoBehaviour
         {
             Debug.LogError($"DynamoDBへのスコア送信に失敗しました: {e.Message}");
         }
+        
     }  
 }
