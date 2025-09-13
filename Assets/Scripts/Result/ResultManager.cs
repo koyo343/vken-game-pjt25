@@ -30,10 +30,10 @@ public class ResultManager : MonoBehaviour
     {
         // ここで画像ファイルを辞書に登録
         // 🚨 必ずAssets/Resourcesフォルダに画像ファイルを配置してください 🚨
-        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/temp_tokino"));
-        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/temp_kenmochi"));
-        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/temp_tsukino"));
-        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/temp_ichinose"));
+        characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/tokino-official"));
+        characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/kenmochi-official"));
+        characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/tsukino-official"));
+        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/ichinose-officail"));
     }
 
     void Start()

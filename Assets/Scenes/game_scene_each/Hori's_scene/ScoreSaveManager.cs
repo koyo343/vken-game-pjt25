@@ -43,5 +43,6 @@ public class ScoreSaveManager : MonoBehaviour
         {
             Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
         }
+        SceneManager.LoadScene("Result_Scene");
     }
 }
