@@ -55,25 +55,26 @@ public class ScoreDictionaryManager : MonoBehaviour
             Debug.LogError("ゲームオブジェクト 'ScoreManager' が見つかりません。");
         }
     }
-
-    // イベント名（文字列）を渡してスコアを加算するメソッド
-    public void StrToScore(string eventName)
-    {
-        // 辞書にキーが存在するかチェック
-        if (_scoreDictionary.ContainsKey(eventName))
+    /*
+        // イベント名（文字列）を渡してスコアを加算するメソッド
+        public void StrToScore(string eventName)
         {
-            // スコアを取得
-            int scoreToAdd = _scoreDictionary[eventName];
-
-            // ScoreManagerのScoreAddメソッドを呼び出す
-            if (_scoreManager != null)
+            // 辞書にキーが存在するかチェック
+            if (_scoreDictionary.ContainsKey(eventName))
             {
-                _scoreManager.AddScore(eventName, scoreToAdd);
+                // スコアを取得
+                int scoreToAdd = _scoreDictionary[eventName];
+
+                // ScoreManagerのScoreAddメソッドを呼び出す
+                if (_scoreManager != null)
+                {
+                    _scoreManager.AddScore(eventName, scoreToAdd);
+                }
+            }
+            else
+            {
+                Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
             }
         }
-        else
-        {
-            Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
-        }
-    }
+        */
 }
