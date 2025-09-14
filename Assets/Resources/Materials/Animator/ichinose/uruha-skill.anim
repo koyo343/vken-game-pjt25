@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: uruha-idle
+  m_Name: uruha-skill
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,11 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 6100285622959518621, guid: 18e855eb424fecb43aaa45b9e888221e, type: 3}
+      value: {fileID: -1045518054933112372, guid: 6e2d0fac841611c42b60a8574fd164e7, type: 3}
+    - time: 0.25
+      value: {fileID: 2115234111795943657, guid: 65b812350f53ee44195143a449301ecf, type: 3}
+    - time: 1.0166667
+      value: {fileID: 2115234111795943657, guid: 65b812350f53ee44195143a449301ecf, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,18 +48,20 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 6100285622959518621, guid: 18e855eb424fecb43aaa45b9e888221e, type: 3}
+    - {fileID: -1045518054933112372, guid: 6e2d0fac841611c42b60a8574fd164e7, type: 3}
+    - {fileID: 2115234111795943657, guid: 65b812350f53ee44195143a449301ecf, type: 3}
+    - {fileID: 2115234111795943657, guid: 65b812350f53ee44195143a449301ecf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 1.0333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
