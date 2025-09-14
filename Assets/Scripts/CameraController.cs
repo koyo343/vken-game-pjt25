@@ -5,8 +5,11 @@ public class CameraController : MonoBehaviour
     public Transform player; // プレイヤーのTransform
     public float smoothing = 0.5f; // カメラの追従速度
 
-    // カメラがこれ以上左に動かないようにする限界位置
+    //カメラがこれ以上左に動かないようにする限界位置
     private float minXPosition;
+
+    //カメラがこれ以上右に動かないようにする限界位置
+    private float maxXPosition;
 
     //カメラがこれ以上上に動かないようにする限界位置
     private float maxYPosition;
@@ -17,12 +20,15 @@ public class CameraController : MonoBehaviour
     public Vector3 SavePoint;
     //落ちたかを判定するフラグ
     public bool FallFlag = false;
+    //ボスフラグ
+    public bool BossFlag = false;
 
     void Start()
     {
         // ゲーム開始時のカメラの左端、上限、下限の座標を設定してください
         //数字の後ろにfつけないと動きません
         minXPosition = -7012f;
+        maxXPosition = 1000f;
         maxYPosition = 1500f;
         minYPosition = -2000f;
 
@@ -43,7 +49,7 @@ public class CameraController : MonoBehaviour
 
             // プレイヤーが左に戻っても、カメラがminXPositionよりも左に動かないようにする
             // Mathf.Maxを使って、targetPosition.xとminXPositionの大きい方を採用
-            float CameraX = Mathf.Max(targetPosition.x, minXPosition);
+            float CameraX = Mathf.Clamp(targetPosition.x, minXPosition, maxXPosition);
 
             /*カメラの位置が上限、下限を割りそうになったら上限、下限で止める。
             そうでなければプレイヤー追従*/
@@ -60,15 +66,25 @@ public class CameraController : MonoBehaviour
             {
                 minXPosition = transform.position.x;
             }
+
+            //ボスを倒した場合maxXPositionを更新
+            if (BossFlag == true)
+            {
+                maxXPosition = 3000f;
+            }
         }
     }
 
     void Update()
     {
-        //プレイヤーが落下した際にフラグを立て、カメラの最小値をセーブポイントに応じて上書きする
-        if (FallFlag == true)
+        if (FallFlag)
         {
+            // minXPositionをセーブポイントのX座標で上書き
             minXPosition = SavePoint.x;
+
+            // 処理が完了したのでフラグをfalseに戻す
+            FallFlag = false; 
+            Debug.Log("Camera is reset.");
         }
     }
 }

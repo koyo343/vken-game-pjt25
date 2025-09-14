@@ -4,6 +4,8 @@ public class Rijin_movement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+
+    public float jumpCount = 1;
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -64,13 +66,16 @@ public class Rijin_movement : MonoBehaviour
         animator.SetBool("isWalking", Mathf.Abs(moveInput) > 0.01f && isGrounded);
 
         // ジャンプ
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpCount--;
+            animator.SetBool("isJumping", true);
         }
 
         if (isGrounded)  // 地面にいる場合
         {
+            jumpCount = 1;
             animator.SetBool("isJumping", false);
         }
         else  // 空中にいる場合
@@ -124,6 +129,7 @@ public class Rijin_movement : MonoBehaviour
             if (cameraController != null)
             {
                 transform.position = cameraController.SavePoint;
+                Debug.Log("Player is fall!!");
             }
         }
     }

@@ -21,12 +21,12 @@ public class Bullet : MonoBehaviour
     }
 
     /// <summary>
-    /// 弾を右方向に移動させる
+    /// 弾を前方に移動させる
     /// </summary>
     private void BulletMove()
     {
-        // Vector3.rightは(1, 0, 0)を意味し、右方向を示す
-        transform.position += Vector3.right * bulletSpeed * Time.deltaTime;
+        // 弾のローカルな右方向(transform.right)に移動
+        transform.position += transform.right * bulletSpeed * Time.deltaTime;
     }
 
     /// <summary>
