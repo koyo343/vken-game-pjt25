@@ -8,7 +8,7 @@ public class Rijin_Movement : MonoBehaviour
     private bool isGrounded;
 
     public enum Direction { Left, Right };
-    
+
     //Animatorの情報を入れる変数を宣言
     Animator animator;
     private Direction lastDirection;
@@ -16,7 +16,7 @@ public class Rijin_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+
         //変数にAnimatorの情報を取得して入れる
         animator = this.GetComponent<Animator>();
     }
@@ -54,7 +54,7 @@ public class Rijin_Movement : MonoBehaviour
 
         // プレイヤーの速度を更新
         rb.linearVelocity = new Vector2(moveInput * currentMoveSpeed, rb.linearVelocity.y);
-        
+
         // isWalking の判定
         animator.SetBool("isWalking", Mathf.Abs(moveInput) > 0.01f && isGrounded);
 
@@ -98,6 +98,17 @@ public class Rijin_Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    void Fall()
+    {
+        //ここは落下したとみなされる値を記述してください
+        if (player.position.y < -1500f)
+        {
+            //落下したとみなされるとフラグを立てる
+            FallFlag = 1;
+            player.position = Vector3(SavePoint.x, SavePoint.y, SavePoint.z);
         }
     }
 }
