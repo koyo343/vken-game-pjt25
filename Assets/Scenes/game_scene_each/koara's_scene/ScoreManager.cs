@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void AddScoreDebug(){
-        if (scoreManager != null && debugmode != null && debugmode.mode){
+        if (scoreManager != null && debugmode != null && debugmode.isDebug){
             if(Input.GetKeyDown(KeyCode.P)){
                 AddScore(100);
                 Debug.Log("スコアを100追加しました！");
