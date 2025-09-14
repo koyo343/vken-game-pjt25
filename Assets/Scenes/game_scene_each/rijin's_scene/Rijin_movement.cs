@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rijin_Movement : MonoBehaviour
+public class Rijin_movement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -8,16 +8,17 @@ public class Rijin_Movement : MonoBehaviour
     private bool isGrounded;
 
     public enum Direction { Left, Right };
-
+    
     //Animatorの情報を入れる変数を宣言
     Animator animator;
     private Direction lastDirection;
 
+    //CameraControllerインスタンスの取得
+    public CameraController cameraController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        //変数にAnimatorの情報を取得して入れる
         animator = this.GetComponent<Animator>();
     }
 
@@ -25,30 +26,24 @@ public class Rijin_Movement : MonoBehaviour
     {
         // 左右の移動入力を取得
         float moveInput = Input.GetAxis("Horizontal");
-
+        
         // 地面にいるかどうかに応じて、移動速度を調整
         float currentMoveSpeed = moveSpeed;
 
-        //最後に入力した左右キーを保持
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        // 地面にいない（空中にいる）場合
+        if (!isGrounded) 
         {
-            lastDirection = Direction.Left;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            lastDirection = Direction.Right;
-        }
-
-        if (!isGrounded) // 地面にいない（空中にいる）場合
-        {
-            if ((moveSpeed > 0 && lastDirection == Direction.Left) || (moveSpeed > 0 && lastDirection == Direction.Right))
+            if (Mathf.Abs(moveInput) > 0) // 空中移動入力がある場合
             {
-                currentMoveSpeed *= 0.5f; // 速度を半分にする
-            }
-            else
-            {
-                moveInput = 0;
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                if ((moveInput > 0 && lastDirection == Direction.Right) || (moveInput < 0 && lastDirection == Direction.Left))
+                {
+                    currentMoveSpeed *= 0.5f; // 速度を半分にする
+                }
+                else
+                {
+                    rb.linearVelocity = new Vector2(rb.linearVelocity.x * 0.8f, rb.linearVelocity.y); // ブレーキ
+                    moveInput = 0;
+                }
             }
         }
 
@@ -82,6 +77,9 @@ public class Rijin_Movement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
+        
+        // 落下判定メソッドを呼び出す
+        Fall();
     }
 
     // 地面判定
@@ -103,12 +101,20 @@ public class Rijin_Movement : MonoBehaviour
 
     void Fall()
     {
-        //ここは落下したとみなされる値を記述してください
-        if (player.position.y < -1500f)
+        // ここは落下したとみなされる値を記述してください
+        if (transform.position.y < -1500f)
         {
-            //落下したとみなされるとフラグを立てる
-            FallFlag = 1;
-            player.position = Vector3(SavePoint.x, SavePoint.y, SavePoint.z);
+            // 落下したとみなされるとフラグを立てる
+            if (cameraController != null)
+            {
+                cameraController.FallFlag = true;
+            }
+
+            // プレイヤーをセーブポイントに瞬間移動
+            if (cameraController != null)
+            {
+                transform.position = cameraController.SavePoint;
+            }
         }
     }
 }

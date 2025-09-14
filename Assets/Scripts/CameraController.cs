@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     //セーブポイントの仮実装
     public Vector3 SavePoint;
     //落ちたかを判定するフラグ
-    public float FallFlag = 0;
+    public bool FallFlag = false;
 
     void Start()
     {
@@ -66,7 +66,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         //プレイヤーが落下した際にフラグを立て、カメラの最小値をセーブポイントに応じて上書きする
-        if (FallFlag == 1)
+        if (FallFlag == true)
         {
             minXPosition = SavePoint.x;
         }
