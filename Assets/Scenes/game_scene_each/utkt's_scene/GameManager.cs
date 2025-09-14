@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static bool isGameClear = false; // staticでどこからでもアクセス可能にする
+    // 静的変数で、どのスクリプトからもアクセス可能
+    public static bool isGameClear = false;
 
-    public GameObject clearPanel;
+    // シングルトン化 (オプション)
+    public static GameManager instance;
 
-    public void GameClear()
+    void Awake()
     {
-        Debug.Log("ゲームクリア！");
-        isGameClear = true; // ゲームクリア状態をtrueにする
-        clearPanel.SetActive(true);
-        Time.timeScale = 0f;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
