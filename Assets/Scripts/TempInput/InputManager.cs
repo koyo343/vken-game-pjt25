@@ -13,6 +13,8 @@ public class InputManager : MonoBehaviour
     public TMP_InputField playScoreInput;
     public TMP_InputField timeLeftsInput;
     public TMP_InputField timeScoreInput;
+
+    public GameData_Manager GameData_Manager;
     
     // キャラクター画像を表示するImageコンポーネント
     public Image characterImage;
@@ -32,6 +34,7 @@ public class InputManager : MonoBehaviour
 
     void Start()
     {
+        GameData_Manager.CheckNullInstance();
         // ボタンにクリックイベントを登録
         foreach(var chara in characterButtons)
         {
