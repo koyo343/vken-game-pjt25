@@ -392,9 +392,8 @@ GameObject:
   - component: {fileID: 1656354046}
   - component: {fileID: 1656354050}
   - component: {fileID: 1656354049}
+  - component: {fileID: 1656354051}
   - component: {fileID: 1656354052}
-  - component: {fileID: 1656354054}
-  - component: {fileID: 1656354053}
   m_Layer: 0
   m_Name: ken-stand_transparent_0
   m_TagString: Untagged
