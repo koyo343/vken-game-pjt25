@@ -92,6 +92,7 @@ public class CharactorAnimationVisualManager : MonoBehaviour
             if (animator != null)
             {
                 animator.runtimeAnimatorController = visualData.animatorController;
+                Debug.Log("Animatorを適用しました'{visualData.animatorController.name}'");
             }
             else
             {

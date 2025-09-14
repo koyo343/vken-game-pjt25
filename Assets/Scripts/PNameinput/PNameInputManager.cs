@@ -16,8 +16,26 @@ public class PNameInputManager : MonoBehaviour
     {
         // ボタンにクリックイベントを登録
         saveButton.onClick.AddListener(OnSaveData);
+
+        playerNameInput.onEndEdit.AddListener(OnEndEditAction);
     }
 
+    private void OnEndEditAction(string text)
+    {
+        // Enterキーが押されたことを確認
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            OnSaveData();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            OnSaveData();
+        }
+    }
     /// <summary>
     /// プレイヤー名をGameData_Managerに保存し、次のシーンに遷移する
     /// </summary>
