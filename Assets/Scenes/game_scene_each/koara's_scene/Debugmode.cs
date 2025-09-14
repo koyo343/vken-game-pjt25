@@ -28,8 +28,9 @@ public class Debugmode : MonoBehaviour
 
     //デバッグモードか否かの判定
     //public bool mode = false;
-    public bool isDebug = false;
-
+    private bool isDebug = false;
+    public bool mode = false;
+    
     void Start()
     {
         if (debugText != null)
@@ -79,6 +80,7 @@ public class Debugmode : MonoBehaviour
                         Debug.Log("Debug Mode now");
                         currentSequenceIndex = 0; // リセット
                         isDebug = true;
+                        mode = true;
                         if (debugText != null)
                         {
                             debugText.text = debugModeMessage;
@@ -101,6 +103,7 @@ public class Debugmode : MonoBehaviour
                 Debug.Log($"キーが押されました: {pressedKey}:debug mode end");
                 currentSequenceIndex = 0;
                 isDebug = false;
+                mode = false;
                 if (debugText != null)
                 {
                     debugText.gameObject.SetActive(false);

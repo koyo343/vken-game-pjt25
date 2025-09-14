@@ -756,7 +756,7 @@ MonoBehaviour:
   debugModeMessage: DEBUG MODE
   sequence: 75000000740000006b00000074000000
   timeOutSeconds: 1.5
-  isDebug: 0
+  mode: 0
 --- !u!1 &336337986
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 401375389}
   scoreManager: {fileID: 379592528}
-  debugmode: {fileID: 0}
+  debugmode: {fileID: 256566929}
   currentScore: 0
 --- !u!114 &379592529
 MonoBehaviour:
@@ -972,6 +972,7 @@ MonoBehaviour:
   TimerControllerforScore: {fileID: 644369619}
   scoreManager: {fileID: 379592528}
   Debugbutton: {fileID: 1931045986}
+  GameData_Manager: {fileID: 0}
 --- !u!1 &401375387
 GameObject:
   m_ObjectHideFlags: 0

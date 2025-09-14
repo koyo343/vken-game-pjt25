@@ -11,6 +11,7 @@ public class PNameInputManager : MonoBehaviour
 
     // データを保存して次のシーンに進むためのボタン
     public Button saveButton;
+    public GameData_Manager GameData_Manager;
 
     void Start()
     {
@@ -18,6 +19,8 @@ public class PNameInputManager : MonoBehaviour
         saveButton.onClick.AddListener(OnSaveData);
 
         playerNameInput.onEndEdit.AddListener(OnEndEditAction);
+
+        GameData_Manager.CheckNullInstance();
     }
 
     private void OnEndEditAction(string text)
@@ -76,9 +79,7 @@ public class PNameInputManager : MonoBehaviour
         if (GameData_Manager.Instance != null)
         {
             // playerIDは別のシーンで付与する前提なので、ここでは空のまま
-            string dummyPlayerID = ""; 
-            int dummyScore = 0;
-            GameData_Manager.Instance.SetPlayerResult(dummyPlayerID, playerName, dummyScore);
+            GameData_Manager.Instance.SetPlayerName(playerName);
             Debug.Log($"プレイヤー名を保存しました: {playerName}");
         }
         else

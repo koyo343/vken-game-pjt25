@@ -12,12 +12,15 @@ public class ScoreSaveManager : MonoBehaviour
 
     public Button Debugbutton;
 
+    public GameData_Manager GameData_Manager;
+
     void Start()
     {
         Debugbutton.onClick.AddListener(OnGameOver);
 
         // ゲーム開始ボタンにメソッドを登録
         //startButton.onClick.AddListener(OnGameStart);
+        GameData_Manager.CheckNullInstance();
     }
 
     // このメソッドは、ゲームオーバー時に外部から呼ばれます
