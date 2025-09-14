@@ -1,36 +1,43 @@
-/*using UnityEngine;
+using UnityEngine;
 
-public class MoveFloorController : Monobehavior
+public class MoveFloorController : MonoBehaviour
 {
-    private float minmove = 0f;
-    private float maxmove; = 100f;
-    private float moveSpeed = 1f;
+    private float minYPosition;
+    private float maxYPosition;
+    private float moveSpeed = 100f;
     private Rigidbody2D rb;
+
+    private int Direction = 1;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        //変数にAnimatorの情報を取得して入れる
-        animator = this.GetComponent<Animator>();
+        minYPosition = 190f;
+        maxYPosition = 730f;
+
+        if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
     }
 
-    void Update
+    void FixedUpdate()
     {
-         カメラが目指す新しい位置を計算
-            Vector3 targetPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
+        // 床を現在の移動方向に沿って動かす
+        rb.linearVelocity = new Vector2(0, moveSpeed * Direction);
 
-             プレイヤーが左に戻っても、カメラがminXPositionよりも左に動かないようにする
-             Mathf.Maxを使って、targetPosition.xとminXPositionの大きい方を採用
-            float CameraX = Mathf.Max(targetPosition.x, minXPosition);
+        // 床の現在のY座標を取得
+        float currentYPosition = transform.position.y;
 
-            カメラの位置が上限、下限を割りそうになったら上限、下限で止める。
-            そうでなければプレイヤー追従
-            float CameraY = Mathf.Clamp(targetPosition.y, minYPosition, maxYPosition);
-
-            // clampedXを使って新しい位置を再設定
-            targetPosition = new Vector3(CameraX, CameraY, transform.position.z);
-
-            // カメラの位置を徐々に目標位置に移動させる
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing);
+        //上限や下限に来たら動きを反転
+        if (currentYPosition >= maxYPosition)
+        {
+            Direction = -1;
+        }
+        // 下限に達したら上向きに反転
+        else if (currentYPosition <= minYPosition)
+        {
+            Direction = 1;
+        }
     }
-}*/
+}
