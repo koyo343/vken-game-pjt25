@@ -1750,6 +1750,7 @@ MonoBehaviour:
   startButton: {fileID: 1044107575}
   gameSceneName: GameScene
   objectToggle: {fileID: 593745187}
+  GameData_Manager: {fileID: 0}
 --- !u!1 &610697407
 GameObject:
   m_ObjectHideFlags: 0
@@ -3641,7 +3642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: debuggamesscene
+  m_text: Hori's DebugGameScene
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3917,6 +3918,7 @@ MonoBehaviour:
   startButton: {fileID: 1859697326}
   gameSceneName: game_debug_scene
   objectToggle: {fileID: 593745187}
+  GameData_Manager: {fileID: 0}
 --- !u!1 &1693336232
 GameObject:
   m_ObjectHideFlags: 0
