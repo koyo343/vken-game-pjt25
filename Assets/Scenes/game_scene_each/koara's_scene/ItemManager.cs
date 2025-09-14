@@ -7,7 +7,8 @@ public class ItemManager : MonoBehaviour
         SpeedUp,
         JumpUp,
         ScoreUp,
-        Invincible
+        Invincible,
+        Recast
     }
 
     [Header("アイテムの種類")]
@@ -17,6 +18,7 @@ public class ItemManager : MonoBehaviour
     public float effectMagnitude = 1.5f; // 速度・ジャンプ用 (1.5 = 50%UP)
     public float effectDuration = 10f;   // 速度・ジャンプ用
     public int scoreValue = 100;         // スコアアップ用
+    public int SkillRecast = 3;          // スキル時間短縮用
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -40,6 +42,9 @@ public class ItemManager : MonoBehaviour
                     break;
                 case ItemType.Invincible:
                     effectsManager.GrantInvincibility();
+                    break;
+                case ItemType.Recast:
+                    effectsManager.SkillRecast(SkillRecast);
                     break;
             }
 
