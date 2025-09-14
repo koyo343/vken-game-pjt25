@@ -429,6 +429,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 328583030}
   smoothing: 0.5
+  SavePoint: {x: 0, y: 0, z: 0}
+  FallFlag: 0
 --- !u!4 &328583030
 Transform:
   m_ObjectHideFlags: 0
@@ -1684,6 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1000
   jumpForce: 1000
+  cameraController: {fileID: 1837025298}
 --- !u!1 &1248931436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,6 +5212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1031096384}
   smoothing: 0.5
+  SavePoint: {x: 0, y: 0, z: 0}
+  FallFlag: 0
 --- !u!1 &1848283817
 GameObject:
   m_ObjectHideFlags: 0
