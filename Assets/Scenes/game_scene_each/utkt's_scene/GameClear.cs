@@ -11,6 +11,8 @@ public class GameClear : MonoBehaviour
             // GameManagerのisGameClearフラグをtrueに設定
             GameManager.isGameClear = true;
 
+            Time.timeScale = 0f; // ゲームを一時停止
+
             // クリア画面を表示
             if (clearScreenPanel != null)
             {
