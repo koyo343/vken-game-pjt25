@@ -9,6 +9,7 @@ public class EffectManager : MonoBehaviour
     [Header("各種マネージャーへの参照")]
     public ScoreManager scoreManager;
     public Debugmode debugmode; 
+    public SkillRecastManager skillrecastmanager;
 
     // --- 内部で使う変数 ---
     private float originalMoveSpeed;
@@ -65,6 +66,12 @@ public class EffectManager : MonoBehaviour
     {
         isItemInvincible = true;
         Debug.Log("無敵アイテムを取得！");
+    }
+
+    public void SkillRecast(int Recasttime)
+    {
+        skillrecastmanager.currentRecastTime += Recasttime;
+        Debug.Log("スキルを短縮しました");
     }
 
     public void AddScore(int amount)
