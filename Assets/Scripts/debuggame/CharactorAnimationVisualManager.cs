@@ -52,6 +52,9 @@ public class CharactorAnimationVisualManager : MonoBehaviour
     void Start()
     {
         // Player GameObjectが存在するか確認
+
+        //GameData_Manager.CheckNullInstance();
+
         if (playerObject == null)
         {
             Debug.LogError("Player GameObjectがアタッチされていません。");

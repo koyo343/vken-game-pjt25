@@ -17,6 +17,7 @@ public class CharacterSelectManager : MonoBehaviour
     private Dictionary<int, string> characterNameDatas = new Dictionary<int, string>();
 
     public ObjectToggle objectToggle;
+    public GameData_Manager GameData_Manager;
 
 
     void Awake()
@@ -36,6 +37,7 @@ public class CharacterSelectManager : MonoBehaviour
 
         // ゲーム開始ボタンにメソッドを登録
         //startButton.onClick.AddListener(OnGameStart);
+        GameData_Manager.CheckNullInstance();
     }
 
     /// <summary>

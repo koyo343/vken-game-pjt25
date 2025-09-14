@@ -109,7 +109,7 @@ public class EffectManager : MonoBehaviour
 
     private void DamageDebug()
     {
-        if (debugmode != null && debugmode.mode == true)
+        if (debugmode != null && debugmode.isDebug == true)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
