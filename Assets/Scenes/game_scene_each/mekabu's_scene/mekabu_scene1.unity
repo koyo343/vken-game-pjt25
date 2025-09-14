@@ -976,10 +976,7 @@ GameObject:
   - component: {fileID: 832932963}
   - component: {fileID: 832932962}
   - component: {fileID: 832932961}
-<<<<<<< HEAD
-=======
   - component: {fileID: 832932965}
->>>>>>> a22a5993bfa859246f5f0ec8b41a8e0a74eb2b6f
   - component: {fileID: 832932964}
   m_Layer: 0
   m_Name: Main Camera
@@ -1071,8 +1068,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 832932960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-=======
   m_Script: {fileID: 11500000, guid: 097e00ef5a2f04a4790e23ccbbfe6b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1087,7 +1082,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 832932960}
   m_Enabled: 1
   m_EditorHideFlags: 0
->>>>>>> a22a5993bfa859246f5f0ec8b41a8e0a74eb2b6f
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1123,8 +1117,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1121820605
 GameObject:
   m_ObjectHideFlags: 0
