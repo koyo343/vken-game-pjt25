@@ -29,9 +29,19 @@ public class Rijin_movement : MonoBehaviour
         
         // 地面にいるかどうかに応じて、移動速度を調整
         float currentMoveSpeed = moveSpeed;
+        
+        //最後に入力した左右キーを保持
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            lastDirection = Direction.Left;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            lastDirection = Direction.Right;
+        }
 
         // 地面にいない（空中にいる）場合
-        if (!isGrounded) 
+        if (!isGrounded)
         {
             if (Mathf.Abs(moveInput) > 0) // 空中移動入力がある場合
             {
