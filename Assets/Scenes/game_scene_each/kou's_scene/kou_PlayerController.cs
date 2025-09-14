@@ -87,23 +87,23 @@ public class kou_PlayerController : MonoBehaviour
         // スキルのトリガー
         if (Input.GetKeyDown(KeyCode.F) /*&& skillManager.IsSkillReady*/)
         {
-            StartCoroutine(SpecialAttackRoutine());
+            StartCoroutine(SkillRoutine());
             //skillManager.UseSkill();
 
         }
         
     }
 
-    private IEnumerator SpecialAttackRoutine()
+    private IEnumerator SkillRoutine()
     {
-        // 1. isSpecialAttackをtrueにする
-        animator.SetBool("isSpecialAttack", true);
+        // 1. isSkillをtrueにする
+        animator.SetBool("isSkill", true);
 
         // 2. 0.5秒待つ
         yield return new WaitForSeconds(0.5f);
 
-        // 3. 0.5秒後にisSpecialAttackをfalseにする
-        animator.SetBool("isSpecialAttack", false);
+        // 3. 0.5秒後にisSkillをfalseにする
+        animator.SetBool("isSkill", false);
     }
 
     // 地面判定
