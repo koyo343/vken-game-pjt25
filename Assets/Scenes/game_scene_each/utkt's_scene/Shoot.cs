@@ -12,7 +12,8 @@ public class PlayerShooting : MonoBehaviour
         // ゲームがクリア状態ではない場合のみ、以下の処理を実行する
         if (!GameManager.isGameClear)
         {
-            if (Input.GetButtonDown("Fire1") && Time.time > nextFireTime)
+            // Fキーが押され、かつ発射レートの条件を満たしている場合
+            if (Input.GetKeyDown(KeyCode.F) && Time.time > nextFireTime)
             {
                 nextFireTime = Time.time + fireRate;
                 Shoot();
