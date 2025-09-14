@@ -1,3 +1,4 @@
+//Debugmode.cs
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -6,16 +7,17 @@ public class Debugmode : MonoBehaviour
 {
     //ゲーム上にデバッグモードを表示する機能
      [Header("デバッグモード表示用UI")]
+    public GameObject Debugpanel;
     public TextMeshProUGUI debugText; // 変数名をより分かりやすく
 
     [Header("デバッグモード有効時に表示する文字")]
     public string debugModeMessage = "DEBUG MODE";
 
-    // 遷移先のシーン名
-    public string targetSceneName;
+    // 遷移先のシーン名→いらねえだろこれ
+    //public string targetSceneName;
 
     // 期待するキーの順番
-    public KeyCode[] sequence = { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.A };
+    public KeyCode[] sequence = { KeyCode.U, KeyCode.T, KeyCode.K, KeyCode.T};
 
     // 現在、シーケンスの何番目を待っているか
     private int currentSequenceIndex = 0;
@@ -25,13 +27,15 @@ public class Debugmode : MonoBehaviour
     private float lastInputTime;
 
     //デバッグモードか否かの判定
-    public bool mode = false;
+    //public bool mode = false;
+    public bool isDebug = false;
 
     void Start()
     {
         if (debugText != null)
         {
             debugText.gameObject.SetActive(false);
+            Debugpanel.SetActive(false);
         }
     }
     void Update()
@@ -60,35 +64,51 @@ public class Debugmode : MonoBehaviour
 
 
             // 正しいキーが押されたか確認
-            if (currentSequenceIndex < sequence.Length && pressedKey == sequence[currentSequenceIndex]){
-                // 正しいキーが押されたので、次のインデックスへ進める
-                currentSequenceIndex++;
-                lastInputTime = Time.time;
-                Debug.Log($"正しいキーが押されました: {pressedKey}。");
-
-                // シーケンスが完了したかチェック
-                if (currentSequenceIndex >= sequence.Length)
+            if(!isDebug)
+            {
+                if (currentSequenceIndex < sequence.Length && pressedKey == sequence[currentSequenceIndex])
                 {
-                    Debug.Log("シーケンスが完了しました！");
-                    currentSequenceIndex = 0; // リセット
-                    mode = true;
-                    if (debugText != null){
-                        debugText.text = debugModeMessage;
-                        debugText.gameObject.SetActive(true);
+                    // 正しいキーが押されたので、次のインデックスへ進める
+                    currentSequenceIndex++;
+                    lastInputTime = Time.time;
+                    Debug.Log($"キーが押されました: {pressedKey}:debugkey{currentSequenceIndex-1}");
+
+                    // シーケンスが完了したかチェック
+                    if (currentSequenceIndex >= sequence.Length)
+                    {
+                        Debug.Log("Debug Mode now");
+                        currentSequenceIndex = 0; // リセット
+                        isDebug = true;
+                        if (debugText != null)
+                        {
+                            debugText.text = debugModeMessage;
+                            debugText.gameObject.SetActive(true);
+                            Debugpanel.SetActive(true);
+                        }
+                    }
+                } else {
+                    // 誤ったキーが押された場合、シーケンスをリセット
+                    // ただし、もし最初のキーが押された直後に別のキーが押された場合、
+                    // インデックスを0にリセットする必要はない
+                        if (currentSequenceIndex > 0 && pressedKey != sequence[currentSequenceIndex])
+                        {
+                            Debug.Log($"キーが押されました: {pressedKey}:debugkeysequenceReset");
+                            currentSequenceIndex = 0;
                         }
                 }
-            }else{
-                // 誤ったキーが押された場合、シーケンスをリセット
-                // ただし、もし最初のキーが押された直後に別のキーが押された場合、
-                // インデックスを0にリセットする必要はない
-                    if (currentSequenceIndex > 0 && pressedKey != sequence[currentSequenceIndex])
-                    {
-                        Debug.Log("誤ったキーが押されました。シーケンスをリセットします。");
-                        currentSequenceIndex = 0;
-                    }
+            } else if(isDebug)
+            {
+                Debug.Log($"キーが押されました: {pressedKey}:debug mode end");
+                currentSequenceIndex = 0;
+                isDebug = false;
+                if (debugText != null)
+                {
+                    debugText.gameObject.SetActive(false);
+                    Debugpanel.SetActive(false);
                 }
             }
-        }
+        }       
+    }
     // 押されたキーコードを取得するヘルパーメソッド
     private KeyCode GetPressedKey()
     {
