@@ -81,5 +81,8 @@ public class ScoreDictionaryManager : MonoBehaviour
 =======
 
 }*/
+<<<<<<< HEAD
 
 >>>>>>> 281bb26088d6e695fad217c6da2210bbf6cde039
+=======
+>>>>>>> ad3141bd9a763eb7807e6faf6ddc5a0132b8b4ea
