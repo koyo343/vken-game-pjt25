@@ -76,5 +76,11 @@ public class ScoreDictionaryManager : MonoBehaviour
                 Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
             }
         }
+<<<<<<< Updated upstream
 
 }*/
+=======
+mm
+}*/
+
+>>>>>>> Stashed changes
