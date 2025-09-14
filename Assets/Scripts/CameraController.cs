@@ -13,6 +13,10 @@ public class CameraController : MonoBehaviour
 
     //カメラがこれ以上下に動かないようにする限界位置
     private float minYPosition;
+    //セーブポイントの仮実装
+    public Vector3 SavePoint;
+    //落ちたかを判定するフラグ
+    public float FallFlag = 0;
 
     void Start()
     {
@@ -21,6 +25,10 @@ public class CameraController : MonoBehaviour
         minXPosition = -7012f;
         maxYPosition = 1500f;
         minYPosition = -2000f;
+
+        //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
+        SavePoint = new Vector3(-3800f, 146f, 0f);
+
     }
 
     void LateUpdate()
@@ -28,7 +36,6 @@ public class CameraController : MonoBehaviour
         if (player != null)
         {
             // カメラの位置をプレイヤーの位置に合わせる
-            //ゲーム統合の際は680fの部分をplayer.position.yにしてy軸カメラ追従して高さを調整してください
             // カメラのZ座標は、元のZ座標を維持する
 
             // カメラが目指す新しい位置を計算
@@ -53,6 +60,15 @@ public class CameraController : MonoBehaviour
             {
                 minXPosition = transform.position.x;
             }
+        }
+    }
+
+    void Update()
+    {
+        //プレイヤーが落下した際にフラグを立て、カメラの最小値をセーブポイントに応じて上書きする
+        if (FallFlag == 1)
+        {
+            minXPosition = SavePoint.x;
         }
     }
 }
