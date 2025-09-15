@@ -100,18 +100,24 @@ public class Debugmode : MonoBehaviour
                 }
             } else if(isDebug)
             {
-                Debug.Log($"キーが押されました: {pressedKey}:debug mode end");
-                currentSequenceIndex = 0;
-                isDebug = false;
-                //mode = false;
-                if (debugText != null)
-                {
-                    debugText.gameObject.SetActive(false);
-                    Debugpanel.SetActive(false);
+                if(Input.GetKeyDown(KeyCode.P)||Input.GetKeyDown(KeyCode.O)){
+                    Debug.Log($"キーが押されました: {pressedKey}:debug mode not end");
+                } else {
+                    Debug.Log($"キーが押されました: {pressedKey}:debug mode end");
+                    currentSequenceIndex = 0;
+                    isDebug = false;
+                    //mode = false;
+                    if (debugText != null)
+                    {
+                        debugText.gameObject.SetActive(false);
+                        Debugpanel.SetActive(false);
+                    }
                 }
+                    
             }
-        }       
-    }
+        }
+    }       
+    
     // 押されたキーコードを取得するヘルパーメソッド
     private KeyCode GetPressedKey()
     {
