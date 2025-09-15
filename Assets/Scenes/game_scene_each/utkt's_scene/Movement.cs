@@ -40,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
             
-            // ... (その他アニメーションや向きの処理) ...
+            // プレイヤーの向きを更新
+            if (moveInput < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (moveInput > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 
