@@ -22,7 +22,7 @@ public class Holoxer : MonoBehaviour
         if (sr.isVisible)//画面に映っているときにのみ実行する
         {
             int xVector = -1;
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(8, 8, 1);
             rb.linearVelocity = new Vector2(xVector * speed, -gravity);
         }
         else
