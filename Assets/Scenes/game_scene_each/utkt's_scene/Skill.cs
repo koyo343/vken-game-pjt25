@@ -14,16 +14,15 @@ public class PlayerSkill : MonoBehaviour
 
     void Update()
     {
-        // GameManager.isGameClearがない場合は、この条件は不要
-        // if (!GameManager.isGameClear)
-        // {
+        if (!GameManager.isGameClear)
+        {
             // スキルのトリガー（Eキー）
             if (Input.GetKeyDown(KeyCode.E))
             {
                 // スキルアニメーションを開始
                 StartCoroutine(SkillRoutine());
             }
-        // }
+        }
     }
 
     // スキルのアニメーション再生を管理するコルーチン
