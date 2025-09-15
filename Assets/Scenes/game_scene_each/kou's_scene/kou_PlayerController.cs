@@ -99,7 +99,7 @@ public class kou_PlayerController : MonoBehaviour
         // 1. isSkillをtrueにする
         animator.SetBool("isSkill", true);
 
-        // 2. 0.5秒待つ
+        // 2. 委員長のスキル継続時間
         yield return new WaitForSeconds(0.5f);
 
         // 3. 0.5秒後にisSkillをfalseにする
