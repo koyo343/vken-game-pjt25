@@ -86,16 +86,16 @@ public class TextureSwitcher : MonoBehaviour
         
         Debug.Log($"Loaded {TextureData.Count} texture data.");
 
-        string soraDictionaly = "Materials/Texture/sora/";
+        string soraDictionaly = "Materials/Texture/sora/objects/";
         BackObjectData.Add("ときのそら", new CharacterToBackObjectData(soraDictionaly));
 
-        string kenDictionaly = "Materials/Texture/ken/";
+        string kenDictionaly = "Materials/Texture/ken/objects/";
         BackObjectData.Add("剣持刀也", new CharacterToBackObjectData(kenDictionaly));
 
-        string mitoDictionaly = "Materials/Texture/tsukino/";
+        string mitoDictionaly = "Materials/Texture/tsukino/objects/";
         BackObjectData.Add("月ノ美 dogs", new CharacterToBackObjectData(mitoDictionaly));
 
-        string uruhaDictionaly = "Materials/Texture/uruha/";
+        string uruhaDictionaly = "Materials/Texture/uruha/objects/";
         BackObjectData.Add("一ノ瀬うるは", new CharacterToBackObjectData(uruhaDictionaly));
 
     }
