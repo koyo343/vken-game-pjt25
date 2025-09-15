@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: devi-trump
+  m_Name: yagoo
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2248072267802131095, guid: 0f099d1d777654ce586ca50650a4c226, type: 3}
+      value: {fileID: 8222961862482430229, guid: 7a5f3a29d65434dd590050ed345b6558, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2248072267802131095, guid: 0f099d1d777654ce586ca50650a4c226, type: 3}
+    - {fileID: 8222961862482430229, guid: 7a5f3a29d65434dd590050ed345b6558, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

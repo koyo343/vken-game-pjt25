@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: devi-trump
+  m_Name: holoxer-banzai
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 2248072267802131095, guid: 0f099d1d777654ce586ca50650a4c226, type: 3}
+      value: {fileID: -6448191239793503162, guid: 51762f2f92cb74c0ab1036c489db3329, type: 3}
+    - time: 0.25
+      value: {fileID: -4112229179211727519, guid: 6d84c075a7f264606a389e04c82003ec, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,13 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 2248072267802131095, guid: 0f099d1d777654ce586ca50650a4c226, type: 3}
+    - {fileID: -6448191239793503162, guid: 51762f2f92cb74c0ab1036c489db3329, type: 3}
+    - {fileID: -4112229179211727519, guid: 6d84c075a7f264606a389e04c82003ec, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.26666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
