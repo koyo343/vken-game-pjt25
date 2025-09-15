@@ -55,7 +55,7 @@ public class ScoreDictionaryManager : MonoBehaviour
             Debug.LogError("ゲームオブジェクト 'ScoreManager' が見つかりません。");
         }
     }
-    /*
+    
         // イベント名（文字列）を渡してスコアを加算するメソッド
         public void StrToScore(string eventName)
         {
@@ -76,5 +76,8 @@ public class ScoreDictionaryManager : MonoBehaviour
                 Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
             }
         }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 036f3b520a77a4798644b24915408f40937e9d8e
 }*/
