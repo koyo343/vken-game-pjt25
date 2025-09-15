@@ -54,6 +54,8 @@ public class CharactorAnimationVisualManager : MonoBehaviour
         // Player GameObjectが存在するか確認
 
         //GameData_Manager.CheckNullInstance();
+        Debug.Log("VisualManager Start");
+        GameData_Manager.CheckNullInstance();
 
         if (playerObject == null)
         {
@@ -69,7 +71,7 @@ public class CharactorAnimationVisualManager : MonoBehaviour
         }
         else
         {   
-            selectedCharacter = "剣持刀也";
+            selectedCharacter = "ときのそら";
         }
         Debug.Log($"選択されたキャラクター: {selectedCharacter}");
 
@@ -107,6 +109,64 @@ public class CharactorAnimationVisualManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"選択されたキャラクター '{selectedCharacter}' のビジュアルデータが見つかりません。");
+        }
+    }
+
+    public void CharaAnimationUpdate(string ChangedCharaName)
+    {
+        if (playerObject == null)
+        {
+            Debug.LogError("Player GameObjectがアタッチされていません。");
+            return;
+        }
+        //string selectedCharacter;
+        /*
+        if (GameData_Manager.Instance.selectedCharacter != null)
+        {
+            // GameData_Managerから選択されたキャラクター名を取得
+            selectedCharacter = GameData_Manager.Instance.selectedCharacter;   
+        }
+        else
+        {   
+            selectedCharacter = "ときのそら";
+        }
+        Debug.Log($"選択されたキャラクター: {selectedCharacter}");
+        */
+
+
+        // 辞書から対応するビジュアルデータを取得
+        if (characterVisuals.ContainsKey(ChangedCharaName))
+        {
+            CharacterVisualData visualData = characterVisuals[ChangedCharaName];
+
+            // Sprite RendererにSpriteを適用
+            SpriteRenderer spriteRenderer = playerObject.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.sprite = visualData.sprite;
+            }
+            else
+            {
+                Debug.LogError("Player GameObjectにSpriteRendererコンポーネントが見つかりません。");
+            }
+
+            // AnimatorにAnimator Controllerを適用
+            Animator animator = playerObject.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.runtimeAnimatorController = visualData.animatorController;
+                Debug.Log($"Animatorを適用しました'{visualData.animatorController.name}'");
+            }
+            else
+            {
+                Debug.LogError("Player GameObjectにAnimatorコンポーネントが見つかりません。");
+            }
+
+            Debug.Log($"キャラクター '{ChangedCharaName}' のビジュアルを更新しました。");
+        }
+        else
+        {
+            Debug.LogWarning($"選択されたキャラクター '{ChangedCharaName}' のビジュアルデータが見つかりません。");
         }
     }
 }

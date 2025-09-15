@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Holoxer_Movement : MonoBehaviour
+public class Holoxer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("移動速度")] public float speed;
@@ -28,6 +28,20 @@ public class Holoxer_Movement : MonoBehaviour
         else
         {
             rb.Sleep();//画面に映っていないときに物理演算を中止
+        }
+    }
+    
+        void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Playerに接触したとき
+        if (collision.gameObject.tag == "Player")
+        {
+            /*
+            ここにPlayerがあたったときのスコア処理
+            */
+
+            Debug.Log("Playerに当たりました");
+            
         }
     }
 }
