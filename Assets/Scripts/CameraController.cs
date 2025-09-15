@@ -16,12 +16,13 @@ public class CameraController : MonoBehaviour
 
     //カメラがこれ以上下に動かないようにする限界位置
     private float minYPosition;
-    //セーブポイントの仮実装
+    //セーブポイント
     public Vector3 SavePoint;
-    //落ちたかを判定するフラグ
-    public bool FallFlag = false;
     //ボスフラグ
     public bool BossFlag = false;
+
+    //落ちたかを判定するフラグ
+    public bool FallFlag;
 
     void Start()
     {
@@ -33,7 +34,9 @@ public class CameraController : MonoBehaviour
         minYPosition = -2000f;
 
         //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
+        //ここは初期スポーンを記述してください
         SavePoint = new Vector3(-3800f, 146f, 0f);
+        FallFlag = false;
 
     }
 
