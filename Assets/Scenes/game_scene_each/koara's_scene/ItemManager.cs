@@ -8,7 +8,8 @@ public class ItemManager : MonoBehaviour
         JumpUp,
         ScoreUp,
         Invincible,
-        Recast
+        Recast,
+        SavePoints
     }
 
     [Header("アイテムの種類")]
@@ -27,6 +28,9 @@ public class ItemManager : MonoBehaviour
             // シーン内のEffectsManagerを探して取得する
             EffectManager effectsManager = FindObjectOfType<EffectManager>();
             if (effectsManager == null) return;
+            // シーン内のCameraControllerを探して取得する 
+            CameraController cameraController = FindObjectOfType<CameraController>();
+            if (cameraController == null) return;
 
             // アイテムの種類によってeffectsManagerのメソッドを呼び分ける
             switch (type)
@@ -45,6 +49,10 @@ public class ItemManager : MonoBehaviour
                     break;
                 case ItemType.Recast:
                     effectsManager.SkillRecast(SkillRecast);
+                    break;
+                case ItemType.SavePoints:
+                    cameraController.SavePoint = transform.position; 
+                    Debug.Log("セーブポイントを更新しました: ");
                     break;
             }
 
