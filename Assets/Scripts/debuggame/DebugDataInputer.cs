@@ -19,6 +19,8 @@ public class DebugDataInputer : MonoBehaviour
 
     public Image characterImage;
     public string selectedCharacter;
+    public CharactorAnimationVisualManager CharactorAnimationVisualManager;
+
 
     // キャラクター名と対応する画像を紐付ける辞書
     private Dictionary<string, Sprite> characterSprites = new Dictionary<string, Sprite>();
@@ -88,12 +90,12 @@ public class DebugDataInputer : MonoBehaviour
         string playerName = playerNameInput.text;
         string playerName = playerNameInput.text;
         */
-
+        /*
         if (characterSprites.ContainsKey(selectedCharacter))
         {
             Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is null: {characterSprites[selectedCharacter] == null}");
             characterImage.sprite = characterSprites[selectedCharacter];
-        }
+        }*/
 
         if (characterSprites.ContainsKey(selectedCharacter))
         {
@@ -108,9 +110,21 @@ public class DebugDataInputer : MonoBehaviour
         string dummyPlayerID = ""; 
         string playerName = playerNameInput.text;
         int score = 0;
-        int playScore = int.Parse(playScoreInput.text);
-        int timeLefts = int.Parse(timeLeftsInput.text);
-        int timeScore = int.Parse(timeLeftsInput.text) * 10;
+        int playScore = 0;
+        int timeLefts = 0;
+        int timeScore = 0;
+
+        if (!int.TryParse(playScoreInput.text, out playScore))
+        {
+            Debug.LogError("Play Scoreの入力が不正です。半角数字を入力してください。");
+        }
+        if (!int.TryParse(timeLeftsInput.text, out timeLefts))
+        {
+            Debug.LogError("Time Leftsの入力が不正です。半角数字を入力してください。");
+        }
+        timeScore = timeLefts * 10;
+        score = playScore + timeScore;
+
 
         if (GameData_Manager.Instance != null)
         {
@@ -122,6 +136,11 @@ public class DebugDataInputer : MonoBehaviour
             Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
             return;
         }
+        string characterName = GameData_Manager.Instance.selectedCharacter;
+
+        CharactorAnimationVisualManager.CharaAnimationUpdate(characterName);
+
+        Debug.Log($"Saved Data!{playerName} {score} {playScore} {timeLefts} {timeScore}{characterName}");
     }
 
     /*
@@ -158,6 +177,8 @@ public class DebugDataInputer : MonoBehaviour
         {
             Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
         }
+
+        Debug.Log($"選択キャラクターを変更しました:{characterName}");
 
         Sprite characterSprite = characterSprites[characterName];
         
