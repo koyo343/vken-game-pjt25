@@ -9084,7 +9084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 111067896}
   scoreManager: {fileID: 2088102342}
-  debugmode: {fileID: 0}
+  debugmode: {fileID: 1583955229}
   currentScore: 0
 --- !u!114 &2088102344
 MonoBehaviour:
@@ -9114,7 +9114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 538920417}
   scoreManager: {fileID: 2088102342}
-  debugmode: {fileID: 0}
+  debugmode: {fileID: 1583955229}
   skillrecastmanager: {fileID: 2088102346}
 --- !u!114 &2088102346
 MonoBehaviour:
