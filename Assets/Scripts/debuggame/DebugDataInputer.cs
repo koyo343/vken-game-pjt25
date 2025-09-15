@@ -14,6 +14,10 @@ public class DebugDataInputer : MonoBehaviour
 
     public Button saveButton;
     public GameData_Manager GameData_Manager;
+    public TextureSwitcher TextureSwitcher;
+    public BGMPlayer BGMPlayer;
+    public BGMManager BGMManager;
+
 
     //public InputManager InputManager;
 
@@ -49,6 +53,7 @@ public class DebugDataInputer : MonoBehaviour
         // ボタンにクリックイベントを登録
         saveButton.onClick.AddListener(OnSaveInput);
         GameData_Manager.CheckNullInstance();
+        BGMPlayer.CheckNullBGMInstance();
 
         //string selectedCharacter;
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
@@ -139,6 +144,8 @@ public class DebugDataInputer : MonoBehaviour
         string characterName = GameData_Manager.Instance.selectedCharacter;
 
         CharactorAnimationVisualManager.CharaAnimationUpdate(characterName);
+        TextureSwitcher.TextureUpdater(characterName);
+
 
         Debug.Log($"Saved Data!{playerName} {score} {playScore} {timeLefts} {timeScore}{characterName}");
     }
