@@ -626,7 +626,7 @@ Animator:
   m_GameObject: {fileID: 785695308}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6bc01f4cc0b1b75428c86589043da063, type: 2}
+  m_Controller: {fileID: 9100000, guid: 793f676a726ae4ee3b270f947b33b89b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -923,6 +923,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   smoothing: 0.5
+  SavePoint: {x: 0, y: 0, z: 0}
+  FallFlag: 0
+  BossFlag: 0
 --- !u!1 &933808208
 GameObject:
   m_ObjectHideFlags: 0
