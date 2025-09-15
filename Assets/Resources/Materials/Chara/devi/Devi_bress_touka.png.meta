@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3c01b8883572f49478357c9cba6eca3a
+guid: e0631b4f35d50448f8ec4df7c67fdc24
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8531029878543443940
-    second: man1_0
+      213: -8583359424782608872
+    second: Devi_bress_touka_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: man1_0
+      name: Devi_bress_touka_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 208
-        height: 242
+        x: 20
+        y: 21
+        width: 497
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e763d6a97e446670800000000000000
-      internalID: 8531029878543443940
+      spriteID: 816d45a6418c1e880800000000000000
+      internalID: -8583359424782608872
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      man1_0: 8531029878543443940
+      Devi_bress_touka_0: -8583359424782608872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

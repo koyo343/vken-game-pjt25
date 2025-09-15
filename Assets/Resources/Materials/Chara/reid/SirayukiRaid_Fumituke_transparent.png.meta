@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 34b8d0af06d931d4b9db02ca9fc046ef
+guid: bd1a0b4721c244b65975542c6d1223eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3938408722033731490
-    second: woman2_0
+      213: -8603970008003874912
+    second: SirayukiRaid_Fumituke_transparent_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: woman2_0
+      name: SirayukiRaid_Fumituke_transparent_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 203
-        height: 249
+        width: 24
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e5811e64226f759c0800000000000000
-      internalID: -3938408722033731490
+      spriteID: 0af60de0dde889880800000000000000
+      internalID: -8603970008003874912
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      woman2_0: -3938408722033731490
+      SirayukiRaid_Fumituke_transparent_0: -8603970008003874912
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
