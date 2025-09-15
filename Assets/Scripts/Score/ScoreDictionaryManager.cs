@@ -76,8 +76,4 @@ public class ScoreDictionaryManager : MonoBehaviour
                 Debug.LogError($"イベント '{eventName}' は辞書に登録されていません。");
             }
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 036f3b520a77a4798644b24915408f40937e9d8e
 }*/
