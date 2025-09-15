@@ -23,7 +23,11 @@ public class Shoot_chara : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        
+        if (transform.localScale.x < 0){
+            Quaternion currentRotation = bullet.transform.rotation;
+            Quaternion NewRotation = Quaternion.Euler(currentRotation.eulerAngles.x, currentRotation.eulerAngles.y, currentRotation.eulerAngles.z + 180f);
+            bullet.transform.rotation = NewRotation;
+        }
         if (rb != null)
         {
             // プレイヤーの向き（localScale.x）に応じて速度を設定

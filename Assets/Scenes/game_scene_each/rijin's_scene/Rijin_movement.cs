@@ -9,8 +9,9 @@ public class Rijin_movement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
+
     public enum Direction { Left, Right };
-    
+
     //Animatorの情報を入れる変数を宣言
     Animator animator;
     private Direction lastDirection;
@@ -28,10 +29,10 @@ public class Rijin_movement : MonoBehaviour
     {
         // 左右の移動入力を取得
         float moveInput = Input.GetAxis("Horizontal");
-        
+
         // 地面にいるかどうかに応じて、移動速度を調整
         float currentMoveSpeed = moveSpeed;
-        
+
         //最後に入力した左右キーを保持
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
@@ -92,9 +93,9 @@ public class Rijin_movement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        
+
         // 落下判定メソッドを呼び出す
-        Fall();
+        FallCheck();
     }
 
     // 地面判定
@@ -113,21 +114,15 @@ public class Rijin_movement : MonoBehaviour
             isGrounded = false;
         }
     }
-
-    void Fall()
+    
+    void FallCheck()
     {
-        // ここは落下したとみなされる値を記述してください
-        if (transform.position.y < -1500f)
+        // プレイヤーのy座標が落下境界を下回ったら
+        if (!GetComponent<Renderer>().isVisible)
         {
-            // 落下したとみなされるとフラグを立てる
             if (cameraController != null)
             {
                 cameraController.FallFlag = true;
-            }
-
-            // プレイヤーをセーブポイントに瞬間移動
-            if (cameraController != null)
-            {
                 transform.position = cameraController.SavePoint;
                 Debug.Log("Player is fall!!");
             }
