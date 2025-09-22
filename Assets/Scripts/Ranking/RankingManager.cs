@@ -39,12 +39,18 @@ public class RankingManager : MonoBehaviour
         previousButton.onClick.AddListener(PreviousPage);
 
         // DynamoDBからランキングデータを非同期で取得
+        ReLoadRankingData();
+    }
+
+    public void ReLoadRankingData()
+    {
         if(!DatabaseSwitcher.isLocal)
         {
             LoadRankingDataFromDynamoDB();
         } else {
             LoadLocalData();
         }
+        Debug.Log("ReLoadRankingData is called");
     }
 
     /// <summary>

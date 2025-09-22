@@ -8,6 +8,7 @@ public static class AWSCredentials
     public static string SecretKey;
     public static string Region;
     private static bool isInitialized = false;
+    public static bool ServerConnected = false;
 
     public static void Initialize()
     {
@@ -20,6 +21,7 @@ public static class AWSCredentials
                 SecretKey = DotEnv.Get("S");
                 Region = DotEnv.Get("R");
                 isInitialized = true;
+                ServerConnected = true;
                 Debug.Log("AWSCredentials is initialized");
             }
         } else {

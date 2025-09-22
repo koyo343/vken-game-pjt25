@@ -115,6 +115,11 @@ public class ResultManager : MonoBehaviour
     // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
+        if(!AWSCredentials.ServerConnected){
+            Debug.Log("Server is not connected.");
+            return;
+        }
+        
         string rankingCategory = "allTime";
 
         Debug.Log("SaveScoreToDynamoDB is called.");

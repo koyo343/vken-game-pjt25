@@ -9,6 +9,7 @@ public class LocalSwitch : MonoBehaviour
 {
     public Button SwitchButton;
     public TextMeshProUGUI LocalmodeText;
+    public RankingManager manager;
 
     public string LocalmodeMessage = "Local Mode";
     public string PublicmodeMessage = "Public Mode";
@@ -43,5 +44,6 @@ public class LocalSwitch : MonoBehaviour
         {
             LocalmodeText.text = PublicmodeMessage;
         }
+        manager.ReLoadRankingData();
     }
 }
