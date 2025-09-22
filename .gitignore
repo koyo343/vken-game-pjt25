@@ -31,4 +31,5 @@ Builds/
 .DS_Store
 
 .env
+SavedScoreLocal.csv
 UserSettings/

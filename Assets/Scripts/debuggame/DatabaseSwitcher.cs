@@ -3,12 +3,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections.Generic;
+using System.IO;
 
 public static class DatabaseSwitcher
 {
     public static bool isLocal = true;
 
-    public void SwitchDatabase()
+    public static void SwitchDatabase()
     {
         if (isLocal)
         {
@@ -23,17 +24,22 @@ public static class DatabaseSwitcher
                 // ★デバッグログ②：ファイルが見つからない場合に警告を表示
                 //Debug.LogWarning("'.env' file not found at the specified path.");
                 Debug.Log("Database was not switched");
-                isLoaded = true; // ロード済みとしてマークし、再試行を防ぐ
+                //isLoaded = true; // ロード済みとしてマークし、再試行を防ぐ
                 return;
             }
             
             isLocal = false;
+
+            AWSCredentials.Initialize();
+            LoadingCSV.isInitializedSwitch();
 
             Debug.Log("Database was switched to DynamoDB");
         }
         else
         {
             isLocal = true;
+            LoadingCSV.Initialize();
+            AWSCredentials.isInitializedSwitch();
             Debug.Log("Database was switched to Local");
         }
     }
