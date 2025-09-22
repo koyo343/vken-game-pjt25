@@ -53,4 +53,10 @@ public class ScoreManager : MonoBehaviour
         // テキストを更新する
         scoreText.text = "Score: " + currentScore.ToString();
     }
+
+    public void UpdateScoreDirectly(int updateScore)
+    {
+        currentScore = updateScore;
+        UpdateScoreDisplay();
+    }
 }

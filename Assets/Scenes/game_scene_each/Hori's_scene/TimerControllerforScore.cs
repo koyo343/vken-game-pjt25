@@ -105,4 +105,15 @@ public class TimerControllerforScore : MonoBehaviour
         // "D3"という書式設定で、数値を3桁のゼロ埋め文字列に変換する (例: 5 -> "005")
         timerText.text = seconds.ToString("D3");
     }
+
+    public void UpdateTimerDirectly(float updateTime)
+    {
+        currentTime = updateTime;
+        UpdateTimerDisplay();
+    }
+
+    public void UpdateTotalTimeDirectly(float updateTime)
+    {
+        totaltime = updateTime;
+    }
 }
