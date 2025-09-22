@@ -10144,7 +10144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchButton: {fileID: 1143844911}
   LocalmodeText: {fileID: 1498365702}
-  CautionPanel: {fileID: 2123190604}
+  CautionPanel: {fileID: 2046393102}
   ConfirmButton: {fileID: 207135534}
   CancelButton: {fileID: 944643846}
   LocalmodeMessage: Local Mode

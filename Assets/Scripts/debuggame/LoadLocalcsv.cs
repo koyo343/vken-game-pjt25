@@ -107,4 +107,18 @@ public static class LoadingCSV
         return sortedRows;
     }
 
+    public static void DeleteFile()
+    {
+        if (File.Exists(csvfilePath))
+        {
+            File.Delete(csvfilePath);
+            csvData.Clear();
+            Debug.Log($"CSVファイルが削除されました: {csvfilePath}");
+        }
+        else
+        {
+            Debug.LogWarning("削除対象のファイルが見つかりませんでした。");
+        }
+    }
+
 }
