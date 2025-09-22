@@ -27,45 +27,62 @@ public class Rijin_movement : MonoBehaviour
 
     void Update()
     {
+        //移動メソッドの呼び出し
+        isWalking();
+
+        //ジャンプメソッドの呼び出し
+        Jump();
+
+        //方向メソッドを呼び出す
+        PlayerDirection();
+
+        // 落下判定メソッドを呼び出す
+        FallCheck();
+    }
+
+    void isWalking()
+    {
         // 左右の移動入力を取得
         float moveInput = Input.GetAxis("Horizontal");
 
-        // 地面にいるかどうかに応じて、移動速度を調整
-        float currentMoveSpeed = moveSpeed;
+        // 地面にいる場合のみ、左右の移動を適用
+        if (isGrounded)
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        //最後に入力した左右キーを保持
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            lastDirection = Direction.Left;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            lastDirection = Direction.Right;
-        }
-
-        // 地面にいない（空中にいる）場合
-        if (!isGrounded)
-        {
-            if (Mathf.Abs(moveInput) > 0) // 空中移動入力がある場合
+            //地上にいる間はプレイヤーの最後の入力方向を更新する
+            if (moveInput >= 0)
             {
-                if ((moveInput > 0 && lastDirection == Direction.Right) || (moveInput < 0 && lastDirection == Direction.Left))
-                {
-                    currentMoveSpeed *= 0.5f; // 速度を半分にする
-                }
-                else
-                {
-                    rb.linearVelocity = new Vector2(rb.linearVelocity.x * 0.8f, rb.linearVelocity.y); // ブレーキ
-                    moveInput = 0;
-                }
+                lastDirection = Direction.Right;
+            }
+            else
+            {
+                lastDirection = Direction.Left;
             }
         }
-
-        // プレイヤーの速度を更新
-        rb.linearVelocity = new Vector2(moveInput * currentMoveSpeed, rb.linearVelocity.y);
+        else if (lastDirection == Direction.Right && moveInput < 0)
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
+        }
+        else if (lastDirection == Direction.Left && moveInput > 0)
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
+        }
+        else
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * 0.5f, rb.linearVelocity.y);
+        }
 
         // isWalking の判定
         animator.SetBool("isWalking", Mathf.Abs(moveInput) > 0.01f && isGrounded);
+    }
 
+    void Jump()
+    {
         // ジャンプ
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
@@ -83,41 +100,30 @@ public class Rijin_movement : MonoBehaviour
         {
             animator.SetBool("isJumping", true);
         }
-
-        // プレイヤーの向きを更新
-        if (moveInput < 0)
-        {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else if (moveInput > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-        }
-
-        // 落下判定メソッドを呼び出す
-        FallCheck();
     }
 
-    // 地面判定
-    void OnCollisionEnter2D(Collision2D collision)
+    void PlayerDirection()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        // 左右の移動入力を取得
+        float moveInput = Input.GetAxis("Horizontal");
+
+        // 地面にいる場合プレイヤーの向きを更新
+        if (isGrounded)
         {
-            isGrounded = true;
+            if (moveInput < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (moveInput > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
-    
     void FallCheck()
     {
-        // プレイヤーのy座標が落下境界を下回ったら
+        // プレイヤーがカメラに映らなくなったら
         if (!GetComponent<Renderer>().isVisible)
         {
             if (cameraController != null)
@@ -126,6 +132,23 @@ public class Rijin_movement : MonoBehaviour
                 transform.position = cameraController.SavePoint;
                 Debug.Log("Player is fall!!");
             }
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        // 地面と接触したかどうかを判定する
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+        // 地面から離れたかどうかを判定する
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
