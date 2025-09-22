@@ -17,18 +17,19 @@ public static class LoadingCSV
 
     private static Dictionary<string, string[]> csvData = new Dictionary<string, string[]>();
 
-    public static string csvfilePath;
+    public static string csvfilePath = Path.Combine(Application.dataPath, "../SavedScoreLocal.csv");
 
     private const int SCORE_COLUMN_INDEX = 2;
     
     public static void Initialize()
     {
-        if (!isInitialized)
+        if (!isInitialized || DatabaseSwitcher.isLocal)
         {
             LoadData();
+            Debug.Log("LodingCSV is already initialized");
             return;
         }
-        csvfilePath = Path.Combine(Application.dataPath, "../SavedScoreLocal.csv");
+        
 
         if (!File.Exists(csvfilePath))
         {
@@ -37,6 +38,7 @@ public static class LoadingCSV
         }
 
         LoadData();
+        Debug.Log("LodingCSV is initialized");
 
         isInitialized = true;
     }

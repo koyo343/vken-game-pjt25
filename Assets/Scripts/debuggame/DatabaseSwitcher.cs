@@ -11,6 +11,7 @@ public static class DatabaseSwitcher
 
     public static void SwitchDatabase()
     {
+        Debug.Log("SwitchDatabase is called");
         if (isLocal)
         {
             // プロジェクトのルートディレクトリにある.envファイルのパスを生成
