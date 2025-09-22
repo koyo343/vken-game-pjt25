@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
         // 地面にいるかどうかに応じて、移動速度を調整
         float currentMoveSpeed = moveSpeed;
-
         //最後に入力した左右キーを保持
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
