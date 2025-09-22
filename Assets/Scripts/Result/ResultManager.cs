@@ -100,9 +100,7 @@ public class ResultManager : MonoBehaviour
         }
 
         // スコアをDynamoDBに送信
-        if(!DatabaseSwitcher.isLocal){
-            SaveScoreToDynamoDB(playerID, playerName, totalScore);
-        }
+        SaveScoreToDynamoDB(playerID, playerName, totalScore);
 
         string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
         LoadingCSV.AddRow(rowData);

@@ -53,6 +53,15 @@ public class RankingManager : MonoBehaviour
         Debug.Log("ReLoadRankingData is called");
     }
 
+    void Update()
+    {
+        if(DatabaseSwitcher.LocalmodeisChenged)
+        {
+            ReLoadRankingData();
+            DatabaseSwitcher.LocalmodeisChenged = false;
+        }
+    }
+
     /// <summary>
     /// DynamoDBからランキングデータを非同期で取得し、UIに反映します。
     /// </summary>

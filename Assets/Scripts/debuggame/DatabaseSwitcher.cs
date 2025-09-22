@@ -8,6 +8,7 @@ using System.IO;
 public static class DatabaseSwitcher
 {
     public static bool isLocal = true;
+    public static bool LocalmodeisChenged = false;
 
     public static void SwitchDatabase()
     {
@@ -34,13 +35,19 @@ public static class DatabaseSwitcher
             AWSCredentials.Initialize();
             LoadingCSV.isInitializedSwitch();
 
+            LocalmodeisChenged = true;
+
             Debug.Log("Database was switched to DynamoDB");
         }
         else
         {
             isLocal = true;
+
             LoadingCSV.Initialize();
             AWSCredentials.isInitializedSwitch();
+
+            LocalmodeisChenged = true;
+
             Debug.Log("Database was switched to Local");
         }
     }
