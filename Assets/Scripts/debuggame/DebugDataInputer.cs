@@ -14,6 +14,11 @@ public class DebugDataInputer : MonoBehaviour
 
     public Button saveButton;
     public GameData_Manager GameData_Manager;
+    public TextureSwitcher TextureSwitcher;
+    public BGMPlayer BGMPlayer;
+    public BGMManager BGMManager;
+    public ScoreManager scoreManager;
+    public TimerControllerforScore TimerControllerforScore;
 
     //public InputManager InputManager;
 
@@ -49,6 +54,7 @@ public class DebugDataInputer : MonoBehaviour
         // ボタンにクリックイベントを登録
         saveButton.onClick.AddListener(OnSaveInput);
         GameData_Manager.CheckNullInstance();
+        BGMPlayer.CheckNullBGMInstance();
 
         //string selectedCharacter;
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
@@ -112,16 +118,35 @@ public class DebugDataInputer : MonoBehaviour
         int score = 0;
         int playScore = 0;
         int timeLefts = 0;
+        int currentTime = 0;
         int timeScore = 0;
 
         if (!int.TryParse(playScoreInput.text, out playScore))
         {
             Debug.LogError("Play Scoreの入力が不正です。半角数字を入力してください。");
         }
+        else
+        {
+            score = int.Parse(timeLeftsInput.text);
+        }
         if (!int.TryParse(timeLeftsInput.text, out timeLefts))
         {
             Debug.LogError("Time Leftsの入力が不正です。半角数字を入力してください。");
         }
+        else
+        {
+            timeLefts= int.Parse(timeLeftsInput.text);
+        }
+        if (!int.TryParse(currentTimeInput.text, out currentTime))
+        {
+            Debug.LogError("currentTimeの入力が不正です。半角数字を入力してください。");
+        }
+        else
+        {
+            currentTime = int.Parse(currentTimeInput.text);
+        }
+
+
         timeScore = timeLefts * 10;
         score = playScore + timeScore;
 
@@ -137,8 +162,17 @@ public class DebugDataInputer : MonoBehaviour
             return;
         }
         string characterName = GameData_Manager.Instance.selectedCharacter;
+        scoreManager.UpdateScoreDirectly(score);
+
+        float timeLeftsf = (float)timeLefts;
+        float currentTimef = (float)currentTime;
+
+        TimerControllerforScore.UpdateTimerDirectly(timeLeftsf);
+        TimerControllerforScore.UpdateTotalTimeDirectly(currentTimef);
 
         CharactorAnimationVisualManager.CharaAnimationUpdate(characterName);
+        TextureSwitcher.TextureUpdater(characterName);
+
 
         Debug.Log($"Saved Data!{playerName} {score} {playScore} {timeLefts} {timeScore}{characterName}");
     }

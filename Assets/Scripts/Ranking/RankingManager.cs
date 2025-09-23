@@ -27,14 +27,39 @@ public class RankingManager : MonoBehaviour
 
     void Start()
     {
-        AWSCredentials.Initialize();
+        if(DatabaseSwitcher.isLocal)
+        {
+            LoadingCSV.Initialize();
+        } else {
+            AWSCredentials.Initialize();
+        }
 
         // ボタンのクリックイベントを登録
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
 
         // DynamoDBからランキングデータを非同期で取得
-        LoadRankingDataFromDynamoDB();
+        ReLoadRankingData();
+    }
+
+    public void ReLoadRankingData()
+    {
+        if(!DatabaseSwitcher.isLocal)
+        {
+            LoadRankingDataFromDynamoDB();
+        } else {
+            LoadLocalData();
+        }
+        Debug.Log("ReLoadRankingData is called");
+    }
+
+    void Update()
+    {
+        if(DatabaseSwitcher.LocalmodeisChenged)
+        {
+            ReLoadRankingData();
+            DatabaseSwitcher.LocalmodeisChenged = false;
+        }
     }
 
     /// <summary>
@@ -91,6 +116,24 @@ public class RankingManager : MonoBehaviour
             // エラーが発生した場合、コンソールにログを出力
             Debug.LogError($"DynamoDBからのデータ取得に失敗しました: {e.Message}");
         }
+    }
+
+    private void LoadLocalData()
+    {
+        LoadingCSV.LoadData();
+        rankingData.Clear();
+
+        var sortedRows = LoadingCSV.GetRowsSortByScore();
+        foreach (var row in sortedRows)
+        {
+            rankingData.Add(new RankingEntry
+            {
+                playerName = row[1], // PlayerNameは2列目
+                score = int.Parse(row[2]) // Scoreは3列目
+            });
+        }
+        totalPages = Mathf.CeilToInt((float)rankingData.Count / entriesPerPage);
+        UpdateUI();
     }
 
     /// <summary>

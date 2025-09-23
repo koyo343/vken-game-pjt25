@@ -16,6 +16,8 @@ public class CharactorAnimationVisualManager : MonoBehaviour
         }
     }
 
+    
+
     // キャラクター名とVisualDataを紐付ける辞書
     private Dictionary<string, CharacterVisualData> characterVisuals = new Dictionary<string, CharacterVisualData>();
 
