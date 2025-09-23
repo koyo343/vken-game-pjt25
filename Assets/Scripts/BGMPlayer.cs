@@ -55,4 +55,25 @@ public class BGMPlayer : MonoBehaviour
     {
         audioSource.Stop();
     }
+
+    public void CheckNullBGMInstance()
+    {
+        // シーン内に他にBGMPlayerインスタンスが存在しないかチェック
+        if (instance == null)
+        {
+            // 存在しない場合、このインスタンスを保持する
+            instance = this;
+            // シーンを移動してもこのオブジェクトが破壊されないようにする
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            // すでにBGMPlayerインスタンスが存在する場合、このオブジェクトは不要なので破壊する
+            Destroy(gameObject);
+            return; // 処理を中断
+        }
+
+        // AudioSourceコンポーネントを取得
+        audioSource = GetComponent<AudioSource>();
+    }
 }
