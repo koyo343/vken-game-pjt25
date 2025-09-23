@@ -8,27 +8,60 @@ public class Uruha_Attack : CharacterAttack
         if (!isUsingTool)
         {
             isUsingTool = true;
-            StartCoroutine(RotateTool());
+            StartCoroutine(LungeTool());
             Debug.Log("uruha attack");
         }
     }
-    private IEnumerator RotateTool()
+    private IEnumerator LungeTool()
     {
-        float elapsedTime = 0f;
-
-        // 開始角度（現在のローカル回転）
-        Quaternion startRotation = Quaternion.Euler(0, 0, 0);
-        // 終了角度（Z軸を-90度回転させたクォータニオン）
-        Quaternion targetRotation = Quaternion.Euler(0, 0, -90);
-
-        while (elapsedTime < toolRotationTime)
+        // ダッシュの速度と距離を設定
+        float lungeDistance = 0.4f;  // 前方に突き出す距離
+        float lungeDuration = 0.2f;  // 突き出すのにかかる時間 (片道)
+        
+        // 道具オブジェクトが割り当てられているか確認
+        if (toolObject == null)
         {
-            // 開始角度から終了角度までを時間に応じて補間
-            toolObject.transform.localRotation = Quaternion.Slerp(startRotation, targetRotation, (elapsedTime / toolRotationTime));
-
-            elapsedTime += Time.deltaTime;
-            yield return null; // 次のフレームまで待機
+            Debug.LogError("toolObjectが割り当てられていません");
+            isUsingTool = false;
+            yield break; // エラーなのでコルーチンを終了
         }
+
+        toolObject.SetActive(true);
+
+        // 開始位置と終了位置を計算
+        Vector3 startPosition = toolObject.transform.localPosition;
+        Vector3 targetPosition = startPosition;
+
+        // 前方に突き出す方向を決定 (キャラクターの向きに合わせる)
+        // 親オブジェクト（キャラクター）のlocalScale.xが負の値なら左向きと判断
+        if (transform.localScale.x < 0)
+        {
+            targetPosition.x -= lungeDistance;
+        }
+        else
+        {
+            targetPosition.x += lungeDistance;
+        }
+
+        // --- 前方への移動 ---
+        float elapsedTime = 0f;
+        while (elapsedTime < lungeDuration)
+        {
+            toolObject.transform.localPosition = Vector3.Lerp(startPosition, targetPosition, (elapsedTime / lungeDuration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        toolObject.transform.localPosition = targetPosition; // 確実に終了位置に
+
+        // --- 元の位置に戻る ---
+        elapsedTime = 0f;
+        while (elapsedTime < lungeDuration)
+        {
+            toolObject.transform.localPosition = Vector3.Lerp(targetPosition, startPosition, (elapsedTime / lungeDuration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        toolObject.transform.localPosition = startPosition; // 確実に開始位置に戻る
 
         // アニメーション終了後に道具を非表示に戻す
         toolObject.SetActive(false);
