@@ -13,34 +13,43 @@ using Amazon.DynamoDBv2.Model;
 public class debugButtons : MonoBehaviour
 {
     public Button deleteData;
-    public GameObject CautionPanel;
-    public Button ConfirmButton;
-    public Button CancelButton;
+    public GameObject deleteCautionPanel;
+    public Button deleteConfirmButton;
+    public Button deleteCancelButton;
+
+    public Button TempDataInput;
 
 
 
     void Start()
     {
         deleteData.onClick.AddListener(onClickdelete);
-        CautionPanel.SetActive(false);
-        ConfirmButton.onClick.AddListener(OnConfirm);
-        CancelButton.onClick.AddListener(OnCancel);
+        deleteCautionPanel.SetActive(false);
+        deleteConfirmButton.onClick.AddListener(OnConfirm);
+        deleteCancelButton.onClick.AddListener(OnCancel);
+
+        TempDataInput.onClick.AddListener(OnTempDataInput);
+    }
+
+    void OnTempDataInput()
+    {
+        LoadingCSV.InputTemplateData();
     }
 
     void onClickdelete()
     {
-        CautionPanel.SetActive(true);
+        deleteCautionPanel.SetActive(true);
     }
 
     void OnConfirm()
     {
-        CautionPanel.SetActive(false);
+        deleteCautionPanel.SetActive(false);
         LoadingCSV.DeleteFile();
     }
 
     void OnCancel()
     {
-        CautionPanel.SetActive(false);
+        deleteCautionPanel.SetActive(false);
     }
 
 }
