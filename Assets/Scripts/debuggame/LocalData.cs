@@ -14,6 +14,6 @@ public class LocalData : MonoBehaviour
 {
     public void LoadRankingDataFromCSV()
     {
-        
+        string filePath = LoadingCSV.csvfilePath;
     }
 }

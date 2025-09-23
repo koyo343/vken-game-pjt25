@@ -25,6 +25,13 @@ public class RankingManager : MonoBehaviour
     private int currentOffset = 0;
     private int totalPages = 0;
 
+    public float cooltimeseconds = 1.0f;
+    private float lastInputTime;
+    private bool incooltime = true;
+
+
+
+
     void Start()
     {
         if(DatabaseSwitcher.isLocal)
@@ -55,6 +62,14 @@ public class RankingManager : MonoBehaviour
 
     void Update()
     {
+        if (incooltime && Time.time - lastInputTime > cooltimeseconds)
+        {
+            if(!DatabaseSwitcher.isLocal){
+                Debug.Log("cooltime is over");
+            }
+            incooltime = false;
+        }
+        
         if(DatabaseSwitcher.LocalmodeisChenged)
         {
             ReLoadRankingData();
@@ -192,6 +207,16 @@ public class RankingManager : MonoBehaviour
     /// </summary>
     public void NextPage()
     {
+        if(!DatabaseSwitcher.isLocal){
+            if(incooltime)
+            {
+                Debug.Log("incooltime");
+                return;
+            }
+        }
+
+        
+        
         currentOffset += entriesPerPage;
         // 最終ページを超えないようにオフセットを調整
         if (currentOffset >= rankingData.Count)
@@ -199,6 +224,8 @@ public class RankingManager : MonoBehaviour
             currentOffset = Mathf.Max(0, rankingData.Count - entriesPerPage);
         }
         UpdateUI();
+        incooltime = true;
+        lastInputTime = Time.time;
     }
     
     /// <summary>
@@ -206,7 +233,18 @@ public class RankingManager : MonoBehaviour
     /// </summary>
     public void PreviousPage()
     {
+        if(!DatabaseSwitcher.isLocal){
+            if(incooltime)
+            {
+                Debug.Log("incooltime");
+                return;
+            }
+        }
+        
+        
         currentOffset = Mathf.Max(currentOffset - entriesPerPage, 0);
         UpdateUI();
+        incooltime = true;
+        lastInputTime = Time.time;
     }
 }
