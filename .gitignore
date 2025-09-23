@@ -4,6 +4,7 @@ Temp/
 Logs/
 Obj/
 MemoryCaptures/
+UserSettings/Layouts/
 
 # Ignore the editor settings
 .vscode/
@@ -32,4 +33,3 @@ Builds/
 
 .env
 SavedScoreLocal.csv
-UserSettings/
