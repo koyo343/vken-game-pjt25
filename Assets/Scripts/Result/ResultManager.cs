@@ -18,6 +18,8 @@ public class ResultManager : MonoBehaviour
     public TextMeshProUGUI timeScoreText;
     
     public Image characterImage;
+
+    public GameData_Manager GameData_Manager;
     
     // キャラクター名と対応する画像を紐付ける辞書
     private Dictionary<string, Sprite> characterSprites = new Dictionary<string, Sprite>();
@@ -40,6 +42,8 @@ public class ResultManager : MonoBehaviour
     {
         // AWS認証情報の初期化を必ず最初に行う
         AWSCredentials.Initialize();
+
+        GameData_Manager.CheckNullInstance();
 
         // UIコンポーネントが有効か確認
         if (playerNameText == null || totalScoreText == null || playScoreText == null || totalTimeText == null || timeScoreText == null || characterImage == null)
@@ -97,6 +101,9 @@ public class ResultManager : MonoBehaviour
 
         // スコアをDynamoDBに送信
         SaveScoreToDynamoDB(playerID, playerName, totalScore);
+
+        string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
+        LoadingCSV.AddRow(rowData);
     }
     
     /// <summary>
@@ -106,6 +113,11 @@ public class ResultManager : MonoBehaviour
     // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
+        if(!AWSCredentials.ServerConnected){
+            Debug.Log("Server is not connected.");
+            return;
+        }
+        
         string rankingCategory = "allTime";
 
         Debug.Log("SaveScoreToDynamoDB is called.");

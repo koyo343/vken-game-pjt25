@@ -21,12 +21,13 @@ public class Bullet : MonoBehaviour
     }
 
     /// <summary>
-    /// 弾を右方向に移動させる
+
+    /// 弾をプレイヤーの向く方向に移動させる
     /// </summary>
     private void BulletMove()
     {
-        // Vector3.rightは(1, 0, 0)を意味し、右方向を示す
-        transform.position += Vector3.right * bulletSpeed * Time.deltaTime;
+        // transform.rightはオブジェクトの右方向を示すベクトル
+        transform.position += transform.right * bulletSpeed * Time.deltaTime;
     }
 
     /// <summary>
@@ -36,6 +37,11 @@ public class Bullet : MonoBehaviour
     {
         // 画面の右端（X座標10f）を超えたら消滅
         if (transform.position.x > 10f)
+        {
+            Destroy(gameObject);
+        }
+        // 画面の左端（X座標-10f）を超えたら消滅
+        else if (transform.position.x < -10f)
         {
             Destroy(gameObject);
         }

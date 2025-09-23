@@ -6,18 +6,18 @@ public class GameData_Manager : MonoBehaviour
 {
     public static GameData_Manager Instance { get; private set; }
 
-    public int currentScore { get; private set; }
-    public string playerName { get; private set; }
-    public string selectedCharacter { get; private set; }
+    public int currentScore { get; private set; } = 0;
+    public string playerName { get; private set; } = "dummyName";
+    public string selectedCharacter { get; private set; } = "ときのそら";
     
     // playerIDを追加
-    public string playerID { get; private set; }
+    public string playerID { get; private set; } = "dummyID";
     
     // 新しく追加する変数
-    public int PlayScore { get; private set; }
-    public int TotalTime { get; private set; }
-    public int TimeScore { get; private set; }
-    public int TotalScore { get; private set; }
+    public int PlayScore { get; private set; } = 0;
+    public int TotalTime { get; private set; } = 0;
+    public int TimeScore { get; private set; } = 0;
+    public int TotalScore { get; private set; } = 0;
 
     void Awake()
     {
@@ -29,6 +29,21 @@ public class GameData_Manager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public static void CheckNullInstance()
+    {
+        if (Instance == null)
+        {
+            // 新しいGameObjectを作成
+            GameObject managerObject = new GameObject("GameData_Manager");
+            // スクリプトをアタッチしてInstanceを初期化
+            managerObject.AddComponent<GameData_Manager>();
+            Debug.Log("Generate GameData Instance");
+        } else {
+            Debug.Log("GameData Instance already exists");
+            return;
         }
     }
 
@@ -59,5 +74,10 @@ public class GameData_Manager : MonoBehaviour
         TotalTime = totalTime;
         TimeScore = timeScore;
         TotalScore = PlayScore + TimeScore;
+    }
+
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
     }
 }
