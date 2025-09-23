@@ -58,7 +58,7 @@ public class CameraController : MonoBehaviour
             そうでなければプレイヤー追従*/
             float CameraY = Mathf.Clamp(targetPosition.y, minYPosition, maxYPosition);
 
-            // clampedXを使って新しい位置を再設定
+            // 新しい位置を再設定
             targetPosition = new Vector3(CameraX, CameraY, transform.position.z);
 
             // カメラの位置を徐々に目標位置に移動させる
