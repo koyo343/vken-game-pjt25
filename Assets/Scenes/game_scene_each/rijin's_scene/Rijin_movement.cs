@@ -25,11 +25,17 @@ public class Rijin_movement : MonoBehaviour
         animator = this.GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         //移動メソッドの呼び出し
         isWalking();
 
+        //地面判定チェックメソッドの呼び出し
+        GroundCheck();
+
+    }
+    void Update()
+    {     
         //ジャンプメソッドの呼び出し
         Jump();
 
@@ -134,21 +140,33 @@ public class Rijin_movement : MonoBehaviour
             }
         }
     }
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        // 地面と接触したかどうかを判定する
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-    }
 
-    void OnCollisionExit2D(Collision2D other)
+        void GroundCheck()
     {
-        // 地面から離れたかどうかを判定する
-        if (other.gameObject.CompareTag("Ground"))
+        BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
+        if (playerCollider == null)
         {
             isGrounded = false;
+            return;
         }
+
+        // レイキャストのパラメータを設定
+        Vector2 raycastDirection = Vector2.down;
+        float raycastDistance = 0.2f; // 余裕を持たせた距離
+        LayerMask mask = ~LayerMask.GetMask("Player");
+
+        // レイキャストの開始位置をコライダーの下端から少し内側にずらす
+        float offsetFromEdge = 0.1f;
+        Vector2 leftOrigin = new Vector2(playerCollider.bounds.min.x + offsetFromEdge, playerCollider.bounds.min.y);
+        Vector2 rightOrigin = new Vector2(playerCollider.bounds.max.x - offsetFromEdge, playerCollider.bounds.min.y);
+
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
+
+        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
+                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+
+        Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
+        Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
     }
 }
