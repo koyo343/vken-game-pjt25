@@ -64,7 +64,9 @@ public class RankingManager : MonoBehaviour
     {
         if (incooltime && Time.time - lastInputTime > cooltimeseconds)
         {
-            Debug.Log("cooltime is over");
+            if(!DatabaseSwitcher.isLocal){
+                Debug.Log("cooltime is over");
+            }
             incooltime = false;
         }
         
