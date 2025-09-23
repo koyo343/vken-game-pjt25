@@ -143,56 +143,30 @@ public class Rijin_movement : MonoBehaviour
 
         void GroundCheck()
     {
-        // BoxCollider2Dが取得できない場合を考慮
         BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
-        if (playerCollider == null) return;
-
-        Vector2 raycastOrigin = new Vector2(transform.position.x, playerCollider.bounds.min.y);
-        Vector2 raycastDirection = Vector2.down;
-        float raycastDistance = 0.1f;
-        
-        // プレイヤーレイヤーを無視するレイヤーマスク
-        LayerMask mask = ~LayerMask.GetMask("Player");
-
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDirection, raycastDistance, mask);
-        
-        // デバッグログで詳細な情報を確認
-        if (hit.collider != null)
-        {
-            Debug.Log("衝突したオブジェクト: " + hit.collider.gameObject.name);
-            Debug.Log("衝突したオブジェクトのタグ: " + hit.collider.tag);
-        }
-        
-        // 接地判定
-        if (hit.collider != null && hit.collider.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
-        else
+        if (playerCollider == null)
         {
             isGrounded = false;
+            return;
         }
-    }
-    
-    private void OnDrawGizmos()
-    {
-        BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
-        Vector2 raycastOrigin = new Vector2(transform.position.x, playerCollider.bounds.min.y);
+
+        // レイキャストのパラメータを設定
         Vector2 raycastDirection = Vector2.down;
-        float raycastDistance = 10f;
+        float raycastDistance = 0.2f; // 余裕を持たせた距離
+        LayerMask mask = ~LayerMask.GetMask("Player");
 
-        // レイキャストが当たっているかどうかで色を変える
-        RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, raycastDirection, raycastDistance);
-        if (hit.collider != null && hit.collider.CompareTag("Ground"))
-        {
-            Gizmos.color = Color.green; // 地面に当たったら緑色
-        }
-        else
-        {
-            Gizmos.color = Color.red; // 当たらなかったら赤色
-        }
+        // レイキャストの開始位置をコライダーの下端から少し内側にずらす
+        float offsetFromEdge = 0.1f;
+        Vector2 leftOrigin = new Vector2(playerCollider.bounds.min.x + offsetFromEdge, playerCollider.bounds.min.y);
+        Vector2 rightOrigin = new Vector2(playerCollider.bounds.max.x - offsetFromEdge, playerCollider.bounds.min.y);
 
-        // レイを描画
-        Gizmos.DrawRay(raycastOrigin, raycastDirection * raycastDistance);
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
+
+        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
+                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+
+        Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
+        Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
     }
 }
