@@ -499,8 +499,8 @@ MonoBehaviour:
   player: {fileID: 328583030}
   smoothing: 0.5
   SavePoint: {x: 0, y: 0, z: 0}
-  FallFlag: 0
   BossFlag: 0
+  FallFlag: 0
 --- !u!4 &328583030
 Transform:
   m_ObjectHideFlags: 0
@@ -1726,7 +1726,7 @@ GameObject:
   - component: {fileID: 1031096381}
   - component: {fileID: 1031096386}
   - component: {fileID: 1031096387}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5570,8 +5570,8 @@ MonoBehaviour:
   player: {fileID: 1031096384}
   smoothing: 0.5
   SavePoint: {x: 0, y: 0, z: 0}
-  FallFlag: 0
   BossFlag: 0
+  FallFlag: 0
 --- !u!1 &1848283817
 GameObject:
   m_ObjectHideFlags: 0
