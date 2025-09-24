@@ -1,8 +1,11 @@
+//DebugDataInputer.cs
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections.Generic;
+
+//using AttackManager;
 
 public class DebugDataInputer : MonoBehaviour
 {
@@ -19,6 +22,7 @@ public class DebugDataInputer : MonoBehaviour
     public BGMManager BGMManager;
     public ScoreManager scoreManager;
     public TimerControllerforScore TimerControllerforScore;
+    public AttackManager AttackManager;
 
     //public InputManager InputManager;
 
@@ -89,19 +93,7 @@ public class DebugDataInputer : MonoBehaviour
 
     private void OnSaveInput()
     {
-        /*
-        string playerName = playerNameInput.text;
-        string charaName = characterNameInput.text;
-        int playerName = playerNameInput.text;
-        string playerName = playerNameInput.text;
-        string playerName = playerNameInput.text;
-        */
-        /*
-        if (characterSprites.ContainsKey(selectedCharacter))
-        {
-            Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is null: {characterSprites[selectedCharacter] == null}");
-            characterImage.sprite = characterSprites[selectedCharacter];
-        }*/
+    
 
         if (characterSprites.ContainsKey(selectedCharacter))
         {
@@ -171,35 +163,15 @@ public class DebugDataInputer : MonoBehaviour
         TimerControllerforScore.UpdateTotalTimeDirectly(currentTimef);
 
         CharactorAnimationVisualManager.CharaAnimationUpdate(characterName);
+        AttackManager.CharaSwitch(characterName);
+
+
         TextureSwitcher.TextureUpdater(characterName);
 
 
         Debug.Log($"Saved Data!{playerName} {score} {playScore} {timeLefts} {timeScore}{characterName}");
     }
 
-    /*
-    private void SaveDebugInput();
-    {
-        // 入力フォームから値を取得
-        string dummyPlayerID = ""; 
-        string playerName = playerNameInput.text;
-        int score = int.Parse(scoreInput.text);
-        int playScore = int.Parse(playScoreInput.text);
-        int timeLefts = int.Parse(timeLeftsInput.text);
-        int timeScore = int.Parse(timeScoreInput.text);
-
-        if (GameData_Manager.Instance != null)
-        {
-            GameData_Manager.Instance.SetPlayerResult(dummyPlayerID, playerName, score);
-            GameData_Manager.Instance.SetGameResult(playScore, timeLefts, timeScore);
-        }
-        else
-        {
-            Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
-            return;
-        }
-    }
-    */
 
     private void OnCharacterSelected(string characterName)
     {
