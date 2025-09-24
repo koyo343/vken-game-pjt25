@@ -101,7 +101,7 @@ public class AttackManager : MonoBehaviour
         // 3. 0.5秒後にisSkillをfalseにする
         animator.SetBool("isSkill", false);
     }
-    void CharaSwitch(string selectedCharacter)
+    public void CharaSwitch(string selectedCharacter)
     {
         switch (selectedCharacter)
         {
