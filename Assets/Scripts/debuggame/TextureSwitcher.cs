@@ -61,26 +61,26 @@ public class TextureSwitcher : MonoBehaviour
         // 🚨 ここにデバッグログを追加して、ロード結果を確認します 🚨
         Sprite soraTexture = Resources.Load<Sprite>("Materials/Chara/sora/TokinoSora_stand");
         RuntimeAnimatorController soraBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tokino/toki");
-        AudioClip soraBGM = Resources.Load<AudioClip>("");
+        AudioClip soraBGM = Resources.Load<AudioClip>("Materials/BGM/holo");
         //string soraDictionaly = "Materials/Texture/sora/";
         Debug.Log($"[Sora Load] Sprite is null: {soraTexture == null}, BossAnimator is null: {soraBossAnimator == null}, BGM is null: {soraBGM == null}");
         TextureData.Add("ときのそら", new CharacterToTextureData(soraTexture, soraBossAnimator, soraBGM));
 
         Sprite kenTexture = Resources.Load<Sprite>("Materials/Chara/ken/KenmochiToya_stand");
         RuntimeAnimatorController kenBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/kenmochi/ken");
-        AudioClip kenBGM = Resources.Load<AudioClip>("");
+        AudioClip kenBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Kenmochi Load] Sprite is null: {kenTexture == null}, BossAnimator is null: {kenBossAnimator == null}, BGM is null: {kenBGM == null}");
         TextureData.Add("剣持刀也", new CharacterToTextureData(kenTexture, kenBossAnimator, kenBGM));
 
         Sprite mitoTexture = Resources.Load<Sprite>("Materials/Chara/tsukino/TsukinoMito_stand");
         RuntimeAnimatorController mitoBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tsukino/tsuki");
-        AudioClip mitoBGM = Resources.Load<AudioClip>("");
+        AudioClip mitoBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Mito Load] Sprite is null: {mitoTexture == null}, BossAnimator is null: {mitoBossAnimator == null}, BGM is null: {mitoBGM == null}");
         TextureData.Add("月ノ美兎", new CharacterToTextureData(mitoTexture, mitoBossAnimator, mitoBGM));
 
         Sprite uruhaTexture = Resources.Load<Sprite>("Materials/Chara/uruha/Ichinose_stand");
         RuntimeAnimatorController uruhaBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/ichinose/ichi");
-        AudioClip uruhaBGM = Resources.Load<AudioClip>("");
+        AudioClip uruhaBGM = Resources.Load<AudioClip>("Materials/BGM/vspo");
         Debug.Log($"[Uruha Load] Sprite is null: {uruhaTexture == null}, BossAnimator is null: {uruhaBossAnimator == null}, BGM is null: {uruhaBGM == null}");
         TextureData.Add("一ノ瀬うるは", new CharacterToTextureData(uruhaTexture, uruhaBossAnimator, uruhaBGM));
         

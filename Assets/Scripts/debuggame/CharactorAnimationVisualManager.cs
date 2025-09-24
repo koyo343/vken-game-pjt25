@@ -13,9 +13,9 @@ public class CharactorAnimationVisualManager : MonoBehaviour
         public Sprite ItemSprite;
 
 
-        public CharacterVisualData(Sprite sprite, RuntimeAnimatorController controller, Sprite ItemSprite)
+        public CharacterVisualData(Sprite Charasprite, RuntimeAnimatorController controller, Sprite ItemSprite)
         {
-            this.sprite = Charasprite;
+            this.Charasprite = Charasprite;
             this.animatorController = controller;
             this.ItemSprite = ItemSprite;
 
@@ -159,7 +159,7 @@ public class CharactorAnimationVisualManager : MonoBehaviour
             SpriteRenderer playerItemspriteRenderer = playerItemObject.GetComponent<SpriteRenderer>();
             if (playerspriteRenderer != null)
             {
-                playerspriteRenderer.sprite = visualData.sprite;
+                playerspriteRenderer.sprite = visualData.Charasprite;
             }
             else
             {
