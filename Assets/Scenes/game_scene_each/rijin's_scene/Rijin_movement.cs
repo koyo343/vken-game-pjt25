@@ -9,7 +9,6 @@ public class Rijin_movement : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
 
-
     public enum Direction { Left, Right };
 
     //Animatorの情報を入れる変数を宣言
@@ -28,14 +27,14 @@ public class Rijin_movement : MonoBehaviour
     void FixedUpdate()
     {
         //移動メソッドの呼び出し
-        isWalking();
+        Walking();
 
         //地面判定チェックメソッドの呼び出し
         GroundCheck();
 
     }
     void Update()
-    {     
+    {
         //ジャンプメソッドの呼び出し
         Jump();
 
@@ -46,7 +45,7 @@ public class Rijin_movement : MonoBehaviour
         FallCheck();
     }
 
-    void isWalking()
+    void Walking()
     {
         // 左右の移動入力を取得
         float moveInput = Input.GetAxis("Horizontal");
@@ -141,7 +140,7 @@ public class Rijin_movement : MonoBehaviour
         }
     }
 
-        void GroundCheck()
+    void GroundCheck()
     {
         BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
         if (playerCollider == null)
