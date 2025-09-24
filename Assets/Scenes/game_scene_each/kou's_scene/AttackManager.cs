@@ -9,56 +9,61 @@ public class AttackManager : MonoBehaviour
     public float toolRotationTime = 1.0f;
     public bool isUsingTool = false;
     private CharacterAttack currentAttackComponent;
+    private CharacterSkill currentSkillComponent;
     //スキルのクールタイム管理インスタンス取得
     //public SkillRecastManager skillManager;
-    private string selectedCharacter;
     public GameData_Manager GameData_Manager;
+    private Animator animator;
 
     void Start()
     {
 
+        GameData_Manager.CheckNullInstance();
         //道具オブジェクトを非表示にする
         if (toolObject != null)
         {
             toolObject.SetActive(false);
         }
-        //キャラの情報を取得
-        if (GameData_Manager.Instance.selectedCharacter != null)
-        {
-            // If it exists, get the selected character
-            selectedCharacter = GameData_Manager.Instance.selectedCharacter;
-            Debug.Log("Selected Character: " + selectedCharacter);
-        }
-        else
-        {
-            // If the instance is null, log an error
-            Debug.LogError("Error: GameData_Manager instance is not available. Make sure it's in the scene and initialized.");
-        }
+        string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
         switch (selectedCharacter)
         {
             case "剣持刀也":
                 currentAttackComponent = GetComponent<Ken_Attack>();
+                currentSkillComponent = GetComponent<Ken_Skill>();
                 break;
 
             case "ときのそら":
                 currentAttackComponent = GetComponent<Sora_Attack>();
+                currentSkillComponent = GetComponent<Sora_Skill>();
+
                 if (currentAttackComponent == null)
                 {
                     Debug.LogError("Sora_Attackコンポーネントが見つかりません");
                 }
                 else
                 {
-                    Debug.Log("Sora_Attackコンポーネントの読み込みに成功しました。");
+                    Debug.Log("Sora_Attackコンポーネントの読み込みに成功しました");
                 }
+                if (currentSkillComponent == null)
+                {
+                    Debug.LogError("Sora_Skillコンポーネントが見つかりません");
+                }
+                else
+                {
+                    Debug.Log("Sora_Skillコンポーネントの読み込みに成功しました");
+                }
+
                 break;
 
             case "月ノ美兎":
                 currentAttackComponent = GetComponent<Mito_Attack>();
+                currentSkillComponent = GetComponent<Mito_Skill>();
                 break;
 
             case "一ノ瀬うるは":
                 currentAttackComponent = GetComponent<Uruha_Attack>();
+                currentSkillComponent = GetComponent<Uruha_Skill>();
                 break;
 
             default:
@@ -77,15 +82,16 @@ public class AttackManager : MonoBehaviour
         }
 
         //スキルの呼び出し
-        /*if (Input.GetKeyDown(KeyCode.F) && skillManager.IsSkillReady)
+        if (Input.GetKeyDown(KeyCode.F) /*&& skillManager.IsSkillReady*/)
         {
             //skillManager.UseSkill();
             StartCoroutine(SkillRoutine());
+            currentSkillComponent.PerformSkill();
         }
-        */
     }
-    /*private IEnumerator SkillRoutine()
-        {
+    //スキルのアニメーション処理
+    private IEnumerator SkillRoutine()
+    {
         // 1. isSkillをtrueにする
         animator.SetBool("isSkill", true);
 
@@ -94,6 +100,53 @@ public class AttackManager : MonoBehaviour
 
         // 3. 0.5秒後にisSkillをfalseにする
         animator.SetBool("isSkill", false);
+    }
+    void CharaSwitch(string selectedCharacter)
+    {
+        switch (selectedCharacter)
+        {
+            case "剣持刀也":
+                currentAttackComponent = GetComponent<Ken_Attack>();
+                currentSkillComponent = GetComponent<Ken_Skill>();
+                break;
+
+            case "ときのそら":
+                currentAttackComponent = GetComponent<Sora_Attack>();
+                currentSkillComponent = GetComponent<Sora_Skill>();
+
+                if (currentAttackComponent == null)
+                {
+                    Debug.LogError("Sora_Attackコンポーネントが見つかりません");
+                }
+                else
+                {
+                    Debug.Log("Sora_Attackコンポーネントの読み込みに成功しました");
+                }
+                if (currentSkillComponent == null)
+                {
+                    Debug.LogError("Sora_Skillコンポーネントが見つかりません");
+                }
+                else
+                {
+                    Debug.Log("Sora_Skillコンポーネントの読み込みに成功しました");
+                }
+
+                break;
+
+            case "月ノ美兎":
+                currentAttackComponent = GetComponent<Mito_Attack>();
+                currentSkillComponent = GetComponent<Mito_Skill>();
+                break;
+
+            case "一ノ瀬うるは":
+                currentAttackComponent = GetComponent<Uruha_Attack>();
+                currentSkillComponent = GetComponent<Uruha_Skill>();
+                break;
+
+            default:
+                Debug.LogWarning("未対応のキャラクターです: " + selectedCharacter);
+                break;
         }
-    */
+    }
+
 }
