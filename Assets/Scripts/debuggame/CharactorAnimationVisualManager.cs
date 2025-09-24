@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CharactorAnimationVisualManager : MonoBehaviour
 {
-    public AttackManager AtttackManager;
+    
     
     // 各キャラクターのデータを保持するクラス
     private class CharacterVisualData

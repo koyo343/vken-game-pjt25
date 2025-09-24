@@ -19,6 +19,7 @@ public class DebugDataInputer : MonoBehaviour
     public BGMManager BGMManager;
     public ScoreManager scoreManager;
     public TimerControllerforScore TimerControllerforScore;
+    public AttackManager AtttackManager;
 
     //public InputManager InputManager;
 
@@ -171,6 +172,8 @@ public class DebugDataInputer : MonoBehaviour
         TimerControllerforScore.UpdateTotalTimeDirectly(currentTimef);
 
         CharactorAnimationVisualManager.CharaAnimationUpdate(characterName);
+        AttackManager.CharaSwitch(characterName);
+
         TextureSwitcher.TextureUpdater(characterName);
 
 
