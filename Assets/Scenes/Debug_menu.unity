@@ -543,6 +543,7 @@ MonoBehaviour:
   BGMManager: {fileID: 0}
   scoreManager: {fileID: 0}
   TimerControllerforScore: {fileID: 0}
+  AttackManager: {fileID: 0}
   characterImage: {fileID: 622351946}
   selectedCharacter: 
   CharactorAnimationVisualManager: {fileID: 0}

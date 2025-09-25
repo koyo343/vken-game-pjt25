@@ -38,6 +38,7 @@ public class GameData_Manager : MonoBehaviour
         {
             // 新しいGameObjectを作成
             GameObject managerObject = new GameObject("GameData_Manager");
+            DontDestroyOnLoad(managerObject);
             // スクリプトをアタッチしてInstanceを初期化
             managerObject.AddComponent<GameData_Manager>();
             Debug.Log("Generate GameData Instance");
