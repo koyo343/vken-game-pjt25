@@ -25,16 +25,56 @@ public class RankingManager : MonoBehaviour
     private int currentOffset = 0;
     private int totalPages = 0;
 
+    public float cooltimeseconds = 1.0f;
+    private float lastInputTime;
+    private bool incooltime = true;
+
+
+
+
     void Start()
     {
-        AWSCredentials.Initialize();
+        if(DatabaseSwitcher.isLocal)
+        {
+            LoadingCSV.Initialize();
+        } else {
+            AWSCredentials.Initialize();
+        }
 
         // ボタンのクリックイベントを登録
         nextButton.onClick.AddListener(NextPage);
         previousButton.onClick.AddListener(PreviousPage);
 
         // DynamoDBからランキングデータを非同期で取得
-        LoadRankingDataFromDynamoDB();
+        ReLoadRankingData();
+    }
+
+    public void ReLoadRankingData()
+    {
+        if(!DatabaseSwitcher.isLocal)
+        {
+            LoadRankingDataFromDynamoDB();
+        } else {
+            LoadLocalData();
+        }
+        Debug.Log("ReLoadRankingData is called");
+    }
+
+    void Update()
+    {
+        if (incooltime && Time.time - lastInputTime > cooltimeseconds)
+        {
+            if(!DatabaseSwitcher.isLocal){
+                Debug.Log("cooltime is over");
+            }
+            incooltime = false;
+        }
+        
+        if(DatabaseSwitcher.LocalmodeisChenged)
+        {
+            ReLoadRankingData();
+            DatabaseSwitcher.LocalmodeisChenged = false;
+        }
     }
 
     /// <summary>
@@ -93,6 +133,24 @@ public class RankingManager : MonoBehaviour
         }
     }
 
+    private void LoadLocalData()
+    {
+        LoadingCSV.LoadData();
+        rankingData.Clear();
+
+        var sortedRows = LoadingCSV.GetRowsSortByScore();
+        foreach (var row in sortedRows)
+        {
+            rankingData.Add(new RankingEntry
+            {
+                playerName = row[1], // PlayerNameは2列目
+                score = int.Parse(row[2]) // Scoreは3列目
+            });
+        }
+        totalPages = Mathf.CeilToInt((float)rankingData.Count / entriesPerPage);
+        UpdateUI();
+    }
+
     /// <summary>
     /// 現在のオフセットに基づいてランキングUIを更新します。
     /// </summary>
@@ -149,6 +207,16 @@ public class RankingManager : MonoBehaviour
     /// </summary>
     public void NextPage()
     {
+        if(!DatabaseSwitcher.isLocal){
+            if(incooltime)
+            {
+                Debug.Log("incooltime");
+                return;
+            }
+        }
+
+        
+        
         currentOffset += entriesPerPage;
         // 最終ページを超えないようにオフセットを調整
         if (currentOffset >= rankingData.Count)
@@ -156,6 +224,8 @@ public class RankingManager : MonoBehaviour
             currentOffset = Mathf.Max(0, rankingData.Count - entriesPerPage);
         }
         UpdateUI();
+        incooltime = true;
+        lastInputTime = Time.time;
     }
     
     /// <summary>
@@ -163,7 +233,18 @@ public class RankingManager : MonoBehaviour
     /// </summary>
     public void PreviousPage()
     {
+        if(!DatabaseSwitcher.isLocal){
+            if(incooltime)
+            {
+                Debug.Log("incooltime");
+                return;
+            }
+        }
+        
+        
         currentOffset = Mathf.Max(currentOffset - entriesPerPage, 0);
         UpdateUI();
+        incooltime = true;
+        lastInputTime = Time.time;
     }
 }

@@ -8,7 +8,7 @@ public class GameData_Manager : MonoBehaviour
 
     public int currentScore { get; private set; } = 0;
     public string playerName { get; private set; } = "dummyName";
-    public string selectedCharacter { get; private set; } = "dummyChara";
+    public string selectedCharacter { get; private set; } = "ときのそら";
     
     // playerIDを追加
     public string playerID { get; private set; } = "dummyID";
@@ -38,9 +38,13 @@ public class GameData_Manager : MonoBehaviour
         {
             // 新しいGameObjectを作成
             GameObject managerObject = new GameObject("GameData_Manager");
+            DontDestroyOnLoad(managerObject);
             // スクリプトをアタッチしてInstanceを初期化
             managerObject.AddComponent<GameData_Manager>();
             Debug.Log("Generate GameData Instance");
+        } else {
+            Debug.Log("GameData Instance already exists");
+            return;
         }
     }
 

@@ -28,6 +28,7 @@ public class CharacterSelectManager : MonoBehaviour
         characterNameDatas.Add(1, "剣持刀也");
         characterNameDatas.Add(2, "月ノ美兎");
         characterNameDatas.Add(3, "一ノ瀬うるは");
+        characterNameDatas.Add(4, "キズナアイ");
     } 
 
     // ゲーム開始時に実行

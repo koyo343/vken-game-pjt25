@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Enemy
   - wall
+  - Goal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -41,6 +42,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3862379065
+    locked: 0
+  - name: Game
+    uniqueID: 3818017405
+    locked: 0
+  - name: UIs
+    uniqueID: 212035247
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

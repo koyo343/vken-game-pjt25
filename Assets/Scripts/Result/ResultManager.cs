@@ -101,6 +101,9 @@ public class ResultManager : MonoBehaviour
 
         // スコアをDynamoDBに送信
         SaveScoreToDynamoDB(playerID, playerName, totalScore);
+
+        string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
+        LoadingCSV.AddRow(rowData);
     }
     
     /// <summary>
@@ -110,6 +113,11 @@ public class ResultManager : MonoBehaviour
     // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
+        if(!AWSCredentials.ServerConnected){
+            Debug.Log("Server is not connected.");
+            return;
+        }
+        
         string rankingCategory = "allTime";
 
         Debug.Log("SaveScoreToDynamoDB is called.");

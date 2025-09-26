@@ -4,7 +4,7 @@ using UnityEngine;
 public class BGMPlayer : MonoBehaviour
 {
     // このスクリプトのインスタンス（実体）を、どこからでもアクセスできるように静的変数で保持する
-    public static BGMPlayer instance;
+    public static BGMPlayer instance { get; private set; }
 
     private AudioSource audioSource;
 
@@ -27,7 +27,7 @@ public class BGMPlayer : MonoBehaviour
         }
 
         // AudioSourceコンポーネントを取得
-        audioSource = GetComponent<AudioSource>();
+        GetAudioComponent();
     }
 
     /// <summary>
@@ -36,6 +36,8 @@ public class BGMPlayer : MonoBehaviour
     /// <param name="bgmClip">再生したいAudioClip</param>
     public void PlayBGM(AudioClip bgmClip)
     {
+        GetAudioComponent();
+        
         // 再生するBGMがnull、または現在再生中のBGMと同じ場合は何もしない
         if (bgmClip == null || audioSource.clip == bgmClip)
         {
@@ -48,11 +50,34 @@ public class BGMPlayer : MonoBehaviour
         audioSource.Play();
     }
 
+    public void GetAudioComponent()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     /// <summary>
     /// BGMの再生を停止するメソッド
     /// </summary>
     public void StopBGM()
     {
         audioSource.Stop();
+    }
+
+    public static void CheckNullBGMInstance()
+    {
+        // シーン内に他にBGMPlayerインスタンスが存在しないかチェック
+        if (instance == null)
+        {
+            // 新しいGameObjectを作成
+            GameObject managerObject = new GameObject("BGMPlayer");
+            DontDestroyOnLoad(managerObject);
+            // スクリプトをアタッチしてInstanceを初期化
+            managerObject.AddComponent<BGMPlayer>();
+            Debug.Log("Generate BGMPlayer Instance");
+        } else {
+            Debug.Log("BGMPlayer Instance already exists");
+            return;
+        }
     }
 }
