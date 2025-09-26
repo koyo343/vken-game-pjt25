@@ -382,4 +382,5 @@ public class DebugDataInputer : MonoBehaviour
             characterImage.sprite = characterSprite;
         }
     }
+    
 }
