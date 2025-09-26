@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 public class TextureSwitcher : MonoBehaviour
 {
-    public BGMPlayer BGMPlayer;
+    public BGMPlayer BGMlayer;
     public BGMManager BGMManager;
     public GameData_Manager GameData_Manager;
     
@@ -113,13 +113,13 @@ public class TextureSwitcher : MonoBehaviour
         if (BossObject == null)
         {
             Debug.LogError("Boss GameObjectがアタッチされていません。");
-            return;
+            //return;
         }
 
         if(BackGroundObject == null)
         {
             Debug.LogError("BackGround GameObjectがアタッチされていません。");
-            return;
+            //return;
         }
 
         foreach(var BOName in BackGroundObjectDatas)
@@ -127,7 +127,7 @@ public class TextureSwitcher : MonoBehaviour
             if(BOName.Backobject == null)
             {
                 Debug.LogError($"{BOName.objectName}がアタッチされていません。");
-                return;
+                //return;
             }
         }
 
@@ -145,6 +145,9 @@ public class TextureSwitcher : MonoBehaviour
         Debug.Log($"選択されたキャラクター: {selectedCharacter}");
 
         
+        BGMManager.updateBGMtitle(TextureData[selectedCharacter].BGM);
+        BGMManager.callPlayBGM();
+
         TextureUpdater(selectedCharacter);
 
 
@@ -152,6 +155,8 @@ public class TextureSwitcher : MonoBehaviour
 
     public void TextureUpdater(string selectedCharacter)
     {
+        Debug.Log("TextureUpdater is called.");
+        
         foreach(var BOName in BackGroundObjectDatas)
         {
             if (BackObjectData.ContainsKey(selectedCharacter))
@@ -206,6 +211,8 @@ public class TextureSwitcher : MonoBehaviour
             if (BGM != null)
             {
                 BGMManager.BGMtitle = selectedTextureData.BGM;
+                BGMManager.updateBGMtitle(selectedTextureData.BGM);
+                BGMManager.callPlayBGM();
                 Debug.Log($"BGMを更新しました。 ：'{selectedCharacter}'");
             }
 

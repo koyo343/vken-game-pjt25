@@ -6,7 +6,7 @@ public class BGMPlayer : MonoBehaviour
     // このスクリプトのインスタンス（実体）を、どこからでもアクセスできるように静的変数で保持する
     public static BGMPlayer instance { get; private set; }
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     // ゲームが開始される一番最初のタイミングで一度だけ呼ばれる
     void Awake()
@@ -36,11 +36,13 @@ public class BGMPlayer : MonoBehaviour
     /// <param name="bgmClip">再生したいAudioClip</param>
     public void PlayBGM(AudioClip bgmClip)
     {
+        Debug.Log("PlayBGM is called.");
         GetAudioComponent();
         
         // 再生するBGMがnull、または現在再生中のBGMと同じ場合は何もしない
         if (bgmClip == null || audioSource.clip == bgmClip)
         {
+            Debug.Log($"bgmClip is null or already playing the same BGM: {bgmClip.name}");
             return;
         }
 
@@ -48,6 +50,7 @@ public class BGMPlayer : MonoBehaviour
         audioSource.clip = bgmClip;
         audioSource.loop = true;
         audioSource.Play();
+        Debug.Log($"Play BGM:{bgmClip.name}");
     }
 
     public void GetAudioComponent()
@@ -76,6 +79,8 @@ public class BGMPlayer : MonoBehaviour
             managerObject.AddComponent<BGMPlayer>();
             Debug.Log("Generate BGMPlayer Instance");
         } else {
+            GameObject managerObject = instance.gameObject;
+            managerObject.AddComponent<BGMPlayer>();
             Debug.Log("BGMPlayer Instance already exists");
             return;
         }

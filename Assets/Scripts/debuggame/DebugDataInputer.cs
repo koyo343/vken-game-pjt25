@@ -60,6 +60,7 @@ public class DebugDataInputer : MonoBehaviour
         GameData_Manager.CheckNullInstance();
         BGMPlayer.CheckNullBGMInstance();
 
+
         //string selectedCharacter;
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
@@ -193,4 +194,8 @@ public class DebugDataInputer : MonoBehaviour
             characterImage.sprite = characterSprite;
         }
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
