@@ -43,6 +43,8 @@ public class GameData_Manager : MonoBehaviour
             managerObject.AddComponent<GameData_Manager>();
             Debug.Log("Generate GameData Instance");
         } else {
+            GameObject managerObject = Instance.gameObject;
+            managerObject.AddComponent<GameData_Manager>();
             Debug.Log("GameData Instance already exists");
             return;
         }
