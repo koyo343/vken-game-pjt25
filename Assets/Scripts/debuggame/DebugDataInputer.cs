@@ -194,8 +194,4 @@ public class DebugDataInputer : MonoBehaviour
             characterImage.sprite = characterSprite;
         }
     }
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
