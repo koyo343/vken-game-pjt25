@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a97f4d8163bc495fa40596abfd0c34f
+guid: 4cd4078859570e44294c3ebac3c175d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2227294643750568297
-    second: uruha-sky_0
+      213: -7064305491121196921
+    second: yakeiyakeiyakeiyakei_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: uruha-sky_0
+      name: yakeiyakeiyakeiyakei_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 960
-        height: 352
+        width: 120
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79efd1d725f0711e0800000000000000
-      internalID: -2227294643750568297
+      spriteID: 78031e8859b86fd90800000000000000
+      internalID: -7064305491121196921
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      uruha-sky_0: -2227294643750568297
+      yakeiyakeiyakeiyakei_0: -7064305491121196921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
