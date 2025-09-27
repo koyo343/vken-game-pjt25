@@ -18,6 +18,7 @@ public class GameData_Manager : MonoBehaviour
     public int TotalTime { get; private set; } = 0;
     public int TimeScore { get; private set; } = 0;
     public int TotalScore { get; private set; } = 0;
+    public int TotalKill { get; private set; } = 0;
 
     void Awake()
     {
@@ -30,6 +31,8 @@ public class GameData_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
     }
 
     public static void CheckNullInstance()
@@ -79,8 +82,32 @@ public class GameData_Manager : MonoBehaviour
         TotalScore = PlayScore + TimeScore;
     }
 
+    public void SetTotalKill(int totalKill)
+    {
+        TotalKill = totalKill;
+    }
+
+
     public void SetPlayerName(string name)
     {
         playerName = name;
+    }
+
+    public void InitializeAllData()
+    {
+        currentScore = 0;
+        playerName = "dummyName";
+        selectedCharacter = "ときのそら";
+        playerID = "dummyID";
+        PlayScore = 0;
+        TotalTime = 0;
+        TimeScore = 0;
+        TotalScore = 0;
+        TotalKill = 0;
+    }
+
+    public void AddKillCount()
+    {
+        TotalKill++;
     }
 }
