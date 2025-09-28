@@ -28,7 +28,7 @@ public class ToolAttack : MonoBehaviour
                 {
                     Debug.Log("DamageAbleコンポーネント取得");
                 }
-
+                //ここはkouのゲームシーンに合わせているので本番環境ではken_Attackにすること！！！！！
                 if (damageable != null && sora_Attack.isUsingTool)
                 {
                     Debug.Log("ダメージ処理の実行");
