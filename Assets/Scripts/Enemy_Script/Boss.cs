@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour
         }
 
         // プレイヤーを検索
-        GameObject playerObject = GameObject.FindWithTag("Player");
+        GameObject playerObject = GameObject.FindWithTag("player");
         if (playerObject != null)
         {
             player = playerObject.transform;
