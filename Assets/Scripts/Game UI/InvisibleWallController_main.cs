@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InvisibleWallController : MonoBehaviour
+public class InvisibleWallController_main : MonoBehaviour
 {
     public Camera mainCamera;
     public Transform InvisibleWall_Left;//もちろん左端
