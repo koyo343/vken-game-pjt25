@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  effectMagnitude: 1.5
+  effectMagnitude: 1.2
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
