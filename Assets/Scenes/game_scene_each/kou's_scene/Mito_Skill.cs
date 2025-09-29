@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Mito_Skill : CharacterSkill
 {
+    public float SkillRecastTime = 10.0f;
     public override void PerformSkill()
     {
         Debug.Log("mito skill");
-        //スター　Movementと関わりそう　たぶん面倒
+
+
     }
 }
