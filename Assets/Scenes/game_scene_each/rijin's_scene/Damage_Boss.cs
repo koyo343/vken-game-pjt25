@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Damage_Boss : DamageEnemyBase
+public class Damage_Boss : DamageBase
 {
     public GameObject boss;
 

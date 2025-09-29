@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Damage_holoxer : DamageEnemyBase
+public class Damage_player : DamageBase
 {
     public GameObject player;
 
