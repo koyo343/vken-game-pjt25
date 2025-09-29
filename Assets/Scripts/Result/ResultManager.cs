@@ -16,6 +16,7 @@ public class ResultManager : MonoBehaviour
     public TextMeshProUGUI playScoreText;
     public TextMeshProUGUI totalTimeText;
     public TextMeshProUGUI timeScoreText;
+    public TextMeshProUGUI totalKillText;
     
     public Image characterImage;
 
@@ -72,6 +73,8 @@ public class ResultManager : MonoBehaviour
         int playScore = GameData_Manager.Instance.PlayScore;
         int totalTime = GameData_Manager.Instance.TotalTime;
         int timeScore = GameData_Manager.Instance.TimeScore;
+        int totalKill = GameData_Manager.Instance.TotalKill;
+
 
         string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
 
@@ -88,6 +91,8 @@ public class ResultManager : MonoBehaviour
         playScoreText.text = "Play Score: " + playScore.ToString();
         totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
         timeScoreText.text = "Time Score: " + timeScore.ToString();
+        totalKillText.text = "Total Kill: " + totalKill.ToString();
+    
 
         // キャラクター画像を変更
         if (characterSprites.ContainsKey(selectedCharacter))
@@ -101,6 +106,9 @@ public class ResultManager : MonoBehaviour
 
         // スコアをDynamoDBに送信
         SaveScoreToDynamoDB(playerID, playerName, totalScore);
+
+        string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
+        LoadingCSV.AddRow(rowData);
     }
     
     /// <summary>
@@ -110,6 +118,11 @@ public class ResultManager : MonoBehaviour
     // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
+        if(!AWSCredentials.ServerConnected){
+            Debug.Log("Server is not connected.");
+            return;
+        }
+        
         string rankingCategory = "allTime";
 
         Debug.Log("SaveScoreToDynamoDB is called.");

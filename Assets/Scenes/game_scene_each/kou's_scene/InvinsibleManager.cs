@@ -1,0 +1,30 @@
+using UnityEngine;
+using System.Collections;//コルーチンを使用するため
+
+public class InvinsibleManager : MonoBehaviour
+{
+    public GameObject gameObject;
+
+    //無敵を付与されているか確認するため
+    private bool isInvinsible;
+
+    void Start()
+    {
+        isInvinsible = 0;
+    }
+
+    public IEnumerator Invinsible(float delaytime)
+    {
+        if (!invinsibleflag)
+        {
+            //無敵付与
+            isInvinsible = 1;
+
+            //コルーチンで指定秒数待機
+            yield return new WaitForSeconds(delaytime);
+            
+            //無敵解除
+            isInvinsible = 0;
+        }
+    }
+}

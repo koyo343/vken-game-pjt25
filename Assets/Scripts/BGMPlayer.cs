@@ -4,9 +4,9 @@ using UnityEngine;
 public class BGMPlayer : MonoBehaviour
 {
     // このスクリプトのインスタンス（実体）を、どこからでもアクセスできるように静的変数で保持する
-    public static BGMPlayer instance;
+    public static BGMPlayer instance { get; private set; }
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     // ゲームが開始される一番最初のタイミングで一度だけ呼ばれる
     void Awake()
@@ -27,7 +27,7 @@ public class BGMPlayer : MonoBehaviour
         }
 
         // AudioSourceコンポーネントを取得
-        audioSource = GetComponent<AudioSource>();
+        GetAudioComponent();
     }
 
     /// <summary>
@@ -36,9 +36,13 @@ public class BGMPlayer : MonoBehaviour
     /// <param name="bgmClip">再生したいAudioClip</param>
     public void PlayBGM(AudioClip bgmClip)
     {
+        Debug.Log("PlayBGM is called.");
+        GetAudioComponent();
+        
         // 再生するBGMがnull、または現在再生中のBGMと同じ場合は何もしない
         if (bgmClip == null || audioSource.clip == bgmClip)
         {
+            Debug.Log($"bgmClip is null or already playing the same BGM: {bgmClip.name}");
             return;
         }
 
@@ -46,7 +50,14 @@ public class BGMPlayer : MonoBehaviour
         audioSource.clip = bgmClip;
         audioSource.loop = true;
         audioSource.Play();
+        Debug.Log($"Play BGM:{bgmClip.name}");
     }
+
+    public void GetAudioComponent()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
 
     /// <summary>
     /// BGMの再生を停止するメソッド
@@ -54,5 +65,24 @@ public class BGMPlayer : MonoBehaviour
     public void StopBGM()
     {
         audioSource.Stop();
+    }
+
+    public static void CheckNullBGMInstance()
+    {
+        // シーン内に他にBGMPlayerインスタンスが存在しないかチェック
+        if (instance == null)
+        {
+            // 新しいGameObjectを作成
+            GameObject managerObject = new GameObject("BGMPlayer");
+            DontDestroyOnLoad(managerObject);
+            // スクリプトをアタッチしてInstanceを初期化
+            managerObject.AddComponent<BGMPlayer>();
+            Debug.Log("Generate BGMPlayer Instance");
+        } else {
+            GameObject managerObject = instance.gameObject;
+            managerObject.AddComponent<BGMPlayer>();
+            Debug.Log("BGMPlayer Instance already exists");
+            return;
+        }
     }
 }

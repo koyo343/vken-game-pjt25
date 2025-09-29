@@ -4,6 +4,7 @@ Temp/
 Logs/
 Obj/
 MemoryCaptures/
+UserSettings/Layouts/
 
 # Ignore the editor settings
 .vscode/
@@ -31,4 +32,4 @@ Builds/
 .DS_Store
 
 .env
-UserSettings/
+SavedScoreLocal.csv

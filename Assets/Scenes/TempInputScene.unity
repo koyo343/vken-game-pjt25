@@ -2844,16 +2844,16 @@ MonoBehaviour:
   characterButtons:
   - button: {fileID: 1874352699}
     characterName: "\u3068\u304D\u306E\u305D\u3089"
-    characterSprite: {fileID: 632301620031758097, guid: 15b476520c47b9b449aace835620807d, type: 3}
+    characterSprite: {fileID: -4204167777653060534, guid: 4e8dee011b7a18845bdc9a3124066f9e, type: 3}
   - button: {fileID: 305267703}
     characterName: "\u5263\u6301\u5200\u4E5F"
-    characterSprite: {fileID: 8531029878543443940, guid: e4106bb926abbfe42a19416b32e666e8, type: 3}
+    characterSprite: {fileID: -5206354335178604344, guid: 5d17af05c3680a645b97e0b87f20c0e7, type: 3}
   - button: {fileID: 28952854}
     characterName: "\u6708\u30CE\u7F8E\u514E"
-    characterSprite: {fileID: -3938408722033731490, guid: 64566442cf802214d943107c1b78e04b, type: 3}
+    characterSprite: {fileID: 2220689668680295836, guid: 7f4252dbcd9347f4aaa90c36f4fc5712, type: 3}
   - button: {fileID: 1759090165}
     characterName: "\u4E00\u30CE\u702C\u3046\u308B\u306F"
-    characterSprite: {fileID: -1286650749685352652, guid: ef000a9438c3e8f44a1d60654f8d869c, type: 3}
+    characterSprite: {fileID: -1045518054933112372, guid: 6e2d0fac841611c42b60a8574fd164e7, type: 3}
   saveButton: {fileID: 1291890638}
 --- !u!4 &800496062
 Transform:
