@@ -13,6 +13,7 @@ public class AttackManager : MonoBehaviour
     //スキルのクールタイム管理インスタンス取得
     //public SkillRecastManager skillManager;
     public GameData_Manager GameData_Manager;
+    public SkillRecastManager SkillRecastManager;
     private Animator animator;
 
     void Start()
@@ -82,9 +83,8 @@ public class AttackManager : MonoBehaviour
         }
 
         //スキルの呼び出し
-        if (Input.GetKeyDown(KeyCode.F) /*&& skillManager.IsSkillReady*/)
+        if(Input.GetKeyDown(KeyCode.F) && SkillRecastManager.IsSkillReady && currentSkillComponent != null)
         {
-            //skillManager.UseSkill();
             StartCoroutine(SkillRoutine());
             currentSkillComponent.PerformSkill();
         }
