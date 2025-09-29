@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-// 抽象クラスとして定義
+// なんでこんなとこ見てるんだよ　作業しろ
 public abstract class CharacterSkill : MonoBehaviour
 {
 
