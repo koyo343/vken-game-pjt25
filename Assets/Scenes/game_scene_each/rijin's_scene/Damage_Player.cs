@@ -11,6 +11,7 @@ public class Damage_player : DamageBase
 
         base.Damage(damage);
 
+        //ここのコメントも仮実装
         Debug.Log("スコアが100減少しました;;");
     }
 
