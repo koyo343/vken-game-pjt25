@@ -12,11 +12,12 @@ public class EnemyCollision : MonoBehaviour
         {
             Debug.Log("DamageAbleコンポーネント取得");
         }
-        
+
         if (damageable != null)
         {
             Debug.Log("ダメージ処理の実行");
             damageable.Damage(0);
+            Destroy(gameObject);
         }
     }
 }
