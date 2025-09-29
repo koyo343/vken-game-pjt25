@@ -15,16 +15,16 @@ public class InvinsibleManager : MonoBehaviour
 
     public IEnumerator Invinsible(float delaytime)
     {
-        if (!invinsibleflag)
+        if (!isInvinsible)
         {
             //無敵付与
-            isInvinsible = 1;
+            isInvinsible = true;
 
             //コルーチンで指定秒数待機
             yield return new WaitForSeconds(delaytime);
-            
+
             //無敵解除
-            isInvinsible = 0;
+            isInvinsible = false;
         }
     }
 }
