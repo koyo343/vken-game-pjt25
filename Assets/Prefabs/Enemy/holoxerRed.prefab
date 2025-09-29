@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2589560866325843403}
   m_Layer: 0
   m_Name: holoxerRed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.05238, y: -1.47807, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7.6, y: 8.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa2df0b9b1adc64c9ba6d2287a3f47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.3
-  moveRangeY: 0.2
+  moveSpeed: 3
+  moveRangeY: 4
   frequencyY: 1
 --- !u!61 &8393329835482424225
 BoxCollider2D:
@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0915b43df51b70944864e51c87a3e5f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchSpeed: 1.5
-  gravityScale: 0.3
+  launchSpeed: 10
+  gravityScale: 1.2
   launchAngle: 45
   launchInterval: 2
   badmarkPrefab: {fileID: 251247817427921042, guid: 1463a3c66fbbd9247b1ae19282e0640e, type: 3}
-  spawnOffset: 0.3
+  spawnOffset: 0.5
