@@ -3553,11 +3553,13 @@ GameObject:
   - component: {fileID: 1584212435}
   - component: {fileID: 1584212434}
   - component: {fileID: 1584212437}
+  - component: {fileID: 1584212440}
   - component: {fileID: 1584212436}
-  - component: {fileID: 1584212438}
+  - component: {fileID: 1584212439}
+  - component: {fileID: 1584212441}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3626,8 +3628,8 @@ Transform:
   m_GameObject: {fileID: 1584212433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1094, y: 521, z: 0}
-  m_LocalScale: {x: 3647.7844, y: 3140.3171, z: 1}
+  m_LocalPosition: {x: -1448.2712, y: 647.6234, z: 0}
+  m_LocalScale: {x: 970.6754, y: 1000.50507, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3640,7 +3642,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584212433}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3693,6 +3695,64 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.1590837}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.32}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.24, y: 0.005569473}
+  m_EdgeRadius: 0
+--- !u!114 &1584212439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584212433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b30ca86d3d68464784c2839d4cbbe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1584212440
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584212433}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -3705,7 +3765,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.24, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &1584212438
+--- !u!114 &1584212441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3714,12 +3774,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1584212433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f640dfe6a8ca86e46a1d4ea486171e00, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9d66569e8a3e342869f780008715d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  boss: {fileID: 1584212433}
-  cameraController: {fileID: 2139318779}
+  holoxer: {fileID: 1584212433}
 --- !u!1 &1603949416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,6 +3798,7 @@ GameObject:
   - component: {fileID: 1603949426}
   - component: {fileID: 1603949425}
   - component: {fileID: 1603949422}
+  - component: {fileID: 1603949429}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4004,6 +4064,20 @@ MonoBehaviour:
   toolObject: {fileID: 978014001}
   toolRotationTime: 1
   isUsingTool: 0
+--- !u!114 &1603949429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440ea594d8dd7e649a14ce28ed52719a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 0}
 --- !u!1 &2048278540
 GameObject:
   m_ObjectHideFlags: 0
