@@ -10,7 +10,7 @@ public class InvinsibleManager : MonoBehaviour
 
     void Start()
     {
-        isInvinsible = 0;
+        isInvinsible = false;
     }
 
     public IEnumerator Invinsible(float delaytime)
