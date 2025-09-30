@@ -3,16 +3,33 @@ using UnityEngine;
 public class Damage_player : DamageBase
 {
     public GameObject player;
+    
+    public InvinsibleManager invinsibleManager;
 
     public override void Damage(int damage)
     {
 
-        /*ここにスコア減算処理を記述*/
+        if (invinsibleManager != null && !invinsibleManager.isInvinsible)
+        {
+            StartCoroutine(invinsibleManager.Invinsible(2f));
 
-        base.Damage(damage);
+            /*ここにスコア減算処理を記述*/
 
-        //ここのコメントも仮実装
-        Debug.Log("スコアが100減少しました;;");
+            base.Damage(damage);
+
+            //ここのコメントも仮実装
+            Debug.Log("スコアが100減少しました;;");
+        }
+        else if (invinsibleManager == null)
+        {
+            Debug.Log("invinsibleManagerが見つかりません");
+        }
+        else if (invinsibleManager.isInvinsible)
+        {
+            //デバッグコメント
+            Debug.Log("無敵時間中のため被弾処理は実行されませんでした");
+        }
+
     }
 
 

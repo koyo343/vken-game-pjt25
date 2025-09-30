@@ -3,10 +3,8 @@ using System.Collections;//コルーチンを使用するため
 
 public class InvinsibleManager : MonoBehaviour
 {
-    public GameObject gameObject;
-
     //無敵を付与されているか確認するため
-    private bool isInvinsible;
+    public bool isInvinsible;
 
     void Start()
     {
