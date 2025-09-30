@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4833444280118051188}
   - component: {fileID: 8393329835482424225}
   - component: {fileID: 2589560866325843403}
+  - component: {fileID: -320766586859636994}
   m_Layer: 0
   m_Name: holoxerRed
   m_TagString: Enemy
@@ -169,3 +170,17 @@ MonoBehaviour:
   launchInterval: 2
   badmarkPrefab: {fileID: 251247817427921042, guid: 1463a3c66fbbd9247b1ae19282e0640e, type: 3}
   spawnOffset: 0.5
+--- !u!114 &-320766586859636994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740744495517577632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9d66569e8a3e342869f780008715d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  holoxer: {fileID: 0}

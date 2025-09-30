@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8970229638173166346}
   - component: {fileID: 3139109462422127410}
   - component: {fileID: 4294781724080786203}
+  - component: {fileID: -2914054083048898594}
+  - component: {fileID: 8834255323899720922}
   m_Layer: 0
   m_Name: holoxer
   m_TagString: Enemy
@@ -177,3 +179,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   gravity: 0
+--- !u!114 &-2914054083048898594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266704961671712856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9d66569e8a3e342869f780008715d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  holoxer: {fileID: 0}
+--- !u!114 &8834255323899720922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266704961671712856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b30ca86d3d68464784c2839d4cbbe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

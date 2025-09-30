@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6118603889133843946}
   - component: {fileID: 3488285686262188201}
   - component: {fileID: 964386881653870241}
+  - component: {fileID: -8939141582534140893}
   m_Layer: 0
   m_Name: yagoo
   m_TagString: Untagged
@@ -100,7 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b2b60b5ae54c944a86a1502d56ca98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  player: {fileID: 0}
+  moveSpeed: 10
   jumpForce: 10
   jumpDistance: 10
   coolDownTime: 3
@@ -114,3 +116,18 @@ MonoBehaviour:
   rockDropHeight: 10
   sr: {fileID: 0}
   chargeColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &-8939141582534140893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755749247670116146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f640dfe6a8ca86e46a1d4ea486171e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  boss: {fileID: 0}
+  cameraController: {fileID: 0}
