@@ -83,7 +83,7 @@ public class AttackManager : MonoBehaviour
         }
 
         //スキルの呼び出し
-        if(Input.GetKeyDown(KeyCode.F) && SkillRecastManager.IsSkillReady && currentSkillComponent != null)
+        if(Input.GetKeyDown(KeyCode.F) /*&& SkillRecastManager.IsSkillReady*/ && currentSkillComponent != null)
         {
             StartCoroutine(SkillRoutine());
             currentSkillComponent.PerformSkill();
