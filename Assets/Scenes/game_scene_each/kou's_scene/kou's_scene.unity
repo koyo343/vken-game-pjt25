@@ -964,7 +964,7 @@ Transform:
   m_GameObject: {fileID: 1535959114}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1014.5796, y: 206.8503, z: 0}
+  m_LocalPosition: {x: 1015.15, y: 205.07, z: 0}
   m_LocalScale: {x: 61.64376, y: 76.25714, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4317,6 +4317,10 @@ GameObject:
   - component: {fileID: 1603949427}
   - component: {fileID: 1603949426}
   - component: {fileID: 1603949425}
+  - component: {fileID: 1603949434}
+  - component: {fileID: 1603949433}
+  - component: {fileID: 1603949432}
+  - component: {fileID: 1603949431}
   - component: {fileID: 1603949422}
   - component: {fileID: 1603949429}
   - component: {fileID: 1603949430}
@@ -4599,7 +4603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  player: {fileID: 0}
+  player: {fileID: 1603949416}
   invinsibleManager: {fileID: 871065247}
 --- !u!114 &1603949430
 MonoBehaviour:
@@ -4614,6 +4618,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvinsible: 0
+--- !u!114 &1603949431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7aca49f794cc4d8696e8c202eed5c7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillRecastTime: 10
+--- !u!114 &1603949432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee3286a32fb7441698d804d812c08d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillRecastTime: 10
+--- !u!114 &1603949433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b3473fcf0854e12a9c9f24ac6df0e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillRecastTime: 10
+  bulletPrefab: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+--- !u!114 &1603949434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acabcd1290de4ae4b60e5b59503231e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillRecastTime: 10
+  toolObject: {fileID: 978014001}
+  toolRotationTime: 1
+  isUsingTool: 0
 --- !u!1 &2048278540
 GameObject:
   m_ObjectHideFlags: 0
