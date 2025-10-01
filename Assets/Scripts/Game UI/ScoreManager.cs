@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour
         if(currentScore < 0){
             currentScore = 0;
         }
+        Debug.Log("スコアを"+ amount + "点追加しました！");
         UpdateScoreDisplay();    // 表示を更新
     }
 

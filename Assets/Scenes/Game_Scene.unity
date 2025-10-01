@@ -1193,7 +1193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e3e6aec54a2ed4687103e13887504a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ScoreData: []
+  _ScoreData:
+  - EventStr: BeatHoloxer
+    Score: 100
+  - EventStr: HitEnemy
+    Score: -100
 --- !u!1001 &197042000
 PrefabInstance:
   m_ObjectHideFlags: 0
