@@ -4390,6 +4390,7 @@ MonoBehaviour:
   toolRotationTime: 1
   isUsingTool: 0
   GameData_Manager: {fileID: 0}
+  SkillRecastManager: {fileID: 0}
 --- !u!95 &938745277
 Animator:
   serializedVersion: 7
@@ -5760,8 +5761,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cdfb376335fee243a7571ab1c43206e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGMlayer: {fileID: 0}
+  BGMPlayer: {fileID: 0}
   BGMtitle: {fileID: 8300000, guid: 8f086cb0f5a9d1c4692ba27620fd8748, type: 3}
+  AdditionalBGMList: []
 --- !u!1 &1265133197
 GameObject:
   m_ObjectHideFlags: 0

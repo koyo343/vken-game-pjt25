@@ -18,12 +18,13 @@ public class BGMPlayer : MonoBehaviour
             instance = this;
             // シーンを移動してもこのオブジェクトが破壊されないようにする
             DontDestroyOnLoad(gameObject);
+            Debug.Log("Generate instance");
         }
         else
         {
-            // すでにBGMPlayerインスタンスが存在する場合、このオブジェクトは不要なので破壊する
-            Destroy(gameObject);
-            return; // 処理を中断
+            //Destroy(gameObject);
+            Debug.Log("instance is already exists");
+            return;
         }
 
         // AudioSourceコンポーネントを取得
