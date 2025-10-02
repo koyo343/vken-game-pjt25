@@ -29,7 +29,7 @@ public class GameData_Manager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
 

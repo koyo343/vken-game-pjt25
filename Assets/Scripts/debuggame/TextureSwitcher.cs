@@ -59,7 +59,7 @@ public class TextureSwitcher : MonoBehaviour
     {
         // 辞書にキャラクターデータを登録
         // 🚨 ここにデバッグログを追加して、ロード結果を確認します 🚨
-        Sprite soraTexture = Resources.Load<Sprite>("Materials/Chara/sora/TokinoSora_stand");
+        Sprite soraTexture = Resources.Load<Sprite>("Materials/BackGroundImage/holo");
         RuntimeAnimatorController soraBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tokino/toki");
         AudioClip soraBGM = Resources.Load<AudioClip>("Materials/BGM/holo");
         //string soraDictionaly = "Materials/Texture/sora/";
@@ -67,21 +67,21 @@ public class TextureSwitcher : MonoBehaviour
         Debug.Log($"Sora's Texture is exist: {(soraTexture != null)&(soraBossAnimator != null)&(soraBGM != null)}");
         TextureData.Add("ときのそら", new CharacterToTextureData(soraTexture, soraBossAnimator, soraBGM));
 
-        Sprite kenTexture = Resources.Load<Sprite>("Materials/Chara/ken/KenmochiToya_stand");
+        Sprite kenTexture = Resources.Load<Sprite>("Materials/BackGroundImage/niji");
         RuntimeAnimatorController kenBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/kenmochi/ken");
         AudioClip kenBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Kenmochi Load] Sprite is exist: {kenTexture != null}, BossAnimator is exist: {kenBossAnimator != null}, BGM is exist: {kenBGM != null}");
         Debug.Log($"Kenmochi's Texture is exist: {(kenTexture != null)&(kenBossAnimator != null)&(kenBGM != null)}");
         TextureData.Add("剣持刀也", new CharacterToTextureData(kenTexture, kenBossAnimator, kenBGM));
 
-        Sprite mitoTexture = Resources.Load<Sprite>("Materials/Chara/tsukino/TsukinoMito_stand");
+        Sprite mitoTexture = Resources.Load<Sprite>("Materials/BackGroundImage/niji");
         RuntimeAnimatorController mitoBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tsukino/tsuki");
         AudioClip mitoBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Mito Load] Sprite is exist: {mitoTexture != null}, BossAnimator is exist: {mitoBossAnimator != null}, BGM is exist: {mitoBGM != null}");
         Debug.Log($"Mito's Texture is exist: {(mitoTexture != null)&(mitoBossAnimator != null)&(mitoBGM != null)}");
         TextureData.Add("月ノ美兎", new CharacterToTextureData(mitoTexture, mitoBossAnimator, mitoBGM));
 
-        Sprite uruhaTexture = Resources.Load<Sprite>("Materials/Chara/uruha/Ichinose_stand");
+        Sprite uruhaTexture = Resources.Load<Sprite>("Materials/BackGroundImage/vspo");
         RuntimeAnimatorController uruhaBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/ichinose/ichi");
         AudioClip uruhaBGM = Resources.Load<AudioClip>("Materials/BGM/vspo");
         Debug.Log($"[Uruha Load] Sprite is exist: {uruhaTexture != null}, BossAnimator is exist: {uruhaBossAnimator != null}, BGM is exist: {uruhaBGM != null}");
@@ -90,16 +90,16 @@ public class TextureSwitcher : MonoBehaviour
         
         Debug.Log($"Loaded {TextureData.Count} texture data.");
 
-        string soraDictionaly = "Materials/Texture/sora/objects/";
+        string soraDictionaly = "Materials/Texture/holo/objects/";
         BackObjectData.Add("ときのそら", new CharacterToBackObjectData(soraDictionaly));
 
-        string kenDictionaly = "Materials/Texture/ken/objects/";
+        string kenDictionaly = "Materials/Texture/niji/objects/";
         BackObjectData.Add("剣持刀也", new CharacterToBackObjectData(kenDictionaly));
 
-        string mitoDictionaly = "Materials/Texture/tsukino/objects/";
+        string mitoDictionaly = "Materials/Texture/niji/objects/";
         BackObjectData.Add("月ノ美 dogs", new CharacterToBackObjectData(mitoDictionaly));
 
-        string uruhaDictionaly = "Materials/Texture/uruha/objects/";
+        string uruhaDictionaly = "Materials/Texture/vspo/objects/";
         BackObjectData.Add("一ノ瀬うるは", new CharacterToBackObjectData(uruhaDictionaly));
 
     }
@@ -215,9 +215,6 @@ public class TextureSwitcher : MonoBehaviour
                 BGMManager.callPlayBGM();
                 Debug.Log($"BGMを更新しました。 ：'{selectedCharacter}'");
             }
-
-
-
 
 
             Debug.Log($"Textureを更新しました。 ：'{selectedCharacter}'");
