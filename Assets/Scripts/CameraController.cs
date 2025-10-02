@@ -16,6 +16,10 @@ public class CameraController : MonoBehaviour
 
     //カメラがこれ以上下に動かないようにする限界位置
     private float minYPosition;
+
+    //ボス部屋のはじめ
+    private float bossXPosition;
+
     //セーブポイント
     public Vector3 SavePoint;
     //ボスフラグ
@@ -28,14 +32,16 @@ public class CameraController : MonoBehaviour
     {
         // ゲーム開始時のカメラの左端、上限、下限の座標を設定してください
         //数字の後ろにfつけないと動きません
-        minXPosition = -7012f;
+        minXPosition = 0f;
         maxXPosition = 1000f;
-        maxYPosition = 1500f;
-        minYPosition = -2000f;
+        maxYPosition = 1000f;
+        minYPosition = -1000f;
+
+        bossXPosition = 800f;
 
         //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
         //ここは初期スポーンを記述してください
-        SavePoint = new Vector3(-3800f, 146f, 0f);
+        SavePoint = new Vector3(0f, 0f, 0f);
         FallFlag = false;
 
     }
@@ -67,13 +73,19 @@ public class CameraController : MonoBehaviour
             //minXPositionを更新できるか確認
             if (transform.position.x > minXPosition)
             {
-                minXPosition = transform.position.x;
-            }
-
-            //ボスを倒した場合maxXPositionを更新
-            if (BossFlag == true)
-            {
-                maxXPosition = 3000f;
+                if (transform.position.x > bossXPosition)
+                {
+                    //ボスを倒した場合maxXPositionを更新
+                    if (BossFlag == true)
+                    {
+                        maxXPosition = 3000f;
+                        minXPosition = transform.position.x;
+                    }
+                }
+                else
+                {
+                    minXPosition = transform.position.x;
+                }
             }
         }
     }

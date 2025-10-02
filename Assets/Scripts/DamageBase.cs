@@ -6,7 +6,7 @@ public interface DamageAble
 }
 
 //敵の初期設定
-public abstract class DamageEnemyBase : MonoBehaviour, DamageAble
+public abstract class DamageBase : MonoBehaviour, DamageAble
 {
     //敵体力の初期設定(inspectorからも編集可能)
     [SerializeField] protected int health = 100;

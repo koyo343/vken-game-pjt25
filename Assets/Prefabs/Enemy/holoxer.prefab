@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8970229638173166346}
   - component: {fileID: 3139109462422127410}
   - component: {fileID: 4294781724080786203}
+  - component: {fileID: -2914054083048898594}
+  - component: {fileID: 8834255323899720922}
   m_Layer: 0
   m_Name: holoxer
   m_TagString: Enemy
@@ -151,7 +153,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -162,7 +164,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4294781724080786203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,5 +177,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81eacf43b7144741b1a69a7eb1d4a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 3
   gravity: 0
+--- !u!114 &-2914054083048898594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266704961671712856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9d66569e8a3e342869f780008715d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  holoxer: {fileID: 5266704961671712856}
+  ScoreDictionaryManager: {fileID: 0}
+--- !u!114 &8834255323899720922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5266704961671712856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b30ca86d3d68464784c2839d4cbbe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

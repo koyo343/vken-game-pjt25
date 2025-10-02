@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
 
     // === インスペクターで設定する項目 ===
     [Header("ターゲット (Player)")]
-    private Transform player;
+    public Transform player;
 
     [Header("移動・ジャンプ")]
     public float moveSpeed = 5f;
@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour
         }
 
         // プレイヤーを検索
-        GameObject playerObject = GameObject.FindWithTag("player");
+        GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
             player = playerObject.transform;
