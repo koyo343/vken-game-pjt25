@@ -3264,7 +3264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMlayer: {fileID: 0}
-  BGMManager: {fileID: 1235467084}
+  BGMManager: {fileID: 0}
   GameData_Manager: {fileID: 0}
   BossObject: {fileID: 0}
   BackGroundObject: {fileID: 781478605}
@@ -4390,6 +4390,7 @@ MonoBehaviour:
   toolRotationTime: 1
   isUsingTool: 0
   GameData_Manager: {fileID: 0}
+  SkillRecastManager: {fileID: 0}
 --- !u!95 &938745277
 Animator:
   serializedVersion: 7
@@ -5657,7 +5658,6 @@ GameObject:
   - component: {fileID: 1235467083}
   - component: {fileID: 1235467082}
   - component: {fileID: 1235467081}
-  - component: {fileID: 1235467084}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5748,20 +5748,6 @@ Canvas:
   m_SortingLayerID: -432588231
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1235467084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235467079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cdfb376335fee243a7571ab1c43206e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGMlayer: {fileID: 0}
-  BGMtitle: {fileID: 8300000, guid: 8f086cb0f5a9d1c4692ba27620fd8748, type: 3}
 --- !u!1 &1265133197
 GameObject:
   m_ObjectHideFlags: 0
@@ -7181,6 +7167,7 @@ GameObject:
   - component: {fileID: 1529635611}
   - component: {fileID: 1529635610}
   - component: {fileID: 1529635609}
+  - component: {fileID: 1529635613}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7249,6 +7236,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1529635613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529635608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdfb376335fee243a7571ab1c43206e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMPlayer: {fileID: 0}
+  BGMtitle: {fileID: 8300000, guid: 8f086cb0f5a9d1c4692ba27620fd8748, type: 3}
+  AdditionalBGMList: []
 --- !u!1 &1606154746
 GameObject:
   m_ObjectHideFlags: 0
