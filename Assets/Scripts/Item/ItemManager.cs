@@ -21,6 +21,17 @@ public class ItemManager : MonoBehaviour
     public int scoreValue = 100;         // スコアアップ用
     public int SkillRecast = 3;          // スキル時間短縮用
 
+    //SEを再生するスクリプト
+    private ScoreSE scoreaudio;
+
+    private ItemSE itemaudio;
+
+    void Awake()
+    {
+        itemaudio = GetComponent<ItemSE>();
+        scoreaudio = GetComponent<ScoreSE>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -37,27 +48,73 @@ public class ItemManager : MonoBehaviour
             {
                 case ItemType.SpeedUp:
                     effectsManager.ApplySpeedUp(effectMagnitude, effectDuration);
+                    PlayItemSE();
                     break;
                 case ItemType.JumpUp:
                     effectsManager.ApplyJumpUp(effectMagnitude, effectDuration);
+                    PlayItemSE();
                     break;
                 case ItemType.ScoreUp:
                     effectsManager.AddScore(scoreValue);
+                    PlayScoreSE();
                     break;
                 case ItemType.Invincible:
                     effectsManager.GrantInvincibility();
+                    PlayItemSE();
                     break;
                 case ItemType.Recast:
                     effectsManager.SkillRecast(SkillRecast);
+                    PlayItemSE();
                     break;
                 case ItemType.SavePoints:
                     cameraController.SavePoint = transform.position; 
                     Debug.Log("セーブポイントを更新しました: ");
+                    PlayItemSE();
                     break;
             }
 
             // アイテム自身を消す
             Destroy(gameObject);
+        }
+    }
+    void PlayItemSE()
+    {
+        // 鳴らすべきSEクリップが存在するかチェック
+        if (itemaudio != null && itemaudio.ItemSound != null)
+        {
+            // 💡 シーン内の SEManager インスタンスを探す（シングルトンであると仮定）
+            SEManager seManager = FindObjectOfType<SEManager>();
+
+            if (seManager != null)
+            {
+                // SEManagerに直接、このアイテムのSEクリップを渡して再生を依頼
+                seManager.PlaySE(itemaudio.ItemSound);
+                Debug.Log($"アイテムSEを再生しました: {itemaudio.ItemSound.name}");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+        }
+    }
+    void PlayScoreSE()
+    {
+        // 鳴らすべきSEクリップが存在するかチェック
+        if (scoreaudio != null && scoreaudio.ScoreSound != null)
+        {
+            // 💡 シーン内の SEManager インスタンスを探す（シングルトンであると仮定）
+            SEManager seManager = FindObjectOfType<SEManager>();
+
+            if (seManager != null)
+            {
+                // SEManagerに直接、このアイテムのSEクリップを渡して再生を依頼
+                seManager.PlaySE(scoreaudio.ScoreSound);
+                Debug.Log($"アイテムSEを再生しました: {scoreaudio.ScoreSound.name}");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         }
     }
 }
