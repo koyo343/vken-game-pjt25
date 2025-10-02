@@ -5748,6 +5748,24 @@ Canvas:
   m_SortingLayerID: -432588231
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
+=======
+--- !u!114 &1235467084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235467079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdfb376335fee243a7571ab1c43206e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGMPlayer: {fileID: 0}
+  BGMtitle: {fileID: 8300000, guid: 8f086cb0f5a9d1c4692ba27620fd8748, type: 3}
+  AdditionalBGMList: []
+>>>>>>> d25dcb5e779b1f8a7860d62da846029282570824
 --- !u!1 &1265133197
 GameObject:
   m_ObjectHideFlags: 0
