@@ -217,9 +217,6 @@ public class TextureSwitcher : MonoBehaviour
             }
 
 
-
-
-
             Debug.Log($"Textureを更新しました。 ：'{selectedCharacter}'");
         }
         else
