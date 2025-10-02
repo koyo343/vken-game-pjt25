@@ -49,7 +49,7 @@ public class CharactorAnimationVisualManager : MonoBehaviour
 
         Sprite mitoSprite = Resources.Load<Sprite>("Materials/Chara/tsukino/TsukinoMito_stand");
         RuntimeAnimatorController mitoAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tsukino/tsuki");
-        Sprite mitoItem = Resources.Load<Sprite>("Materials/Chara/tsukino/tsukinoItem");
+        Sprite mitoItem = Resources.Load<Sprite>("Materials/Chara/tsukino/mito_attack");
         Debug.Log($"[Mito Load] Sprite is exist: {mitoSprite != null}, Animator is exist: {mitoAnimator != null}, ItemSprite is exist: {mitoItem != null}");
         characterVisuals.Add("月ノ美兎", new CharacterVisualData(mitoSprite, mitoAnimator, mitoItem));
 
