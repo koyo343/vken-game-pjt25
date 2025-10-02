@@ -4,7 +4,8 @@ public class MoveFloorController : MonoBehaviour
 {
     private float minYPosition;
     private float maxYPosition;
-    private float moveSpeed = 100f;
+    private float standardPosition;
+    private float moveSpeed = 5f;
     private Rigidbody2D rb;
 
     private int Direction = 1;
@@ -12,8 +13,9 @@ public class MoveFloorController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        minYPosition = 190f;
-        maxYPosition = 730f;
+        standardPosition = transform.position.y;
+        minYPosition = standardPosition - 5f;
+        maxYPosition = standardPosition + 5f;
 
         if (rb != null)
         {
