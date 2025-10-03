@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ken_Skill : CharacterSkill
 {
-    public float SkillRecastTime = 10.0f;
+    public float SkillRecastTime = 7.0f;
 
     // 生成する弾のプレハブ
     public GameObject bulletPrefab;
