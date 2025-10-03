@@ -1527,6 +1527,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!1001 &234991937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3609,6 +3611,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5727510846093978714, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 1328947440}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalScale.x
       value: 7
@@ -3619,11 +3625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 211.68
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 677.15
+      value: 677.3
       objectReference: {fileID: 0}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3656,6 +3662,10 @@ PrefabInstance:
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814219217917768730, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

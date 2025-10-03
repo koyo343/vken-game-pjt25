@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Rijin_movement : MonoBehaviour
+public class Rijintest_movement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
