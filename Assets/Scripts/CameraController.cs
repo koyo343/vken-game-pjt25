@@ -32,16 +32,16 @@ public class CameraController : MonoBehaviour
     {
         // ゲーム開始時のカメラの左端、上限、下限の座標を設定してください
         //数字の後ろにfつけないと動きません
-        minXPosition = 0f;
+        minXPosition = -10f;
         maxXPosition = 1000f;
         maxYPosition = 1000f;
-        minYPosition = -1000f;
+        minYPosition = 650f;
 
         bossXPosition = 800f;
 
         //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
         //ここは初期スポーンを記述してください
-        SavePoint = new Vector3(0f, 0f, 0f);
+        SavePoint = new Vector3(-6f, 677f, 0f);
         FallFlag = false;
 
     }

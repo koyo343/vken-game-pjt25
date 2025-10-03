@@ -1,9 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
+
+    public bool jumpCheck = false;
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -13,90 +16,157 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     private Direction lastDirection;
 
+    //CameraControllerインスタンスの取得
+    public CameraController cameraController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        //変数にAnimatorの情報を取得して入れる
         animator = this.GetComponent<Animator>();
     }
 
+    void FixedUpdate()
+    {
+        //移動メソッドの呼び出し
+        Walking();
+
+        //地面判定チェックメソッドの呼び出し
+        GroundCheck();
+
+    }
     void Update()
+    {
+        //ジャンプメソッドの呼び出し
+        Jump();
+
+        //方向メソッドを呼び出す
+        PlayerDirection();
+
+        // 落下判定メソッドを呼び出す
+        FallCheck();
+    }
+
+    void Walking()
     {
         // 左右の移動入力を取得
         float moveInput = Input.GetAxis("Horizontal");
 
-        // 地面にいるかどうかに応じて、移動速度を調整
-        float currentMoveSpeed = moveSpeed;
-        //最後に入力した左右キーを保持
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        // 地面にいる場合のみ、左右の移動を適用
+        if (isGrounded)
         {
-            lastDirection = Direction.Left;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            lastDirection = Direction.Right;
-        }
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        if (!isGrounded) // 地面にいない（空中にいる）場合
-        {
-            if ((moveSpeed > 0 && lastDirection == Direction.Left) || (moveSpeed > 0 && lastDirection == Direction.Right))
+            //地上にいる間はプレイヤーの最後の入力方向を更新する
+            if (moveInput >= 0)
             {
-                currentMoveSpeed *= 0.5f; // 速度を半分にする
+                lastDirection = Direction.Right;
             }
             else
             {
-                moveInput = 0;
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                lastDirection = Direction.Left;
             }
         }
-
-        // プレイヤーの速度を更新
-        rb.linearVelocity = new Vector2(moveInput * currentMoveSpeed, rb.linearVelocity.y);
+        else if (lastDirection == Direction.Right && moveInput < 0)
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
+        }
+        else if (lastDirection == Direction.Left && moveInput > 0)
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
+        }
+        else
+        {
+            // プレイヤーの速度を更新
+            rb.linearVelocity = new Vector2(moveInput * moveSpeed * 0.5f, rb.linearVelocity.y);
+        }
 
         // isWalking の判定
         animator.SetBool("isWalking", Mathf.Abs(moveInput) > 0.01f && isGrounded);
+    }
 
-
+    void Jump()
+    {
         // ジャンプ
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpCheck)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpCheck = false;
+            animator.SetBool("isJumping", true);
         }
 
         if (isGrounded)  // 地面にいる場合
         {
+            jumpCheck = true;
             animator.SetBool("isJumping", false);
         }
         else  // 空中にいる場合
         {
             animator.SetBool("isJumping", true);
         }
-        // プレイヤーの向きを更新
-        if (moveInput < 0)
+    }
+
+    void PlayerDirection()
+    {
+        // 左右の移動入力を取得
+        float moveInput = Input.GetAxis("Horizontal");
+
+        // 地面にいる場合プレイヤーの向きを更新
+        if (isGrounded)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else if (moveInput > 0)
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            if (moveInput < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (moveInput > 0)
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
     }
 
-    // 地面判定
-    void OnCollisionEnter2D(Collision2D collision)
+    void FallCheck()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        // プレイヤーがカメラに映らなくなったら
+        if (!GetComponent<Renderer>().isVisible)
         {
-            isGrounded = true;
+            if (cameraController != null)
+            {
+                cameraController.FallFlag = true;
+                transform.position = cameraController.SavePoint;
+                Debug.Log("Player is fall!!");
+            }
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void GroundCheck()
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        BoxCollider2D playerCollider = GetComponent<BoxCollider2D>();
+        if (playerCollider == null)
         {
             isGrounded = false;
+            return;
         }
+
+        // レイキャストのパラメータを設定
+        Vector2 raycastDirection = Vector2.down;
+        float raycastDistance = 0.2f; // 余裕を持たせた距離
+        LayerMask mask = ~LayerMask.GetMask("Player");
+
+        // レイキャストの開始位置をコライダーの下端から少し内側にずらす
+        float offsetFromEdge = 0.1f;
+        Vector2 leftOrigin = new Vector2(playerCollider.bounds.min.x + offsetFromEdge, playerCollider.bounds.min.y);
+        Vector2 rightOrigin = new Vector2(playerCollider.bounds.max.x - offsetFromEdge, playerCollider.bounds.min.y);
+
+        RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
+        RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
+
+        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
+                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+
+        Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
+        Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
     }
 }

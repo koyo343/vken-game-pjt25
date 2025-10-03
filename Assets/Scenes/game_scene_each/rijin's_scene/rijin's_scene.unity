@@ -1910,10 +1910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5528c1addd650a547a4956df6dbbd5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1000
-  jumpForce: 1300
+  moveSpeed: 5
+  jumpForce: 10
   jumpCount: 1
-  cameraController: {fileID: 1837025298}
+  cameraController: {fileID: 0}
 --- !u!1 &1248931436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,7 +5569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1031096384}
   smoothing: 0.5
-  SavePoint: {x: 0, y: 0, z: 0}
+  SavePoint: {x: -7012, y: 0, z: -10}
   BossFlag: 0
   FallFlag: 0
 --- !u!1 &1848283817
