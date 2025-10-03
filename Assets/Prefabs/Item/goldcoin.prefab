@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1351228262768758115}
   - component: {fileID: 8197428959348017401}
   - component: {fileID: -5070484041828775603}
+  - component: {fileID: -3816472719409614190}
   m_Layer: 0
   m_Name: goldcoin
   m_TagString: Untagged
@@ -152,3 +153,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.28, y: 0.26}
   m_EdgeRadius: 0
+--- !u!114 &-3816472719409614190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295404599515784122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aa87b0c46be854582a85318d01fed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemSound: {fileID: 8300000, guid: b4c8eb56863c6284ab59e947da306ab8, type: 3}
