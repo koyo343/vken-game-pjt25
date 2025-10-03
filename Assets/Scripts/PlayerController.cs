@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         }
         else  // 空中にいる場合
         {
+            jumpCheck = false;
             animator.SetBool("isJumping", true);
         }
     }
