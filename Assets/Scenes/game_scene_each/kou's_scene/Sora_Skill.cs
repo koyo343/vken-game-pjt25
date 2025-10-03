@@ -1,80 +1,63 @@
-//toolObjectをアタッチしてね じゃないと動かんよ
+// toolObjectをキャラクターの子オブジェクトとしてアタッチしてください。
 using UnityEngine;
 using System.Collections;
 
 public class Sora_Skill : CharacterSkill
 {
     public float SkillRecastTime = 10.0f;
-    public GameObject toolObject;
-    public float toolRotationTime = 1.0f;
-    public bool isUsingTool = false;
-    public override void PerformSkill()
-    {
-        Debug.Log("sora skill");
-        isUsingTool = true;
-        StartCoroutine(DashwithTool());
-    }
-    private IEnumerator DashwithTool()
-    {
-        // ダッシュの速度と距離を設定
-        float lungeDistance = 0.4f;
-        float lungeDuration = 0.2f;
 
-        // 道具オブジェクトが割り当てられているか確認
+    [Header("スキル設定")]
+    public GameObject toolObject; // インスペクターから突進時に使う道具をアタッチ
+
+    [Header("突進のパラメータ")]
+    public float lungeDistance = 3.0f; // 突進する距離
+    public float lungeDuration = 0.2f; // 突進にかかる時間
+
+    public override void PerformSkill()
+    {   
+        Debug.Log("sora skill");
+        StartCoroutine(DashWithTool());
+    }
+
+    private IEnumerator DashWithTool()
+    {
+        // 道具オブジェクトが設定されていなければエラーを出して終了
         if (toolObject == null)
         {
-            Debug.LogError("toolObjectが割り当てられていません");
-            isUsingTool = false;
+            Debug.LogError("toolObjectがアタッチされていません");
             yield break;
         }
 
-        toolObject.SetActive(true);
-
-        // キャラクターの開始位置と目標位置を計算
-        Vector3 characterStartPosition = transform.position;
-        Vector3 characterTargetPosition = transform.position;
-
-        // 前方に突き出す方向を決定 (キャラクターの向きに合わせる)
-        if (transform.localScale.x < 0)
+        // try-finallyブロックで、処理の途中で中断されても必ず終了処理が呼ばれるようにする
+        try
         {
-            characterTargetPosition.x -= lungeDistance;
+            // 道具をアクティブにする
+            toolObject.SetActive(true);
+
+            // キャラクターの現在位置と目標位置を計算
+            Vector3 startPosition = transform.position;
+            // キャラクターの向き（右向きが正）に合わせて移動方向を決定
+            Vector3 direction = transform.right * Mathf.Sign(transform.localScale.x);
+            Vector3 targetPosition = startPosition + direction * lungeDistance;
+
+            // 突進処理
+            float elapsedTime = 0f;
+            while (elapsedTime < lungeDuration)
+            {
+                // Lerpを使って現在位置から目標位置へ滑らかに移動
+                transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / lungeDuration);
+
+                elapsedTime += Time.deltaTime;
+                yield return null; // 1フレーム待つ
+            }
+
+            // 確実に目標位置へ移動させる
+            transform.position = targetPosition;
         }
-        else
+        finally
         {
-            characterTargetPosition.x += lungeDistance;
+            // スキル終了処理
+            toolObject.SetActive(false);
         }
-
-        // --- 道具の開始位置と終了位置はそのまま ---
-        Vector3 toolStartPosition = toolObject.transform.localPosition;
-        Vector3 toolTargetPosition = toolStartPosition;
-
-        if (transform.localScale.x < 0)
-        {
-            toolTargetPosition.x -= lungeDistance;
-        }
-        else
-        {
-            toolTargetPosition.x += lungeDistance;
-        }
-
-
-        // --- 前方への移動 ---
-        float elapsedTime = 0f;
-        while (elapsedTime < lungeDuration)
-        {
-            // 道具とキャラクターの両方を補間移動
-            toolObject.transform.localPosition = Vector3.Lerp(toolStartPosition, toolTargetPosition, (elapsedTime / lungeDuration));
-            transform.position = Vector3.Lerp(characterStartPosition, characterTargetPosition, (elapsedTime / lungeDuration));
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        // 確実に終了位置に
-        toolObject.transform.localPosition = toolTargetPosition;
-        transform.position = characterTargetPosition;
-
-        // アニメーション終了後に道具を非表示に戻す
-        toolObject.SetActive(false);
-        isUsingTool = false;
     }
 }

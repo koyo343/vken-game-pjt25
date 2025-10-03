@@ -12,6 +12,11 @@ public class Bullet : MonoBehaviour
     /// </summary>
     public GameObject explosionPrefab;
 
+    /// <summary>
+    /// 敵に当たっても消えないか（貫通するか）
+    /// </summary>
+    public bool isPenetrating = false;
+
     private void Update()
     {
         // 弾を前方に移動させる
@@ -67,7 +72,12 @@ public class Bullet : MonoBehaviour
             
             // ぶつかった敵とこの弾自身を消す
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            
+             // 貫通しない弾（isPenetratingがfalse）の場合だけ、弾自身を消す
+            if (!isPenetrating)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
