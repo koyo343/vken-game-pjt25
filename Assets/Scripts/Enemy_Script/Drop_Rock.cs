@@ -19,8 +19,16 @@ public class RockBehaviour : MonoBehaviour
                 rb.linearVelocity = Vector2.zero;
                 rb.isKinematic = true; // 物理演算の影響を受けないようにする
             }
-            // 適切な時間後に岩を消す処理を追加しても良い
-            Destroy(gameObject, 0.1f); 
+            Destroy(gameObject, 0.1f);
+        }
+
+        // プレイヤーへの処理
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            /*
+            プレイヤーへのダメージ処理
+            */
+            Destroy(gameObject, 0.1f);
         }
     }
 }
