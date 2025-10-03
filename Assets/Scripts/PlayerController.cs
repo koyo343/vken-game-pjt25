@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
 
     public bool jumpCheck = false;
+    private float debugjump = 0;
     private Rigidbody2D rb;
     private bool isGrounded;
 
@@ -95,6 +96,9 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCheck = false;
             animator.SetBool("isJumping", true);
+        } else if (Input.GetKeyDown(KeyCode.J)) {
+            jumpCheck = true;
+            debugjump++;
         }
 
         if (isGrounded)  // 地面にいる場合
@@ -104,8 +108,11 @@ public class PlayerController : MonoBehaviour
         }
         else  // 空中にいる場合
         {
-            jumpCheck = false;
-            animator.SetBool("isJumping", true);
+            if (debugjump == 0)
+            {
+                jumpCheck = false;
+                animator.SetBool("isJumping", true);
+            }
         }
     }
 
