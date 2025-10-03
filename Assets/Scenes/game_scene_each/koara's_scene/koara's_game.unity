@@ -1824,6 +1824,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 4391119062237852173, guid: c3da0d852f9bd1243945cadf599593ed, type: 3}
 --- !u!61 &306918105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1961,7 +1963,7 @@ Transform:
   m_GameObject: {fileID: 306918103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.52, y: 674.92, z: 0}
+  m_LocalPosition: {x: -0.08, y: 674.92, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2567,7 +2569,7 @@ Transform:
   m_GameObject: {fileID: 538920412}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.37, y: 674.08, z: 0}
+  m_LocalPosition: {x: -15.44, y: 674.21, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2984,6 +2986,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 100
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!50 &665313198
 Rigidbody2D:
   serializedVersion: 5
@@ -3883,6 +3887,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!50 &995598990
 Rigidbody2D:
   serializedVersion: 5
@@ -5539,6 +5545,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!50 &1491490644
 Rigidbody2D:
   serializedVersion: 5
@@ -6221,6 +6229,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!50 &1641517807
 Rigidbody2D:
   serializedVersion: 5
@@ -6523,6 +6533,8 @@ MonoBehaviour:
   effectDuration: 10
   scoreValue: 100
   SkillRecast: 3
+  IsSavepoint: 0
+  Alreadysave: {fileID: 0}
 --- !u!50 &1673510601
 Rigidbody2D:
   serializedVersion: 5
