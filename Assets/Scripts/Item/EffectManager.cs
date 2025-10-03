@@ -51,6 +51,12 @@ public class EffectManager : MonoBehaviour
         StartCoroutine(DamageInvincibilityCoroutine(2f));
     }
 
+     // ■■■ 数秒の無敵効果のみを起動するメソッド ■■■
+    public void ApplyInvincibility(float duration)
+    {
+        StartCoroutine(DamageInvincibilityCoroutine(duration));
+    }
+
     // ■■■ アイテム効果を適用するメソッド群 ■■■
     public void ApplySpeedUp(float multiplier, float duration)
     {
