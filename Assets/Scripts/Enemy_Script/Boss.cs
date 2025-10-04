@@ -90,7 +90,7 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(coolDownTime);
 
             // 攻撃選択
-            int attackChosenNum = Random.Range(0, 4); // 0, 1, 2, 3のいずれか
+            int attackChosenNum = Random.Range(1, 1); // 0, 1, 2, 3のいずれか
 
             currentState = BossState.Attacking;
             rb.linearVelocity = Vector2.zero; // 攻撃中は移動停止
@@ -174,7 +174,7 @@ public class Boss : MonoBehaviour
             }
             
             // 少し間隔を空けて連射
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(1.0f);
         }
     }
 
@@ -214,7 +214,7 @@ public class Boss : MonoBehaviour
         // 突進実行
         rb.linearVelocity = dashDirection * dashSpeed;
 
-        // 突進持続時間待機
+        // 突進持続時間待機a
         yield return new WaitForSeconds(dashDuration);
 
         // --- 突進終了 ---
