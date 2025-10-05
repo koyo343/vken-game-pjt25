@@ -12,7 +12,7 @@ public class CharacterSelectManager : MonoBehaviour
     public Button startButton;
 
     // ゲームシーンのシーン名
-    public string gameSceneName = "GameScene";
+    public string gameSceneName = "Game_Scene";
 
     private Dictionary<int, string> characterNameDatas = new Dictionary<int, string>();
 
