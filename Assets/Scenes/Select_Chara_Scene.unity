@@ -446,7 +446,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6C7A\u5B9A"
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1dcc0f192fd12404592587bc717fd63e, type: 2}
   m_sharedMaterial: {fileID: -7414607657773038653, guid: 1dcc0f192fd12404592587bc717fd63e, type: 2}
@@ -3203,6 +3205,7 @@ GameObject:
   - component: {fileID: 1044107577}
   - component: {fileID: 1044107576}
   - component: {fileID: 1044107575}
+  - component: {fileID: 1044107578}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -3273,7 +3276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1044107576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044107578}
+        m_TargetAssemblyTypeName: MoveScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1044107576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3294,7 +3309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2530564911472380330, guid: b45f5013a4cfc3541bc17758a7016064, type: 3}
+  m_Sprite: {fileID: 8726293238575644662, guid: 50bf90e528264421e988ecc5c880f599, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3312,6 +3327,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044107573}
   m_CullTransparentMesh: 1
+--- !u!114 &1044107578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044107573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf968bf2d1a74d44d99aca61d0880b31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: Game_Scene
 --- !u!1 &1049165298
 GameObject:
   m_ObjectHideFlags: 0
