@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         LayerMask mask = ~LayerMask.GetMask("Player");
 
         // レイキャストの開始位置をコライダーの下端から少し内側にずらす
-        float offsetFromEdge = 0.1f;
+        float offsetFromEdge = 0.2f;
         Vector2 leftOrigin = new Vector2(playerCollider.bounds.min.x + offsetFromEdge, playerCollider.bounds.min.y);
         Vector2 rightOrigin = new Vector2(playerCollider.bounds.max.x - offsetFromEdge, playerCollider.bounds.min.y);
 
