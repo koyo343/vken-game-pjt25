@@ -90,7 +90,7 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(coolDownTime);
 
             // 攻撃選択
-            int attackChosenNum = Random.Range(1, 1); // 0, 1, 2, 3のいずれか
+            int attackChosenNum = Random.Range(0, 3); // 0, 1, 2, 3のいずれか
 
             currentState = BossState.Attacking;
             rb.linearVelocity = Vector2.zero; // 攻撃中は移動停止
