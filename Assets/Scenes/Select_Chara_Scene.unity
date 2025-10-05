@@ -3277,13 +3277,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1044107578}
-        m_TargetAssemblyTypeName: MoveScene, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3336,10 +3336,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044107573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf968bf2d1a74d44d99aca61d0880b31, type: 3}
+  m_Script: {fileID: 11500000, guid: d333f50621aaebe449a199f3f8838f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Game_Scene
+  startButton: {fileID: 1044107575}
+  gameSceneName: Game_Scene
+  objectToggle: {fileID: 0}
+  GameData_Manager: {fileID: 0}
 --- !u!1 &1049165298
 GameObject:
   m_ObjectHideFlags: 0
