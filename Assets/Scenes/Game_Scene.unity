@@ -4820,7 +4820,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4459278190379956900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 786489289}
+      addedObject: {fileID: 811821532}
     - targetCorrespondingSourceObject: {fileID: 5399582524937383524, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1798582841}
@@ -7464,7 +7464,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5727510846093978714, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
   m_PrefabInstance: {fileID: 596717703}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534462889}
+  m_GameObject: {fileID: 811821517}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 267dc845f6ac8204cab7404a6c0c3b0b, type: 3}
@@ -7475,21 +7475,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
   m_PrefabInstance: {fileID: 596717703}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &786489289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534462889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 440ea594d8dd7e649a14ce28ed52719a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  player: {fileID: 0}
-  invinsibleManager: {fileID: 0}
 --- !u!1001 &807349190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7557,6 +7542,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6391983933378941360, guid: 4a6c4a25aa3f46b4b8c946e20d1100d9, type: 3}
   m_PrefabInstance: {fileID: 7916080351085956119}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &811821517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459278190379956900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+  m_PrefabInstance: {fileID: 596717703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &811821532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811821517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440ea594d8dd7e649a14ce28ed52719a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  player: {fileID: 811821517}
+  invinsibleManager: {fileID: 0}
 --- !u!1 &814323869
 GameObject:
   m_ObjectHideFlags: 0
