@@ -34,7 +34,7 @@ public class Ken_Skill : CharacterSkill
                 float direction = Mathf.Sign(transform.localScale.x);
 
                 // 向きと速度を使って、弾に力を加えます。
-                rb.velocity = new Vector2(direction * bulletSpeed, 0);
+                rb.linearVelocity = new Vector2(direction * bulletSpeed, 0);
 
                 // キャラクターが左を向いている場合 (directionが-1の場合)
                 if (direction < 0)
