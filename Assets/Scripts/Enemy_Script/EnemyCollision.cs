@@ -19,5 +19,6 @@ public class EnemyCollision : MonoBehaviour
             damageable.Damage(0);
             Destroy(gameObject);
         }
+        
     }
 }
