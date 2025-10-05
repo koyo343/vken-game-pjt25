@@ -18,7 +18,7 @@ public class AttackManager : MonoBehaviour
 
     void Start()
     {
-
+        animator = GetComponent<Animator>();
         GameData_Manager.CheckNullInstance();
         //道具オブジェクトを非表示にする
         if (toolObject != null)
