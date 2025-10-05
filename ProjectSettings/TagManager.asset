@@ -9,6 +9,7 @@ TagManager:
   - wall
   - Goal
   - Bullet
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
