@@ -27,12 +27,15 @@ public class ScoreSaveManager : MonoBehaviour
     public void OnGameOver()
     {
         Debug.Log("OnGameOver is called.");
+        GameData_Manager.CheckNullInstance();
+
         // ScoreManagerからスコアを取得
         int playScore = scoreManager.currentScore;
         
         // TimerControllerから時間を取得
         float currentTime = TimerControllerforScore.GetCurrentTime();
         float totaltime = TimerControllerforScore.GetTotalTime();
+        //float totalKill = 
 
         // TimerScoreを計算: 残り時間 * 10
         int timerScore = Mathf.Max(0, (int)currentTime * 10);
