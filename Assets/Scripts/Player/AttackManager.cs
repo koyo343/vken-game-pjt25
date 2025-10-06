@@ -10,9 +10,6 @@ public class AttackManager : MonoBehaviour
     public bool isUsingTool = false;
     private CharacterAttack currentAttackComponent;
     private CharacterSkill currentSkillComponent;
-    //スキルのクールタイム管理インスタンス取得
-    //public SkillRecastManager skillManager;
-    public GameData_Manager GameData_Manager;
     public SkillRecastManager SkillRecastManager;
     private Animator animator;
 
@@ -71,6 +68,25 @@ public class AttackManager : MonoBehaviour
                 Debug.LogWarning("未対応のキャラクターです: " + selectedCharacter);
                 break;
         }
+
+        // SkillRecastManagerとcurrentSkillComponentが正しく設定されているか確認
+        if (SkillRecastManager != null && currentSkillComponent != null)
+        {
+            // 取得したスキルコンポーネントからSkillRecastTimeを取得し、
+            // SkillRecastManagerの初期化メソッドに渡す
+            SkillRecastManager.InitializeSkill(currentSkillComponent.SkillRecastTime);
+        }
+        else
+        {
+            if (SkillRecastManager == null)
+            {
+                Debug.LogError("SkillRecastManagerがインスペクターに設定されていません");
+            }
+            if (currentSkillComponent == null)
+            {
+                Debug.LogError("対応するスキルコンポーネントが見つかりませんでした。キャラクター名やアタッチ状況を確認してください。");
+            }
+        }
     }
 
     void Update()
@@ -83,10 +99,18 @@ public class AttackManager : MonoBehaviour
         }
 
         //スキルの呼び出し
-        if(Input.GetKeyDown(KeyCode.F) /*&& SkillRecastManager.IsSkillReady*/ && currentSkillComponent != null)
+        if(Input.GetKeyDown(KeyCode.F) && currentSkillComponent != null)
         {
-            StartCoroutine(SkillRoutine());
-            currentSkillComponent.PerformSkill();
+            //SkillRecastManagerがアクティブになったらtrueとコメントアウトを消す
+            if (/*SkillRecastManager.IsSkillReady*/ true)
+            {
+                StartCoroutine(SkillRoutine());
+                currentSkillComponent.PerformSkill();
+            }
+            else
+            {
+                //Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
+            }
         }
     }
     //スキルのアニメーション処理

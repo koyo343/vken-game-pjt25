@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Ken_Skill : CharacterSkill
 {
-    public float SkillRecastTime = 7.0f;
-
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
     public float bulletSpeed = 10f;
