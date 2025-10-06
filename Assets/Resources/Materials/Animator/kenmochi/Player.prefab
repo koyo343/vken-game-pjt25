@@ -331,9 +331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8265b34c7b4248d3b3a45c0efbcfcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillRecastTime: 10
-  bulletPrefab: {fileID: 6564305981207148596, guid: 7bc18a469dfa71348a15aeebba4b25a3, type: 3}
+  SkillRecastTime: 15
+  bulletPrefab: {fileID: 7685970381826964954, guid: 51eb1b8cbb797440786bf91e0fb6469e, type: 3}
   bulletSpawnPoint: {fileID: 5815018281729776729}
+  bulletSpeed: 0.5
 --- !u!114 &6181321532051405934
 MonoBehaviour:
   m_ObjectHideFlags: 0
