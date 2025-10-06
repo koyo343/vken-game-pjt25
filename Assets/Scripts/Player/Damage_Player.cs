@@ -18,9 +18,6 @@ public class Damage_player : DamageBase
 
             base.Damage(damage);
             scoreDictionaryManager.StrToScore("HitEnemy");
-
-            //ここのコメントも仮実装
-            Debug.Log("スコアが100減少しました;;");
         }
         else if (invinsibleManager == null)
         {

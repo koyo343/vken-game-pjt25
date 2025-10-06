@@ -50,6 +50,15 @@ public class HoloxerRed_Attack : MonoBehaviour
             Debug.LogError("Player GameObject not found. Make sure it has the 'Player' tag.");
         }
 
+        if (scoreDictionaryManager == null)
+        {
+            scoreDictionaryManager = FindObjectOfType<ScoreDictionaryManager>();
+            if (scoreDictionaryManager == null)
+            {
+                Debug.LogWarning("Holoxer: ScoreDictionaryManagerがシーンに見つかりません。スコア処理をスキップします。");
+            }
+        }
+
         FindAndGetPlayerComponent();
     }
 
@@ -135,13 +144,16 @@ public class HoloxerRed_Attack : MonoBehaviour
             }
             Debug.Log("Playerに当たりました");
         }
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {
             // 敵（Holoxer自身）を破壊
-            scoreDictionaryManager.StrToScore("BeatHoloxer");
             Destroy(gameObject);
+            scoreDictionaryManager.StrToScore("BeatHoloxer");
             Debug.Log("Holoxerにダメージ");
 
             // プレイヤーの弾も消したい場合は、ここで相手の弾も破壊するロジックを追加

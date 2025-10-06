@@ -75,7 +75,7 @@ public class Boss : MonoBehaviour
             Debug.LogError("Damage_Bossコンポーネントがボス自身に見つかりません！");
         }
         normalColor = sr.color;
-        
+
         // 攻撃サイクル開始
         StartCoroutine(BossControlRoutine());
     }
@@ -259,16 +259,15 @@ public class Boss : MonoBehaviour
             }
             Debug.Log("Playerに当たりました");
         }
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {
-
             damage_boss.Damage(10);
             Debug.Log("Bossにダメージ");
-
-            // プレイヤーの弾も消したい場合は、ここで相手の弾も破壊するロジックを追加
-            // Destroy(collision.gameObject); 
         }
     }
 

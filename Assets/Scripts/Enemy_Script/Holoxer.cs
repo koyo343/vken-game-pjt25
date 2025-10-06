@@ -7,9 +7,9 @@ public class Holoxer : MonoBehaviour
     public ScoreDictionaryManager scoreDictionaryManager;
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
-    
+
     // Damage_Playerコンポーネント (Playerのダメージ処理スクリプト)
-    private Damage_player playerDamager; 
+    private Damage_player playerDamager;
     private const string PlayerTag = "Player";
 
     void Awake()
@@ -23,12 +23,20 @@ public class Holoxer : MonoBehaviour
         // Rigidbody2DやSpriteRendererはStartで取得
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        
+
         // コンポーネント取得失敗時のスクリプト無効化（安全対策）
         if (rb == null || sr == null)
         {
             Debug.LogError("Holoxer: Rigidbody2D/SpriteRenderer コンポーネントが必要です。");
             enabled = false;
+        }
+        if (scoreDictionaryManager == null)
+        {
+            scoreDictionaryManager = FindObjectOfType<ScoreDictionaryManager>();
+            if (scoreDictionaryManager == null)
+            {
+                Debug.LogWarning("Holoxer: ScoreDictionaryManagerがシーンに見つかりません。スコア処理をスキップします。");
+            }
         }
     }
 
@@ -39,7 +47,7 @@ public class Holoxer : MonoBehaviour
             // ★修正点 1★: Y軸速度を維持して自然な落下を実現
             int xVector = -1;
             transform.localScale = new Vector3(8, 8, 1);
-            
+
             // X軸に移動速度を設定し、Y軸には既存の速度（重力による落下）を維持
             rb.linearVelocity = new Vector2(xVector * speed, rb.linearVelocity.y);
         }
@@ -62,15 +70,19 @@ public class Holoxer : MonoBehaviour
             }
             Debug.Log("Playerに当たりました");
         }
-        
+
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {
             // 敵（Holoxer自身）を破壊
-            scoreDictionaryManager.StrToScore("BeatHoloxer");
             Destroy(gameObject);
+            scoreDictionaryManager.StrToScore("BeatHoloxer");
             Debug.Log("Holoxerにダメージ");
-            
+
             // プレイヤーの弾も消したい場合は、ここで相手の弾も破壊するロジックを追加
             // Destroy(collision.gameObject); 
         }
