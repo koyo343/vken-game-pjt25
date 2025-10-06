@@ -221,7 +221,7 @@ public class TextureSwitcher : MonoBehaviour
             {
                 Debug.Log("test2-1");
                 animator.runtimeAnimatorController = selectedTextureData.animatorController;
-                Debug.Log($"Animatorを適用しました'{selectedTextureData.animatorController.name}'");
+                Debug.Log($"BossAnimatorを適用しました'{selectedTextureData.animatorController.name}'");
             }
             else
             {
