@@ -10,32 +10,32 @@ public class Badmark : MonoBehaviour
     private const string PlayerTag = "Player";
     void Start()
     {
-
+        FindAndGetPlayerComponent();
+        Destroy(gameObject, 4.0f);
     }
     void Update()
     {
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // 衝突した相手にGroundタグが付いているとき
-        if (collision.gameObject.tag == "Ground")
+        // 地面、プレイヤーの弾に接したら消滅
+        /*if (other.CompareTag("Ground") )
         {
-            Debug.Log("Groundに当たりました");
-            // 0.01秒後に消える
-            Destroy(gameObject, 0.01f);
+            Debug.Log("建物に当たりました");
+            Destroy(gameObject); // 遅延なしで即時削除
+            return; // 処理を終了
         }
-
-        // 衝突した相手にPlayerタグが付いているとき
-        if (collision.gameObject.tag == "Player")
+        */
+        // プレイヤーへの処理
+        if (other.CompareTag("Player"))
         {
-            /*
-            ここにPlayerがあたったときのスコア処理
-            */
-
             Debug.Log("Playerに当たりました");
-            Destroy(gameObject);
+            //プレイヤーへのダメージ処理
+            playerDamager.Damage(0);
+            Destroy(gameObject); // 遅延なしで即時削除
+            return; // 処理を終了
         }
     }
 
@@ -66,4 +66,6 @@ public class Badmark : MonoBehaviour
             Debug.LogError($"シーン内に '{PlayerTag}' タグを持つオブジェクトが見つかりません。");
         }
     }
+
+    
 }
