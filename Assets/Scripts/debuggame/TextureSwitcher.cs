@@ -67,7 +67,7 @@ public class TextureSwitcher : MonoBehaviour
         // 辞書にキャラクターデータを登録
         // 🚨 ここにデバッグログを追加して、ロード結果を確認します 🚨
         Sprite soraTexture = Resources.Load<Sprite>("Materials/BackGroundImage/holo");
-        RuntimeAnimatorController soraBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tokino/toki");
+        RuntimeAnimatorController soraBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/yagoo/yagoo");
         AudioClip soraBGM = Resources.Load<AudioClip>("Materials/BGM/holo");
         //string soraDictionaly = "Materials/Texture/sora/";
         Debug.Log($"[Sora Load] Sprite is exist: {soraTexture != null}, BossAnimator is exist: {soraBossAnimator != null}, BGM is exist: {soraBGM != null}");
@@ -75,21 +75,21 @@ public class TextureSwitcher : MonoBehaviour
         TextureData.Add("ときのそら", new CharacterToTextureData(soraTexture, soraBossAnimator, soraBGM));
 
         Sprite kenTexture = Resources.Load<Sprite>("Materials/BackGroundImage/niji");
-        RuntimeAnimatorController kenBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/kenmochi/ken");
+        RuntimeAnimatorController kenBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/devi/devi");
         AudioClip kenBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Kenmochi Load] Sprite is exist: {kenTexture != null}, BossAnimator is exist: {kenBossAnimator != null}, BGM is exist: {kenBGM != null}");
         Debug.Log($"Kenmochi's Texture is exist: {(kenTexture != null) & (kenBossAnimator != null) & (kenBGM != null)}");
         TextureData.Add("剣持刀也", new CharacterToTextureData(kenTexture, kenBossAnimator, kenBGM));
 
         Sprite mitoTexture = Resources.Load<Sprite>("Materials/BackGroundImage/niji");
-        RuntimeAnimatorController mitoBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/tsukino/tsuki");
+        RuntimeAnimatorController mitoBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/devi/devi");
         AudioClip mitoBGM = Resources.Load<AudioClip>("Materials/BGM/niji");
         Debug.Log($"[Mito Load] Sprite is exist: {mitoTexture != null}, BossAnimator is exist: {mitoBossAnimator != null}, BGM is exist: {mitoBGM != null}");
         Debug.Log($"Mito's Texture is exist: {(mitoTexture != null) & (mitoBossAnimator != null) & (mitoBGM != null)}");
         TextureData.Add("月ノ美兎", new CharacterToTextureData(mitoTexture, mitoBossAnimator, mitoBGM));
 
         Sprite uruhaTexture = Resources.Load<Sprite>("Materials/BackGroundImage/vspo");
-        RuntimeAnimatorController uruhaBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/ichinose/ichi");
+        RuntimeAnimatorController uruhaBossAnimator = Resources.Load<RuntimeAnimatorController>("Materials/Animator/reid/reid");
         AudioClip uruhaBGM = Resources.Load<AudioClip>("Materials/BGM/vspo");
         Debug.Log($"[Uruha Load] Sprite is exist: {uruhaTexture != null}, BossAnimator is exist: {uruhaBossAnimator != null}, BGM is exist: {uruhaBGM != null}");
         Debug.Log($"Uruha's Texture is exist: {(uruhaTexture != null) & (uruhaBossAnimator != null) & (uruhaBGM != null)}");

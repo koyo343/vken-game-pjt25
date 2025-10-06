@@ -111,6 +111,7 @@ public class TimerControllerforScore : MonoBehaviour
         currentTime = updateTime;
         isTimeUp = false;
         timeUpCounter = 1f;
+        timerText.color = Color.white;
         UpdateTimerDisplay();
     }
 
