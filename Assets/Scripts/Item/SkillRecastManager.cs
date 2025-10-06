@@ -7,7 +7,7 @@ public class SkillRecastManager : MonoBehaviour
     public Image skillGauge;
 
     [Header("スキルの設定")]
-    public float recastTime = 10f; // スキルが再使用可能になるまでの時間
+    public float recastTime = 10f; // デフォルト値
 
     // --- 外部のスクリプトから参照する変数 ---
     [Tooltip("スキルが使用可能かどうか")]
@@ -15,6 +15,13 @@ public class SkillRecastManager : MonoBehaviour
 
     // --- 内部で使う変数 ---
     public float currentRecastTime = 0f; // 現在のリキャスト時間
+    // 外部からリキャスト時間を設定するメソッド
+    public void InitializeSkill(float newRecastTime)
+    {
+        recastTime = newRecastTime;
+        currentRecastTime = 0f; // リキャストを最初から開始
+        Debug.Log("スキルリキャスト時間を "+ recastTime +" 秒に設定しました。");
+    }
 
     void Start()
     {
@@ -49,13 +56,6 @@ public class SkillRecastManager : MonoBehaviour
     // スキルを使用する処理 
     public void UseSkill()
     {
-        // スキルが使用可能でなければ何もしない
-        if (!IsSkillReady)
-        {
-            Debug.Log("スキルはまだ使えません。");
-            return;
-        }
-
         Debug.Log("スキル発動！");
 
         // スキルを使用したので、リキャスト状態に戻す
