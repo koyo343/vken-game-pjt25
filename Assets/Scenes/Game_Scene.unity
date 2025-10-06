@@ -2052,7 +2052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9191577768180922995, guid: 3565985aa4c0bee4d8144bd65003d7d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -253.82666
+      value: -251.89
       objectReference: {fileID: 0}
     - target: {fileID: 9191577768180922995, guid: 3565985aa4c0bee4d8144bd65003d7d1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5145,6 +5145,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1577435432058386629, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061794003043004135, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3522644
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061794003043004135, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5295671
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061794003043004135, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.036173373
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061794003043004135, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.15467805
+      objectReference: {fileID: 0}
     - target: {fileID: 4459278190379956900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_Name
       value: Player
@@ -5173,6 +5193,18 @@ PrefabInstance:
       propertyPath: uruha_Attack
       value: 
       objectReference: {fileID: 655609730}
+    - target: {fileID: 6181321532051405934, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: GameData_Manager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642707253736322900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: invinsibleManager
+      value: 
+      objectReference: {fileID: 867720554}
+    - target: {fileID: 6642707253736322900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: scoreDictionaryManager
+      value: 
+      objectReference: {fileID: 195400148}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 164.97
@@ -5220,7 +5252,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5399582524937383524, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1798582842}
   m_SourcePrefab: {fileID: 100100000, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
 --- !u!1 &596717704 stripped
 GameObject:
@@ -23864,6 +23899,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5399582524937383524, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
   m_PrefabInstance: {fileID: 596717703}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1798582842
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798582838}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1801049593
 PrefabInstance:
   m_ObjectHideFlags: 0
