@@ -37,9 +37,10 @@ public class CharacterSelectManager : MonoBehaviour
         startButton.onClick.AddListener(OnCharacterSelected);
 
         // ゲーム開始ボタンにメソッドを登録
-        //startButton.onClick.AddListener(OnGameStart);
+        startButton.onClick.AddListener(OnGameStart);
         GameData_Manager.CheckNullInstance();
     }
+    
 
     /// <summary>
     /// キャラクター選択ボタンが押されたときの処理
@@ -82,7 +83,6 @@ public class CharacterSelectManager : MonoBehaviour
             Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
         }
     }
-    /*
     /// <summary>
     /// ゲーム開始ボタンが押されたときの処理
     /// </summary>
@@ -91,5 +91,4 @@ public class CharacterSelectManager : MonoBehaviour
         // ゲームシーンに遷移
         SceneManager.LoadScene(gameSceneName);
     }
-    */
 }
