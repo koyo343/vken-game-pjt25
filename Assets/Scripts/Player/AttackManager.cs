@@ -10,7 +10,6 @@ public class AttackManager : MonoBehaviour
     public bool isUsingTool = false;
     private CharacterAttack currentAttackComponent;
     private CharacterSkill currentSkillComponent;
-    public GameData_Manager GameData_Manager;
     public SkillRecastManager SkillRecastManager;
     private Animator animator;
 
@@ -102,14 +101,15 @@ public class AttackManager : MonoBehaviour
         //スキルの呼び出し
         if(Input.GetKeyDown(KeyCode.F) && currentSkillComponent != null)
         {
-            if(SkillRecastManager.IsSkillReady)
+            //SkillRecastManagerがアクティブになったらtrueとコメントアウトを消す
+            if (/*SkillRecastManager.IsSkillReady*/ true)
             {
                 StartCoroutine(SkillRoutine());
                 currentSkillComponent.PerformSkill();
             }
             else
             {
-                Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
+                //Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
             }
         }
     }
