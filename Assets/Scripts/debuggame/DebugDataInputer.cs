@@ -155,10 +155,15 @@ public class DebugDataInputer : MonoBehaviour
             return;
         }
         string characterName = GameData_Manager.Instance.selectedCharacter;
-        scoreManager.UpdateScoreDirectly(score);
+        scoreManager.UpdateScoreDirectly(playScore);
+        Debug.Log($"Saved Data!{playerName} {score}");
 
         float timeLeftsf = (float)timeLefts;
+        Debug.Log($"timeLeftsf: {timeLeftsf}");
+        
         float currentTimef = (float)currentTime;
+        Debug.Log($"currentTimef: {currentTimef}");
+
 
         TimerControllerforScore.UpdateTimerDirectly(timeLeftsf);
         TimerControllerforScore.UpdateTotalTimeDirectly(currentTimef);

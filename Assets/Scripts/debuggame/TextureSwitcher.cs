@@ -199,24 +199,27 @@ public class TextureSwitcher : MonoBehaviour
         // 辞書から対応するビジュアルデータを取得
         if (TextureData.ContainsKey(selectedCharacter))
         {
+            Debug.Log("test");
             CharacterToTextureData selectedTextureData = TextureData[selectedCharacter];
 
             // Sprite RendererにSpriteを適用:背景
-            SpriteRenderer spriteRenderer = BackGroundObject.GetComponent<SpriteRenderer>();
-            if (spriteRenderer != null)
+             // Sprite RendererにSpriteを適用:背景
+            if (BackGroundObject != null)
             {
-                spriteRenderer.sprite = selectedTextureData.sprite;
-                Debug.Log($"背景画像を'{selectedCharacter}'textureに更新しました。");
+                BackGroundObject.sprite = selectedTextureData.sprite;
+                Debug.Log($"背景画像を'{selectedCharacter}'のImageに更新しました。");
             }
             else
             {
-                Debug.LogError("背景用のobjectにSpriteRendererコンポーネントが見つかりません。");
+                Debug.LogError("BackGroundImageコンポーネントが見つかりません。");
             }
 
             // AnimatorにAnimator Controllerを適用
+            Debug.Log("test2");
             Animator animator = BossObject.GetComponent<Animator>();
             if (animator != null)
             {
+                Debug.Log("test2-1");
                 animator.runtimeAnimatorController = selectedTextureData.animatorController;
                 Debug.Log($"Animatorを適用しました'{selectedTextureData.animatorController.name}'");
             }
@@ -225,14 +228,15 @@ public class TextureSwitcher : MonoBehaviour
                 Debug.LogError("Player GameObjectにAnimatorコンポーネントが見つかりません。");
             }
 
-            AudioClip BGM = BGMManager.GetComponent<AudioClip>();
-            if (BGM != null)
-            {
-                BGMManager.BGMtitle = selectedTextureData.BGM;
-                BGMManager.updateBGMtitle(selectedTextureData.BGM);
-                BGMManager.callPlayBGM();
-                Debug.Log($"BGMを更新しました。 ：'{selectedCharacter}'");
-            }
+            Debug.Log("test3");
+
+            
+            Debug.Log("test3-1");
+            BGMManager.BGMtitle = selectedTextureData.BGM;
+            BGMManager.updateBGMtitle(selectedTextureData.BGM);
+            BGMManager.callPlayBGM();
+            Debug.Log($"BGMを更新しました。 ：'{selectedCharacter}'");
+    
 
 
             Debug.Log($"Textureを更新しました。 ：'{selectedCharacter}'");

@@ -10,6 +10,9 @@ public class Debugmode : MonoBehaviour
     public GameObject Debugpanel;
     public TextMeshProUGUI debugText; // 変数名をより分かりやすく
 
+    public MultiInputFocusChecker InputtingChecker;
+
+
     [Header("デバッグモード有効時に表示する文字")]
     public string debugModeMessage = "DEBUG MODE";
 
@@ -98,11 +101,14 @@ public class Debugmode : MonoBehaviour
                             currentSequenceIndex = 0;
                         }
                 }
-            } else if(isDebug)
+            } else if(isDebug && !InputtingChecker.IsAnyInputFieldFocused())
             {
-                if(Input.GetKeyDown(KeyCode.P)||Input.GetKeyDown(KeyCode.O)){
+                if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.O))
+                {
                     Debug.Log($"キーが押されました: {pressedKey}:debug mode not end");
-                } else {
+                }
+                else
+                {
                     Debug.Log($"キーが押されました: {pressedKey}:debug mode end");
                     currentSequenceIndex = 0;
                     isDebug = false;

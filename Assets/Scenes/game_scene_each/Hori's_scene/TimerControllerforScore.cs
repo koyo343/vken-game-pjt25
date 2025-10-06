@@ -109,6 +109,8 @@ public class TimerControllerforScore : MonoBehaviour
     public void UpdateTimerDirectly(float updateTime)
     {
         currentTime = updateTime;
+        isTimeUp = false;
+        timeUpCounter = 1f;
         UpdateTimerDisplay();
     }
 

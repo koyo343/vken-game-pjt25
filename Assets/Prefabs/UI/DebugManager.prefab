@@ -3302,6 +3302,7 @@ GameObject:
   - component: {fileID: 222257253620699099}
   - component: {fileID: 2503279691637489287}
   - component: {fileID: 8562569644258815151}
+  - component: {fileID: -6918175497402447231}
   m_Layer: 0
   m_Name: DebugManager
   m_TagString: Untagged
@@ -3339,6 +3340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debugpanel: {fileID: 5989428956400488773}
   debugText: {fileID: 5073367091979256539}
+  InputtingChecker: {fileID: 0}
   debugModeMessage: DEBUG MODE
   sequence: 75000000740000006b00000074000000
   timeOutSeconds: 1.5
@@ -3398,6 +3400,23 @@ MonoBehaviour:
   CancelButton: {fileID: 1153090736748814538}
   LocalmodeMessage: Local Mode
   PublicmodeMessage: Public Mode
+--- !u!114 &-6918175497402447231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073838671482363532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34c0054bea59d44aa540c9c43ea12c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetInputFields:
+  - {fileID: 104834281883777184}
+  - {fileID: 6320428393591300622}
+  - {fileID: 7297854670439281909}
+  - {fileID: 6242728110661541021}
 --- !u!1 &5284719918764537719
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ public class EnemyCollision : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("衝突検知:" + other.GetComponent<DamageAble>());
+        //Debug.Log("衝突検知:" + other.GetComponent<DamageAble>());
 
         DamageAble damageable = other.GetComponent<DamageAble>();
 

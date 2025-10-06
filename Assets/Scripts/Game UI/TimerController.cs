@@ -95,7 +95,6 @@ public class TimerController : MonoBehaviour
         timerText.text = seconds.ToString("D3");
     }
 
-    /*
     public void UpdateTimerDirectly(float updateTime)
     {
         currentTime = updateTime;
@@ -106,7 +105,6 @@ public class TimerController : MonoBehaviour
     {
         totaltime = updateTime;
     }
-    */
 
     
 }

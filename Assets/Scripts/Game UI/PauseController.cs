@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseController : MonoBehaviour
 {
@@ -7,26 +8,43 @@ public class PauseController : MonoBehaviour
 
     public GameObject SettingsPanel; // インスペクターからSettingsPanelをアタッチする
 
+    public Button Pausebutton;
+
     private bool isPaused = false; // ポーズ状態を管理するフラグ
 
     private bool issetting = false; // 設定画面を管理するフラグ
 
+    void Awake()
+    {
+        Pausebutton.onClick.AddListener(CheckPause);
+    }
+
     void Update()
     {
-        // Escキーが押されたら、ポーズ状態を切り替える
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
-            {
-                // もしポーズ中なら、ゲームを再開する
-                ResumeGame();
-            }
-            else
-            {
-                // もしポーズ中でないなら、ゲームをポーズする
-                PauseGame();
-            }
+            CheckPause();
         }
+    }
+
+    void CheckPause()
+    {
+        if (isPaused)
+        {
+            // もしポーズ中なら、ゲームを再開する
+            ResumeGame();
+        }
+        else
+        {
+            // もしポーズ中でないなら、ゲームをポーズする
+            PauseGame();
+        }
+    }
+
+    void Start()
+    {
+        PausePanel.SetActive(false);
+        SettingsPanel.SetActive(false);
     }
 
     // ■ ゲームをポーズする処理
