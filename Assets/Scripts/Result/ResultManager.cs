@@ -10,6 +10,8 @@ using System.Collections.Generic;
 public class ResultManager : MonoBehaviour
 {
     // UIコンポーネントをUnityエディタからアタッチ
+
+    public Button refleshButton;
     public TextMeshProUGUI playerNameText;
     public TextMeshProUGUI totalScoreText;
     
@@ -34,10 +36,16 @@ public class ResultManager : MonoBehaviour
         // ここで画像ファイルを辞書に登録
         // 🚨 必ずAssets/Resourcesフォルダに画像ファイルを配置してください 🚨
         characterSprites.Add("ときのそら", Resources.Load<Sprite>("Materials/Chara/tokino-official"));
+        Debug.Log($"[Loading] ときのそら Sprite is exist: {Resources.Load<Sprite>("Materials/Chara/tokino-official") != null}");
         characterSprites.Add("剣持刀也", Resources.Load<Sprite>("Materials/Chara/kenmochi-official"));
+        Debug.Log($"[Loading] 剣持刀也 Sprite is exist: {Resources.Load<Sprite>("Materials/Chara/kenmochi-official") != null}");
         characterSprites.Add("月ノ美兎", Resources.Load<Sprite>("Materials/Chara/tsukino-official"));
-        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/ichinose-officail"));
+        Debug.Log($"[Loading] 月ノ美兎 Sprite is exist: {Resources.Load<Sprite>("Materials/Chara/tsukino-official") != null}");
+        characterSprites.Add("一ノ瀬うるは", Resources.Load<Sprite>("Materials/Chara/ichinose-official"));
+        Debug.Log($"[Loading] 一ノ瀬うるは Sprite is exist: {Resources.Load<Sprite>("Materials/Chara/ichinose-official") != null}");
     }
+
+
 
     void Start()
     {
@@ -45,6 +53,11 @@ public class ResultManager : MonoBehaviour
         AWSCredentials.Initialize();
 
         GameData_Manager.CheckNullInstance();
+
+        refleshButton.onClick.AddListener(RefreshDisplay);
+        //refleshButton.text = "Refresh";
+
+        
 
         // UIコンポーネントが有効か確認
         if (playerNameText == null || totalScoreText == null || playScoreText == null || totalTimeText == null || timeScoreText == null || characterImage == null)
@@ -81,7 +94,7 @@ public class ResultManager : MonoBehaviour
 
         if (characterSprites.ContainsKey(selectedCharacter))
         {
-            Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is null: {characterSprites[selectedCharacter] == null}");
+            Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is exist: {characterSprites[selectedCharacter] != null}");
             characterImage.sprite = characterSprites[selectedCharacter];
         }
 
@@ -91,6 +104,7 @@ public class ResultManager : MonoBehaviour
         playScoreText.text = "Play Score: " + playScore.ToString();
         totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
         timeScoreText.text = "Time Score: " + timeScore.ToString();
+
         totalKillText.text = "Total Kill: " + totalKill.ToString();
     
 
@@ -110,6 +124,56 @@ public class ResultManager : MonoBehaviour
         string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
         LoadingCSV.AddRow(rowData);
     }
+
+    public void RefreshDisplay()
+    {
+
+        GameData_Manager.CheckNullInstance();
+
+        // GameData_Managerから結果を取得
+        string playerID = GameData_Manager.Instance.playerID;
+        string playerName = GameData_Manager.Instance.playerName;
+        int totalScore = GameData_Manager.Instance.TotalScore;
+        int playScore = GameData_Manager.Instance.PlayScore;
+        int totalTime = GameData_Manager.Instance.TotalTime;
+        int timeScore = GameData_Manager.Instance.TimeScore;
+        int totalKill = GameData_Manager.Instance.TotalKill;
+
+        string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
+
+        // UIコンポーネントが有効か確認
+        if (playerNameText == null || totalScoreText == null || playScoreText == null || totalTimeText == null || timeScoreText == null || characterImage == null)
+        {
+            Debug.LogError("リザルト画面のUIコンポーネントがアタッチされていません！");
+            return;
+        }
+
+        if (characterSprites.ContainsKey(selectedCharacter))
+        {
+            Debug.Log($"Loading sprite for: {selectedCharacter}. Sprite is null: {characterSprites[selectedCharacter] == null}");
+            characterImage.sprite = characterSprites[selectedCharacter];
+        }
+
+        // UIに表示
+        playerNameText.text = "PlayerName: " + playerName;
+        totalScoreText.text = "Total Score: " + totalScore.ToString();
+        playScoreText.text = "Play Score: " + playScore.ToString();
+        totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
+        timeScoreText.text = "Time Score: " + timeScore.ToString();
+
+        totalKillText.text = "Total Kill: " + totalKill.ToString();
+    
+
+        // キャラクター画像を変更
+        if (characterSprites.ContainsKey(selectedCharacter))
+        {
+            characterImage.sprite = characterSprites[selectedCharacter];
+        }
+        else
+        {
+            Debug.LogWarning("選択されたキャラクターの画像が見つかりません: " + selectedCharacter);
+        }
+    }
     
     /// <summary>
     /// スコアをDynamoDBに非同期で送信するメソッド
@@ -118,15 +182,16 @@ public class ResultManager : MonoBehaviour
     // ResultManager.cs (SaveScoreToDynamoDBメソッドのみ)
     private async void SaveScoreToDynamoDB(string playerID, string playerName, int newScore)
     {
-        if(!AWSCredentials.ServerConnected){
+        if (!AWSCredentials.ServerConnected)
+        {
             Debug.Log("Server is not connected.");
             return;
         }
-        
+
         string rankingCategory = "allTime";
 
         Debug.Log("SaveScoreToDynamoDB is called.");
-        
+
         if (string.IsNullOrEmpty(playerID))
         {
             Debug.LogError("DynamoDBへの送信に失敗しました: playerIDが設定されていません。");
@@ -140,7 +205,7 @@ public class ResultManager : MonoBehaviour
             Score = newScore,
             RankingCategory = rankingCategory
         };
-        
+
         try
         {
             await context.SaveAsync(item);
@@ -150,6 +215,6 @@ public class ResultManager : MonoBehaviour
         {
             Debug.LogError($"DynamoDBへのスコア送信に失敗しました: {e.Message}");
         }
-        
+
     }  
 }
