@@ -37,13 +37,35 @@ public class ScoreManager : MonoBehaviour
     }
 
     public void AddScoreDebug(){
-        if (scoreManager != null && debugmode != null && debugmode.isDebug){
-            if(Input.GetKeyDown(KeyCode.P)){
+        if (debugmode.isDebug)
+        {
+            //Debug.Log("AddScoreDebugを呼び出しました");
+            if (Input.GetKeyDown(KeyCode.P))
+            {
                 AddScore(100);
                 Debug.Log("スコアを100追加しました！");
-            }else if(Input.GetKeyDown(KeyCode.O)){
+            }
+            else if (Input.GetKeyDown(KeyCode.O))
+            {
                 AddScore(-100);
                 Debug.Log("スコアを100減らしました！");
+            }
+        }
+    }
+
+    public void AddScoreDebugDirect(){
+        //Debug.Log("AddScoreDebugDirectを呼び出しました");
+        if (debugmode != null && debugmode.isDebug)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                AddScore(100);
+                Debug.Log($"スコアを100追加しました！:{currentScore}");
+            }
+            else if (Input.GetKeyDown(KeyCode.O))
+            {
+                AddScore(-100);
+                Debug.Log($"スコアを100減らしました！:{currentScore}");
             }
         }
     }
