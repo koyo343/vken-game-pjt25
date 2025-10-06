@@ -5099,6 +5099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 594761350}
   - component: {fileID: 594761351}
+  - component: {fileID: 594761352}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -5137,6 +5138,22 @@ MonoBehaviour:
   scoreManager: {fileID: 594761351}
   debugmode: {fileID: 1440714410}
   currentScore: 0
+--- !u!114 &594761352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594761349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3c5a360fae7314c800ae5d8d444bca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerControllerforScore: {fileID: 75462714}
+  scoreManager: {fileID: 594761351}
+  Debugbutton: {fileID: 0}
+  GameData_Manager: {fileID: 0}
 --- !u!1001 &596717703
 PrefabInstance:
   m_ObjectHideFlags: 0
