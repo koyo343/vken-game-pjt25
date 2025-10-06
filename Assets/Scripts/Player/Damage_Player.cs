@@ -3,6 +3,7 @@ using UnityEngine;
 public class Damage_player : DamageBase
 {
     public GameObject player;
+    public ScoreDictionaryManager scoreDictionaryManager;
     
     public InvinsibleManager invinsibleManager;
 
@@ -16,6 +17,7 @@ public class Damage_player : DamageBase
             /*ここにスコア減算処理を記述*/
 
             base.Damage(damage);
+            scoreDictionaryManager.StrToScore("HitEnemy");
 
             //ここのコメントも仮実装
             Debug.Log("スコアが100減少しました;;");
