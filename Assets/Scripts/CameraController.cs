@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
 
     //セーブポイント
     public Vector3 SavePoint;
-    //ボスフラグ
+    //ボスのフラグボスフラグ
     public bool BossFlag = false;
 
     //落ちたかを判定するフラグ
