@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Mito_Skill : CharacterSkill
 {
-    public float SkillRecastTime = 15.0f;
-
     [Header("スキル効果のパラメータ")]
     public float effectDuration = 5.0f;     // スキル効果の持続時間（秒）
     public float speedMultiplier = 1.75f;    // スピードの倍率

@@ -4,7 +4,6 @@ using System.Collections;
 
 public class Sora_Skill : CharacterSkill
 {
-    public float SkillRecastTime = 10.0f;
 
     [Header("スキル設定")]
     public GameObject toolObject; // インスペクターから突進時に使う道具をアタッチ
