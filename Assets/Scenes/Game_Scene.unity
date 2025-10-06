@@ -2969,6 +2969,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2413652721269698452, guid: 4d0245118eb4df24483554641c5fbed8, type: 3}
   m_PrefabInstance: {fileID: 330973312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &331990160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 331990161}
+  - component: {fileID: 331990162}
+  m_Layer: 0
+  m_Name: ClearManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331990161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331990160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1046992311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331990162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331990160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b65f727371ff4b07a1abda664f88d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BossFlag: 0
+  resultSceneName: Result_Scene
+  RetireButton: {fileID: 0}
 --- !u!1001 &335385233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5126,10 +5173,6 @@ PrefabInstance:
       propertyPath: uruha_Attack
       value: 
       objectReference: {fileID: 655609730}
-    - target: {fileID: 6181321532051405934, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
-      propertyPath: GameData_Manager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 164.97
@@ -5169,10 +5212,6 @@ PrefabInstance:
     - target: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8131745330509778589, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
-      propertyPath: GameData_Manager
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8131745330509778589, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: SkillRecastManager
@@ -13333,6 +13372,7 @@ Transform:
   - {fileID: 1970266956}
   - {fileID: 195400147}
   - {fileID: 867720553}
+  - {fileID: 331990161}
   m_Father: {fileID: 1699111315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1047505847
@@ -28039,6 +28079,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8939141582534140893, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: health
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: player
       value: 
