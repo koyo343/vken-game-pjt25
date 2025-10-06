@@ -15,22 +15,20 @@ public class Ken_Skill : CharacterSkill
 
         if (bulletPrefab != null && bulletSpawnPoint != null)
         {
-            // ■ Y軸回転を想定した弾の発射 ■
+            // 弾を、弾の発射地点(bulletSpawnPoint)の「位置」と「向き」に合わせて生成
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
 
-            // 弾を、弾の発射地点(bulletSpawnPoint)の「位置」と「向き」に合わせて生成します。
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            if (transform.localScale.x < 0)
+            {
+                Quaternion currentRotation = bullet.transform.rotation;
+                Quaternion NewRotation = Quaternion.Euler(currentRotation.eulerAngles.x, currentRotation.eulerAngles.y, currentRotation.eulerAngles.z +180f);
+                bullet.transform.rotation = NewRotation;
+            }
             if (rb != null)
             {
-                // 弾を発射地点の向き（右方向）に飛ばします。
-                // プレイヤーがY軸で180度回転して左を向いていれば、
-                // 子であるbulletSpawnPointのright（右方向）も自動的に左を向いています。
-                rb.linearVelocity = bulletSpawnPoint.right * bulletSpeed;
-            }
-            else
-            {
-                Debug.LogError("Bullet PrefabにRigidbody2Dがアタッチされていません！");
+                // プレイヤーの向き（localScale.x）に応じて速度を設定
+                rb.linearVelocity = new Vector2(transform.localScale.x * bulletSpeed, 0);
             }
         }
         else

@@ -3,27 +3,36 @@ using System.Collections;
 
 public class Uruha_Skill : CharacterSkill
 {
-    public float SkillRecastTime = 10.0f;
+    public float SkillRecastTime = 15.0f;
 
-    // 生成する弾のプレハブ
     public GameObject bulletPrefab;
-    // 弾を生成する場所
     public Transform bulletSpawnPoint;
+    public float bulletSpeed = 10f;
 
     public override void PerformSkill()
     {
         Debug.Log("uruha skill");
 
-        // プレハブと生成場所が設定されているか確認
         if (bulletPrefab != null && bulletSpawnPoint != null)
         {
-            // 1. Instantiateでプレハブをシーン上に生成し、そのインスタンスを newBullet 変数に格納
-            GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-            
-            // 2. 生成した弾からBulletコンポーネントを取得
-            Bullet bulletComponent = newBullet.GetComponent<Bullet>();
+            // 弾を、弾の発射地点(bulletSpawnPoint)の「位置」と「向き」に合わせて生成
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
 
-            // 3. 取得したコンポーネントの isPenetrating フラグを true に設定
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            if (transform.localScale.x < 0)
+            {
+                Quaternion currentRotation = bullet.transform.rotation;
+                Quaternion NewRotation = Quaternion.Euler(currentRotation.eulerAngles.x, currentRotation.eulerAngles.y, currentRotation.eulerAngles.z + 180f);
+                bullet.transform.rotation = NewRotation;
+            }
+            if (rb != null)
+            {
+                // プレイヤーの向き（localScale.x）に応じて速度を設定
+                rb.linearVelocity = new Vector2(transform.localScale.x * bulletSpeed, 0);
+            }
+            // 生成した弾からBulletコンポーネント取得
+            Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            // 取得したコンポーネントの isPenetrating フラグを true に設定
             if (bulletComponent != null)
             {
                 // この弾を「貫通弾」に設定する
