@@ -26,10 +26,14 @@ public class HoloxerRed_Attack : MonoBehaviour
     // 投擲物の出現位置を調整するオフセット
     [Header("出現位置のオフセット")]
     public float spawnOffset = 1.0f;
+    public ScoreDictionaryManager scoreDictionaryManager;
 
     private float launchTimer;
     private bool isVisible = false;
     private Transform playerTransform;
+    private Damage_player playerDamager;
+    private const string PlayerTag = "Player";
+
 
     void Start()
     {
@@ -45,6 +49,8 @@ public class HoloxerRed_Attack : MonoBehaviour
         {
             Debug.LogError("Player GameObject not found. Make sure it has the 'Player' tag.");
         }
+
+        FindAndGetPlayerComponent();
     }
 
     void Update()
@@ -114,6 +120,60 @@ public class HoloxerRed_Attack : MonoBehaviour
             }
 
             rb.linearVelocity = launchVelocity;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Playerに接触したとき
+        if (collision.gameObject.tag == "Player")
+        {
+            // ★修正点 2★: Nullチェックを追加
+            if (playerDamager != null)
+            {
+                playerDamager.Damage(0);
+            }
+            Debug.Log("Playerに当たりました");
+        }
+
+        // Playerの攻撃に接触したとき
+        if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
+        {
+            // 敵（Holoxer自身）を破壊
+            scoreDictionaryManager.StrToScore("BeatHoloxer");
+            Destroy(gameObject);
+            Debug.Log("Holoxerにダメージ");
+
+            // プレイヤーの弾も消したい場合は、ここで相手の弾も破壊するロジックを追加
+            // Destroy(collision.gameObject); 
+        }
+    }
+
+    void FindAndGetPlayerComponent()
+    {
+        // 1. "Player" タグを持つゲームオブジェクトをシーン全体から検索
+        GameObject playerObject = GameObject.FindWithTag(PlayerTag);
+
+        if (playerObject != null)
+        {
+            // 2. そのゲームオブジェクトから Damage_Player コンポーネントを取得
+            playerDamager = playerObject.GetComponent<Damage_player>();
+
+            if (playerDamager != null)
+            {
+                Debug.Log("PlayerオブジェクトとDamage_Playerコンポーネントを取得しました。");
+                // これで、playerDamager.Damage(10); のようにコンポーネントのメソッドを呼び出せます。
+            }
+            else
+            {
+                // プレイヤーオブジェクトは見つかったが、コンポーネントがアタッチされていない場合
+                Debug.LogError("PlayerオブジェクトにはDamage_Playerコンポーネントが見つかりません！");
+            }
+        }
+        else
+        {
+            // Playerタグを持つオブジェクトがシーンに見つからなかった場合
+            Debug.LogError($"シーン内に '{PlayerTag}' タグを持つオブジェクトが見つかりません。");
         }
     }
 }

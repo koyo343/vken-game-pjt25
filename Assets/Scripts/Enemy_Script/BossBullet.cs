@@ -48,7 +48,7 @@ public class BossBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // 地面、壁、プレイヤーの弾に接したら消滅
-        if (other.CompareTag("Ground") || other.CompareTag("Wall") || other.CompareTag("Bullet"))
+        if (other.CompareTag("Ground") || other.CompareTag("Bullet"))
         {
             Debug.Log("建物に当たりました");
             Destroy(gameObject); // 遅延なしで即時削除
