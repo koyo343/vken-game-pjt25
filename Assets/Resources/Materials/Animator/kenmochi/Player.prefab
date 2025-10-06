@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6100092357993388448}
   - component: {fileID: 4701601782588591040}
   - component: {fileID: 6181321532051405934}
+  - component: {fileID: 1956883808977831973}
   - component: {fileID: 7814219217917768730}
   - component: {fileID: 6642707253736322900}
   m_Layer: 3
@@ -208,7 +209,6 @@ MonoBehaviour:
   toolObject: {fileID: 5399582524937383524}
   toolRotationTime: 1
   isUsingTool: 0
-  GameData_Manager: {fileID: 0}
   SkillRecastManager: {fileID: 0}
 --- !u!114 &8887394291014868192
 MonoBehaviour:
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillRecastTime: 10
   toolObject: {fileID: 5399582524937383524}
+  isUsingTool: 0
   lungeDistance: 3
   lungeDuration: 0.2
 --- !u!114 &4701601782588591040
@@ -347,11 +348,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fe46c12f48b1148ae0f5fe9f6b00de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameData_Manager: {fileID: 0}
   ken_Attack: {fileID: 0}
   mito_Attack: {fileID: 0}
   sora_Attack: {fileID: 0}
+  sora_Skill: {fileID: 0}
   uruha_Attack: {fileID: 0}
+--- !u!114 &1956883808977831973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459278190379956900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebe2d4a67533434daa7b12e0eb1d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvinsible: 0
 --- !u!95 &7814219217917768730
 Animator:
   serializedVersion: 7
@@ -388,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   player: {fileID: 4459278190379956900}
+  scoreDictionaryManager: {fileID: 0}
   invinsibleManager: {fileID: 0}
 --- !u!1 &5399582524937383524
 GameObject:

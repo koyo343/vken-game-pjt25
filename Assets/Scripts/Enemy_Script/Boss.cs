@@ -34,6 +34,12 @@ public class Boss : MonoBehaviour
     public Color chargeColor = Color.red;
     private Color normalColor;
 
+    private Damage_player playerDamager;
+    private Damage_Boss damage_boss;
+
+    // プレイヤーのタグ名
+    private const string PlayerTag = "Player";
+
     // === プライベート変数 ===
     private Rigidbody2D rb;
     private bool isGrounded = true; // 接地判定は別途実装が必要です（ここでは簡略化）
@@ -62,8 +68,14 @@ public class Boss : MonoBehaviour
         {
             Debug.LogError("Playerタグを持つオブジェクトが見つかりません。");
         }
-
+        FindAndGetPlayerComponent();
+        damage_boss = GetComponent<Damage_Boss>(); // ★修正：Boss自身からコンポーネントを取得
+        if (damage_boss == null)
+        {
+            Debug.LogError("Damage_Bossコンポーネントがボス自身に見つかりません！");
+        }
         normalColor = sr.color;
+
         // 攻撃サイクル開始
         StartCoroutine(BossControlRoutine());
     }
@@ -76,6 +88,7 @@ public class Boss : MonoBehaviour
         {
             ChasePlayer();
         }
+
     }
 
     // === メイン制御コルーチン ===
@@ -139,10 +152,10 @@ public class Boss : MonoBehaviour
         // ターゲットの水平位置を計算
         Vector2 targetPos = player.position;
         float horizontalDistance = targetPos.x - transform.position.x;
-        
+
         // ターゲット方向へジャンプするための水平速度を計算（簡略化）
         float horizontalVelocity = horizontalDistance / (2 * jumpForce / Physics2D.gravity.magnitude);
-        
+
         // ジャンプ
         if (isGrounded)
         {
@@ -159,11 +172,11 @@ public class Boss : MonoBehaviour
         for (int i = 0; i < projectileCount; i++)
         {
             Vector2 directionToTarget = (player.position - transform.position).normalized;
-            
+
             // 投射物生成
             GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             Rigidbody2D projRb = proj.GetComponent<Rigidbody2D>();
-            
+
             if (projRb != null)
             {
                 // 投射物を発射
@@ -172,7 +185,7 @@ public class Boss : MonoBehaviour
                 float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
                 proj.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             }
-            
+
             // 少し間隔を空けて連射
             yield return new WaitForSeconds(1.0f);
         }
@@ -183,10 +196,10 @@ public class Boss : MonoBehaviour
     {
         // プレイヤーの真上、指定された高さの位置
         Vector3 dropPosition = new Vector3(player.position.x, rockDropHeight, transform.position.z);
-        
+
         // 岩を生成 (岩のPrefabにはCollider2D, Rigidbody2D, そして"Ground"タグが必要です)
         GameObject rock = Instantiate(rockPrefab, dropPosition, Quaternion.identity);
-        
+
         // 岩は落下し、着地後はTagにより足場として機能する
         // (岩のスクリプトで着地後にRigidBody2DのBodyTypeをStaticに変更するなどの処理が必要です)
         yield return null; // 1フレーム待機
@@ -230,11 +243,31 @@ public class Boss : MonoBehaviour
         {
             // 突進によるダメージ処理
         }
-        
+
         // 地面との接触判定（簡略化）
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground")) // "Ground"レイヤーを仮定
         {
-             isGrounded = true;
+            isGrounded = true;
+        }
+        // Playerに接触したとき
+        if (collision.gameObject.tag == "Player")
+        {
+            // ★修正点 2★: Nullチェックを追加
+            if (playerDamager != null)
+            {
+                playerDamager.Damage(0);
+            }
+            Debug.Log("Playerに当たりました");
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Playerの攻撃に接触したとき
+        if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
+        {
+            damage_boss.Damage(10);
+            Debug.Log("Bossにダメージ");
         }
     }
 
@@ -243,7 +276,35 @@ public class Boss : MonoBehaviour
         // 地面からの離脱判定（簡略化）
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-             isGrounded = false;
+            isGrounded = false;
+        }
+    }
+
+    void FindAndGetPlayerComponent()
+    {
+        // 1. "Player" タグを持つゲームオブジェクトをシーン全体から検索
+        GameObject playerObject = GameObject.FindWithTag(PlayerTag);
+
+        if (playerObject != null)
+        {
+            // 2. そのゲームオブジェクトから Damage_Player コンポーネントを取得
+            playerDamager = playerObject.GetComponent<Damage_player>();
+
+            if (playerDamager != null)
+            {
+                Debug.Log("PlayerオブジェクトとDamage_Playerコンポーネントを取得しました。");
+                // これで、playerDamager.Damage(10); のようにコンポーネントのメソッドを呼び出せます。
+            }
+            else
+            {
+                // プレイヤーオブジェクトは見つかったが、コンポーネントがアタッチされていない場合
+                Debug.LogError("PlayerオブジェクトにはDamage_Playerコンポーネントが見つかりません！");
+            }
+        }
+        else
+        {
+            // Playerタグを持つオブジェクトがシーンに見つからなかった場合
+            Debug.LogError($"シーン内に '{PlayerTag}' タグを持つオブジェクトが見つかりません。");
         }
     }
 }

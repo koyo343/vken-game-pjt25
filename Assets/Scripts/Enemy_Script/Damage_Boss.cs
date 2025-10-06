@@ -17,6 +17,11 @@ public class Damage_Boss : DamageBase
 
         //気持ち悪いデバッグログ
         Debug.Log("ボスは" + bossdamage + "を受けた(残り体力:" + health + ")");
+        //死亡判定
+        if (GetHealth() <= 0)
+        {
+            Die();
+        }
     }
 
     protected override void Die()
@@ -28,5 +33,10 @@ public class Damage_Boss : DamageBase
             cameraController.BossFlag = true;
             Destroy(boss);
         }
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
