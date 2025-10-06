@@ -7,15 +7,20 @@ public class Sora_Skill : CharacterSkill
 
     [Header("スキル設定")]
     public GameObject toolObject; // インスペクターから突進時に使う道具をアタッチ
+    public bool isUsingTool = false; // 道具使用中かどうかのフラグ
 
     [Header("突進のパラメータ")]
     public float lungeDistance = 3.0f; // 突進する距離
     public float lungeDuration = 0.2f; // 突進にかかる時間
 
     public override void PerformSkill()
-    {   
-        Debug.Log("sora skill");
-        StartCoroutine(DashWithTool());
+    {
+        if (!isUsingTool)
+        {
+            isUsingTool = true;
+            Debug.Log("sora skill");
+            StartCoroutine(DashWithTool());
+        }
     }
 
     private IEnumerator DashWithTool()
