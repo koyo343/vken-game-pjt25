@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6474371621181771914}
   - component: {fileID: 4114018869276739746}
   - component: {fileID: 4865858112818345046}
+  - component: {fileID: -3127761597327068305}
   m_Layer: 5
   m_Name: Pause button
   m_TagString: Untagged
@@ -123,16 +124,29 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
-        m_MethodName: PauseGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-3127761597327068305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214703939418795371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b193b36030f1404088a6a07a85dbd68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 8588827db24bea7499a0a6aeb24671e8, type: 3}
 --- !u!1 &6025286005853500667
 GameObject:
   m_ObjectHideFlags: 0
