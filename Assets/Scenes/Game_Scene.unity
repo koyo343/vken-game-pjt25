@@ -5111,6 +5111,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 899041692}
     - target: {fileID: 6181321532051405934, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: sora_Skill
+      value: 
+      objectReference: {fileID: 1185929565}
+    - target: {fileID: 6181321532051405934, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: mito_Attack
       value: 
       objectReference: {fileID: 2138665409}
@@ -8489,6 +8493,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 401289518885135065, guid: c3da0d852f9bd1243945cadf599593ed, type: 3}
   m_PrefabInstance: {fileID: 860863674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &867720552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867720553}
+  - component: {fileID: 867720554}
+  m_Layer: 0
+  m_Name: InvinsibleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867720553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867720552}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 31.5781, y: 678.8558, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1046992311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867720554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867720552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebe2d4a67533434daa7b12e0eb1d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvinsible: 0
 --- !u!1 &873995402
 GameObject:
   m_ObjectHideFlags: 0
@@ -13283,6 +13332,7 @@ Transform:
   - {fileID: 594761350}
   - {fileID: 1970266956}
   - {fileID: 195400147}
+  - {fileID: 867720553}
   m_Father: {fileID: 1699111315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1047505847
@@ -14602,6 +14652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1185929564}
   - component: {fileID: 1185929563}
+  - component: {fileID: 1185929565}
   m_Layer: 0
   m_Name: sora
   m_TagString: Untagged
@@ -14639,6 +14690,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1603777676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1185929565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185929562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bb05edecaba4deaabae4d2c15e8957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillRecastTime: 0
+  toolObject: {fileID: 1798582838}
+  isUsingTool: 0
+  lungeDistance: 3
+  lungeDuration: 0.2
 --- !u!1 &1186369937
 GameObject:
   m_ObjectHideFlags: 0
@@ -28001,11 +28069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 490.44785
+      value: 495.56
       objectReference: {fileID: 0}
     - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 705.77
+      value: 700.37
       objectReference: {fileID: 0}
     - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_LocalPosition.z
