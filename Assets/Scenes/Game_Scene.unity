@@ -7837,6 +7837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5989428956400488773, guid: eb4c1c51783f02b41b5637c77736875a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6732048399395419855, guid: eb4c1c51783f02b41b5637c77736875a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -645
