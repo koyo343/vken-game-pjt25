@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class ToolAttack : MonoBehaviour
 {
-    public GameData_Manager GameData_Manager;
-    
     public Ken_Attack ken_Attack;
 
     public Mito_Attack mito_Attack;
 
     public Sora_Attack sora_Attack;
+    public Sora_Skill sora_Skill;
 
     public Uruha_Attack uruha_Attack;
 
@@ -28,8 +27,7 @@ public class ToolAttack : MonoBehaviour
                 {
                     Debug.Log("DamageAbleコンポーネント取得");
                 }
-                //ここはkouのゲームシーンに合わせているので本番環境ではken_Attackにすること！！！！！
-                if (damageable != null && sora_Attack.isUsingTool)
+                if (damageable != null && ken_Attack.isUsingTool)
                 {
                     Debug.Log("ダメージ処理の実行");
                     damageable.Damage(100);
@@ -67,6 +65,11 @@ public class ToolAttack : MonoBehaviour
                 {
                     Debug.Log("ダメージ処理の実行");
                     damageable.Damage(100);
+                }
+                else if (damageable != null && sora_Skill.isUsingTool)
+                {
+                    Debug.Log("ダメージ処理の実行");
+                    damageable.Damage(200);
                 }
 
                 break;
