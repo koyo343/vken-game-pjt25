@@ -6,14 +6,12 @@ public class InvinsibleManager : MonoBehaviour
     //無敵を付与されているか確認するため
     public bool isInvinsible;
     //アニメーターの情報を入れる変数
-    private Animator animator;
+    public Animator animator;
 
     void Start()
     {
         //非無敵状態にセットする
         isInvinsible = false;
-        //アニメーターコンポーネントの情報を取得
-        animator = this.GetComponent<Animator>();
     }
 
     public IEnumerator Invinsible(float delaytime)
