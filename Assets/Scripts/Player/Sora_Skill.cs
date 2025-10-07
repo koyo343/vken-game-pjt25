@@ -10,8 +10,8 @@ public class Sora_Skill : CharacterSkill
     public bool isUsingTool = false; // 道具使用中かどうかのフラグ
 
     [Header("突進のパラメータ")]
-    public float lungeDistance = 50f; // 突進する距離
-    public float lungeDuration = 2.0f; // 突進にかかる時間
+    public float lungeDistance = 15f; // 突進する距離
+    public float lungeDuration = 1.0f; // 突進にかかる時間
 
     public override void PerformSkill()
     {
