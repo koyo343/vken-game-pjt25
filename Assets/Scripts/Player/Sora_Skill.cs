@@ -10,8 +10,8 @@ public class Sora_Skill : CharacterSkill
     public bool isUsingTool = false; // 道具使用中かどうかのフラグ
 
     [Header("突進のパラメータ")]
-    public float lungeDistance = 3.0f; // 突進する距離
-    public float lungeDuration = 0.2f; // 突進にかかる時間
+    public float lungeDistance = 50f; // 突進する距離
+    public float lungeDuration = 2.0f; // 突進にかかる時間
 
     public override void PerformSkill()
     {
@@ -34,7 +34,11 @@ public class Sora_Skill : CharacterSkill
 
         // try-finallyブロックで、処理の途中で中断されても必ず終了処理が呼ばれるようにする
         try
-        {
+        {   
+            // 武器の角度（90度倒した状態）
+            Quaternion targetRotation = Quaternion.Euler(0, 0, -90);
+            toolObject.transform.rotation = targetRotation;
+
             // 道具をアクティブにする
             toolObject.SetActive(true);
 
@@ -62,6 +66,7 @@ public class Sora_Skill : CharacterSkill
         {
             // スキル終了処理
             toolObject.SetActive(false);
+            isUsingTool = false;
         }
     }
 }
