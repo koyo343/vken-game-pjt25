@@ -1475,6 +1475,7 @@ GameObject:
   - component: {fileID: 365074761}
   - component: {fileID: 365074760}
   - component: {fileID: 365074759}
+  - component: {fileID: 365074762}
   m_Layer: 5
   m_Name: Panel_Uruha
   m_TagString: Untagged
@@ -1545,6 +1546,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 365074762}
+        m_TargetAssemblyTypeName: ButtonSE, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
         m_MethodName: ToggleObject
@@ -1595,6 +1608,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365074757}
   m_CullTransparentMesh: 1
+--- !u!114 &365074762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365074757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b193b36030f1404088a6a07a85dbd68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 8588827db24bea7499a0a6aeb24671e8, type: 3}
 --- !u!1 &369695836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,6 +2544,7 @@ GameObject:
   - component: {fileID: 861288771}
   - component: {fileID: 861288770}
   - component: {fileID: 861288769}
+  - component: {fileID: 861288773}
   m_Layer: 5
   m_Name: Panel_Sora
   m_TagString: Untagged
@@ -2569,6 +2596,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 861288773}
+        m_TargetAssemblyTypeName: ButtonSE, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
         m_MethodName: ToggleObject
@@ -2638,6 +2677,19 @@ RectTransform:
   m_AnchoredPosition: {x: -70, y: 170}
   m_SizeDelta: {x: 300, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &861288773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861288768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b193b36030f1404088a6a07a85dbd68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 8588827db24bea7499a0a6aeb24671e8, type: 3}
 --- !u!1 &876987678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2728,6 +2780,7 @@ GameObject:
   - component: {fileID: 878826786}
   - component: {fileID: 878826785}
   - component: {fileID: 878826784}
+  - component: {fileID: 878826787}
   m_Layer: 5
   m_Name: Panel_Toya
   m_TagString: Untagged
@@ -2798,6 +2851,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 878826787}
+        m_TargetAssemblyTypeName: ButtonSE, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
         m_MethodName: ToggleObject
@@ -2848,6 +2913,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878826782}
   m_CullTransparentMesh: 1
+--- !u!114 &878826787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878826782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b193b36030f1404088a6a07a85dbd68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 8588827db24bea7499a0a6aeb24671e8, type: 3}
 --- !u!1 &893166093
 GameObject:
   m_ObjectHideFlags: 0
@@ -4955,6 +5033,7 @@ GameObject:
   - component: {fileID: 1804208582}
   - component: {fileID: 1804208581}
   - component: {fileID: 1804208580}
+  - component: {fileID: 1804208583}
   m_Layer: 5
   m_Name: Panel_Mito
   m_TagString: Untagged
@@ -5025,6 +5104,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1804208583}
+        m_TargetAssemblyTypeName: ButtonSE, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 593745187}
         m_TargetAssemblyTypeName: ObjectToggle, Assembly-CSharp
         m_MethodName: ToggleObject
@@ -5075,6 +5166,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804208578}
   m_CullTransparentMesh: 1
+--- !u!114 &1804208583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804208578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b193b36030f1404088a6a07a85dbd68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 8588827db24bea7499a0a6aeb24671e8, type: 3}
 --- !u!1 &1854964195
 GameObject:
   m_ObjectHideFlags: 0
