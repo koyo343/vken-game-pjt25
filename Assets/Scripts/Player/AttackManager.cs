@@ -120,9 +120,9 @@ public class AttackManager : MonoBehaviour
         animator.SetBool("isSkill", true);
 
         // 2. 委員長のスキル継続時間
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3.5f);
 
-        // 3. 0.5秒後にisSkillをfalseにする
+        // 3. 3.5秒後にisSkillをfalseにする
         animator.SetBool("isSkill", false);
     }
     public void CharaSwitch(string selectedCharacter)

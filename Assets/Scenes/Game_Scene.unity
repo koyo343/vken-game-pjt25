@@ -5381,6 +5381,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5080873985878449372, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: invinsibleManager
+      value: 
+      objectReference: {fileID: 867720554}
+    - target: {fileID: 5080873985878449372, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: scoreDictionaryManager
+      value: 
+      objectReference: {fileID: 195400148}
     - target: {fileID: 5727510846093978714, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: cameraController
       value: 
@@ -8279,6 +8287,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6929852064325885401, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
   m_PrefabInstance: {fileID: 596717703}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &786489275 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7814219217917768730, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+  m_PrefabInstance: {fileID: 596717703}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &807349190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8923,6 +8936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInvinsible: 0
+  animator: {fileID: 786489275}
 --- !u!1 &873995402
 GameObject:
   m_ObjectHideFlags: 0
