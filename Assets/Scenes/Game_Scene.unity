@@ -5356,9 +5356,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3504109494408326921, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+    - target: {fileID: 489697885529981365, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_BodyType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3504109494408326921, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: m_BodyType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3504109494408326921, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_CollisionDetection
