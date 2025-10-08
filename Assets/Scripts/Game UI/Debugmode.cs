@@ -54,9 +54,12 @@ public class Debugmode : MonoBehaviour
         // キーが押されたかチェック
         if (Input.anyKeyDown)
         {
-            if (InputtingChecker.IsAnyInputFieldFocused())
+            if (InputtingChecker != null)
             {
-                return;
+                if (InputtingChecker.IsAnyInputFieldFocused())
+                {
+                    return;
+                }
             }
             // どのキーが押されたか
             KeyCode pressedKey = GetPressedKey();
@@ -81,7 +84,7 @@ public class Debugmode : MonoBehaviour
                     lastInputTime = Time.time;
                     Debug.Log($"キーが押されました: {pressedKey}:debugkey{currentSequenceIndex-1}");
 
-                    // シーケンスが完了したかチェック
+                    // シーケンスが完了したかチェック:
                     if (currentSequenceIndex >= sequence.Length)
                     {
                         Debug.Log("Debug Mode now");
