@@ -54,6 +54,10 @@ public class Debugmode : MonoBehaviour
         // キーが押されたかチェック
         if (Input.anyKeyDown)
         {
+            if (InputtingChecker.IsAnyInputFieldFocused())
+            {
+                return;
+            }
             // どのキーが押されたか
             KeyCode pressedKey = GetPressedKey();
 

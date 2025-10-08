@@ -46,6 +46,7 @@ public class AutoUpdaterToggle : MonoBehaviour
             {
                 RankingManager.ReLoadRankingData();
                 lastUpdateTime = Time.time;
+                Debug.Log($"UpDated");
             }
         }
     }
