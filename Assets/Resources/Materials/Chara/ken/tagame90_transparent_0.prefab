@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8533724371487852540}
   - component: {fileID: 6258827607541058357}
   - component: {fileID: 2179094100355681441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: tagame90_transparent_0
   m_TagString: Bullet
   m_Icon: {fileID: 0}
