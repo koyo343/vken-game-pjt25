@@ -13,12 +13,15 @@ public class Mito_Skill : CharacterSkill
     // EffectManagerへの参照を保持する変数
     private EffectManager effectManager;
 
+    private InvinsibleManager invinsible;
+
     void Start()
     {
         // このスクリプトがアタッチされているキャラクターが持つEffectManagerを取得する
         // PlayerControllerやEffectManagerを持つオブジェクトを探して取得します。
-        animator = GetComponent<Animator>();
+        animator      = GetComponent<Animator>();
         effectManager = FindObjectOfType<EffectManager>();
+        invinsible    = GetComponent<InvinsibleManager>();
 
         if (effectManager == null)
         {
@@ -45,7 +48,8 @@ public class Mito_Skill : CharacterSkill
         // 2. ジャンプ力アップを適用
         effectManager.ApplyJumpUp(jumpMultiplier, effectDuration);
 
-        // 3. ダメージ無敵を適用（ステップ1で追加したメソッドを呼び出す）
+        // 3. ダメージ無敵を適用
+        StartCoroutine(invinsible.InvinsibleNoBlink(invincibilityDuration));
         effectManager.ApplyInvincibility(invincibilityDuration);
 
         StartCoroutine(MitoSkillRoutine());
