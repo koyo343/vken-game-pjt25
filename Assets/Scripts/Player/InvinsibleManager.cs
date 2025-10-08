@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using Mono.Cecil.Cil;//コルーチンを使用するため
+using System.Collections; //コルーチンを使用するため
 
 public class InvinsibleManager : MonoBehaviour
 {
