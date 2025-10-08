@@ -31,6 +31,8 @@ public class ResultManager : MonoBehaviour
     private AmazonDynamoDBClient client;
     private DynamoDBContext context;
 
+    //public DatabaseSwitcher DatabaseSwitcher;
+
     void Awake()
     {
         // ここで画像ファイルを辞書に登録
@@ -119,7 +121,15 @@ public class ResultManager : MonoBehaviour
         }
 
         // スコアをDynamoDBに送信
-        SaveScoreToDynamoDB(playerID, playerName, totalScore);
+
+        if (DatabaseSwitcher.isServerUpload)
+        {
+            SaveScoreToDynamoDB(playerID, playerName, totalScore);
+        }
+        else
+        {
+            Debug.Log("Upload to local only.");
+        }
 
         string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
         LoadingCSV.AddRow(rowData);
