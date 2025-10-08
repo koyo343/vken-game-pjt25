@@ -105,7 +105,7 @@ public class LocalSwitch : MonoBehaviour
             return;
         }
         // テキストを一度だけ更新
-        UpdateLocalModeText();
+        UpdateUploadModeText();
     }
 
     private void OnCancel()

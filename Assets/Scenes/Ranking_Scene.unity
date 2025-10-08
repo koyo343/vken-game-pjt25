@@ -1862,7 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AutoUpdaterButton: {fileID: 1115185254}
   UpdaterText: {fileID: 1627047475}
-  RankingManager: {fileID: 0}
+  RankingManager: {fileID: 1556455192}
 --- !u!114 &1115185254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,12 +2460,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchButton: {fileID: 1258620580}
+  UPSwitchButton: {fileID: 0}
   LocalmodeText: {fileID: 442209485}
+  UploadmodeText: {fileID: 0}
   CautionPanel: {fileID: 1698608208}
   ConfirmButton: {fileID: 2018646888}
   CancelButton: {fileID: 1572471812}
   LocalmodeMessage: Local Mode
   PublicmodeMessage: Public Mode
+  PublicUPmodeMessage: Public Upload Mode
+  LocalUPmodeMessage: Local Upload Mode
 --- !u!1 &1350976675
 GameObject:
   m_ObjectHideFlags: 0
