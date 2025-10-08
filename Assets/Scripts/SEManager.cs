@@ -32,7 +32,18 @@ public class SEManager : MonoBehaviour
     /// <param name="clip">再生したいSEのAudioClip</param>
     public void PlaySE(AudioClip clip)
     {
-        // PlayOneShotを使うと、再生中のSEを中断せずに新しいSEを重ねて鳴らせる
-        audioSource.PlayOneShot(clip);
+        if(clip.name != "カーソル音")
+        {
+            // PlayOneShotを使うと、再生中のSEを中断せずに新しいSEを重ねて鳴らせる
+            audioSource.PlayOneShot(clip);
+            Debug.Log($"SEを再生しました: {clip.name}");
+        }
+        else
+        {
+            audioSource.clip = clip;
+            audioSource.time = 0.08f;
+            audioSource.Play(); 
+            Debug.Log($"SEを0.08秒地点から開始しました: {clip.name}");
+        }
     }
 }
