@@ -8,6 +8,7 @@ public class Mito_Skill : CharacterSkill
     public float speedMultiplier = 1.75f;    // スピードの倍率
     public float jumpMultiplier = 1.5f;     // ジャンプ力の倍率
     public float invincibilityDuration = 5.0f; // 無敵時間の長さ
+    Animator animator;
 
     // EffectManagerへの参照を保持する変数
     private EffectManager effectManager;
@@ -16,7 +17,7 @@ public class Mito_Skill : CharacterSkill
     {
         // このスクリプトがアタッチされているキャラクターが持つEffectManagerを取得する
         // PlayerControllerやEffectManagerを持つオブジェクトを探して取得します。
-        // もしPlayerに直接アタッチされているなら GetComponent<EffectManager>() に変更する
+        animator = GetComponent<Animator>();
         effectManager = FindObjectOfType<EffectManager>();
 
         if (effectManager == null)
@@ -46,5 +47,15 @@ public class Mito_Skill : CharacterSkill
 
         // 3. ダメージ無敵を適用（ステップ1で追加したメソッドを呼び出す）
         effectManager.ApplyInvincibility(invincibilityDuration);
+
+        StartCoroutine(MitoSkillRoutine());
+
+    }
+    private IEnumerator MitoSkillRoutine()
+    {
+        yield return new WaitForSeconds(3.5f);
+
+        // 3.5秒後にisSkillEndを起動
+        animator.SetTrigger("isSkillEnd");
     }
 }
