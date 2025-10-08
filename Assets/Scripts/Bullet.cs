@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         // 弾を前方に移動させる
         BulletMove();
         // 画面外に出たかチェックする
-        OffScreen();
+        //OffScreen();
     }
 
     /// <summary>
@@ -35,21 +35,10 @@ public class Bullet : MonoBehaviour
         transform.position += transform.right * bulletSpeed * Time.deltaTime;
     }
 
-    /// <summary>
-    /// 弾が一定の距離を超えたら消す
-    /// </summary>
-    private void OffScreen()
+    //カメラから外れたらBulletを消す
+    private void OnBecameInvisible()
     {
-        // 画面の右端（X座標10f）を超えたら消滅
-        if (transform.position.x > 10f)
-        {
-            Destroy(gameObject);
-        }
-        // 画面の左端（X座標-10f）を超えたら消滅
-        else if (transform.position.x < -10f)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
     /// <summary>
@@ -68,16 +57,24 @@ public class Bullet : MonoBehaviour
             }
 
             // 爆発エフェクトを生成
-            Instantiate(explosionPrefab, collision.transform.position, transform.rotation);
-            
+            //Instantiate(explosionPrefab, collision.transform.position, transform.rotation);
+
             // ぶつかった敵とこの弾自身を消す
             Destroy(collision.gameObject);
-            
-             // 貫通しない弾（isPenetratingがfalse）の場合だけ、弾自身を消す
+
+            // 貫通しない弾（isPenetratingがfalse）の場合だけ、弾自身を消す
             if (!isPenetrating)
             {
                 Destroy(gameObject);
             }
+        }
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            // 爆発エフェクトを生成
+            //Instantiate(explosionPrefab, collision.transform.position, transform.rotation);
+
+            // 地面に当たったら弾を消す
+            Destroy(gameObject);
         }
     }
 }
