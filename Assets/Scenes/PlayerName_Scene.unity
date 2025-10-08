@@ -2150,7 +2150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debugpanel: {fileID: 142026019}
   debugText: {fileID: 543286200}
-  InputtingChecker: {fileID: 0}
+  InputtingChecker: {fileID: 547482018}
   debugModeMessage: DEBUG MODE
   sequence: 75000000740000006b00000074000000
   timeOutSeconds: 1.5
