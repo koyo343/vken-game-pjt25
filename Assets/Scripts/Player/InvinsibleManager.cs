@@ -32,4 +32,20 @@ public class InvinsibleManager : MonoBehaviour
             blinker.EndBlink();
         }
     }
+    //スキルによる無敵時間コルーチン(点滅なし)
+    public IEnumerator InvinsibleNoBlink(float delaytime)
+    {
+        if (!isInvinsible)
+        {
+            //無敵付与
+            isInvinsible = true;
+            Debug.LogWarning("スキルで無敵状態になった1");
+
+            //コルーチンで指定秒数待機
+            yield return new WaitForSeconds(delaytime);
+
+            //無敵解除
+            isInvinsible = false;
+        }
+    }
 }
