@@ -8,7 +8,13 @@ using System.IO;
 public class LocalSwitch : MonoBehaviour
 {
     public Button SwitchButton;
+
+    public Button UPSwitchButton;
+
     public TextMeshProUGUI LocalmodeText;
+
+    public TextMeshProUGUI UploadmodeText;
+
     public GameObject CautionPanel;
     public Button ConfirmButton;
     public Button CancelButton;
@@ -16,44 +22,88 @@ public class LocalSwitch : MonoBehaviour
     public string LocalmodeMessage = "Local Mode";
     public string PublicmodeMessage = "Public Mode";
 
+    public string PublicUPmodeMessage = "Public Upload Mode";
+    public string LocalUPmodeMessage = "Local Upload Mode";
+
+
     void Start()
     {
         // ボタンにクリックイベントを登録
-        SwitchButton.onClick.AddListener(onClicking);
-        ConfirmButton.onClick.AddListener(OnConfirm);
-        CancelButton.onClick.AddListener(OnCancel);
+        if (SwitchButton != null)
+        {
+            SwitchButton.onClick.AddListener(localbutton);
+        }
+        if (UPSwitchButton != null)
+        {
+            UPSwitchButton.onClick.AddListener(onClicking);
+        }
+        if (ConfirmButton != null)
+        {
+            ConfirmButton.onClick.AddListener(OnConfirm);
+        }
+        if (CancelButton != null)
+        {
+            CancelButton.onClick.AddListener(OnCancel);
+        }
+
 
         CautionPanel.SetActive(false);
 
-        
+
         // 初期表示を設定
         UpdateLocalModeText();
+        UpdateUploadModeText();
     }
+
+    private void localbutton()
+    {
+        if (DatabaseSwitcher.isLocal)
+        {
+            DatabaseSwitcher.SwitchDatabase();
+            if (DatabaseSwitcher.isLocal)
+            {
+                return;
+            }
+            UpdateLocalModeText();
+        }
+        else
+        {
+            DatabaseSwitcher.SwitchDatabase();
+            UpdateLocalModeText();
+        }
+    }
+
 
     private void onClicking()
     {
         Debug.Log("onClicking is called");
-        
+
         // データベースモードを切り替える
-        if (!DatabaseSwitcher.isLocal)
+        if (DatabaseSwitcher.isServerUpload)
         {
-            DatabaseSwitcher.SwitchDatabase();
+            DatabaseSwitcher.SwitchServerUpload();
+            
             // テキストを一度だけ更新
-            UpdateLocalModeText();
+            UpdateUploadModeText();
         }
         else
         {
             CautionPanel.SetActive(true);
         }
 
-        
+
     }
 
     private void OnConfirm()
     {
         Debug.Log("OnConfirm is called");
-        DatabaseSwitcher.SwitchDatabase();
+        DatabaseSwitcher.SwitchServerUpload();
+        
         CautionPanel.SetActive(false);
+        if (!DatabaseSwitcher.isServerUpload)
+        {
+            return;
+        }
         // テキストを一度だけ更新
         UpdateLocalModeText();
     }
@@ -74,6 +124,17 @@ public class LocalSwitch : MonoBehaviour
         else
         {
             LocalmodeText.text = PublicmodeMessage;
+        }
+    }
+    private void UpdateUploadModeText()
+    {
+        if (DatabaseSwitcher.isServerUpload)
+        {
+            UploadmodeText.text = PublicUPmodeMessage;
+        }
+        else
+        {
+            UploadmodeText.text = LocalUPmodeMessage;
         }
     }
 }
