@@ -1020,8 +1020,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 458936668}
+  m_Children: []
   m_Father: {fileID: 588878227}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2278,12 +2277,12 @@ RectTransform:
   - {fileID: 874900469}
   - {fileID: 1265325867}
   - {fileID: 1291162177}
-  m_Father: {fileID: 177800990}
+  m_Father: {fileID: 531653445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.1099854, y: -10.426636}
-  m_SizeDelta: {x: -156.12964, y: -105.743286}
+  m_AnchoredPosition: {x: -2.1098633, y: -10.426636}
+  m_SizeDelta: {x: -156.12964, y: -105.74341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458936669
 MonoBehaviour:
@@ -2648,6 +2647,7 @@ RectTransform:
   - {fileID: 318387660}
   - {fileID: 651785047}
   - {fileID: 93373659}
+  - {fileID: 458936668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deleteData: {fileID: 588878229}
-  deleteCautionPanel: {fileID: 177800989}
+  deleteCautionPanel: {fileID: 458936667}
   deleteConfirmButton: {fileID: 1291162178}
   deleteCancelButton: {fileID: 1265325868}
   TempDataInput: {fileID: 1075006817}

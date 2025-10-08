@@ -81,7 +81,7 @@ public class BGMPlayer : MonoBehaviour
             Debug.Log("Generate BGMPlayer Instance");
         } else {
             GameObject managerObject = instance.gameObject;
-            managerObject.AddComponent<BGMPlayer>();
+            //managerObject.AddComponent<BGMPlayer>();
             Debug.Log("BGMPlayer Instance already exists");
             return;
         }

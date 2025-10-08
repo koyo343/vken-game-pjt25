@@ -94,7 +94,9 @@ public class DebugDataInputer : MonoBehaviour
 
     private void OnSaveInput()
     {
-    
+        GameData_Manager.CheckNullInstance();
+
+        // キャラクター画像を変更
 
         if (characterSprites.ContainsKey(selectedCharacter))
         {
@@ -106,13 +108,21 @@ public class DebugDataInputer : MonoBehaviour
         }
 
         // 入力フォームから値を取得
-        string dummyPlayerID = ""; 
+        string dummyPlayerID = "";
         string playerName = playerNameInput.text;
-        int score = 0;
-        int playScore = 0;
+        if (string.IsNullOrWhiteSpace(playerName))
+        {
+            playerName = GameData_Manager.Instance.playerName;
+            Debug.Log($"DebugName:{playerName}");
+        }
+        int score = scoreManager.currentScore;
+        int playScore = scoreManager.currentScore;
         int timeLefts = 0;
         int currentTime = 0;
+        float timeLeftsf = TimerControllerforScore.GetCurrentTime();
+        float currentTimef = TimerControllerforScore.GetTotalTime();
         int timeScore = 0;
+        Debug.Log($"playerName: {playerName}, score: {score}, playScore: {playScore}, timeLefts: {timeLefts}, currentTime: {currentTime},");
 
         if (!int.TryParse(playScoreInput.text, out playScore))
         {
@@ -124,6 +134,7 @@ public class DebugDataInputer : MonoBehaviour
         }
         if (!int.TryParse(timeLeftsInput.text, out timeLefts))
         {
+            timeLefts = (int)timeLeftsf;
             Debug.LogError("Time Leftsの入力が不正です。半角数字を入力してください。");
         }
         else
@@ -132,6 +143,7 @@ public class DebugDataInputer : MonoBehaviour
         }
         if (!int.TryParse(currentTimeInput.text, out currentTime))
         {
+            currentTime = (int)currentTimef;
             Debug.LogError("currentTimeの入力が不正です。半角数字を入力してください。");
         }
         else
@@ -158,10 +170,10 @@ public class DebugDataInputer : MonoBehaviour
         scoreManager.UpdateScoreDirectly(playScore);
         Debug.Log($"Saved Data!{playerName} {score}");
 
-        float timeLeftsf = (float)timeLefts;
+        timeLeftsf = (float)timeLefts;
         Debug.Log($"timeLeftsf: {timeLeftsf}");
         
-        float currentTimef = (float)currentTime;
+        currentTimef = (float)currentTime;
         Debug.Log($"currentTimef: {currentTimef}");
 
 
@@ -175,7 +187,7 @@ public class DebugDataInputer : MonoBehaviour
         TextureSwitcher.TextureUpdater(characterName);
 
 
-        Debug.Log($"Saved Data!{playerName} {score} {playScore} {timeLefts} {timeScore}{characterName}");
+        Debug.Log($"Saved Data!{playerName}, {score}, {playScore}, {timeLefts}, {timeScore}, {characterName}");
     }
 
 
