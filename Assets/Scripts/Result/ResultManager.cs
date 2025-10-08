@@ -122,9 +122,13 @@ public class ResultManager : MonoBehaviour
 
         // スコアをDynamoDBに送信
 
-        if (!DatabaseSwitcher.isLocal)
+        if (DatabaseSwitcher.isServerUpload)
         {
             SaveScoreToDynamoDB(playerID, playerName, totalScore);
+        }
+        else
+        {
+            Debug.Log("Upload to local only.");
         }
 
         string[] rowData = new string[] { playerID, playerName, totalScore.ToString(), "allTime" };
