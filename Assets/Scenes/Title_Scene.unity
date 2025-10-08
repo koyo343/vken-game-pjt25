@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGMPlayer: {fileID: 0}
-  BGMtitle: {fileID: 8300000, guid: 8f086cb0f5a9d1c4692ba27620fd8748, type: 3}
+  BGMtitle: {fileID: 8300000, guid: d14a8bb5466d6ac458a2ef089ec5f330, type: 3}
 --- !u!1 &1091323327
 GameObject:
   m_ObjectHideFlags: 0
