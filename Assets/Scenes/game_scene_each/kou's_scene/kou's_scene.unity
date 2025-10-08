@@ -821,10 +821,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48fe46c12f48b1148ae0f5fe9f6b00de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameData_Manager: {fileID: 0}
   ken_Attack: {fileID: 1603949427}
   mito_Attack: {fileID: 1603949426}
   sora_Attack: {fileID: 1603949428}
+  sora_Skill: {fileID: 0}
   uruha_Attack: {fileID: 1603949425}
 --- !u!1 &1007893942
 GameObject:
@@ -4566,8 +4566,8 @@ GameObject:
   - component: {fileID: 1603949421}
   - component: {fileID: 1603949420}
   - component: {fileID: 1603949419}
+  - component: {fileID: 1603949435}
   - component: {fileID: 1603949424}
-  - component: {fileID: 1603949423}
   - component: {fileID: 1603949418}
   - component: {fileID: 1603949428}
   - component: {fileID: 1603949427}
@@ -4741,7 +4741,7 @@ Animator:
   m_GameObject: {fileID: 1603949416}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 793f676a726ae4ee3b270f947b33b89b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 360ae16e25510c9448ac2f0802cd9f25, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4753,22 +4753,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1603949423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603949416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5528c1addd650a547a4956df6dbbd5ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1000
-  jumpForce: 1300
-  jumpCount: 1
-  cameraController: {fileID: 2139318779}
 --- !u!114 &1603949424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4784,7 +4768,6 @@ MonoBehaviour:
   toolObject: {fileID: 978014001}
   toolRotationTime: 1
   isUsingTool: 0
-  GameData_Manager: {fileID: 1479157486}
   SkillRecastManager: {fileID: 0}
 --- !u!114 &1603949425
 MonoBehaviour:
@@ -4860,6 +4843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   player: {fileID: 1603949416}
+  scoreDictionaryManager: {fileID: 0}
   invinsibleManager: {fileID: 871065247}
 --- !u!114 &1603949430
 MonoBehaviour:
@@ -4883,12 +4867,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603949416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7aca49f794cc4d8696e8c202eed5c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: f8265b34c7b4248d3b3a45c0efbcfcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillRecastTime: 10
+  SkillRecastTime: 0
   bulletPrefab: {fileID: 0}
   bulletSpawnPoint: {fileID: 0}
+  bulletSpeed: 10
 --- !u!114 &1603949432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4898,10 +4883,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603949416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee3286a32fb7441698d804d812c08d3, type: 3}
+  m_Script: {fileID: 11500000, guid: d744aa9604d8047adbc3badd077c2d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillRecastTime: 10
+  SkillRecastTime: 0
   effectDuration: 5
   speedMultiplier: 1.75
   jumpMultiplier: 1.5
@@ -4915,12 +4900,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603949416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79b3473fcf0854e12a9c9f24ac6df0e9, type: 3}
+  m_Script: {fileID: 11500000, guid: ccea6236f428b4ed7b31ea2b1befba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillRecastTime: 10
+  SkillRecastTime: 0
   bulletPrefab: {fileID: 0}
   bulletSpawnPoint: {fileID: 0}
+  bulletSpeed: 10
 --- !u!114 &1603949434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4930,13 +4916,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1603949416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3acabcd1290de4ae4b60e5b59503231e, type: 3}
+  m_Script: {fileID: 11500000, guid: c2bb05edecaba4deaabae4d2c15e8957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillRecastTime: 10
+  SkillRecastTime: 0
   toolObject: {fileID: 978014001}
-  lungeDistance: 3
-  lungeDuration: 0.2
+  isUsingTool: 0
+  lungeDistance: 15
+  lungeDuration: 1
+--- !u!114 &1603949435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603949416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267dc845f6ac8204cab7404a6c0c3b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 10
+  jumpCheck: 0
+  cameraController: {fileID: 2139318779}
 --- !u!1 &2048278540
 GameObject:
   m_ObjectHideFlags: 0

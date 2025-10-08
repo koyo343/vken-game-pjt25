@@ -104,7 +104,7 @@ public class AttackManager : MonoBehaviour
             //SkillRecastManagerがアクティブになったらtrueとコメントアウトを消す
             if (/*SkillRecastManager.IsSkillReady*/ true)
             {
-                StartCoroutine(SkillRoutine());
+                animator.SetTrigger("isSkill");
                 currentSkillComponent.PerformSkill();
             }
             else
@@ -113,18 +113,7 @@ public class AttackManager : MonoBehaviour
             }
         }
     }
-    //スキルのアニメーション処理
-    private IEnumerator SkillRoutine()
-    {
-        // 1. isSkillをtrueにする
-        animator.SetBool("isSkill", true);
-
-        // 2. 委員長のスキル継続時間
-        yield return new WaitForSeconds(3.5f);
-
-        // 3. 3.5秒後にisSkillをfalseにする
-        animator.SetBool("isSkill", false);
-    }
+    
     public void CharaSwitch(string selectedCharacter)
     {
         switch (selectedCharacter)
