@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   gravity: 0
+  scoreDictionaryManager: {fileID: 0}
 --- !u!114 &-2914054083048898594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   holoxer: {fileID: 5266704961671712856}
-  ScoreDictionaryManager: {fileID: 0}
 --- !u!114 &8834255323899720922
 MonoBehaviour:
   m_ObjectHideFlags: 0
