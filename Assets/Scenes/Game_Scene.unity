@@ -5457,7 +5457,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4459278190379956900, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 786489305}
   m_SourcePrefab: {fileID: 100100000, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
 --- !u!1 &596717704 stripped
 GameObject:
@@ -8341,6 +8344,25 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4153149739450652005, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
   m_PrefabInstance: {fileID: 596717703}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &786489305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596717704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f12ff7c96fb2d742a8ccfa036b0ef84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackSound: {fileID: 8300000, guid: 4c3a0f5ff93ef2e49b1985606f9d4547, type: 3}
+  SoraSkillSound: {fileID: 8300000, guid: f66a6cf6b7ce34f4da74f9bb37d2ae15, type: 3}
+  MitoSkillSound: {fileID: 8300000, guid: 3327f6adf60c6e9448fbd001a263dc08, type: 3}
+  KenSkillSound: {fileID: 8300000, guid: ce8e861348c054f4790c29c855973755, type: 3}
+  UruhaSkillSound: {fileID: 8300000, guid: ff994f0e10691dd4ebf6e44b8d6ec8d7, type: 3}
+  JumpSound: {fileID: 8300000, guid: 0084cb70db85e8141928aee8d19fe890, type: 3}
+  DamageSound: {fileID: 8300000, guid: cfbed62a9f2e0fb4181ce78334c6ba55, type: 3}
 --- !u!1001 &807349190
 PrefabInstance:
   m_ObjectHideFlags: 0
