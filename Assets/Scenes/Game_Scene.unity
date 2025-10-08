@@ -5390,6 +5390,10 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 1328947440}
+    - target: {fileID: 6100092357993388448, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: lungeDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6181321532051405934, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: ken_Attack
       value: 

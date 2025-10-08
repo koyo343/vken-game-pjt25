@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mito_Skill : CharacterSkill
 {
-    [Header("スキル効果のパラメータ")]
+    //スキル効果のパラメータ
     public float effectDuration = 5.0f;     // スキル効果の持続時間（秒）
     public float speedMultiplier = 1.75f;    // スピードの倍率
     public float jumpMultiplier = 1.5f;     // ジャンプ力の倍率
