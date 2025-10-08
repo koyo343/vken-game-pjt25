@@ -68,16 +68,21 @@ public class ResultManager : MonoBehaviour
             return;
         }
 
-        // AWSクライアントの初期化
-        client = new AmazonDynamoDBClient(
-            AWSCredentials.AccessKey,
-            AWSCredentials.SecretKey,
-            RegionEndpoint.GetBySystemName(AWSCredentials.Region)
-        );
+        if (AWSCredentials.ServerConnected)
+        {
 
-        // DynamoDBContextBuilderを使って初期化
-        DynamoDBContextConfig config = new DynamoDBContextConfig();
-        context = new DynamoDBContext(client, config);
+
+            // AWSクライアントの初期化
+            client = new AmazonDynamoDBClient(
+                AWSCredentials.AccessKey,
+                AWSCredentials.SecretKey,
+                RegionEndpoint.GetBySystemName(AWSCredentials.Region)
+            );
+
+            // DynamoDBContextBuilderを使って初期化
+            DynamoDBContextConfig config = new DynamoDBContextConfig();
+            context = new DynamoDBContext(client, config);
+        }
 
         GameData_Manager.Instance.InitializePlayerID();
 
