@@ -3014,8 +3014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossFlag: 0
-  resultSceneName: Result_Scene
   RetireButton: {fileID: 0}
+  ScoreSaveManager: {fileID: 0}
 --- !u!1001 &335385233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4756,6 +4756,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1851959338096226378, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495718780619970749, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
+      propertyPath: RetireButton
+      value: 
+      objectReference: {fileID: 557281028}
+    - target: {fileID: 2495718780619970749, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
+      propertyPath: ScoreSaveManager
+      value: 
+      objectReference: {fileID: 594761352}
     - target: {fileID: 3848960098812502645, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
       propertyPath: m_SizeDelta.x
       value: 338.1478
@@ -4802,7 +4814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6831940745141162553, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8408812589836774711, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
       propertyPath: m_AnchorMax.y
@@ -4841,6 +4853,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
+--- !u!114 &557281028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1851959338096226378, guid: d4d2c9a6f541fde4cac8d0c5868c1278, type: 3}
+  m_PrefabInstance: {fileID: 557281027}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &564640671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7928,6 +7951,10 @@ PrefabInstance:
       propertyPath: CharactorAnimationVisualManager
       value: 
       objectReference: {fileID: 123210846}
+    - target: {fileID: 4699773359946316332, guid: eb4c1c51783f02b41b5637c77736875a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5073838671482363532, guid: eb4c1c51783f02b41b5637c77736875a, type: 3}
       propertyPath: m_Name
       value: DebugManager

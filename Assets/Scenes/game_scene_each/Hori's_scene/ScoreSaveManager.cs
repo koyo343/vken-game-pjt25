@@ -16,8 +16,10 @@ public class ScoreSaveManager : MonoBehaviour
 
     void Start()
     {
-        Debugbutton.onClick.AddListener(OnGameOver);
-
+        if (Debugbutton != null)
+        {
+            Debugbutton.onClick.AddListener(OnGameOver);
+        }
         // ゲーム開始ボタンにメソッドを登録
         //startButton.onClick.AddListener(OnGameStart);
         GameData_Manager.CheckNullInstance();
