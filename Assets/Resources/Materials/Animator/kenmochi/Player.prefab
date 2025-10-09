@@ -24,8 +24,6 @@ GameObject:
   - component: {fileID: 4701601782588591040}
   - component: {fileID: 6181321532051405934}
   - component: {fileID: 5080873985878449372}
-  - component: {fileID: 6375054055205925649}
-  - component: {fileID: 1956883808977831973}
   - component: {fileID: 7814219217917768730}
   m_Layer: 3
   m_Name: Player
@@ -304,6 +302,7 @@ MonoBehaviour:
   speedMultiplier: 1.75
   jumpMultiplier: 1.5
   invincibilityDuration: 5
+  invinsible: {fileID: 0}
 --- !u!114 &6100092357993388448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,33 +369,6 @@ MonoBehaviour:
   player: {fileID: 4459278190379956900}
   scoreDictionaryManager: {fileID: 0}
   invinsibleManager: {fileID: 0}
---- !u!114 &6375054055205925649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459278190379956900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b38c998da911429789fffe343e73a54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 4153149739450652005}
-  _cycle: 1
---- !u!114 &1956883808977831973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459278190379956900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ebe2d4a67533434daa7b12e0eb1d0f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInvinsible: 0
 --- !u!95 &7814219217917768730
 Animator:
   serializedVersion: 7
