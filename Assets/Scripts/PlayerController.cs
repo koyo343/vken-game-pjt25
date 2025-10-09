@@ -96,6 +96,22 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCheck = false;
             animator.SetBool("isJumping", true);
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.JumpSound);
+                Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.JumpSound.name}");
+            }
+            else if(charactorAudioData.JumpSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+                else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         } else if (Input.GetKeyDown(KeyCode.J)) {
             jumpCheck = true;
             debugjump++;
