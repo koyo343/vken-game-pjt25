@@ -5922,6 +5922,10 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2692445850723042149, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: invinsible
+      value: 
+      objectReference: {fileID: 867720554}
     - target: {fileID: 3504109494408326921, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: m_BodyType
       value: 0
@@ -5942,6 +5946,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4526385368796336897, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: currentBoss
+      value: 
+      objectReference: {fileID: 2075295793}
+    - target: {fileID: 4701601782588591040, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: currentBoss
+      value: 
+      objectReference: {fileID: 2075295793}
     - target: {fileID: 5080873985878449372, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: invinsibleManager
       value: 
