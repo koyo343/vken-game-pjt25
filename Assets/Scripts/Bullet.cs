@@ -11,7 +11,9 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// 爆発エフェクトのプレハブ
     /// </summary>
-    public GameObject explosionPrefab;
+    //public GameObject explosionPrefab;
+
+    public GameObject boss;
 
     /// <summary>
     /// 敵に当たっても消えないか（貫通するか）
@@ -67,7 +69,11 @@ public class Bullet : MonoBehaviour
                 else
                 {
                     //うるぱんち
-                    damageable.Damage(50);
+                    damageable.Damage(200);
+                    if(collision.gameObject == boss)
+                    {
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
