@@ -4,8 +4,7 @@ using UnityEngine.UI;
 
 public class BossClearManager : MonoBehaviour
 {
-    //public Damage_Boss Damage_Boss;
-    public bool BossFlag = false;
+    public CameraController cameraController;
     //public string resultSceneName = "Result_Scene";
     public Button RetireButton;
 
@@ -23,7 +22,7 @@ public class BossClearManager : MonoBehaviour
     void Update()
     {
         // ボスが倒されてシーン遷移する処理
-        if (/*Damage_Boss.BossFlag*/ BossFlag == true && !isSceneTransitioning)
+        if (cameraController.BossFlag && !isSceneTransitioning)
         {
             // シーン遷移を一度だけ実行
             isSceneTransitioning = true;
