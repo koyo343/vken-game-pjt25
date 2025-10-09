@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2632226723038456577}
   m_Layer: 0
   m_Name: LowerApartment
-  m_TagString: Ground
+  m_TagString: BackObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

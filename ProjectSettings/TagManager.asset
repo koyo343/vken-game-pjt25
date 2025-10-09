@@ -10,6 +10,7 @@ TagManager:
   - Goal
   - Bullet
   - PlayerAttack
+  - BackObject
   layers:
   - Default
   - TransparentFX
