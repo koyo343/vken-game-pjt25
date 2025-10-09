@@ -5951,6 +5951,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195400148}
     - target: {fileID: 5727510846093978714, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
+      propertyPath: fallMaxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5727510846093978714, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 1328947440}
@@ -30796,14 +30800,4 @@ SceneRoots:
   - {fileID: 1851595645}
   - {fileID: 2049758152}
   - {fileID: 741725773}
-  - {fileID: 837451146}
-  - {fileID: 1273749031}
-  - {fileID: 186738940}
-  - {fileID: 1513000686}
-  - {fileID: 1613973777}
-  - {fileID: 1969667474}
-  - {fileID: 1497433076}
-  - {fileID: 76010501}
-  - {fileID: 290492949}
-  - {fileID: 1308376816}
   - {fileID: 2143329885}
