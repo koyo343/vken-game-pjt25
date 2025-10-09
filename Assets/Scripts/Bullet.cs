@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -49,25 +50,28 @@ public class Bullet : MonoBehaviour
         // ぶつかったオブジェクトが「Enemy」タグを持っているか確認
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // プレイヤーのスコアを加算
-            PlayerController player = FindObjectOfType<PlayerController>();
-            if (player != null)
+            DamageAble damageable = collision.gameObject.GetComponent<DamageAble>();
+
+            //ダメージ処理
+            if (damageable != null)
             {
-                //player.AddScore(1);
-            }
-
-            // 爆発エフェクトを生成
-            //Instantiate(explosionPrefab, collision.transform.position, transform.rotation);
-
-            // ぶつかった敵とこの弾自身を消す
-            Destroy(collision.gameObject);
-
-            // 貫通しない弾（isPenetratingがfalse）の場合だけ、弾自身を消す
-            if (!isPenetrating)
-            {
-                Destroy(gameObject);
+                Debug.Log("DamageAbleコンポーネント取得");
+                
+                // 貫通しない弾（isPenetratingがfalse）の場合だけ、弾自身を消す
+                if (!isPenetrating)
+                {
+                    //タガメ
+                    damageable.Damage(100);
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    //うるぱんち
+                    damageable.Damage(50);
+                }
             }
         }
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             // 爆発エフェクトを生成

@@ -97,7 +97,7 @@ public class Sora_Skill : CharacterSkill
                 // 1. 突進時間を超えた
                 // 2. 目標距離に達した
                 // 3. 速度がゼロになった（壁に衝突したことを意味する）
-                if (elapsedTime >= lungeDuration || distanceTraveled >= lungeDistance || rb.velocity.x == 0)
+                if (elapsedTime >= lungeDuration || distanceTraveled >= lungeDistance || rb.linearVelocity.x == 0)
                 {
                     break;
                 }
