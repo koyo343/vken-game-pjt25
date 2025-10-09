@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -320766586859636994}
   - component: {fileID: 4080045564371519749}
   - component: {fileID: 7510854121055232456}
+  - component: {fileID: -2815596737033552605}
   m_Layer: 0
   m_Name: holoxerRed
   m_TagString: Enemy
@@ -226,3 +227,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-2815596737033552605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740744495517577632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a7c737860b52b4c8ef72d20c267144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemySound: {fileID: 8300000, guid: b72b164b11e063e43b3acf812ca75ae6, type: 3}
