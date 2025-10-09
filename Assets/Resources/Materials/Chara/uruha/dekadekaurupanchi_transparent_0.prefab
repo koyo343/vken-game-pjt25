@@ -166,5 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  explosionPrefab: {fileID: 0}
+  boss: {fileID: 0}
   isPenetrating: 0

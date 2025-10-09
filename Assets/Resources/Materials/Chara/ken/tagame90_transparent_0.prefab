@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2410179526740472512}
   - component: {fileID: 8533724371487852540}
   - component: {fileID: 6258827607541058357}
-  - component: {fileID: 2179094100355681441}
+  - component: {fileID: -637611181787650381}
   m_Layer: 3
   m_Name: tagame90_transparent_0
   m_TagString: Bullet
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2179094100355681441
+--- !u!114 &-637611181787650381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,5 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  explosionPrefab: {fileID: 0}
+  boss: {fileID: 0}
   isPenetrating: 0
