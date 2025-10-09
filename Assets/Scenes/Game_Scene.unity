@@ -3199,9 +3199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b65f727371ff4b07a1abda664f88d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossFlag: 0
+  cameraController: {fileID: 1328947440}
   RetireButton: {fileID: 0}
-  ScoreSaveManager: {fileID: 0}
+  ScoreSaveManager: {fileID: 594761352}
 --- !u!1001 &335385233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28770,9 +28770,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8939141582534140893, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 2075295793}
+    - target: {fileID: -8939141582534140893, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: health
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: -8939141582534140893, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 1328947440}
     - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: player
       value: 
