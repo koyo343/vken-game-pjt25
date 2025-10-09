@@ -70,6 +70,8 @@ public class Sora_Skill : CharacterSkill
 
             // 開始位置を記録
             Vector3 startPosition = transform.position;
+            // 突進開始時間を記録
+            float startTime = Time.time; 
 
             // 武器の角度を調整
             float rotationZ = (directionX > 0) ? -90 : 90;
@@ -88,12 +90,14 @@ public class Sora_Skill : CharacterSkill
             {
                 // 経過時間で終了するか、最大移動距離に達したかチェック
                 float distanceTraveled = Vector3.Distance(startPosition, transform.position);
+                // 現在の経過時間を計算
+                float elapsedTime = Time.time - startTime; 
 
                 // **突進を停止する条件**
                 // 1. 突進時間を超えた
                 // 2. 目標距離に達した
                 // 3. 速度がゼロになった（壁に衝突したことを意味する）
-                if (distanceTraveled >= lungeDistance || rb.linearVelocity.x == 0 || (Time.time - Time.fixedTime) > lungeDuration)
+                if (elapsedTime >= lungeDuration || distanceTraveled >= lungeDistance || rb.velocity.x == 0)
                 {
                     break;
                 }
