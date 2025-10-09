@@ -49,8 +49,7 @@ public class Mito_Skill : CharacterSkill
         effectManager.ApplyJumpUp(jumpMultiplier, effectDuration);
 
         // 3. ダメージ無敵を適用
-        StartCoroutine(invinsible.InvinsibleNoBlink(invincibilityDuration));
-        effectManager.ApplyInvincibility(invincibilityDuration);
+        StartCoroutine(invinsible.Invinsible(invincibilityDuration));
 
         StartCoroutine(MitoSkillRoutine());
 
