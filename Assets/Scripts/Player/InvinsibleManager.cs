@@ -14,6 +14,11 @@ public class InvinsibleManager : MonoBehaviour
         blinker = GetComponent<SpriteRendererBlinker>();
     }
 
+    void Update()
+    {
+        //Debug.Log(isInvinsible);
+    }
+
     public IEnumerator Invinsible(float delaytime)
     {
         if (!isInvinsible)
@@ -22,10 +27,12 @@ public class InvinsibleManager : MonoBehaviour
             isInvinsible = true;
             //アニメーターを無敵の状態にする
             blinker.BeginBlink();
+            Debug.Log("被弾無敵開始");
 
             //コルーチンで指定秒数待機
             yield return new WaitForSeconds(delaytime);
 
+            Debug.Log("被弾無敵owata");
             //無敵解除
             isInvinsible = false;
             //アニメーターの無敵状態を切る
@@ -33,7 +40,7 @@ public class InvinsibleManager : MonoBehaviour
         }
     }
     //スキルによる無敵時間コルーチン(点滅なし)
-    public IEnumerator InvinsibleNoBlink(float delaytime)
+    public IEnumerator InvinsibleNoBlink(float delay)
     {
         if (!isInvinsible)
         {
@@ -42,7 +49,8 @@ public class InvinsibleManager : MonoBehaviour
             Debug.LogWarning("スキルで無敵状態になった1");
 
             //コルーチンで指定秒数待機
-            yield return new WaitForSeconds(delaytime);
+            yield return new WaitForSeconds(delay);
+            Debug.LogWarning("無敵状態owata");
 
             //無敵解除
             isInvinsible = false;
