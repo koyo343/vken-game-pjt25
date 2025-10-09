@@ -9,7 +9,8 @@ public class Damage_holoxer : DamageBase
         /*ここに敵を倒した際のカウンターの呼び出し処理を追加*/
         if (holoxer != null)
         {
-            Destroy(holoxer);   
+            Destroy(holoxer);
+            Debug.Log("Damage holoxer");
         }
     }
 }

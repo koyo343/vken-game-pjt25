@@ -144,10 +144,7 @@ public class HoloxerRed_Attack : MonoBehaviour
             }
             Debug.Log("Playerに当たりました");
         }
-    }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {

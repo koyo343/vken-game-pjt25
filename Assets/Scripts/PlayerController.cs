@@ -187,8 +187,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
         RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
 
-        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
-                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+        isGrounded = (leftHit.collider != null && (leftHit.collider.CompareTag("Ground") || leftHit.collider.CompareTag("BackObject"))) ||
+                    (rightHit.collider != null && (rightHit.collider.CompareTag("Ground") || rightHit.collider.CompareTag("BackObject")));
 
         Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
         Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
