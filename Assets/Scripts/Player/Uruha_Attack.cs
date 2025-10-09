@@ -32,16 +32,9 @@ public class Uruha_Attack : CharacterAttack
         Vector3 startPosition = toolObject.transform.localPosition;
         Vector3 targetPosition = startPosition;
 
-        // 前方に突き出す方向を決定 (キャラクターの向きに合わせる)
-        // 親オブジェクト（キャラクター）のlocalScale.xが負の値なら左向きと判断
-        if (transform.localScale.x < 0)
-        {
-            targetPosition.x -= lungeDistance;
-        }
-        else
-        {
-            targetPosition.x += lungeDistance;
-        }
+        // 向きの判定を削除し、常にローカル座標のX軸プラス方向に移動させる
+        // 親のlocalScale.xが-1なら、これだけで自動的に左に動く
+        targetPosition.x += lungeDistance;
 
         // --- 前方への移動 ---
         float elapsedTime = 0f;

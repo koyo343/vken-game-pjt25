@@ -54,6 +54,7 @@ public class EffectManager : MonoBehaviour
      // ■■■ 数秒の無敵効果のみを起動するメソッド ■■■
     public void ApplyInvincibility(float duration)
     {
+        Debug.LogWarning("スキルで無敵状態になった2");
         StartCoroutine(DamageInvincibilityCoroutine(duration));
     }
 

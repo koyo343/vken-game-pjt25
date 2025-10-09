@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class BossClearManager : MonoBehaviour
 {
-    //public Damage_Boss Damage_Boss;
-    public bool BossFlag = false;
-    public string resultSceneName = "Result_Scene";
+    public CameraController cameraController;
+    //public string resultSceneName = "Result_Scene";
     public Button RetireButton;
+
+    public ScoreSaveManager ScoreSaveManager;
+
 
     // シーン遷移を一度だけ実行するためのフラグ
     private bool isSceneTransitioning = false;
@@ -20,19 +22,21 @@ public class BossClearManager : MonoBehaviour
     void Update()
     {
         // ボスが倒されてシーン遷移する処理
-        if (/*Damage_Boss.BossFlag*/ BossFlag == true)
+        if (cameraController.BossFlag && !isSceneTransitioning)
         {
             // シーン遷移を一度だけ実行
             isSceneTransitioning = true;
             Debug.Log("ボスが倒されました！リザルトシーンに遷移します。");
 
-            SceneManager.LoadScene(resultSceneName);
+            //SceneManager.LoadScene(resultSceneName);
+            ScoreSaveManager.OnGameOver();
         }
     }
-    
+
     //リタイアボタンの処理
     public void OnRetire()
     {
-        SceneManager.LoadScene(resultSceneName);
+        //SceneManager.LoadScene(resultSceneName);
+        ScoreSaveManager.OnGameOver();
     }
 }

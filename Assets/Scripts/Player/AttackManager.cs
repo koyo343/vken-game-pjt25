@@ -96,6 +96,22 @@ public class AttackManager : MonoBehaviour
         {
             toolObject.SetActive(true);
             currentAttackComponent.PerformAttack();
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.AttackSound);
+                Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.AttackSound.name}");
+            }
+            if(charactorAudioData.AttackSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+            Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         }
 
         //スキルの呼び出し
@@ -104,27 +120,65 @@ public class AttackManager : MonoBehaviour
             //SkillRecastManagerがアクティブになったらtrueとコメントアウトを消す
             if (/*SkillRecastManager.IsSkillReady*/ true)
             {
-                StartCoroutine(SkillRoutine());
+                animator.SetTrigger("isSkill");
                 currentSkillComponent.PerformSkill();
             }
             else
             {
                 //Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
             }
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            string selectedCharacter = GameData_Manager.Instance.selectedCharacter;
+            if (seManager != null) 
+            {
+                switch (selectedCharacter)
+                {
+                    case "ときのそら":
+                        seManager.PlaySE(charactorAudioData.SoraSkillSound);
+                        Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.SoraSkillSound.name}");
+                        if(charactorAudioData.SoraSkillSound == null)
+                        {
+                            Debug.Log("SEがアタッチされていません");
+                        }
+                        break;
+
+                    case "月ノ美兎":
+                        seManager.PlaySE(charactorAudioData.MitoSkillSound);
+                        Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.MitoSkillSound.name}");
+                        if(charactorAudioData.MitoSkillSound == null)
+                        {
+                            Debug.Log("SEがアタッチされていません");
+                        }
+                        break;
+
+                    case "剣持刀也":
+                        seManager.PlaySE(charactorAudioData.KenSkillSound);
+                        Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.KenSkillSound.name}");
+                        if(charactorAudioData.KenSkillSound == null)
+                        {
+                            Debug.Log("SEがアタッチされていません");
+                        }  
+                        break;
+
+                    case "一ノ瀬うるは":
+                        seManager.PlaySE(charactorAudioData.UruhaSkillSound);
+                        Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.UruhaSkillSound.name}");
+                        if(charactorAudioData.UruhaSkillSound == null)
+                        {
+                            Debug.Log("SEがアタッチされていません");
+                        }
+                        break;
+                }   
+            }
+            else
+            {
+            Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         }
     }
-    //スキルのアニメーション処理
-    private IEnumerator SkillRoutine()
-    {
-        // 1. isSkillをtrueにする
-        animator.SetBool("isSkill", true);
-
-        // 2. 委員長のスキル継続時間
-        yield return new WaitForSeconds(0.5f);
-
-        // 3. 0.5秒後にisSkillをfalseにする
-        animator.SetBool("isSkill", false);
-    }
+    
     public void CharaSwitch(string selectedCharacter)
     {
         switch (selectedCharacter)

@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
 
         //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
         //ここは初期スポーンを記述してください
-        SavePoint = new Vector3(-6f, 677f, 0f);
+        SavePoint = new Vector3(-6f, 680f, 0f);
         FallFlag = false;
 
     }

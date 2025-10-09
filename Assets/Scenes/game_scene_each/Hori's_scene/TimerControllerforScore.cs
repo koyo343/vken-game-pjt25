@@ -1,6 +1,7 @@
 // 必要なライブラリを読み込む
 using UnityEngine;
 using TMPro; // TextMesh Pro を使うために必要
+using System;
 
 public class TimerControllerforScore : MonoBehaviour
 {
@@ -17,10 +18,11 @@ public class TimerControllerforScore : MonoBehaviour
     private float totaltime;        //全体でかかった時間の計算
     private bool isTimeUp = false;  // 時間切れになったかどうかを判定するフラグ
 
-        // TimerScoreManagerからcurrentTimeにアクセスするためのメソッドを追加
+    // TimerScoreManagerからcurrentTimeにアクセスするためのメソッドを追加
     public float GetCurrentTime()
     {
         return currentTime;
+
     }
 
     // TimerScoreManagerからtotaltimeにアクセスするためのメソッドを追加

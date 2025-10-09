@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8393329835482424225}
   - component: {fileID: 2589560866325843403}
   - component: {fileID: -320766586859636994}
+  - component: {fileID: 4080045564371519749}
+  - component: {fileID: 7510854121055232456}
   m_Layer: 0
   m_Name: holoxerRed
   m_TagString: Enemy
@@ -170,6 +172,7 @@ MonoBehaviour:
   launchInterval: 2
   badmarkPrefab: {fileID: 251247817427921042, guid: 1463a3c66fbbd9247b1ae19282e0640e, type: 3}
   spawnOffset: 0.5
+  scoreDictionaryManager: {fileID: 0}
 --- !u!114 &-320766586859636994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +186,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  holoxer: {fileID: 0}
+  holoxer: {fileID: 1740744495517577632}
+--- !u!114 &4080045564371519749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740744495517577632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b30ca86d3d68464784c2839d4cbbe4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &7510854121055232456
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740744495517577632}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
