@@ -148,6 +148,23 @@ public class HoloxerRed_Attack : MonoBehaviour
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {
+            //SE再生
+            EnemySE enemyAudioData = GetComponent<EnemySE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(enemyAudioData.EnemySound);
+                Debug.Log($"SEを再生しました: {enemyAudioData.EnemySound.name}");
+            }
+            if(enemyAudioData.EnemySound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+
             // 敵（Holoxer自身）を破壊
             Destroy(gameObject);
             scoreDictionaryManager.StrToScore("BeatHoloxer");
