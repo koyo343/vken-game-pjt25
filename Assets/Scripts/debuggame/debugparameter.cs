@@ -6,7 +6,7 @@ public static class DebugParameter
 {
     //public static DebugParameter Instance { get; private set; }
 
-    public static bool ismasked = false;
+    public static bool ExitisActive = true;
 
     /*
     void Awake()
@@ -47,10 +47,10 @@ public static class DebugParameter
         return ismasked;
     }*/
 
-    public static void togglemasked()
+    public static void toggleExit()
     {
-        ismasked = !ismasked;
-        Debug.Log($"ismasked : {ismasked}");
+        ExitisActive = !ExitisActive;
+        Debug.Log($"ExitisActive is {ExitisActive}");
     }
 
 }

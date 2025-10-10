@@ -2,11 +2,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class maskingObject : MonoBehaviour
+public class ToggleExit : MonoBehaviour
 {
 
     public Button ToggleButton;
-    public GameObject[] targetGameObjects;
+    //複数用
+    //public GameObject[] targetGameObjects;
+
+    //一つ用
+    public GameObject targetGameObject;
+
 
     //public DebugParameter debugParameter;
 
@@ -19,15 +24,16 @@ public class maskingObject : MonoBehaviour
     public void ToggleMask()
     {
 
-        DebugParameter.togglemasked();
+        DebugParameter.toggleExit();
         MaskUpdate();
     }
     
     void MaskUpdate()
-    {
+    {   
+        /*
         foreach (GameObject GameObject in targetGameObjects)
         {
-            if (!DebugParameter.ismasked)
+            if (DebugParameter.ExitisActive)
             {
                 GameObject.gameObject.SetActive(true);
             }
@@ -35,7 +41,9 @@ public class maskingObject : MonoBehaviour
             {
                 GameObject.gameObject.SetActive(false);
             }
-            Debug.Log($"object mask is {DebugParameter.ismasked}");
-        }
+        }*/
+
+        targetGameObject.SetActive(DebugParameter.ExitisActive);
+        Debug.Log($"ExitMask is {DebugParameter.ExitisActive}");
     }
 }
