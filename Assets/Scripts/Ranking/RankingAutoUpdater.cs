@@ -13,6 +13,8 @@ public class AutoUpdaterToggle : MonoBehaviour
     private bool isAutoUpdaterEnabled = false;
     public TextMeshProUGUI UpdaterText;
 
+    public TextMeshProUGUI UpdatingUIText;
+
     public RankingManager RankingManager;
 
     private float updatetime = 60.0f;
@@ -21,7 +23,9 @@ public class AutoUpdaterToggle : MonoBehaviour
     void Start()
     {
         AutoUpdaterButton.onClick.AddListener(ToggleAutoUpdater);
+        UpdatingUIText.gameObject.SetActive(isAutoUpdaterEnabled);
         UpdaterText.text = "AutoUpdating OFF";
+        UpdatingUIText.text = "Updating...";
     }
 
     void ToggleAutoUpdater()
@@ -32,9 +36,11 @@ public class AutoUpdaterToggle : MonoBehaviour
             RankingManager.ReLoadRankingData();
             lastUpdateTime = Time.time;
             Debug.Log("AutoUpdater is enabled");
+            UpdatingUIText.gameObject.SetActive(true);
         } else {
             UpdaterText.text = "AutoUpdating OFF";
             Debug.Log("AutoUpdater is disabled");
+            UpdatingUIText.gameObject.SetActive(false);
         }
     }
 
