@@ -25,7 +25,7 @@ public class EffectManager : MonoBehaviour
             originalMoveSpeed = playerController.moveSpeed;
             originalJumpForce = playerController.jumpForce;
 
-            damage_player = GetComponent<Damage_player>();
+            /*damage_player = GetComponent<Damage_player>();*/
 
             if (damage_player != null)
             {
