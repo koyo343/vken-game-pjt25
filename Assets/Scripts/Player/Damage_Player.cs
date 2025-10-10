@@ -24,6 +24,22 @@ public class Damage_player : DamageBase
             Debug.Log("シールドダメージ");
 
             //ここにシールドSEを追加
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.ShieldSound);
+                Debug.Log($"ダメージSEを再生しました: {charactorAudioData.ShieldSound.name}");
+            }
+            if(charactorAudioData.ShieldSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+
             base.Damage(0);
             
             //シールドを無効にする
