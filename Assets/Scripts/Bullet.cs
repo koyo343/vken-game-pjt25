@@ -69,7 +69,7 @@ public class Bullet : MonoBehaviour
                 else
                 {
                     //うるぱんち
-                    damageable.Damage(200);
+                    damageable.Damage(100);
                     if(collision.gameObject == boss)
                     {
                         Destroy(gameObject);

@@ -117,15 +117,14 @@ public class AttackManager : MonoBehaviour
         //スキルの呼び出し
         if(Input.GetKeyDown(KeyCode.F) && currentSkillComponent != null)
         {
-            //SkillRecastManagerがアクティブになったらtrueとコメントアウトを消す
-            if (/*SkillRecastManager.IsSkillReady*/ true)
+            if (SkillRecastManager.IsSkillReady)
             {
                 animator.SetTrigger("isSkill");
                 currentSkillComponent.PerformSkill();
             }
             else
             {
-                //Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
+                Debug.Log("skill not ready あと " + SkillRecastManager.recastTime + " - " + SkillRecastManager.currentRecastTime + " 秒");
             }
             //SE再生
             CharactorSE charactorAudioData = GetComponent<CharactorSE>();
