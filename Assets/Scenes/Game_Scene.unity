@@ -10640,6 +10640,7 @@ MonoBehaviour:
   UruhaSkillSound: {fileID: 8300000, guid: ff994f0e10691dd4ebf6e44b8d6ec8d7, type: 3}
   JumpSound: {fileID: 8300000, guid: 0084cb70db85e8141928aee8d19fe890, type: 3}
   DamageSound: {fileID: 8300000, guid: cfbed62a9f2e0fb4181ce78334c6ba55, type: 3}
+  ShieldSound: {fileID: 8300000, guid: 403a3ba82eecfeb48913047ebc69cfcc, type: 3}
 --- !u!114 &786489307 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5080873985878449372, guid: 82c6db2e6b469403091ef5c8451661db, type: 3}
