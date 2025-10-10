@@ -203,53 +203,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3570419794343397929
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2599992795034145679}
-  - component: {fileID: 2495718780619970749}
-  m_Layer: 0
-  m_Name: BossClearManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2599992795034145679
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3570419794343397929}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 166781415206534997}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2495718780619970749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3570419794343397929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b65f727371ff4b07a1abda664f88d46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BossFlag: 0
-  resultSceneName: Result_Scene
-  RetireButton: {fileID: 0}
 --- !u!1 &3771846814872246491
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +462,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3570419794343397929}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseController, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
@@ -642,7 +595,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2495718780619970749}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BossClearManager, Assembly-CSharp
         m_MethodName: OnRetire
         m_Mode: 1
@@ -1093,7 +1046,6 @@ RectTransform:
   m_Children:
   - {fileID: 1413526779889362745}
   - {fileID: 3848960098812502645}
-  - {fileID: 2599992795034145679}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

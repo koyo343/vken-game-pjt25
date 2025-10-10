@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems; // EventSystemを扱うために必要
 
 public class PauseController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PauseController : MonoBehaviour
     private bool isPaused = false; // ポーズ状態を管理するフラグ
 
     private bool issetting = false; // 設定画面を管理するフラグ
+    public GameObject ContinueButton; // コンティニューボタンの参照
 
     void Awake()
     {
@@ -56,6 +58,9 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 0f;
         // ポーズ状態フラグをtrueにする
         isPaused = true;
+        // 一旦選択をクリアしてから、ContinueButtonを選択状態にする
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(ContinueButton);
     }
 
     // ■ ゲームを再開する処理
