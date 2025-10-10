@@ -266,6 +266,23 @@ public class Boss : MonoBehaviour
         // Playerの攻撃に接触したとき
         if (collision.gameObject.tag == "PlayerAttack" || collision.gameObject.tag == "Bullet")
         {
+            //SE再生
+            EnemySE enemyAudioData = GetComponent<EnemySE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(enemyAudioData.EnemySound);
+                Debug.Log($"SEを再生しました: {enemyAudioData.EnemySound.name}");
+            }
+            if(enemyAudioData.EnemySound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+            
             damage_boss.Damage(10);
             Debug.Log("Bossにダメージ");
         }
