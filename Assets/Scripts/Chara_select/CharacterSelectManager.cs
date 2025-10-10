@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.EventSystems; // EventSystemを扱うために必要
 
 
 
@@ -18,6 +19,9 @@ public class CharacterSelectManager : MonoBehaviour
 
     public ObjectToggle objectToggle;
     public GameData_Manager GameData_Manager;
+    public GameObject confirmationPanel; // 確認パネルの参照
+    public GameObject NoButton; // Noボタンの参照
+    public GameObject StartButton; // GameStartボタンの参照
 
 
     void Awake()
@@ -88,7 +92,27 @@ public class CharacterSelectManager : MonoBehaviour
     /// </summary>
     public void OnGameStart()
     {
-        // ゲームシーンに遷移
+        // 確認パネルを表示
+        confirmationPanel.SetActive(true);
+
+        // 一旦選択をクリア
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(NoButton);
+    }
+
+    public void OnConfirmStart()
+    {
+        // 確認パネルを非表示にしてゲームシーンに遷移
+        confirmationPanel.SetActive(false);
         SceneManager.LoadScene(gameSceneName);
+    }
+    
+    public void OnCancelStart()
+    {
+        // 確認パネルを非表示にして選択画面に戻る
+        confirmationPanel.SetActive(false);
+        // 一旦選択をクリア
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(StartButton);
     }
 }
