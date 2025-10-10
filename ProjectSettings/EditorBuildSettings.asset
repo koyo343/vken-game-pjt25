@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Debug_menu.unity
     guid: 84b536cd373e17e4b988740cb680ce39
   - enabled: 1
+    path: Assets/Scenes/Thanks_Scene.unity
+    guid: 5cec4e619e56abb4c80e7c6a3a7f3538
+  - enabled: 1
     path: Assets/Scenes/Credit_Scene.unity
     guid: 0cbac89e12dc1ff4abe6961f0a537f2a
   m_configObjects:
