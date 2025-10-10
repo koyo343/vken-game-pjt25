@@ -32171,6 +32171,7 @@ MonoBehaviour:
   Pausebutton: {fileID: 328419030}
   ContinueButton: {fileID: 557281031}
   Back: {fileID: 1313750767}
+  PauseButton: {fileID: 342219781}
 --- !u!1001 &1971538710
 PrefabInstance:
   m_ObjectHideFlags: 0
