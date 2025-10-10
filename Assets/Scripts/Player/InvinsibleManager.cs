@@ -14,11 +14,6 @@ public class InvinsibleManager : MonoBehaviour
         blinker = GetComponent<SpriteRendererBlinker>();
     }
 
-    void FixedUpdate()
-    {
-        //Debug.Log(isInvinsible);
-    }
-
     public IEnumerator Invinsible(float delaytime)
     {
         if (!isInvinsible)
