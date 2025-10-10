@@ -13,7 +13,7 @@ public class Mito_Skill : CharacterSkill
     // EffectManagerへの参照を保持する変数
     private EffectManager effectManager;
 
-    private InvinsibleManager invinsible;
+    public InvinsibleManager invinsible;
 
     void Start()
     {
@@ -21,7 +21,6 @@ public class Mito_Skill : CharacterSkill
         // PlayerControllerやEffectManagerを持つオブジェクトを探して取得します。
         animator      = GetComponent<Animator>();
         effectManager = FindObjectOfType<EffectManager>();
-        invinsible    = GetComponent<InvinsibleManager>();
 
         if (effectManager == null)
         {
@@ -50,6 +49,7 @@ public class Mito_Skill : CharacterSkill
 
         // 3. ダメージ無敵を適用
         StartCoroutine(invinsible.Invinsible(invincibilityDuration));
+        //effectManager.ApplyInvincibility(invincibilityDuration);
 
         StartCoroutine(MitoSkillRoutine());
 
