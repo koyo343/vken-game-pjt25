@@ -15,11 +15,14 @@ public class Damage_player : DamageBase
         isShield = false;
         Debug.Log("isShield is false");
     }
+
     public override void Damage(int damage)
     {
         //シールドを付与されているか
         if (isShield)
         {
+            Debug.Log("シールドダメージ");
+
             //ここにシールドSEを追加
             base.Damage(0);
             
