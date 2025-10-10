@@ -25,8 +25,6 @@ public class EffectManager : MonoBehaviour
             originalMoveSpeed = playerController.moveSpeed;
             originalJumpForce = playerController.jumpForce;
 
-            /*damage_player = GetComponent<Damage_player>();*/
-
             if (damage_player != null)
             {
                 Debug.Log("damage_playerコンポーネントを取得しました");
