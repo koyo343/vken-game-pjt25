@@ -1305,6 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31797fd9e111e5a429ea281edf64b2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 0}
 --- !u!82 &1110332265
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1416,10 +1417,7 @@ GameObject:
   - component: {fileID: 1130635408}
   - component: {fileID: 1130635407}
   - component: {fileID: 1130635411}
-<<<<<<< HEAD
-=======
   - component: {fileID: 1130635413}
->>>>>>> 1d97090c1a82e9599a2b6cf7876f4cd855097489
   - component: {fileID: 1130635412}
   m_Layer: 5
   m_Name: Ranking_Button
@@ -1460,7 +1458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9880c0ff79dfa024aba6a3acdaae5e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSound: {fileID: 8300000, guid: 15b38dd222f098f44b650db3337c37d6, type: 3}
 --- !u!114 &1130635408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1589,12 +1586,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130635405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
-  m_Script: {fileID: 11500000, guid: bf968bf2d1a74d44d99aca61d0880b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetSceneName: Ranking_Scene
-=======
   m_Script: {fileID: 11500000, guid: d4acfcdda9f61b4469b13288be8484cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1628,7 +1619,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
->>>>>>> 1d97090c1a82e9599a2b6cf7876f4cd855097489
 --- !u!1 &1167610763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1773,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: Next
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1810,13 +1800,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
