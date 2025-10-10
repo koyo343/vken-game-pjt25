@@ -12,6 +12,23 @@ public class Damage_player : DamageBase
 
         if (invinsibleManager != null && !invinsibleManager.isInvinsible)
         {
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.DamageSound);
+                Debug.Log($"ダメージSEを再生しました: {charactorAudioData.DamageSound.name}");
+            }
+            if(charactorAudioData.DamageSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+
             StartCoroutine(invinsibleManager.Invinsible(2f));
 
             /*ここにスコア減算処理を記述*/

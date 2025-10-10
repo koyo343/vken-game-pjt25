@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
 
+    public float fallMaxSpeed = 30f;
+
     public bool jumpCheck = false;
     private float debugjump = 0;
     private Rigidbody2D rb;
@@ -55,8 +57,16 @@ public class PlayerController : MonoBehaviour
         // 地面にいる場合のみ、左右の移動を適用
         if (isGrounded)
         {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            if (rb.linearVelocity.y <= fallMaxSpeed)
+            {
+                // プレイヤーの速度を更新
+                rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            } else
+            {
+                // プレイヤーの速度を更新
+                rb.linearVelocity = new Vector2(moveInput * moveSpeed, fallMaxSpeed);
+            }
+            
 
             //地上にいる間はプレイヤーの最後の入力方向を更新する
             if (moveInput >= 0)
@@ -96,6 +106,22 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpCheck = false;
             animator.SetBool("isJumping", true);
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.JumpSound);
+                Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.JumpSound.name}");
+            }
+            else if(charactorAudioData.JumpSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+                else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         } else if (Input.GetKeyDown(KeyCode.J)) {
             jumpCheck = true;
             debugjump++;
@@ -171,8 +197,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
         RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
 
-        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
-                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+        isGrounded = (leftHit.collider != null && (leftHit.collider.CompareTag("Ground") || leftHit.collider.CompareTag("BackObject"))) ||
+                    (rightHit.collider != null && (rightHit.collider.CompareTag("Ground") || rightHit.collider.CompareTag("BackObject")));
 
         Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
         Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);

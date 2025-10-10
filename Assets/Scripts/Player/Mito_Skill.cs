@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Mito_Skill : CharacterSkill
 {
-    [Header("スキル効果のパラメータ")]
+    //スキル効果のパラメータ
     public float effectDuration = 5.0f;     // スキル効果の持続時間（秒）
     public float speedMultiplier = 1.75f;    // スピードの倍率
     public float jumpMultiplier = 1.5f;     // ジャンプ力の倍率
@@ -13,7 +13,7 @@ public class Mito_Skill : CharacterSkill
     // EffectManagerへの参照を保持する変数
     private EffectManager effectManager;
 
-    private InvinsibleManager invinsible;
+    public InvinsibleManager invinsible;
 
     void Start()
     {
@@ -21,7 +21,6 @@ public class Mito_Skill : CharacterSkill
         // PlayerControllerやEffectManagerを持つオブジェクトを探して取得します。
         animator      = GetComponent<Animator>();
         effectManager = FindObjectOfType<EffectManager>();
-        invinsible    = GetComponent<InvinsibleManager>();
 
         if (effectManager == null)
         {
@@ -49,8 +48,8 @@ public class Mito_Skill : CharacterSkill
         effectManager.ApplyJumpUp(jumpMultiplier, effectDuration);
 
         // 3. ダメージ無敵を適用
-        StartCoroutine(invinsible.InvinsibleNoBlink(invincibilityDuration));
-        effectManager.ApplyInvincibility(invincibilityDuration);
+        StartCoroutine(invinsible.Invinsible(invincibilityDuration));
+        //effectManager.ApplyInvincibility(invincibilityDuration);
 
         StartCoroutine(MitoSkillRoutine());
 

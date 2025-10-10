@@ -5,6 +5,7 @@ public class Uruha_Skill : CharacterSkill
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawnPoint;
+    public GameObject currentBoss;
     public float bulletSpeed = 10f;
 
     public override void PerformSkill()
@@ -28,13 +29,21 @@ public class Uruha_Skill : CharacterSkill
                 // プレイヤーの向き（localScale.x）に応じて速度を設定
                 rb.linearVelocity = new Vector2(transform.localScale.x * bulletSpeed, 0);
             }
+            
             // 生成した弾からBulletコンポーネント取得
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
+
             // 取得したコンポーネントの isPenetrating フラグを true に設定
             if (bulletComponent != null)
             {
                 // この弾を「貫通弾」に設定する
                 bulletComponent.isPenetrating = true;
+
+                if(currentBoss != null)
+                {
+                    // 弾にボスの情報を渡す
+                    bulletComponent.boss = currentBoss;
+                }
             }
         }
         else

@@ -19,10 +19,10 @@ public abstract class DamageBase : MonoBehaviour, DamageAble
         //ここはデバッグログなので消してもよい
         Debug.Log("敵がダメージを受けました！");
 
-        if (health <= 0)
+        /*if (health <= 0)
         {
             Die();
-        }
+        }*/
     }
 
     //これは絶対に子クラスで実装しようね

@@ -103,7 +103,7 @@ public class ItemManager : MonoBehaviour
         // 鳴らすべきSEクリップが存在するかチェック
         if (itemaudio != null && itemaudio.ItemSound != null)
         {
-            // 💡 シーン内の SEManager インスタンスを探す（シングルトンであると仮定）
+            // シーン内の SEManager インスタンスを探す
             SEManager seManager = FindObjectOfType<SEManager>();
 
             if (seManager != null)
