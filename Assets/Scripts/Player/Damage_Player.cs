@@ -10,13 +10,18 @@ public class Damage_player : DamageBase
     //シールドアイテムの効果中か否か
     public bool isShield;
 
+    void Start()
+    {
+        isShield = false;
+        Debug.Log("isShield is false");
+    }
     public override void Damage(int damage)
     {
         //シールドを付与されているか
         if (isShield)
         {
             //ここにシールドSEを追加
-            base.damage(0);
+            base.Damage(0);
             
             //シールドを無効にする
             isShield = false;
