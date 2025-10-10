@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems; // EventSystemを扱うために必要
+
 using TMPro; // TextMeshProを使用する場合に必要
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,6 +20,8 @@ public class RankingManager : MonoBehaviour
     public Button nextButton;
     public Button previousButton;
     public TextMeshProUGUI pageText;
+    public GameObject Next; // Nextボタンの参照
+    public GameObject Previous; // Previousボタンの参照
 
     // 内部変数
     private List<RankingEntry> rankingData = new List<RankingEntry>();
@@ -226,6 +230,10 @@ public class RankingManager : MonoBehaviour
         UpdateUI();
         incooltime = true;
         lastInputTime = Time.time;
+
+        // 一旦選択をクリアしてから、StartButtonを選択状態にする
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Next);
     }
     
     /// <summary>
@@ -246,5 +254,9 @@ public class RankingManager : MonoBehaviour
         UpdateUI();
         incooltime = true;
         lastInputTime = Time.time;
+
+        // 一旦選択をクリアしてから、StartButtonを選択状態にする
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Previous);
     }
 }

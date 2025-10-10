@@ -4,14 +4,65 @@ public class Damage_player : DamageBase
 {
     public GameObject player;
     public ScoreDictionaryManager scoreDictionaryManager;
-    
+
     public InvinsibleManager invinsibleManager;
+
+    //シールドアイテムの効果中か否か
+    public bool isShield;
+
+    void Start()
+    {
+        isShield = false;
+        Debug.Log("isShield is false");
+    }
 
     public override void Damage(int damage)
     {
-
-        if (invinsibleManager != null && !invinsibleManager.isInvinsible)
+        //シールドを付与されているか
+        if (isShield)
         {
+            Debug.Log("シールドダメージ");
+
+            //ここにシールドSEを追加
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.ShieldSound);
+                Debug.Log($"シールドSEを再生しました: {charactorAudioData.ShieldSound.name}");
+            }
+            if(charactorAudioData.ShieldSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+
+            base.Damage(0);
+            
+            //シールドを無効にする
+            isShield = false;
+        } else if (invinsibleManager != null && !invinsibleManager.isInvinsible) //InvinsibleManagerがあることとfalseであることを確認
+        {
+            //SE再生
+            CharactorSE charactorAudioData = GetComponent<CharactorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(charactorAudioData.DamageSound);
+                Debug.Log($"ダメージSEを再生しました: {charactorAudioData.DamageSound.name}");
+            }
+            if(charactorAudioData.DamageSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
+
             StartCoroutine(invinsibleManager.Invinsible(2f));
 
             /*ここにスコア減算処理を記述*/

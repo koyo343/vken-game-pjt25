@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
 
+    public float fallMaxSpeed = 30f;
+
     public bool jumpCheck = false;
     private float debugjump = 0;
     private Rigidbody2D rb;
@@ -55,8 +57,17 @@ public class PlayerController : MonoBehaviour
         // 地面にいる場合のみ、左右の移動を適用
         if (isGrounded)
         {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            if (rb.linearVelocity.y <= fallMaxSpeed)
+            {
+                // プレイヤーの速度を更新
+                rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+            }
+            else
+            {
+                // プレイヤーの速度を更新
+                rb.linearVelocity = new Vector2(moveInput * moveSpeed, fallMaxSpeed);
+            }
+            
 
             //地上にいる間はプレイヤーの最後の入力方向を更新する
             if (moveInput >= 0)
@@ -67,16 +78,6 @@ public class PlayerController : MonoBehaviour
             {
                 lastDirection = Direction.Left;
             }
-        }
-        else if (lastDirection == Direction.Right && moveInput < 0)
-        {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
-        }
-        else if (lastDirection == Direction.Left && moveInput > 0)
-        {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
         }
         else
         {
@@ -187,8 +188,8 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D leftHit = Physics2D.Raycast(leftOrigin, raycastDirection, raycastDistance, mask);
         RaycastHit2D rightHit = Physics2D.Raycast(rightOrigin, raycastDirection, raycastDistance, mask);
 
-        isGrounded = (leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
-                    (rightHit.collider != null && rightHit.collider.CompareTag("Ground"));
+        isGrounded = (leftHit.collider != null && (leftHit.collider.CompareTag("Ground") || leftHit.collider.CompareTag("BackObject"))) ||
+                    (rightHit.collider != null && (rightHit.collider.CompareTag("Ground") || rightHit.collider.CompareTag("BackObject")));
 
         Debug.DrawRay(leftOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);
         Debug.DrawRay(rightOrigin, raycastDirection * raycastDistance, isGrounded ? Color.green : Color.red);

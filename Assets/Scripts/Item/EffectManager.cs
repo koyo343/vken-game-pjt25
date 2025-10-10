@@ -14,7 +14,7 @@ public class EffectManager : MonoBehaviour
     // --- 内部で使う変数 ---
     private float originalMoveSpeed;
     private float originalJumpForce;
-    private bool isItemInvincible = false;    // アイテムによる無敵
+    public Damage_player damage_player;
     private bool isDamageInvincible = false;  // ダメージ後の無敵
 
     void Start()
@@ -24,18 +24,23 @@ public class EffectManager : MonoBehaviour
             // ゲーム開始時にプレイヤーの元のステータスを記録
             originalMoveSpeed = playerController.moveSpeed;
             originalJumpForce = playerController.jumpForce;
+
+            if (damage_player != null)
+            {
+                Debug.Log("damage_playerコンポーネントを取得しました");
+            }
         }
     }
 
-    // ■■■ ダメージを受ける処理 ■■■
+    /*// ■■■ ダメージを受ける処理 ■■■
     public void TakeDamage(int damageScorePenalty)
     {
         // どちらかの無敵状態ならダメージを受けない
-        if (isItemInvincible || isDamageInvincible)
+        if (damage_player.isShield || isDamageInvincible)
         {
-            if (isItemInvincible)
+            if (damage_player.isShield)
             {
-                isItemInvincible = false; // アイテム無敵は一度で消費
+                damage_player.isShield = false; // アイテム無敵は一度で消費
                 Debug.Log("無敵効果でダメージを防いだ！");
             }
             return;
@@ -48,15 +53,8 @@ public class EffectManager : MonoBehaviour
         }
 
         // ダメージ後の無敵時間コルーチンを開始
-        StartCoroutine(DamageInvincibilityCoroutine(2f));
-    }
-
-     // ■■■ 数秒の無敵効果のみを起動するメソッド ■■■
-    public void ApplyInvincibility(float duration)
-    {
-        Debug.LogWarning("スキルで無敵状態になった2");
-        StartCoroutine(DamageInvincibilityCoroutine(duration));
-    }
+        StartCoroutine(DamageInvincibilityCoroutine());
+    }*/
 
     // ■■■ アイテム効果を適用するメソッド群 ■■■
     public void ApplySpeedUp(float multiplier, float duration)
@@ -71,7 +69,7 @@ public class EffectManager : MonoBehaviour
     
     public void GrantInvincibility()
     {
-        isItemInvincible = true;
+        damage_player.isShield = true;
         Debug.Log("無敵アイテムを取得！");
     }
 
@@ -106,16 +104,15 @@ public class EffectManager : MonoBehaviour
         playerController.jumpForce = originalJumpForce;
     }
 
-    private IEnumerator DamageInvincibilityCoroutine(float duration)
+    private void DamageInvincibilityCoroutine()
     {
-        isDamageInvincible = true;
-        Debug.Log($"ダメージを受け、{duration}秒間の無敵時間に入ります。");
-        yield return new WaitForSeconds(duration);
-        isDamageInvincible = false;
-        Debug.Log("無敵時間が終了しました。");
+        // シールド付与
+        Debug.Log("シールド付与予定");
+        damage_player.isShield = true;
+        Debug.Log("シールドを付与");
     }
 
-    // --- デバッグ用ダメージ機能 ---
+    /*// --- デバッグ用ダメージ機能 ---
     void Update()
     {
         DamageDebug();
@@ -130,5 +127,5 @@ public class EffectManager : MonoBehaviour
                 TakeDamage(500);
             }
         }
-    }
+    }*/
 }
