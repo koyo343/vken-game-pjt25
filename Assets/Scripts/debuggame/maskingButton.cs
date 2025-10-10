@@ -8,18 +8,26 @@ public class maskingObject : MonoBehaviour
     public Button ToggleButton;
     public GameObject[] targetGameObjects;
 
-    public bool isMasked = false;
+    //public DebugParameter debugParameter;
 
     void Start()
     {
         ToggleButton.onClick.AddListener(ToggleMask);
+        MaskUpdate();
     }
 
     public void ToggleMask()
     {
+
+        DebugParameter.togglemasked();
+        MaskUpdate();
+    }
+    
+    void MaskUpdate()
+    {
         foreach (GameObject GameObject in targetGameObjects)
         {
-            if(isMasked)
+            if (!DebugParameter.ismasked)
             {
                 GameObject.gameObject.SetActive(true);
             }
@@ -27,7 +35,7 @@ public class maskingObject : MonoBehaviour
             {
                 GameObject.gameObject.SetActive(false);
             }
-        isMasked = !isMasked;
+            Debug.Log($"object mask is {DebugParameter.ismasked}");
         }
     }
 }
