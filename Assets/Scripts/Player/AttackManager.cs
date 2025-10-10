@@ -131,7 +131,7 @@ public class AttackManager : MonoBehaviour
                     {
                         case "ときのそら":
                             seManager.PlaySE(charactorAudioData.SoraSkillSound);
-                            Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.SoraSkillSound.name}");
+                            Debug.Log($"SoraスキルSEを再生しました: {charactorAudioData.SoraSkillSound.name}");
                             if(charactorAudioData.SoraSkillSound == null)
                             {
                                 Debug.Log("SEがアタッチされていません");
@@ -140,7 +140,7 @@ public class AttackManager : MonoBehaviour
 
                         case "月ノ美兎":
                             seManager.PlaySE(charactorAudioData.MitoSkillSound);
-                            Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.MitoSkillSound.name}");
+                            Debug.Log($"MitoスキルSEを再生しました: {charactorAudioData.MitoSkillSound.name}");
                             if(charactorAudioData.MitoSkillSound == null)
                             {
                                 Debug.Log("SEがアタッチされていません");
@@ -149,7 +149,7 @@ public class AttackManager : MonoBehaviour
 
                         case "剣持刀也":
                             seManager.PlaySE(charactorAudioData.KenSkillSound);
-                            Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.KenSkillSound.name}");
+                            Debug.Log($"TouyaスキルSEを再生しました: {charactorAudioData.KenSkillSound.name}");
                             if(charactorAudioData.KenSkillSound == null)
                             {
                                 Debug.Log("SEがアタッチされていません");
@@ -158,7 +158,7 @@ public class AttackManager : MonoBehaviour
 
                         case "一ノ瀬うるは":
                             seManager.PlaySE(charactorAudioData.UruhaSkillSound);
-                            Debug.Log($"通常攻撃SEを再生しました: {charactorAudioData.UruhaSkillSound.name}");
+                            Debug.Log($"UruhaスキルSEを再生しました: {charactorAudioData.UruhaSkillSound.name}");
                             if(charactorAudioData.UruhaSkillSound == null)
                             {
                                 Debug.Log("SEがアタッチされていません");
