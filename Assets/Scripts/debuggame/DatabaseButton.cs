@@ -128,6 +128,7 @@ public class LocalSwitch : MonoBehaviour
     }
     private void UpdateUploadModeText()
     {
+        Debug.Log("UpdateUploadModeText is called");
         if (DatabaseSwitcher.isServerUpload)
         {
             UploadmodeText.text = PublicUPmodeMessage;
