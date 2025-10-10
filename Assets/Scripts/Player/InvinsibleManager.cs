@@ -16,7 +16,7 @@ public class InvinsibleManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(isInvinsible);
+        //Debug.Log(isInvinsible);
     }
 
     public IEnumerator Invinsible(float delaytime)
@@ -26,11 +26,7 @@ public class InvinsibleManager : MonoBehaviour
             //無敵付与
             isInvinsible = true;
 
-<<<<<<< HEAD
-            if (delaytime < 3f)
-=======
             if(delaytime <= 3f)
->>>>>>> c54679ac4a2ecae9fe84fd6838aaef189fab9e9f
             {
                 //アニメーターを無敵の状態にする
                 blinker.BeginBlink();
@@ -41,12 +37,7 @@ public class InvinsibleManager : MonoBehaviour
 
             //無敵解除
             isInvinsible = false;
-<<<<<<< HEAD
-            
-            if (delaytime < 3f)
-=======
             if (delaytime <= 3f)
->>>>>>> c54679ac4a2ecae9fe84fd6838aaef189fab9e9f
             {
                 //アニメーターの無敵状態を切る
                 blinker.EndBlink();
