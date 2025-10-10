@@ -14,7 +14,7 @@ public class EffectManager : MonoBehaviour
     // --- 内部で使う変数 ---
     private float originalMoveSpeed;
     private float originalJumpForce;
-    private Damage_player damage_player;
+    public Damage_player damage_player;
     private bool isDamageInvincible = false;  // ダメージ後の無敵
 
     void Start()
@@ -24,6 +24,13 @@ public class EffectManager : MonoBehaviour
             // ゲーム開始時にプレイヤーの元のステータスを記録
             originalMoveSpeed = playerController.moveSpeed;
             originalJumpForce = playerController.jumpForce;
+
+            damage_player = GetComponent<Damage_player>();
+
+            if (damage_player != null)
+            {
+                Debug.Log("damage_playerコンポーネントを取得しました");
+            }
         }
     }
 
