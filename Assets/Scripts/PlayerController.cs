@@ -61,7 +61,8 @@ public class PlayerController : MonoBehaviour
             {
                 // プレイヤーの速度を更新
                 rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
-            } else
+            }
+            else
             {
                 // プレイヤーの速度を更新
                 rb.linearVelocity = new Vector2(moveInput * moveSpeed, fallMaxSpeed);
@@ -77,16 +78,6 @@ public class PlayerController : MonoBehaviour
             {
                 lastDirection = Direction.Left;
             }
-        }
-        else if (lastDirection == Direction.Right && moveInput < 0)
-        {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
-        }
-        else if (lastDirection == Direction.Left && moveInput > 0)
-        {
-            // プレイヤーの速度を更新
-            rb.linearVelocity = new Vector2(moveInput * moveSpeed * -0.3f, rb.linearVelocity.y);
         }
         else
         {
