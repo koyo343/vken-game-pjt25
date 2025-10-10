@@ -29,16 +29,51 @@ public class SliderArrowKeyController : MonoBehaviour
         }
 
         // 左矢印キーが押された瞬間を検知
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             // スライダーの値をstep分だけ減らす
             slider.value -= step;
+
+            //SE再生
+            CursorSE cursorAudioData = GetComponent<CursorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(cursorAudioData.CursorSound);
+                Debug.Log($"SEを再生しました: {cursorAudioData.CursorSound.name}");
+            }
+            if(cursorAudioData.CursorSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         }
+
         // 右矢印キーが押された瞬間を検知
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             // スライダーの値をstep分だけ増やす
             slider.value += step;
+
+            //SE再生
+            CursorSE cursorAudioData = GetComponent<CursorSE>();
+            SEManager seManager = FindObjectOfType<SEManager>();
+            if (seManager != null) 
+            {
+                seManager.PlaySE(cursorAudioData.CursorSound);
+                Debug.Log($"SEを再生しました: {cursorAudioData.CursorSound.name}");
+            }
+            if(cursorAudioData.CursorSound == null)
+            {
+                Debug.Log("SEがアタッチされていません");
+            }
+            else
+            {
+                Debug.LogWarning("SEManagerが見つからないため、SEを再生できませんでした。");
+            }
         }
     }
 }
