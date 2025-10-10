@@ -109,7 +109,7 @@ public class ResultManager : MonoBehaviour
         playerNameText.text = "PlayerName: " + playerName;
         totalScoreText.text = "Total Score: " + totalScore.ToString();
         playScoreText.text = "Play Score: " + playScore.ToString();
-        totalTimeText.text = "Time Lefts: " + totalTime.ToString() + "s";
+        totalTimeText.text = "Total Time: " + totalTime.ToString() + "s";
         timeScoreText.text = "Time Score: " + timeScore.ToString();
 
         totalKillText.text = "Total Kill: " + totalKill.ToString();
