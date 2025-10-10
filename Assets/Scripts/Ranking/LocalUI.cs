@@ -36,7 +36,7 @@ public class LocalUI : MonoBehaviour
         {
             RankingModeText.text = publictext;
         }
-        DatabaseSwitcher.LocalmodeisChenged = false;
+       // DatabaseSwitcher.LocalmodeisChenged = false;
     }
             
     
