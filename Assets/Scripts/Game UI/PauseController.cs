@@ -16,6 +16,7 @@ public class PauseController : MonoBehaviour
     private bool issetting = false; // 設定画面を管理するフラグ
     public GameObject ContinueButton; // コンティニューボタンの参照
     public GameObject Back; // Backボタンの参照
+    public GameObject PauseButton; // ポーズボタンの参照
 
     void Awake()
     {
@@ -74,6 +75,10 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 1f;
         // ポーズ状態フラグをfalseにする
         isPaused = false;
+
+        // 一旦選択をクリアしてから、PauseButtonを選択状態にする
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(PauseButton);
     }
 
     // ■ 設定画面に入る処理
