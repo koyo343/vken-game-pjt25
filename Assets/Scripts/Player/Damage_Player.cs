@@ -29,7 +29,7 @@ public class Damage_player : DamageBase
             if (seManager != null) 
             {
                 seManager.PlaySE(charactorAudioData.ShieldSound);
-                Debug.Log($"ダメージSEを再生しました: {charactorAudioData.ShieldSound.name}");
+                Debug.Log($"シールドSEを再生しました: {charactorAudioData.ShieldSound.name}");
             }
             if(charactorAudioData.ShieldSound == null)
             {
