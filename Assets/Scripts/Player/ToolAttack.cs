@@ -69,7 +69,7 @@ public class ToolAttack : MonoBehaviour
                 else if (damageable != null && sora_Skill.isUsingTool)
                 {
                     Debug.Log("ダメージ処理の実行");
-                    damageable.Damage(50);
+                    damageable.Damage(1);
                 }
 
                 break;
