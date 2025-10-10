@@ -4,13 +4,23 @@ public class Damage_player : DamageBase
 {
     public GameObject player;
     public ScoreDictionaryManager scoreDictionaryManager;
-    
+
     public InvinsibleManager invinsibleManager;
+
+    //シールドアイテムの効果中か否か
+    public bool isShield;
 
     public override void Damage(int damage)
     {
-
-        if (invinsibleManager != null && !invinsibleManager.isInvinsible)
+        //シールドを付与されているか
+        if (isShield)
+        {
+            //ここにシールドSEを追加
+            base.damage(0);
+            
+            //シールドを無効にする
+            isShield = false;
+        } else if (invinsibleManager != null && !invinsibleManager.isInvinsible) //InvinsibleManagerがあることとfalseであることを確認
         {
             //SE再生
             CharactorSE charactorAudioData = GetComponent<CharactorSE>();

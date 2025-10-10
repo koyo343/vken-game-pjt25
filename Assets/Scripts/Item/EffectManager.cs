@@ -14,7 +14,7 @@ public class EffectManager : MonoBehaviour
     // --- 内部で使う変数 ---
     private float originalMoveSpeed;
     private float originalJumpForce;
-    private bool isItemInvincible = false;    // アイテムによる無敵
+    private Damage_Player damage_player;
     private bool isDamageInvincible = false;  // ダメージ後の無敵
 
     void Start()
@@ -106,13 +106,10 @@ public class EffectManager : MonoBehaviour
         playerController.jumpForce = originalJumpForce;
     }
 
-    private IEnumerator DamageInvincibilityCoroutine(float duration)
+    private void DamageInvincibilityCoroutine()
     {
-        isDamageInvincible = true;
-        Debug.Log($"ダメージを受け、{duration}秒間の無敵時間に入ります。");
-        yield return new WaitForSeconds(duration);
-        isDamageInvincible = false;
-        Debug.Log("無敵時間が終了しました。");
+        // シールド付与
+        damage_player.isShield = true;
     }
 
     // --- デバッグ用ダメージ機能 ---
