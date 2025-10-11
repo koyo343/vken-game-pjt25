@@ -44,6 +44,8 @@ MonoBehaviour:
     m_path: Assets/Scenes/Debug_menu.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Credit_Scene.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Thanks_Scene.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings:
@@ -59,7 +61,7 @@ MonoBehaviour:
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
     - line: '|   companyName: Vken'
-    - line: '|   productName: vken-game-Prototype1.2'
+    - line: '|   productName: vken-game'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
     - line: '|   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b:
@@ -187,7 +189,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 4'
+    - line: '|   bundleVersion: 6'
     - line: '|   preloadedAssets:'
     - line: '|   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100,
         type: 3}'
@@ -749,10 +751,10 @@ MonoBehaviour:
     - rid: 8728195025787945027
       type: {class: WindowsPlatformSettings, ns: UnityEditor.WindowsStandalone, asm: UnityEditor.WindowsStandalone.Extensions}
       data:
-        m_Development: 0
+        m_Development: 1
         m_ConnectProfiler: 0
         m_BuildWithDeepProfilingSupport: 0
-        m_AllowDebugging: 0
+        m_AllowDebugging: 1
         m_WaitForManagedDebugger: 0
         m_ManagedDebuggerFixedPort: 0
         m_ExplicitNullChecks: 0
