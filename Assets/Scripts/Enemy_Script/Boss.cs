@@ -96,7 +96,7 @@ public class Boss : MonoBehaviour
 
     void Update()
     {
-        
+        //何もしない
     }
 
     void FixedUpdate()
