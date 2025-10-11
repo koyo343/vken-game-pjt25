@@ -10,4 +10,5 @@ public class CharactorSE : MonoBehaviour
     public AudioClip UruhaSkillSound;
     public AudioClip JumpSound;
     public AudioClip DamageSound;
+    public AudioClip ShieldSound;
 }
