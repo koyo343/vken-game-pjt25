@@ -9,6 +9,7 @@ public static class DotEnv
 {
     private static Dictionary<string, string> envVariables = new Dictionary<string, string>();
     private static bool isLoaded = false;
+    public static bool existenv = false;
 
     /// <summary>
     /// .envファイルをロードします。複数回呼び出されても一度しか実行されません。
@@ -31,10 +32,12 @@ public static class DotEnv
             // ★デバッグログ②：ファイルが見つからない場合に警告を表示
             Debug.LogWarning("'.env' file not found at the specified path.");
             isLoaded = true; // ロード済みとしてマークし、再試行を防ぐ
+            existenv = false;
             return;
         }
 
         // ★デバッグログ③：ファイルが見つかったことを表示
+        existenv = true;
         Debug.Log(".env file found. Reading lines.");
 
         // ファイルの各行を読み込み、キーと値を解析

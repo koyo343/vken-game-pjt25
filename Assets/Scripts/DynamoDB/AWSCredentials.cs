@@ -13,6 +13,10 @@ public static class AWSCredentials
     public static void Initialize()
     {
         DotEnv.Load();
+        if (!DotEnv.existenv)
+        {
+            return;
+        }
         if(!DatabaseSwitcher.isLocal || !isInitialized){
             if(string.IsNullOrEmpty(DotEnv.Get("A")) || string.IsNullOrEmpty(DotEnv.Get("S")) || string.IsNullOrEmpty(DotEnv.Get("R"))){
                 Debug.LogError(".env do not has keys enough");
