@@ -33614,10 +33614,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -34937,6 +34937,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 786489274}
     - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: moveSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: rockPrefab
       value: 
       objectReference: {fileID: 7976444703990644392, guid: a009337f2d295fd45814c312f57abaa7, type: 3}
@@ -34949,9 +34953,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: rockDropHeight
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: projectileCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 8818182396253077568, guid: bc2c914e44ffcf54a981821133c4f970, type: 3}
+    - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: knockbackVerticalForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 964386881653870241, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: knockbackHorizontalForce
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1755749247670116146, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_Name
       value: yagoo
@@ -34963,6 +34983,18 @@ PrefabInstance:
     - target: {fileID: 1755749247670116146, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35003,6 +35035,10 @@ PrefabInstance:
     - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118603889133843946, guid: ea0d2eb44da8a8247a62a9a4bc0181ce, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

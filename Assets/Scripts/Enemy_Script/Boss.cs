@@ -22,9 +22,9 @@ public class Boss : MonoBehaviour
     public float dashSpeed = 20f;
     public float dashDuration = 0.5f;
 
-    [Header("ノックバック設定")] // ★追加★ ノックバック力を設定
-    public float knockbackHorizontalForce = 500f;
-    public float knockbackVerticalForce = 300f;
+    [Header("ノックバック設定")] //ノックバック力を設定
+    public float knockbackHorizontalForce = 30f;
+    public float knockbackVerticalForce = 20f;
     public float colliderDisableDuration = 0.1f;
 
     [Header("投射物と岩")]
@@ -120,8 +120,7 @@ public class Boss : MonoBehaviour
             yield return new WaitForSeconds(coolDownTime);
 
             // 攻撃選択
-            // 攻撃選択の範囲を修正（0, 4）に戻します。
-            int attackChosenNum = Random.Range(2, 2);
+            int attackChosenNum = Random.Range(0, 4);
 
             currentState = BossState.Attacking;
             rb.linearVelocity = Vector2.zero;
