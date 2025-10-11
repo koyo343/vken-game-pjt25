@@ -11,7 +11,7 @@ public class SkillRecastManager : MonoBehaviour
 
     // --- 外部のスクリプトから参照する変数 ---
     [Tooltip("スキルが使用可能かどうか")]
-    public bool IsSkillReady { get; private set; } = false;
+    public bool IsSkillReady  = false;
 
     // --- 内部で使う変数 ---
     public float currentRecastTime = 0f; // 現在のリキャスト時間
