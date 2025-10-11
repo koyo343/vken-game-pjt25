@@ -2603,9 +2603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ToggleButton: {fileID: 588688654}
-  targetGameObjects:
-  - {fileID: 2001076453}
-  isMasked: 0
+  targetGameObject: {fileID: 2001076453}
 --- !u!1 &1707439314
 GameObject:
   m_ObjectHideFlags: 0

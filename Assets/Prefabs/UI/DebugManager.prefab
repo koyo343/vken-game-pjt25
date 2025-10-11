@@ -3394,12 +3394,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SwitchButton: {fileID: 8579781006777621695}
+  UPSwitchButton: {fileID: 0}
   LocalmodeText: {fileID: 2435280152706198755}
+  UploadmodeText: {fileID: 0}
   CautionPanel: {fileID: 7723554686975521771}
   ConfirmButton: {fileID: 84820141212033467}
   CancelButton: {fileID: 1153090736748814538}
   LocalmodeMessage: Local Mode
   PublicmodeMessage: Public Mode
+  PublicUPmodeMessage: Public Upload Mode
+  LocalUPmodeMessage: Local Upload Mode
 --- !u!114 &-6918175497402447231
 MonoBehaviour:
   m_ObjectHideFlags: 0
