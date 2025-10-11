@@ -14,6 +14,7 @@ public class RockBehaviour : MonoBehaviour
         // 地面に接したら消滅
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("地面に当たりました");
             if (rb != null)
             {
                 rb.linearVelocity = Vector2.zero;
@@ -28,7 +29,8 @@ public class RockBehaviour : MonoBehaviour
             /*
             プレイヤーへのダメージ処理
             */
-            Destroy(gameObject, 0.1f);
+            Debug.Log("プレイヤーに当たりました");
+            Destroy(gameObject);
         }
     }
 }
