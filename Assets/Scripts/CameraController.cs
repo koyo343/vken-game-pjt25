@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
         maxYPosition = 1000f;
         minYPosition = 650f;
 
-        bossXPosition = 470f;
+        bossXPosition = 490f;
 
         //セーブポイントの初期化、第一引数をx、第二引数をy、第三引数をz座標とする。
         //ここは初期スポーンを記述してください
