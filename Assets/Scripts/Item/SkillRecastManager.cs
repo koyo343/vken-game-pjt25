@@ -47,10 +47,11 @@ public class SkillRecastManager : MonoBehaviour
         }
         
         // Fキーが押され、かつスキルが使用可能な場合
+        /*
         if (Input.GetKeyDown(KeyCode.F) && IsSkillReady)
         {
             UseSkill();
-        }
+        }*/
     }
 
     // スキルを使用する処理 

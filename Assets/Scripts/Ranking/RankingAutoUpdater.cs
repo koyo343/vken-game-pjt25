@@ -17,7 +17,7 @@ public class AutoUpdaterToggle : MonoBehaviour
 
     public RankingManager RankingManager;
 
-    private float updatetime = 60.0f;
+    private float updatetime = 15.0f;
     private float lastUpdateTime = 0.0f;
 
     void Start()
