@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class RockBehaviour : MonoBehaviour
+{
+    private Rigidbody2D rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 地面に接したら消滅
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("地面に当たりました");
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.isKinematic = true; // 物理演算の影響を受けないようにする
+            }
+            Destroy(gameObject, 0.1f);
+        }
+
+        // プレイヤーへの処理
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            /*
+            プレイヤーへのダメージ処理
+            */
+            Debug.Log("プレイヤーに当たりました");
+            Destroy(gameObject);
+        }
+    }
+}

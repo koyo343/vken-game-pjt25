@@ -1,0 +1,56 @@
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class ScoreSaveManager : MonoBehaviour
+{
+    // このスクリプトは、TimerController.csと同じGameObjectにアタッチしてください
+
+    // TimerControllerへの参照
+    public TimerControllerforScore TimerControllerforScore;
+    public ScoreManager scoreManager; 
+
+    public Button Debugbutton;
+
+    public GameData_Manager GameData_Manager;
+
+    void Start()
+    {
+        if (Debugbutton != null)
+        {
+            Debugbutton.onClick.AddListener(OnGameOver);
+        }
+        // ゲーム開始ボタンにメソッドを登録
+        //startButton.onClick.AddListener(OnGameStart);
+        GameData_Manager.CheckNullInstance();
+    }
+
+    // このメソッドは、ゲームオーバー時に外部から呼ばれます
+    public void OnGameOver()
+    {
+        Debug.Log("OnGameOver is called.");
+        GameData_Manager.CheckNullInstance();
+
+        // ScoreManagerからスコアを取得
+        int playScore = scoreManager.currentScore;
+        
+        // TimerControllerから時間を取得
+        float currentTime = TimerControllerforScore.GetCurrentTime();
+        float totaltime = TimerControllerforScore.GetTotalTime();
+        //float totalKill = 
+
+        // TimerScoreを計算: 残り時間 * 10
+        int timerScore = Mathf.Max(0, (int)currentTime * 10);
+        
+        // GameData_Managerにデータを格納
+        if (GameData_Manager.Instance != null)
+        {
+            GameData_Manager.Instance.SetGameResult(playScore, (int)totaltime, timerScore);
+        }
+        else
+        {
+            Debug.LogError("GameData_Manager.Instanceが初期化されていません！");
+        }
+        SceneManager.LoadScene("Result_Scene");
+    }
+}
