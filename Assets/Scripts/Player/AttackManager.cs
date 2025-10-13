@@ -121,6 +121,9 @@ public class AttackManager : MonoBehaviour
             {
                 animator.SetTrigger("isSkill");
                 currentSkillComponent.PerformSkill();
+                SkillRecastManager.IsSkillReady = false;
+                SkillRecastManager.currentRecastTime = 0f;
+                SkillRecastManager.skillGauge.fillAmount = 0; // ゲージを空にする
                 //SE再生
                 CharactorSE charactorAudioData = GetComponent<CharactorSE>();
                 SEManager seManager = FindObjectOfType<SEManager>();

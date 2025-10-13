@@ -8,7 +8,7 @@ public class ExitGame : MonoBehaviour
     void Update()
     {
         // 指定されたキーが押されたかチェック
-        if (Input.GetKeyDown(exitKey))
+        if (Input.GetKeyDown(exitKey) && DebugParameter.ExitisActive)
         {
             // アプリケーションを終了させる
             QuitGame();

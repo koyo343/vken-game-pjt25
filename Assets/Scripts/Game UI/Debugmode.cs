@@ -20,7 +20,7 @@ public class Debugmode : MonoBehaviour
     //public string targetSceneName;
 
     // 期待するキーの順番
-    public KeyCode[] sequence = { KeyCode.U, KeyCode.T, KeyCode.K, KeyCode.T};
+    private KeyCode[] sequence = { KeyCode.U, KeyCode.T, KeyCode.K, KeyCode.T, KeyCode.K, KeyCode.B};
 
     // 現在、シーケンスの何番目を待っているか
     private int currentSequenceIndex = 0;
@@ -82,7 +82,7 @@ public class Debugmode : MonoBehaviour
                     // 正しいキーが押されたので、次のインデックスへ進める
                     currentSequenceIndex++;
                     lastInputTime = Time.time;
-                    Debug.Log($"キーが押されました: {pressedKey}:debugkey{currentSequenceIndex-1}");
+                    Debug.Log($"キーが押されました: {pressedKey}:debugkey{currentSequenceIndex-1}: {currentSequenceIndex}/{sequence.Length}");
 
                     // シーケンスが完了したかチェック:
                     if (currentSequenceIndex >= sequence.Length)

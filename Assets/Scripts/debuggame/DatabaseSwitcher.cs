@@ -68,6 +68,10 @@ public static class DatabaseSwitcher
     public static void SwitchServerUpload()
     {
         Debug.Log("SwitchServerUpload is called");
+
+        AWSCredentials.Initialize();
+
+
         if (!isServerUpload)
         {
             if (AWSCredentials.ServerConnected)
